@@ -3,612 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ritualpet Estilismo Canino — El ritual que tu perro se merece</title>
-<meta name="description" content="Estilismo canino en Camins al Grau, Valencia. Especialistas en Schnauzer y razas de pelo. Trato con mimo, sin prisas. 5★ con 95 reseñas. Pide cita por WhatsApp.">
+<title>Ritualpet Estilismo Canino — El ritual que tu perro merece</title>
+<meta name="description" content="Estilismo canino en Valencia con trato de 10 y especialistas en razas como Schnauzer y Akita. 5⭐ en Google. Pide cita por WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --primario:#FF5B4A;
-    --primario-soft:#FF8678;
-    --secundario:#B6E61E;
-    --crema:#FFF3E0;
-    --crema-2:#F6E4C8;
-    --tinta:#1B1B1B;
-    --tinta-2:#2E2A26;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--crema);
-    color:var(--tinta);
-    font-family:'DM Sans',sans-serif;
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
-  }
-  ::selection{background:var(--primario);color:var(--crema)}
-  h1,h2,h3{line-height:.94;letter-spacing:-.02em}
-  .bric{font-family:'Bricolage Grotesque',sans-serif;font-weight:800}
-  a{color:inherit;text-decoration:none}
-
-  /* ---------- NAVBAR ---------- */
-  .nav{
-    position:fixed;top:0;left:0;right:0;z-index:100;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:14px 20px;
-    background:rgba(255,243,224,.85);
-    backdrop-filter:blur(12px);
-    border-bottom:2px solid var(--tinta);
-  }
-  .brand{display:flex;align-items:center;gap:8px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px;letter-spacing:-.01em}
-  .brand .dot{color:var(--primario)}
-  .nav-wa{
-    display:inline-flex;align-items:center;gap:7px;
-    background:var(--primario);color:var(--crema);
-    font-family:'DM Sans';font-weight:700;font-size:14px;
-    padding:9px 16px;border-radius:40px;border:2px solid var(--tinta);
-    transition:transform .15s ease, background .2s ease;
-  }
-  .nav-wa:hover{transform:translateY(-2px) rotate(-2deg);background:var(--tinta)}
-  .nav-wa:focus-visible{outline:3px solid var(--secundario);outline-offset:2px}
-
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative;padding:120px 20px 60px;text-align:center;overflow:hidden;
-  }
-  .hero-blob{
-    position:absolute;width:520px;height:520px;border-radius:50%;
-    background:var(--primario);opacity:.16;filter:blur(10px);
-    top:-160px;right:-200px;z-index:0;
-    animation:floaty 9s ease-in-out infinite;
-  }
-  .hero-blob.b2{background:var(--secundario);opacity:.22;width:300px;height:300px;top:auto;bottom:-80px;left:-120px;right:auto;animation-delay:-3s}
-  @keyframes floaty{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(30px) scale(1.06)}}
-  .hero-kicker{
-    position:relative;z-index:2;
-    display:inline-flex;align-items:center;gap:8px;
-    background:var(--tinta);color:var(--crema);
-    font-weight:500;font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;
-    padding:7px 15px;border-radius:30px;margin-bottom:26px;
-  }
-  .hero-kicker .pulse{width:8px;height:8px;border-radius:50%;background:var(--secundario);animation:pulse 1.4s infinite}
-  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
-  .hero h1{
-    position:relative;z-index:2;
-    font-size:clamp(54px,18vw,128px);
-    font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
-    animation:bounceIn .9s cubic-bezier(.18,.89,.32,1.6) both;
-  }
-  @keyframes bounceIn{0%{opacity:0;transform:translateY(40px) scale(.9)}100%{opacity:1;transform:none}}
-  .hero h1 .l1{display:block;color:var(--tinta)}
-  .hero h1 .l2{display:block;color:var(--primario);position:relative}
-  .hero h1 .l2::after{
-    content:"";position:absolute;left:50%;bottom:4px;transform:translateX(-50%);
-    width:0;height:12px;background:var(--secundario);z-index:-1;opacity:.8;border-radius:6px;
-    animation:underline 1.1s ease-out forwards .8s;
-  }
-  @keyframes underline{to{width:90%}}
-  .hero-sub{
-    position:relative;z-index:2;
-    max-width:440px;margin:24px auto 0;
-    font-size:18px;line-height:1.5;color:var(--tinta-2);
-  }
-  .hero-sub em{font-style:italic;font-weight:500;color:var(--primario)}
-  .hero-cta{
-    position:relative;z-index:2;
-    display:inline-flex;align-items:center;gap:10px;margin-top:32px;
-    background:var(--primario);color:var(--crema);
-    font-family:'Bricolage Grotesque';font-weight:800;font-size:19px;letter-spacing:.3px;
-    padding:18px 30px;border-radius:50px;border:3px solid var(--tinta);
-    box-shadow:6px 6px 0 var(--tinta);
-    transition:transform .15s ease, box-shadow .15s ease;
-  }
-  .hero-cta:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--tinta)}
-  .hero-cta:active{transform:translate(6px,6px);box-shadow:0 0 0 var(--tinta)}
-  .hero-cta:focus-visible{outline:3px solid var(--secundario);outline-offset:3px}
-  .hero-rating{position:relative;z-index:2;margin-top:16px;font-size:14px;color:var(--tinta-2);display:inline-flex;align-items:center;gap:7px;justify-content:center}
-  .hero-rating .stars{color:#F4B740;letter-spacing:1px}
-  .hero-rating b{color:var(--tinta)}
-
-  /* ---------- BEFORE / AFTER STAGE (signature) ---------- */
-  .stage{position:relative;z-index:2;margin:46px auto 0;max-width:380px}
-  .ba-card{
-    position:relative;
-    background:var(--crema-2);border:3px solid var(--tinta);border-radius:28px;
-    padding:18px;box-shadow:8px 8px 0 var(--primario);
-  }
-  .blob-bg{position:absolute;inset:-26px -14px auto auto;width:120px;z-index:-1;color:var(--secundario);animation:spin 22s linear infinite}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .ba-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center}
-  .ba-pane{text-align:center}
-  .ba-photo{
-    aspect-ratio:1/1;border-radius:16px;border:2px dashed var(--tinta);
-    display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
-  }
-  .ba-before .ba-photo{background:#E2D2BB}
-  .ba-after .ba-photo{background:var(--primario);color:var(--crema)}
-  .ba-photo svg{width:54%;height:54%}
-  .ba-tag{
-    position:absolute;bottom:8px;left:50%;transform:translateX(-50%);
-    font-size:10px;background:rgba(27,27,27,.82);color:var(--crema);
-    padding:3px 8px;border-radius:20px;white-space:nowrap;letter-spacing:.03em;
-  }
-  .ba-label{margin-top:9px;font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;text-transform:uppercase;letter-spacing:.4px}
-  .ba-before .ba-label{color:var(--tinta-2)}
-  .ba-after .ba-label{color:var(--primario)}
-  .ba-arrow{
-    text-align:center;margin-top:14px;font-style:italic;
-    font-size:15px;color:var(--tinta-2);
-  }
-  .ba-arrow b{color:var(--primario);font-style:normal;font-weight:700}
-
-  /* ---------- MARQUEE ---------- */
-  .marquee{
-    background:var(--tinta);color:var(--crema);overflow:hidden;white-space:nowrap;
-    border-top:3px solid var(--tinta);border-bottom:3px solid var(--tinta);padding:13px 0;
-  }
-  .marquee-track{display:inline-block;animation:scroll 20s linear infinite;font-family:'Bricolage Grotesque';font-weight:800;font-size:21px;text-transform:uppercase;letter-spacing:.5px}
-  .marquee-track span{margin:0 16px}
-  .marquee-track .star{color:var(--secundario)}
-  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-  /* ---------- SECTIONS ---------- */
-  section{position:relative}
-  .wrap{max-width:500px;margin:0 auto;padding:64px 22px}
-  .eyebrow{
-    display:inline-block;font-weight:700;font-size:12.5px;letter-spacing:.15em;text-transform:uppercase;
-    color:var(--primario);margin-bottom:14px;
-  }
-  .sec-title{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(36px,11vw,58px);color:var(--tinta);margin-bottom:18px}
-  .sec-title .pink{color:var(--primario)}
-
-  .reveal{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
-  .reveal.in{opacity:1;transform:none}
-
-  /* ---------- QUIÉN SOMOS ---------- */
-  .me{background:var(--crema-2)}
-  .me-card{display:flex;gap:16px;align-items:flex-start;margin-top:8px}
-  .me-photo{
-    flex:0 0 116px;height:140px;border-radius:18px;border:3px solid var(--tinta);
-    background:var(--primario-soft);display:flex;align-items:center;justify-content:center;
-    position:relative;overflow:hidden;box-shadow:5px 5px 0 var(--tinta);
-  }
-  .me-photo svg{width:55%;height:55%}
-  .me-photo .ba-tag{font-size:9px}
-  .me-text p{font-size:17px;line-height:1.55;color:var(--tinta-2);margin-bottom:12px}
-  .me-text p strong{color:var(--tinta);font-weight:700}
-  .me-sign{font-style:italic;font-size:20px;color:var(--primario);margin-top:4px;font-weight:500}
-
-  /* ---------- SERVICIOS ---------- */
-  .svc-list{display:flex;flex-direction:column;gap:14px;margin-top:10px}
-  .svc{
-    background:var(--crema);border:3px solid var(--tinta);border-radius:20px;padding:20px;
-    display:flex;gap:15px;align-items:flex-start;
-    transition:transform .18s ease,box-shadow .18s ease;
-  }
-  .svc:hover{transform:translateY(-4px);box-shadow:6px 6px 0 var(--secundario)}
-  .svc-ico{flex:0 0 auto;width:42px;height:42px;color:var(--primario)}
-  .svc-ico svg{width:100%;height:100%}
-  .svc-body h3{font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;text-transform:uppercase;margin-bottom:5px}
-  .svc-body p{font-size:14.5px;line-height:1.5;color:var(--tinta-2)}
-  .svc-tag{margin-top:9px;display:inline-block;font-family:'Bricolage Grotesque';font-weight:600;font-size:13px;color:var(--primario);border:2px solid var(--primario);border-radius:30px;padding:3px 12px}
-
-  /* ---------- CÓMO VA ---------- */
-  .why{background:var(--tinta);color:var(--crema)}
-  .why .sec-title{color:var(--crema)}
-  .why .eyebrow{color:var(--secundario)}
-  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:10px}
-  .why-cell{
-    background:var(--tinta-2);border:2px solid rgba(255,243,224,.18);border-radius:18px;padding:18px 16px;
-  }
-  .why-cell .n{font-family:'Bricolage Grotesque';font-weight:800;font-size:30px;color:var(--primario)}
-  .why-cell h4{font-family:'DM Sans';font-weight:700;font-size:15px;margin:6px 0 5px}
-  .why-cell p{font-size:13px;line-height:1.45;color:rgba(255,243,224,.74)}
-
-  /* ---------- GALERÍA ---------- */
-  .gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-  .gal-item{
-    aspect-ratio:1/1;border-radius:18px;border:3px solid var(--tinta);position:relative;overflow:hidden;
-    display:flex;align-items:center;justify-content:center;
-    transition:transform .2s ease;
-  }
-  .gal-item:hover{transform:scale(1.03) rotate(-1deg)}
-  .gal-item:nth-child(4n+1){background:var(--primario-soft)}
-  .gal-item:nth-child(4n+2){background:var(--crema-2)}
-  .gal-item:nth-child(4n+3){background:var(--secundario)}
-  .gal-item:nth-child(4n){background:#D9C6AB}
-  .gal-item svg{width:46%;height:46%;color:var(--tinta)}
-  .gal-item.tall{grid-row:span 2;aspect-ratio:auto}
-
-  /* ---------- RESEÑAS ---------- */
-  .rev{background:var(--crema-2)}
-  .rev-list{display:flex;flex-direction:column;gap:16px;margin-top:8px}
-  .rev-card{
-    background:var(--crema);border:3px solid var(--tinta);border-radius:20px;padding:20px;
-    box-shadow:5px 5px 0 var(--tinta);
-  }
-  .rev-stars{color:#F4B740;font-size:17px;letter-spacing:2px;margin-bottom:8px}
-  .rev-card p{font-size:17px;line-height:1.5;color:var(--tinta);font-style:italic}
-  .rev-who{display:flex;align-items:center;gap:10px;margin-top:14px}
-  .rev-av{width:38px;height:38px;border-radius:50%;background:var(--primario);color:var(--crema);display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:15px;border:2px solid var(--tinta)}
-  .rev-name{font-weight:700;font-size:14px}
-  .rev-meta{font-size:12px;color:var(--tinta-2);opacity:.75}
-
-  /* ---------- PROMO ---------- */
-  .promo{background:var(--primario);color:var(--crema);text-align:center}
-  .promo .wrap{padding:60px 22px}
-  .promo-badge{display:inline-block;background:var(--tinta);color:var(--secundario);font-weight:700;font-size:12px;letter-spacing:.13em;text-transform:uppercase;padding:7px 14px;border-radius:30px;margin-bottom:18px}
-  .promo h2{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(32px,10vw,52px);line-height:.96;margin-bottom:14px}
-  .promo h2 .b{color:var(--tinta)}
-  .promo p{font-size:16px;line-height:1.5;max-width:380px;margin:0 auto 24px;color:#FFE7E2}
-  .promo p em{font-style:italic}
-  .promo-cta{display:inline-flex;align-items:center;gap:9px;background:var(--crema);color:var(--tinta);font-family:'Bricolage Grotesque';font-weight:800;font-size:18px;text-transform:uppercase;padding:16px 28px;border-radius:50px;border:3px solid var(--tinta);box-shadow:5px 5px 0 var(--tinta);transition:transform .15s ease,box-shadow .15s ease}
-  .promo-cta:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--tinta)}
-  .promo-cta:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--tinta)}
-  .promo-cta:focus-visible{outline:3px solid var(--tinta);outline-offset:3px}
-
-  /* ---------- FAQ ---------- */
-  .faq-item{border:3px solid var(--tinta);border-radius:16px;margin-bottom:12px;overflow:hidden;background:var(--crema)}
-  .faq-q{width:100%;text-align:left;background:none;border:none;font-family:'DM Sans';font-weight:700;font-size:16px;color:var(--tinta);padding:17px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer}
-  .faq-q .plus{font-family:'Bricolage Grotesque';font-weight:800;color:var(--primario);font-size:24px;transition:transform .25s ease;flex:0 0 auto}
-  .faq-item.open .faq-q .plus{transform:rotate(45deg)}
-  .faq-q:focus-visible{outline:3px solid var(--secundario);outline-offset:-3px}
-  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
-  .faq-a p{padding:0 18px 17px;font-size:14.5px;line-height:1.55;color:var(--tinta-2)}
-
-  /* ---------- CONTACTO ---------- */
-  .contact{background:var(--tinta);color:var(--crema);text-align:center}
-  .contact .sec-title{color:var(--crema)}
-  .contact .eyebrow{color:var(--secundario)}
-  .contact p{font-size:16px;line-height:1.55;color:rgba(255,243,224,.82);max-width:380px;margin:0 auto 26px}
-  .contact-cta{display:inline-flex;align-items:center;gap:10px;background:var(--primario);color:var(--crema);font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;text-transform:uppercase;padding:18px 32px;border-radius:50px;border:3px solid var(--crema);box-shadow:5px 5px 0 var(--primario);transition:transform .15s ease}
-  .contact-cta:hover{transform:translateY(-3px)}
-  .contact-cta:focus-visible{outline:3px solid var(--secundario);outline-offset:3px}
-  .contact-info{margin-top:30px;display:flex;flex-direction:column;gap:9px;font-size:14.5px}
-  .contact-info .row{display:inline-flex;align-items:center;justify-content:center;gap:9px;color:rgba(255,243,224,.86)}
-  .contact-info .row b{color:var(--secundario);font-weight:700}
-  .contact-info a{text-decoration:underline;text-underline-offset:3px}
-  .map-ph{margin-top:24px;height:150px;border-radius:18px;border:3px dashed rgba(255,243,224,.4);display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,243,224,.62);position:relative;background:repeating-linear-gradient(45deg,var(--tinta-2),var(--tinta-2) 12px,#3a342e 12px,#3a342e 24px)}
-
-  /* ---------- FOOTER ---------- */
-  footer{background:var(--tinta);color:var(--crema);border-top:3px solid var(--primario);padding:34px 22px 110px;text-align:center}
-  .foot-brand{font-family:'Bricolage Grotesque';font-weight:800;font-size:28px}
-  .foot-brand .dot{color:var(--primario)}
-  .foot-tag{font-style:italic;font-size:15px;color:var(--secundario);margin:8px 0 18px}
-  .foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 20px;font-size:13px;color:rgba(255,243,224,.72);margin-bottom:18px}
-  .foot-links a:hover{color:var(--secundario)}
-  .foot-fine{font-size:11.5px;color:rgba(255,243,224,.48);line-height:1.6}
-
-  /* ---------- WA FIXED ---------- */
-  .wa-fixed{
-    position:fixed;left:16px;right:16px;bottom:16px;z-index:200;
-    display:flex;align-items:center;justify-content:center;gap:10px;
-    background:#25D366;color:#0a3d1c;
-    font-family:'Bricolage Grotesque';font-weight:800;font-size:18px;text-transform:uppercase;letter-spacing:.3px;
-    padding:16px;border-radius:50px;border:3px solid var(--tinta);
-    box-shadow:0 6px 0 var(--tinta);
-    animation:wabob 2.6s ease-in-out infinite;
-  }
-  @keyframes wabob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-  .wa-fixed .wa-ico{width:24px;height:24px;flex:0 0 auto}
-  .wa-fixed:focus-visible{outline:3px solid var(--secundario);outline-offset:3px}
-
-  @media(prefers-reduced-motion:reduce){
-    *{animation:none!important;transition:none!important}
-    .reveal{opacity:1;transform:none}
-    .hero h1 .l2::after{width:90%}
-  }
-  @media(min-width:560px){
-    .wa-fixed{left:auto;right:24px;bottom:24px;padding:16px 24px}
-  }
-</style>
-</head>
-<body>
-
-<!-- NAVBAR -->
-<nav class="nav">
-  <div class="brand">Ritualpet<span class="dot">●</span></div>
-  <a class="nav-wa" href="https://wa.me/34692684407" aria-label="Pedir cita por WhatsApp">
-    <svg class="wa-ico" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7s1.9 2.9 4.6 4c1.7.7 2.3.7 3.1.6.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1z"/></svg>
-    Pedir cita
-  </a>
-</nav>
-
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-blob"></div>
-  <div class="hero-blob b2"></div>
-  <span class="hero-kicker"><span class="pulse"></span>Estilismo canino · Camins al Grau, Valencia</span>
-  <h1>
-    <span class="l1">El ritual</span>
-    <span class="l1">que tu perro</span>
-    <span class="l2">se merece.</span>
-  </h1>
-  <p class="hero-sub">Baño, tijera y mucho <em>mimo</em> para tu peludo — un estilismo a su ritmo, sin sustos ni prisas. Sales con el perro guapo y, sobre todo, feliz. 🐾</p>
-  <a class="hero-cta" href="https://wa.me/34692684407">Reservar su ritual →</a>
-  <div class="hero-rating">
-    <span class="stars" aria-hidden="true">★★★★★</span>
-    <span><b>5,0</b> · 95 reseñas verificadas en Google</span>
-  </div>
-
-  <!-- BEFORE / AFTER (signature dentro de blob) -->
-  <div class="stage">
-    <svg class="blob-bg" viewBox="0 0 200 200" aria-hidden="true"><path fill="currentColor" d="M44,-62C56,-52,63,-37,67,-21C71,-5,72,12,66,27C60,42,47,55,31,63C15,71,-4,73,-22,67C-40,61,-57,47,-65,30C-73,12,-72,-9,-64,-26C-56,-43,-41,-56,-25,-65C-9,-74,9,-79,25,-76C41,-73,32,-72,44,-62Z" transform="translate(100 100)"/></svg>
-    <div class="ba-card">
-      <div class="ba-row">
-        <div class="ba-pane ba-before">
-          <div class="ba-photo">
-            <svg viewBox="0 0 64 64" fill="none" stroke="#7a6a52" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M20 38c-4 0-8 4-8 10M44 38c4 0 8 4 8 10M16 22c-3-4-3-10 1-12M48 22c3-4 3-10-1-12"/><circle cx="32" cy="36" r="16"/><path d="M26 34h.01M38 34h.01M28 42c2 2 6 2 8 0"/></svg>
-            <span class="ba-tag">📸 foto real aquí · antes</span>
-          </div>
-          <div class="ba-label">Antes</div>
-        </div>
-        <div class="ba-pane ba-after">
-          <div class="ba-photo">
-            <svg viewBox="0 0 64 64" fill="none" stroke="#FFF3E0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="32" cy="34" r="15"/><path d="M22 20c-2-4-1-9 2-10M42 20c2-4 1-9-2-10M27 33h.01M37 33h.01M28 40c2 2 6 2 8 0M32 5l2 4 4 .5-3 3 .8 4.5L32 14l-3.8 3 .8-4.5-3-3 4-.5z"/></svg>
-            <span class="ba-tag">📸 foto real aquí · después</span>
-          </div>
-          <div class="ba-label">Después</div>
-        </div>
-      </div>
-      <div class="ba-arrow">de "uy, qué nudos" a <b>"¡pero qué guapo está!"</b></div>
-    </div>
-  </div>
-</header>
-
-<!-- MARQUEE -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Baño<span class="star"> ✦ </span></span><span>Tijera<span class="star"> ✦ </span></span><span>Schnauzer<span class="star"> ✦ </span></span><span>Pelo largo<span class="star"> ✦ </span></span><span>Sin prisas<span class="star"> ✦ </span></span><span>Mucho mimo<span class="star"> ✦ </span></span>
-    <span>Baño<span class="star"> ✦ </span></span><span>Tijera<span class="star"> ✦ </span></span><span>Schnauzer<span class="star"> ✦ </span></span><span>Pelo largo<span class="star"> ✦ </span></span><span>Sin prisas<span class="star"> ✦ </span></span><span>Mucho mimo<span class="star"> ✦ </span></span>
-  </div>
-</div>
-
-<!-- QUIÉN SOMOS -->
-<section class="me">
-  <div class="wrap reveal">
-    <span class="eyebrow">Hola, encantados 👋</span>
-    <h2 class="sec-title">Detrás de <span class="pink">cada tijera</span></h2>
-    <div class="me-card">
-      <div class="me-photo">
-        <svg viewBox="0 0 64 64" fill="none" stroke="#1B1B1B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 30l-8 8M44 30l8 8"/><circle cx="14" cy="40" r="4"/><circle cx="50" cy="40" r="4"/><path d="M14 36l16-12 16 12"/><circle cx="30" cy="46" r="13"/><path d="M26 44h.01M34 44h.01M27 51c2 2 6 2 7 0"/></svg>
-        <span class="ba-tag">📸 foto real aquí</span>
-      </div>
-      <div class="me-text">
-        <p>Somos <strong>Ritualpet</strong> — estilismo canino en Camins al Grau, donde cada perro tiene su propio ritual de cuidado.</p>
-        <p>Cuidamos a tu peludo con calma y cariño: <strong>especialistas en razas de pelo</strong> como el Schnauzer, el trato es de 10 y siempre te damos los consejos para mantenerlo bonito en casa.</p>
-        <p class="me-sign">— Cada perro sale guapo. Pero, sobre todo, sale a gusto.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICIOS -->
-<section>
-  <div class="wrap reveal">
-    <span class="eyebrow">Nuestros rituales</span>
-    <h2 class="sec-title">El menú del <span class="pink">cuidado</span></h2>
-    <div class="svc-list">
-      <div class="svc">
-        <div class="svc-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 24h32v6a8 8 0 0 1-8 8H16a8 8 0 0 1-8-8z"/><path d="M16 24V12a4 4 0 0 1 8 0M14 8v2M20 6v2M26 8v2"/></svg></div>
-        <div class="svc-body">
-          <h3>Baño y spa</h3>
-          <p>Baño con producto elegido según su pelo, secado, cepillado y un masaje que lo deja en otra dimensión.</p>
-          <span class="svc-tag">consúltanos</span>
-        </div>
-      </div>
-      <div class="svc">
-        <div class="svc-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="34" r="6"/><circle cx="12" cy="14" r="6"/><path d="M16.5 18L40 38M16.5 30L40 10"/></svg></div>
-        <div class="svc-body">
-          <h3>Corte a tijera</h3>
-          <p>Tijera y máquina a medida de su raza — o del look que tú quieras. Especialistas en Schnauzer y pelo largo.</p>
-          <span class="svc-tag">consúltanos</span>
-        </div>
-      </div>
-      <div class="svc">
-        <div class="svc-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6c8 0 14 6 14 16 0 8-6 14-14 18C16 36 10 30 10 22 10 12 16 6 24 6z"/><path d="M24 14v8l5 4"/></svg></div>
-        <div class="svc-body">
-          <h3>Detalles que cuidan</h3>
-          <p>Uñas, oídos, almohadillas y limpieza. Lo pequeño que marca la diferencia en su bienestar.</p>
-          <span class="svc-tag">consúltanos</span>
-        </div>
-      </div>
-      <div class="svc">
-        <div class="svc-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 34l4-16 8 8 4-14 4 14 8-8 4 16z"/><path d="M8 34h32v4H8z"/></svg></div>
-        <div class="svc-body">
-          <h3>Ritual completo</h3>
-          <p>Todo junto, sin prisa — baño, corte y detalles para el perro que merece su día de spa de verdad.</p>
-          <span class="svc-tag">consúltanos</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CÓMO VA -->
-<section class="why">
-  <div class="wrap reveal">
-    <span class="eyebrow">Cómo va</span>
-    <h2 class="sec-title">Aquí se hace<br>distinto</h2>
-    <div class="why-grid">
-      <div class="why-cell">
-        <div class="n">01</div>
-        <h4>Te recibimos con mimo</h4>
-        <p>Nos cuentas cómo es tu perro y qué necesita. El trato cariñoso empieza desde la puerta.</p>
-      </div>
-      <div class="why-cell">
-        <div class="n">02</div>
-        <h4>Especialistas en su pelo</h4>
-        <p>Akita, Schnauzer, pelo largo… conocemos cada raza y la tratamos como toca.</p>
-      </div>
-      <div class="why-cell">
-        <div class="n">03</div>
-        <h4>Sin prisas</h4>
-        <p>El tiempo que necesite. Trabajamos con calma para que se vaya con buen recuerdo.</p>
-      </div>
-      <div class="why-cell">
-        <div class="n">04</div>
-        <h4>Consejos para casa</h4>
-        <p>Te explicamos cómo mantenerlo bonito entre cita y cita. Salimos del trabajo bien hecho.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GALERÍA -->
-<section>
-  <div class="wrap reveal">
-    <span class="eyebrow">El muro de la fama 🏆</span>
-    <h2 class="sec-title">Nuestras <span class="pink">estrellas</span></h2>
-    <div class="gal-grid">
-      <div class="gal-item tall"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="32" cy="34" r="15"/><path d="M22 22c-3-4-2-10 1-11M42 22c3-4 2-10-1-11M27 33h.01M37 33h.01M29 40c2 2 5 2 7 0"/></svg><span class="ba-tag">📸 foto real aquí</span></div>
-      <div class="gal-item"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 30l-6 6M46 30l6 6"/><circle cx="32" cy="36" r="14"/><path d="M27 35h.01M37 35h.01M30 42c1 1 3 1 4 0"/></svg><span class="ba-tag">📸 foto real aquí</span></div>
-      <div class="gal-item"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 26c-2-6 0-12 4-13M44 26c2-6 0-12-4-13"/><circle cx="32" cy="36" r="14"/><path d="M27 34h.01M37 34h.01M28 43c2 2 6 2 8 0"/></svg><span class="ba-tag">📸 foto real aquí</span></div>
-      <div class="gal-item"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="32" cy="34" r="15"/><path d="M24 20l-4-6M40 20l4-6M27 33h.01M37 33h.01M28 41c2 2 6 2 8 0"/></svg><span class="ba-tag">📸 foto real aquí</span></div>
-      <div class="gal-item tall"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 28l-7 7M45 28l7 7"/><circle cx="32" cy="36" r="15"/><path d="M27 34h.01M37 34h.01M29 42c2 1 4 1 6 0M30 22l4-3 0 0"/></svg><span class="ba-tag">📸 foto real aquí</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- RESEÑAS -->
-<section class="rev">
-  <div class="wrap reveal">
-    <span class="eyebrow">Lo que dicen sus humanos</span>
-    <h2 class="sec-title">5⭐ · <span class="pink">95 reseñas</span></h2>
-    <div class="rev-list">
-      <div class="rev-card">
-        <div class="rev-stars" aria-label="5 de 5 estrellas">★★★★★</div>
-        <p>"Probamos por primera vez esta peluquería y no tenemos duda de que ya tenemos peluquería de confianza. Mi perrita, una Akita Inu de pelo largo, con mucho trabajo encima."</p>
-        <div class="rev-who">
-          <div class="rev-av">AI</div>
-          <div>
-            <div class="rev-name">Cliente verificado</div>
-            <div class="rev-meta">Akita Inu · pelo largo</div>
-          </div>
-        </div>
-      </div>
-      <div class="rev-card">
-        <div class="rev-stars" aria-label="5 de 5 estrellas">★★★★★</div>
-        <p>"Hoy hemos llevado por primera vez a nuestro Schnauzer de 6 meses. Hemos quedado muy contentos, no solo por lo guapo que lo han dejado sino también por los consejos."</p>
-        <div class="rev-who">
-          <div class="rev-av">SC</div>
-          <div>
-            <div class="rev-name">Cliente verificado</div>
-            <div class="rev-meta">Schnauzer · 6 meses</div>
-          </div>
-        </div>
-      </div>
-      <div class="rev-card">
-        <div class="rev-stars" aria-label="5 de 5 estrellas">★★★★★</div>
-        <p>"He llevado a mis dos Schnauzer miniatura y ha sido un acierto absoluto. Son especialistas en este tipo de raza y están preciosas, pero más allá de eso, el trato."</p>
-        <div class="rev-who">
-          <div class="rev-av">SM</div>
-          <div>
-            <div class="rev-name">Cliente verificado</div>
-            <div class="rev-meta">2 Schnauzer miniatura</div>
-          </div>
-        </div>
-      </div>
-      <div class="rev-card">
-        <div class="rev-stars" aria-label="5 de 5 estrellas">★★★★★</div>
-        <p>"Encantada no, ¡lo siguiente! Qué maravilla, desde cómo nos han recibido, el amor que se nota que tienen a las mascotas y un trabajo realizado de 10."</p>
-        <div class="rev-who">
-          <div class="rev-av">MR</div>
-          <div>
-            <div class="rev-name">Cliente verificado</div>
-            <div class="rev-meta">Reseña en Google</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROMO -->
-<section class="promo">
-  <div class="wrap">
-    <span class="promo-badge">🐾 Primera visita</span>
-    <h2>¿Aún no os conocéis?<br><span class="b">Que sea hoy.</span></h2>
-    <p>La <em>primera vez</em> es la que importa: nos cuentas cómo es tu perro y le buscamos su ritual a medida. Las agendas vuelan — <strong>escríbenos y reservamos hueco</strong>.</p>
-    <a class="promo-cta" href="https://wa.me/34692684407">Pillar mi hueco →</a>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section>
-  <div class="wrap reveal">
-    <span class="eyebrow">Dudas rápidas</span>
-    <h2 class="sec-title">Lo que<br><span class="pink">preguntáis</span></h2>
-    <div class="faq-item">
-      <button class="faq-q" aria-expanded="false">¿Sois especialistas en alguna raza?<span class="plus" aria-hidden="true">+</span></button>
-      <div class="faq-a"><p>Trabajamos todas las razas, pero tenemos mucha experiencia con Schnauzer y perros de pelo largo como el Akita Inu. Adaptamos el corte a cada tipo de pelo.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" aria-expanded="false">Mi perro es nervioso, ¿pasa algo?<span class="plus" aria-hidden="true">+</span></button>
-      <div class="faq-a"><p>Para nada. Trabajamos con calma y a su ritmo. Si hoy toca ir despacito, vamos despacito. Lo importante es que se vaya con buen recuerdo.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" aria-expanded="false">¿Cómo reservo cita?<span class="plus" aria-hidden="true">+</span></button>
-      <div class="faq-a"><p>Por WhatsApp, así de fácil. Nos cuentas qué perro tienes y qué necesita, y buscamos hueco juntos. Respondemos rapidito 🐾</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" aria-expanded="false">¿Me dais consejos para casa?<span class="plus" aria-hidden="true">+</span></button>
-      <div class="faq-a"><p>¡Siempre! Te explicamos cómo cepillar y mantener su pelo bonito entre cita y cita. Es parte del cuidado que nos importa.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACTO -->
-<section class="contact">
-  <div class="wrap">
-    <span class="eyebrow">¿Hablamos?</span>
-    <h2 class="sec-title">Tu perro<br>te lo pide</h2>
-    <p>Su próximo ritual está a un mensaje de distancia. Escríbenos y le buscamos su momento de mimo.</p>
-    <a class="contact-cta" href="https://wa.me/34692684407">
-      <svg class="wa-ico" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7s1.9 2.9 4.6 4c1.7.7 2.3.7 3.1.6.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1z"/></svg>
-      Escribir por WhatsApp
-    </a>
-    <div class="contact-info">
-      <span class="row"><b>📍</b> Av. de Baleares, 87, b · Camins al Grau, 46023 Valencia</span>
-      <span class="row"><b>📞</b> <a href="tel:+34692684407">692 68 44 07</a></span>
-      <span class="row"><b>⭐</b> 5,0 · 95 reseñas en Google</span>
-    </div>
-    <div class="map-ph">📍 mapa real aquí · cómo llegar</div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="foot-brand">Ritualpet<span class="dot">●</span></div>
-  <div class="foot-tag">El ritual que tu perro se merece.</div>
-  <div class="foot-links">
-    <a href="#">Servicios</a>
-    <a href="#">Galería</a>
-    <a href="#">Reseñas</a>
-    <a href="https://wa.me/34692684407">WhatsApp</a>
-  </div>
-  <p class="foot-fine">Ritualpet Estilismo Canino · Camins al Grau, Valencia 🐾<br>Hecho con cariño y mucho pelo. © 2026 Ritualpet.</p>
-</footer>
-
-<!-- WHATSAPP FIJO -->
-<a class="wa-fixed" href="https://wa.me/34692684407" aria-label="Reservar cita por WhatsApp">
-  <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7s1.9 2.9 4.6 4c1.7.7 2.3.7 3.1.6.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1z"/></svg>
-  Reservar cita
-</a>
-
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"PetStore",
+  "@type":"PetGroomer",
   "name":"Ritualpet Estilismo Canino",
-  "description":"Estilismo y peluquería canina en Camins al Grau, Valencia. Especialistas en razas de pelo como Schnauzer y Akita Inu. Trato con mimo y sin prisas.",
+  "image":"fotos/foto-01.jpg",
   "address":{
     "@type":"PostalAddress",
-    "streetAddress":"Av. de Baleares, 87, b",
-    "addressLocality":"Valencia",
-    "addressRegion":"Comunidad Valenciana",
+    "streetAddress":"Av. de Baleares, 87, b, Camins al Grau",
     "postalCode":"46023",
+    "addressLocality":"Valencia",
     "addressCountry":"ES"
   },
   "telephone":"+34692684407",
@@ -622,6 +32,603 @@
   }
 }
 </script>
+<style>
+  :root{
+    --primario:#FF5B4A;
+    --primario-soft:#FF8576;
+    --secundario:#B6E61E;
+    --crema:#FFF3E0;
+    --crema-2:#FBE6C9;
+    --tinta:#1B1B1B;
+    --tinta-2:#2E2A26;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--crema);
+    color:var(--tinta);
+    font-family:'DM Sans',sans-serif;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--primario);color:var(--crema)}
+  h1,h2,h3{line-height:.95;letter-spacing:-.02em}
+  .bricolage{font-family:'Bricolage Grotesque',sans-serif;font-weight:800}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+
+  /* ---------- NAVBAR ---------- */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;
+    background:rgba(255,243,224,.85);
+    backdrop-filter:blur(12px);
+    border-bottom:2px solid var(--tinta);
+  }
+  .brand{display:flex;align-items:center;gap:8px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px;text-transform:uppercase;letter-spacing:-.01em}
+  .brand .dot{color:var(--primario);font-size:26px;line-height:0}
+  .nav-wa{
+    display:inline-flex;align-items:center;gap:7px;
+    background:var(--primario);color:var(--crema);
+    font-weight:700;font-size:14px;
+    padding:9px 16px;border-radius:40px;border:2px solid var(--tinta);
+    transition:transform .15s ease, background .2s ease;
+  }
+  .nav-wa:hover{transform:translateY(-2px) rotate(-2deg);background:var(--tinta)}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;padding:118px 20px 56px;text-align:center;overflow:hidden;
+  }
+  .hero-blob{
+    position:absolute;width:540px;height:540px;border-radius:50%;
+    background:var(--secundario);opacity:.28;filter:blur(12px);
+    top:-180px;right:-220px;z-index:0;
+    animation:floaty 9s ease-in-out infinite;
+  }
+  .hero-blob.two{background:var(--primario);opacity:.16;left:-200px;right:auto;top:auto;bottom:-160px;animation-delay:-4s}
+  @keyframes floaty{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(30px) scale(1.06)}}
+  .sticker{
+    position:absolute;z-index:2;font-size:40px;
+    animation:spin 14s linear infinite;
+  }
+  .sticker.s1{top:96px;left:14px;animation-duration:18s}
+  .sticker.s2{top:150px;right:18px;font-size:34px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hero-kicker{
+    position:relative;z-index:2;
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--tinta);color:var(--crema);
+    font-weight:500;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;
+    padding:8px 16px;border-radius:30px;margin-bottom:24px;
+  }
+  .hero-kicker .pulse{width:8px;height:8px;border-radius:50%;background:var(--secundario);animation:pulse 1.4s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+  .hero h1{
+    position:relative;z-index:2;
+    font-size:clamp(50px,16vw,118px);
+    text-transform:uppercase;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
+    animation:bounceIn .9s cubic-bezier(.22,1.3,.36,1) both;
+  }
+  @keyframes bounceIn{0%{opacity:0;transform:translateY(40px) scale(.92)}60%{transform:translateY(-8px) scale(1.02)}100%{opacity:1;transform:none}}
+  .hero h1 .l1{display:block;color:var(--tinta)}
+  .hero h1 .l2{display:block;color:var(--primario);position:relative}
+  .hero h1 .l2::after{
+    content:"";position:absolute;left:50%;bottom:4px;transform:translateX(-50%);
+    width:0;height:12px;background:var(--secundario);z-index:-1;border-radius:6px;
+    animation:underline 1.1s ease-out forwards .8s;
+  }
+  @keyframes underline{to{width:90%}}
+  .hero-sub{
+    position:relative;z-index:2;
+    max-width:450px;margin:24px auto 0;
+    font-size:18px;line-height:1.55;color:var(--tinta-2);
+  }
+  .hero-sub em{font-weight:700;font-style:normal;color:var(--primario)}
+  .hero-cta{
+    position:relative;z-index:2;
+    display:inline-flex;align-items:center;gap:10px;margin-top:30px;
+    background:var(--primario);color:var(--crema);
+    font-family:'Bricolage Grotesque';font-weight:800;font-size:19px;letter-spacing:.3px;text-transform:uppercase;
+    padding:18px 30px;border-radius:50px;border:3px solid var(--tinta);
+    box-shadow:6px 6px 0 var(--tinta);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .hero-cta:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--tinta)}
+  .hero-cta:active{transform:translate(6px,6px);box-shadow:0 0 0 var(--tinta)}
+  .hero-note{position:relative;z-index:2;margin-top:14px;font-size:13px;color:var(--tinta-2);opacity:.8}
+  .hero-rating{position:relative;z-index:2;margin-top:18px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700}
+  .hero-rating .stars{color:#F0A500;letter-spacing:1px}
+
+  /* ---------- BEFORE / AFTER STAGE (blob signature) ---------- */
+  .stage{position:relative;z-index:2;margin:48px auto 0;max-width:380px}
+  .ba-card{
+    background:var(--crema-2);border:3px solid var(--tinta);border-radius:26px;
+    padding:18px;box-shadow:8px 8px 0 var(--primario);
+  }
+  .ba-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center}
+  .ba-pane{text-align:center}
+  .ba-photo{
+    aspect-ratio:1/1;position:relative;overflow:hidden;
+  }
+  .ba-photo svg{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+  .blobimg{
+    width:100%;height:100%;object-fit:cover;
+    clip-path:url(#blobClip);
+  }
+  .ba-label{margin-top:11px;font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;text-transform:uppercase;letter-spacing:.3px}
+  .ba-before .ba-label{color:var(--tinta-2)}
+  .ba-after .ba-label{color:var(--primario)}
+  .ba-arrow{
+    text-align:center;margin-top:15px;font-weight:500;
+    font-size:15px;color:var(--tinta-2);
+  }
+  .ba-arrow b{color:var(--primario);font-weight:700}
+
+  /* ---------- MARQUEE ---------- */
+  .marquee{
+    background:var(--tinta);color:var(--crema);overflow:hidden;white-space:nowrap;
+    border-top:3px solid var(--tinta);border-bottom:3px solid var(--tinta);padding:14px 0;
+  }
+  .marquee-track{display:inline-block;animation:scroll 20s linear infinite;font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;text-transform:uppercase;letter-spacing:.5px}
+  .marquee-track span{margin:0 18px}
+  .marquee-track .star{color:var(--secundario)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section{position:relative}
+  .wrap{max-width:500px;margin:0 auto;padding:64px 22px}
+  .eyebrow{
+    display:inline-block;font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--primario);margin-bottom:14px;
+  }
+  .sec-title{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(36px,11vw,58px);text-transform:uppercase;color:var(--tinta);margin-bottom:18px}
+  .sec-title .pink{color:var(--primario)}
+
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1.2,.36,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- QUIÉN SOY ---------- */
+  .me{background:var(--crema-2)}
+  .me-card{display:flex;gap:16px;align-items:flex-start;margin-top:8px}
+  .me-photo{
+    flex:0 0 128px;height:156px;border-radius:20px;border:3px solid var(--tinta);
+    overflow:hidden;box-shadow:5px 5px 0 var(--tinta);
+  }
+  .me-photo img{width:100%;height:100%;object-fit:cover}
+  .me-text p{font-size:17px;line-height:1.55;color:var(--tinta-2);margin-bottom:12px}
+  .me-text p strong{color:var(--tinta);font-weight:700}
+  .me-sign{font-weight:700;font-size:18px;color:var(--primario);margin-top:4px;line-height:1.3}
+
+  /* ---------- SERVICIOS ---------- */
+  .svc-list{display:flex;flex-direction:column;gap:14px;margin-top:10px}
+  .svc{
+    background:var(--crema);border:3px solid var(--tinta);border-radius:20px;padding:20px;
+    display:flex;gap:15px;align-items:flex-start;
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .svc:hover{transform:translateY(-4px);box-shadow:6px 6px 0 var(--secundario)}
+  .svc-ico{font-size:34px;line-height:1;flex:0 0 auto}
+  .svc-body h3{font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;text-transform:uppercase;margin-bottom:5px}
+  .svc-body p{font-size:14.5px;line-height:1.5;color:var(--tinta-2)}
+  .svc-tag{margin-top:9px;display:inline-block;font-family:'Bricolage Grotesque';font-weight:800;font-size:13px;text-transform:uppercase;color:var(--tinta);background:var(--secundario);border:2px solid var(--tinta);border-radius:30px;padding:4px 13px}
+
+  /* ---------- POR QUÉ ---------- */
+  .why{background:var(--tinta);color:var(--crema)}
+  .why .sec-title{color:var(--crema)}
+  .why .eyebrow{color:var(--secundario)}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:10px}
+  .why-cell{
+    background:var(--tinta-2);border:2px solid rgba(255,243,224,.18);border-radius:18px;padding:18px 16px;
+  }
+  .why-cell .n{font-family:'Bricolage Grotesque';font-weight:800;font-size:30px;color:var(--primario)}
+  .why-cell h4{font-weight:700;font-size:15px;margin:6px 0 5px}
+  .why-cell p{font-size:13px;line-height:1.45;color:rgba(255,243,224,.72)}
+
+  /* ---------- GALERÍA ---------- */
+  .gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+  .gal-item{
+    aspect-ratio:1/1;border-radius:18px;border:3px solid var(--tinta);position:relative;overflow:hidden;
+    transition:transform .2s ease;
+  }
+  .gal-item:hover{transform:scale(1.03) rotate(-1deg)}
+  .gal-item img{width:100%;height:100%;object-fit:cover}
+  .gal-item.tall{grid-row:span 2;aspect-ratio:auto}
+
+  /* ---------- RESEÑAS ---------- */
+  .rev{background:var(--crema-2)}
+  .rev-list{display:flex;flex-direction:column;gap:16px;margin-top:8px}
+  .rev-card{
+    background:var(--crema);border:3px solid var(--tinta);border-radius:20px;padding:20px;
+    box-shadow:5px 5px 0 var(--tinta);
+  }
+  .rev-stars{color:#F0A500;font-size:17px;letter-spacing:2px;margin-bottom:8px}
+  .rev-card p{font-size:17px;line-height:1.5;color:var(--tinta);font-weight:500}
+  .rev-who{display:flex;align-items:center;gap:10px;margin-top:14px}
+  .rev-av{width:38px;height:38px;border-radius:50%;background:var(--primario);color:var(--crema);display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:14px;border:2px solid var(--tinta)}
+  .rev-name{font-weight:700;font-size:14px}
+  .rev-meta{font-size:12px;color:var(--tinta-2);opacity:.7}
+
+  /* ---------- PROMO ---------- */
+  .promo{background:var(--primario);color:var(--crema);text-align:center}
+  .promo .wrap{padding:60px 22px}
+  .promo-badge{display:inline-block;background:var(--tinta);color:var(--secundario);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:30px;margin-bottom:18px}
+  .promo h2{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(32px,10vw,54px);text-transform:uppercase;line-height:.96;margin-bottom:14px}
+  .promo h2 .b{color:var(--tinta)}
+  .promo p{font-size:16px;line-height:1.5;max-width:380px;margin:0 auto 24px;color:#FFEDE0}
+  .promo p strong{color:#fff}
+  .promo-cta{display:inline-flex;align-items:center;gap:9px;background:var(--crema);color:var(--tinta);font-family:'Bricolage Grotesque';font-weight:800;font-size:18px;text-transform:uppercase;padding:16px 28px;border-radius:50px;border:3px solid var(--tinta);box-shadow:5px 5px 0 var(--tinta);transition:transform .12s ease,box-shadow .12s ease}
+  .promo-cta:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--tinta)}
+  .promo-cta:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--tinta)}
+
+  /* ---------- FAQ ---------- */
+  .faq-item{border:3px solid var(--tinta);border-radius:16px;margin-bottom:12px;overflow:hidden;background:var(--crema)}
+  .faq-q{width:100%;text-align:left;background:none;border:none;font-family:'DM Sans';font-weight:700;font-size:16px;color:var(--tinta);padding:17px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer}
+  .faq-q .plus{font-family:'Bricolage Grotesque';font-weight:800;color:var(--primario);font-size:24px;transition:transform .25s ease;flex:0 0 auto}
+  .faq-item.open .faq-q .plus{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .faq-a p{padding:0 18px 17px;font-size:14.5px;line-height:1.55;color:var(--tinta-2)}
+
+  /* ---------- CONTACTO ---------- */
+  .contact{background:var(--tinta);color:var(--crema);text-align:center}
+  .contact .sec-title{color:var(--crema)}
+  .contact .eyebrow{color:var(--secundario)}
+  .contact p{font-size:16px;line-height:1.55;color:rgba(255,243,224,.8);max-width:380px;margin:0 auto 26px}
+  .contact-cta{display:inline-flex;align-items:center;gap:10px;background:var(--primario);color:var(--crema);font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;text-transform:uppercase;padding:18px 32px;border-radius:50px;border:3px solid var(--crema);box-shadow:5px 5px 0 var(--primario);transition:transform .15s ease}
+  .contact-cta:hover{transform:translateY(-3px)}
+  .contact-info{margin-top:30px;display:flex;flex-direction:column;gap:9px;font-size:14.5px}
+  .contact-info .row{display:inline-flex;align-items:center;justify-content:center;gap:9px;color:rgba(255,243,224,.85)}
+  .contact-info .row b{color:var(--secundario);font-weight:700}
+  .map-wrap{margin-top:24px;border-radius:18px;overflow:hidden;border:3px solid rgba(255,243,224,.4)}
+  .map-wrap iframe{display:block;width:100%;height:200px;border:0;filter:grayscale(.2)}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--tinta);color:var(--crema);border-top:3px solid var(--primario);padding:34px 22px 110px;text-align:center}
+  .foot-brand{font-family:'Bricolage Grotesque';font-weight:800;font-size:28px;text-transform:uppercase}
+  .foot-brand .dot{color:var(--primario)}
+  .foot-tag{font-weight:700;font-size:15px;color:var(--secundario);margin:8px 0 18px}
+  .foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 20px;font-size:13px;color:rgba(255,243,224,.7);margin-bottom:18px}
+  .foot-fine{font-size:11.5px;color:rgba(255,243,224,.45);line-height:1.6}
+
+  /* ---------- WA FIXED ---------- */
+  .wa-fixed{
+    position:fixed;left:16px;right:16px;bottom:16px;z-index:200;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:#25D366;color:#0a3d1c;
+    font-family:'Bricolage Grotesque';font-weight:800;font-size:18px;text-transform:uppercase;letter-spacing:.4px;
+    padding:16px;border-radius:50px;border:3px solid var(--tinta);
+    box-shadow:0 6px 0 var(--tinta);
+    animation:wabob 2.6s ease-in-out infinite;
+  }
+  @keyframes wabob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+  .wa-fixed:active{transform:translateY(3px);box-shadow:0 2px 0 var(--tinta)}
+  .wa-fixed .wa-ico{width:24px;height:24px;flex:0 0 auto}
+
+  @media(min-width:560px){
+    .wa-fixed{left:auto;right:24px;bottom:24px;padding:16px 24px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- SVG clip para blob signature -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <clipPath id="blobClip" clipPathUnits="objectBoundingBox">
+      <path d="M.84.12C.94.23.99.42.97.58.95.75.86.89.71.95.55,1.02.35,1,.2.91.06.82-.02.65.01.48.04.3.13.13.29.06.45-.02.7-.01.84.12Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<!-- NAVBAR -->
+<nav class="nav">
+  <div class="brand">Ritualpet<span class="dot">●</span></div>
+  <a class="nav-wa" href="https://wa.me/34692684407" aria-label="Pedir cita por WhatsApp">
+    <svg class="wa-ico" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7s1.9 2.9 4.6 4c1.7.7 2.3.7 3.1.6.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1z"/></svg>
+    Pedir cita
+  </a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-blob"></div>
+  <div class="hero-blob two"></div>
+  <span class="sticker s1" aria-hidden="true">🐾</span>
+  <span class="sticker s2" aria-hidden="true">✨</span>
+  <span class="hero-kicker"><span class="pulse"></span>Estilismo canino · Camins al Grau, Valencia</span>
+  <h1>
+    <span class="l1">Un</span>
+    <span class="l1">ritual</span>
+    <span class="l2">para tu</span>
+    <span class="l2">perro</span>
+  </h1>
+  <p class="hero-sub">Baño, tijera y un <em>trato de 10</em> que se nota desde el primer minuto. Especialistas en cada raza — tu perro entra a un sitio donde lo quieren de verdad. 🐶</p>
+  <a class="hero-cta" href="https://wa.me/34692684407">Reservar cita →</a>
+  <p class="hero-note">Te respondemos rápido por WhatsApp 🐾</p>
+  <div class="hero-rating"><span class="stars">★★★★★</span> 5,0 · 95 reseñas en Google</div>
+
+  <!-- BEFORE / AFTER STAGE -->
+  <div class="stage">
+    <div class="ba-card">
+      <div class="ba-row">
+        <div class="ba-pane ba-before">
+          <div class="ba-photo">
+            <img class="blobimg" src="fotos/foto-02.jpg" alt="Perro antes del estilismo en Ritualpet" loading="lazy">
+          </div>
+          <div class="ba-label">Antes</div>
+        </div>
+        <div class="ba-pane ba-after">
+          <div class="ba-photo">
+            <img class="blobimg" src="fotos/foto-03.jpg" alt="Perro después del estilismo en Ritualpet, impecable" loading="lazy">
+          </div>
+          <div class="ba-label">Después</div>
+        </div>
+      </div>
+      <div class="ba-arrow">de "necesita una manita" a <b>"¡qué guapo está!"</b></div>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Baño<span class="star"> ✦ </span></span><span>Tijera<span class="star"> ✦ </span></span><span>Schnauzer<span class="star"> ✦ </span></span><span>Akita<span class="star"> ✦ </span></span><span>Mimos<span class="star"> ✦ </span></span><span>Trato de 10<span class="star"> ✦ </span></span>
+    <span>Baño<span class="star"> ✦ </span></span><span>Tijera<span class="star"> ✦ </span></span><span>Schnauzer<span class="star"> ✦ </span></span><span>Akita<span class="star"> ✦ </span></span><span>Mimos<span class="star"> ✦ </span></span><span>Trato de 10<span class="star"> ✦ </span></span>
+  </div>
+</div>
+
+<!-- QUIÉN SOMOS -->
+<section class="me">
+  <div class="wrap reveal">
+    <span class="eyebrow">Encantados de conocerte 👋</span>
+    <h2 class="sec-title">Detrás de <span class="pink">cada tijera</span></h2>
+    <div class="me-card">
+      <div class="me-photo">
+        <img src="fotos/foto-04.jpg" alt="Equipo de Ritualpet trabajando con una mascota" loading="lazy">
+      </div>
+      <div class="me-text">
+        <p>En <strong>Ritualpet</strong> el estilismo canino es eso, un <strong>ritual</strong>: tiempo, mimo y manos expertas para cada perro que entra por la puerta.</p>
+        <p>Somos especialistas en razas con mucho trabajo de pelo — Schnauzer, Akita y compañía — y nos lo tomamos en serio. Pero, sobre todo, cuidamos el trato: tu perro nota el cariño y tú lo notas en el resultado.</p>
+        <p class="me-sign">— Sale guapo. Y, lo más importante, sale a gusto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section>
+  <div class="wrap reveal">
+    <span class="eyebrow">Lo que hacemos</span>
+    <h2 class="sec-title">El <span class="pink">ritual</span> completo</h2>
+    <div class="svc-list">
+      <div class="svc">
+        <div class="svc-ico">🛁</div>
+        <div class="svc-body">
+          <h3>Baño &amp; cuidado</h3>
+          <p>Baño con productos elegidos según su tipo de pelo, secado, cepillado y un trato relajado que lo deja como nuevo.</p>
+          <span class="svc-tag">Bienestar primero</span>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="svc-ico">✂️</div>
+        <div class="svc-body">
+          <h3>Corte de estilismo</h3>
+          <p>Tijera y máquina al estándar de su raza o al look que prefieras. Mano fina y paciencia para que quede perfecto.</p>
+          <span class="svc-tag">A medida</span>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="svc-ico">🐩</div>
+        <div class="svc-body">
+          <h3>Especialistas en raza</h3>
+          <p>Schnauzer miniatura, Akita inu de pelo largo y razas exigentes. Sabemos cómo lucir cada manto como toca.</p>
+          <span class="svc-tag">Schnauzer · Akita</span>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="svc-ico">🦴</div>
+        <div class="svc-body">
+          <h3>Detalles &amp; consejos</h3>
+          <p>Uñas, oídos, almohadillas... y los consejos que necesitas para mantener su pelo perfecto en casa.</p>
+          <span class="svc-tag">Acompañamiento</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÉ -->
+<section class="why">
+  <div class="wrap reveal">
+    <span class="eyebrow">Por qué Ritualpet</span>
+    <h2 class="sec-title">Aquí se hace<br>distinto</h2>
+    <div class="why-grid">
+      <div class="why-cell">
+        <div class="n">01</div>
+        <h4>Trato de 10</h4>
+        <p>Desde cómo te reciben hasta cómo se va tu perro. El amor por las mascotas se nota.</p>
+      </div>
+      <div class="why-cell">
+        <div class="n">02</div>
+        <h4>Especialistas</h4>
+        <p>Conocemos a fondo las razas de pelo difícil. Trabajo cuidado, resultado impecable.</p>
+      </div>
+      <div class="why-cell">
+        <div class="n">03</div>
+        <h4>Sin prisas</h4>
+        <p>Cada perro a su ritmo, sin sustos. Lo importante es que se vaya tranquilo.</p>
+      </div>
+      <div class="why-cell">
+        <div class="n">04</div>
+        <h4>Peluquería de confianza</h4>
+        <p>Los clientes vuelven y nos recomiendan. 95 reseñas con 5 estrellas lo dicen todo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section>
+  <div class="wrap reveal">
+    <span class="eyebrow">El muro de la fama 🏆</span>
+    <h2 class="sec-title">Nuestras <span class="pink">estrellas</span></h2>
+    <div class="gal-grid">
+      <div class="gal-item tall"><img src="fotos/foto-01.jpg" alt="Perro recién peluqueado en Ritualpet" loading="lazy"></div>
+      <div class="gal-item"><img src="fotos/foto-05.jpg" alt="Trabajo de estilismo canino en Ritualpet" loading="lazy"></div>
+      <div class="gal-item"><img src="fotos/foto-06.jpg" alt="Mascota guapa tras su sesión en Ritualpet" loading="lazy"></div>
+      <div class="gal-item"><img src="fotos/foto-07.jpg" alt="Detalle del cuidado del pelo en Ritualpet" loading="lazy"></div>
+      <div class="gal-item tall"><img src="fotos/foto-08.jpg" alt="Resultado de estilismo canino en Ritualpet" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEÑAS -->
+<section class="rev">
+  <div class="wrap reveal">
+    <span class="eyebrow">Lo que dicen sus humanos</span>
+    <h2 class="sec-title">Reseñas <span class="pink">de 5 ⭐</span></h2>
+    <div class="rev-list">
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p>"Probamos por primera vez esta peluquería y no tenemos duda que ya tenemos peluquería de confianza. Mi perrita, una akita inu de pelo largo, con mucho trabajo..."</p>
+        <div class="rev-who">
+          <div class="rev-av" aria-hidden="true">AI</div>
+          <div>
+            <div class="rev-name">Cliente verificado</div>
+            <div class="rev-meta">Akita inu de pelo largo</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p>"Hoy hemos llevado por primera vez a nuestro schnauzer de 6 meses, hemos quedado muy contentos, no sólo por lo guapo que lo han dejado sino también por los consejos."</p>
+        <div class="rev-who">
+          <div class="rev-av" aria-hidden="true">SM</div>
+          <div>
+            <div class="rev-name">Cliente verificado</div>
+            <div class="rev-meta">Schnauzer · 6 meses</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p>"He llevado a mis dos Schnauzer miniatura y ha sido un acierto absoluto. Son especialistas en este tipo de raza y están preciosas, pero más allá de eso, el trato..."</p>
+        <div class="rev-who">
+          <div class="rev-av" aria-hidden="true">SS</div>
+          <div>
+            <div class="rev-name">Cliente verificado</div>
+            <div class="rev-meta">Dos Schnauzer miniatura</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p>"Encantada no, lo siguiente!! Qué maravilla, desde cómo nos han recibido, el amor que se nota que tienen a las mascotas y un trabajo realizado de 10!!"</p>
+        <div class="rev-who">
+          <div class="rev-av" aria-hidden="true">CV</div>
+          <div>
+            <div class="rev-name">Cliente verificado</div>
+            <div class="rev-meta">Reseña en Google</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p>"Super bien para Pitu. Muchas gracias por vuestro super trato."</p>
+        <div class="rev-who">
+          <div class="rev-av" aria-hidden="true">SL</div>
+          <div>
+            <div class="rev-name">Susu y Lele</div>
+            <div class="rev-meta">Pitu</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO -->
+<section class="promo">
+  <div class="wrap">
+    <span class="promo-badge">🐾 Primera visita</span>
+    <h2>¿Aún no nos<br><span class="b">conoces?</span></h2>
+    <p>Cuéntanos qué perro tienes y qué necesita. Te asesoramos sin compromiso y le buscamos hueco — <strong>las agendas vuelan</strong>, mejor reservar con tiempo.</p>
+    <a class="promo-cta" href="https://wa.me/34692684407">Pillar mi hueco →</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap reveal">
+    <span class="eyebrow">Dudas rápidas</span>
+    <h2 class="sec-title">Lo que<br><span class="pink">preguntáis</span></h2>
+    <div class="faq-item">
+      <button class="faq-q">¿Trabajáis razas de pelo difícil?<span class="plus">+</span></button>
+      <div class="faq-a"><p>Sí, es lo nuestro. Somos especialistas en Schnauzer, Akita inu de pelo largo y razas con mucho trabajo de manto. Cada una con su técnica y su estándar.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Mi perro es nervioso, pasa algo?<span class="plus">+</span></button>
+      <div class="faq-a"><p>Para nada. Trabajamos sin prisas y a su ritmo, con todo el mimo. Lo importante es que se vaya tranquilo y con buen recuerdo.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Cómo reservo cita?<span class="plus">+</span></button>
+      <div class="faq-a"><p>Por WhatsApp, fácil y rápido. Nos cuentas qué perro tienes y qué necesita, y buscamos hueco juntos. También puedes llamarnos al 692 68 44 07.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Me dais consejos para casa?<span class="plus">+</span></button>
+      <div class="faq-a"><p>¡Siempre! Te explicamos cómo mantener el pelo y el cuidado de tu mascota entre visitas. Es parte del trato de 10 que nos define.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact">
+  <div class="wrap">
+    <span class="eyebrow">¿Hablamos?</span>
+    <h2 class="sec-title">Tu perro<br>te lo pide</h2>
+    <p>Su próximo ritual está a un mensaje de distancia. Escríbenos y le buscamos su momento.</p>
+    <a class="contact-cta" href="https://wa.me/34692684407">
+      <svg class="wa-ico" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7s1.9 2.9 4.6 4c1.7.7 2.3.7 3.1.6.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1z"/></svg>
+      Escribir por WhatsApp
+    </a>
+    <div class="contact-info">
+      <span class="row"><b>📍</b> Av. de Baleares, 87, b · Camins al Grau, 46023 Valencia</span>
+      <span class="row"><b>📞</b> <a href="tel:+34692684407">692 68 44 07</a></span>
+      <span class="row"><b>⭐</b> 5,0 · 95 reseñas en Google</span>
+    </div>
+    <div class="map-wrap">
+      <iframe title="Mapa de Ritualpet Estilismo Canino" loading="lazy" src="https://maps.google.com/maps?q=Av.%20de%20Baleares%2087%2046023%20Valencia&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-brand">Ritualpet<span class="dot">●</span></div>
+  <div class="foot-tag">El ritual que tu perro merece</div>
+  <div class="foot-links">
+    <a href="#">Servicios</a>
+    <a href="#">Galería</a>
+    <a href="#">Reseñas</a>
+    <a href="https://wa.me/34692684407">WhatsApp</a>
+  </div>
+  <p class="foot-fine">
+    Estilismo canino · Av. de Baleares, 87, b · Camins al Grau, 46023 Valencia 🐾<br>
+    Fotos: Ritualpet estilismo canino (Google Maps)<br>
+    © 2026 Ritualpet Estilismo Canino. Hecho con cariño y mucho pelo.
+  </p>
+</footer>
+
+<!-- WHATSAPP FIJO -->
+<a class="wa-fixed" href="https://wa.me/34692684407" aria-label="Reservar cita por WhatsApp">
+  <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7s1.9 2.9 4.6 4c1.7.7 2.3.7 3.1.6.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1z"/></svg>
+  Reservar cita
+</a>
 
 <script>
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
@@ -632,16 +639,8 @@
       const item=b.parentElement;
       const ans=item.querySelector('.faq-a');
       const open=item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i=>{
-        i.classList.remove('open');
-        i.querySelector('.faq-a').style.maxHeight=null;
-        i.querySelector('.faq-q').setAttribute('aria-expanded','false');
-      });
-      if(!open){
-        item.classList.add('open');
-        ans.style.maxHeight=ans.scrollHeight+'px';
-        b.setAttribute('aria-expanded','true');
-      }
+      document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null});
+      if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px'}
     });
   });
 </script>
