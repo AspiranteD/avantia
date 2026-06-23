@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mispatitascaninas — Tu tienda y peluquería de confianza en València</title>
+<meta name="description" content="Tienda de mascotas y peluquería canina en La Saïdia, València. Pienso saludable de marca propia, baños con paciencia y trato excepcional. 4,6★ en Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coral:#FF5B4A;
+    --coral-soft:#FF8273;
+    --lima:#B6E61E;
+    --lima-dark:#9BC718;
+    --crema:#FFF3E0;
+    --crema-2:#FBE6CB;
+    --tinta:#1B1B1B;
+    --tinta-2:#2B2724;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--crema);
+    color:var(--tinta);
+    font-family:'DM Sans',sans-serif;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--coral);color:var(--crema)}
+  h1,h2,h3{line-height:.95;letter-spacing:-.02em;font-family:'Bricolage Grotesque',sans-serif;font-weight:800}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+
+  /* ---------- NAVBAR ---------- */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:13px 18px;
+    background:rgba(255,243,224,.86);
+    backdrop-filter:blur(12px);
+    border-bottom:2px solid var(--tinta);
+  }
+  .brand{display:flex;align-items:center;gap:8px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand .paw{color:var(--coral);font-size:20px}
+  .nav-wa{
+    display:inline-flex;align-items:center;gap:7px;
+    background:var(--coral);color:var(--crema);
+    font-weight:700;font-size:14px;
+    padding:9px 16px;border-radius:40px;border:2px solid var(--tinta);
+    transition:transform .15s ease, background .2s ease;
+  }
+  .nav-wa:hover{transform:translateY(-2px) rotate(-2deg);background:var(--tinta)}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding:108px 20px 56px;text-align:center;overflow:hidden}
+  .hero-blob{
+    position:absolute;width:520px;height:520px;border-radius:50%;
+    background:var(--lima);opacity:.32;filter:blur(14px);
+    top:-180px;right:-200px;z-index:0;
+    animation:floaty 9s ease-in-out infinite;
+  }
+  .hero-blob.b2{background:var(--coral);opacity:.18;top:auto;bottom:-220px;left:-200px;right:auto;animation-delay:1.5s}
+  @keyframes floaty{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(30px) scale(1.06)}}
+  .hero-kicker{
+    position:relative;z-index:2;
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--tinta);color:var(--crema);
+    font-weight:500;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;
+    padding:7px 15px;border-radius:30px;margin-bottom:24px;
+  }
+  .hero-kicker .pulse{width:8px;height:8px;border-radius:50%;background:var(--lima);animation:pulse 1.4s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+  .hero h1{
+    position:relative;z-index:2;
+    font-size:clamp(46px,15vw,104px);
+  }
+  .hero h1 .l1{display:block;color:var(--tinta)}
+  .hero h1 .l2{display:block;color:var(--coral);position:relative}
+  .hero h1 .l2::after{
+    content:"";position:absolute;left:50%;bottom:4px;transform:translateX(-50%);
+    width:0;height:12px;background:var(--lima);z-index:-1;opacity:.85;border-radius:6px;
+    animation:underline 1.1s ease-out forwards .8s;
+  }
+  @keyframes underline{to{width:90%}}
+  .hero-sub{
+    position:relative;z-index:2;
+    max-width:460px;margin:22px auto 0;
+    font-size:17.5px;line-height:1.55;color:var(--tinta-2);
+  }
+  .hero-sub strong{font-weight:700;color:var(--tinta)}
+  .hero-cta{
+    position:relative;z-index:2;
+    display:inline-flex;align-items:center;gap:10px;margin-top:30px;
+    background:var(--coral);color:var(--crema);
+    font-family:'Bricolage Grotesque';font-weight:800;font-size:18px;letter-spacing:-.01em;
+    padding:17px 30px;border-radius:50px;border:3px solid var(--tinta);
+    box-shadow:6px 6px 0 var(--tinta);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .hero-cta:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--tinta)}
+  .hero-rating{
+    position:relative;z-index:2;margin-top:18px;
+    display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;
+    font-size:13.5px;color:var(--tinta-2);
+  }
+  .hero-rating .stars{color:#E8A100;letter-spacing:1px;font-size:15px}
+  .hero-rating b{color:var(--tinta);font-weight:700}
+
+  /* ---------- HERO PHOTOS ---------- */
+  .hero-shots{
+    position:relative;z-index:2;margin:42px auto 0;max-width:380px;
+    display:grid;grid-template-columns:1.25fr 1fr;gap:14px;
+  }
+  .hero-shot{
+    border:3px solid var(--tinta);border-radius:22px;overflow:hidden;position:relative;
+    box-shadow:8px 8px 0 var(--coral);
+  }
+  .hero-shot.tall{grid-row:span 2}
+  .hero-shot img{width:100%;height:100%;object-fit:cover}
+  .hero-shot.tall img{aspect-ratio:3/4}
+  .hero-shot.small img{aspect-ratio:1/1}
+  .shot-tag{
+    position:absolute;bottom:8px;left:8px;
+    font-size:10.5px;font-weight:700;background:rgba(27,27,27,.82);color:var(--crema);
+    padding:4px 10px;border-radius:20px;letter-spacing:.02em;
+  }
+
+  /* ---------- MARQUEE ---------- */
+  .marquee{
+    background:var(--tinta);color:var(--crema);overflow:hidden;white-space:nowrap;
+    border-top:3px solid var(--tinta);border-bottom:3px solid var(--tinta);padding:13px 0;
+  }
+  .marquee-track{display:inline-block;animation:scroll 20s linear infinite;font-family:'Bricolage Grotesque';font-weight:800;font-size:21px;text-transform:uppercase;letter-spacing:.02em}
+  .marquee-track span{margin:0 16px}
+  .marquee-track .star{color:var(--lima)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section{position:relative}
+  .wrap{max-width:500px;margin:0 auto;padding:62px 22px}
+  .eyebrow{
+    display:inline-block;font-weight:700;font-size:12.5px;letter-spacing:.15em;text-transform:uppercase;
+    color:var(--coral);margin-bottom:13px;
+  }
+  .sec-title{font-size:clamp(34px,10vw,56px);color:var(--tinta);margin-bottom:16px}
+  .sec-title .pink{color:var(--coral)}
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- SIGNATURE: COMPARADOR EN BLOB ---------- */
+  .ba{background:var(--lima)}
+  .ba .wrap{text-align:center}
+  .ba .eyebrow{color:var(--tinta)}
+  .ba .sec-title{color:var(--tinta)}
+  .ba-stage{position:relative;margin:8px auto 0;max-width:420px}
+  .blob-wrap{position:relative}
+  .blob-svg{position:absolute;inset:-22px;width:calc(100% + 44px);height:calc(100% + 44px);z-index:0;filter:drop-shadow(8px 10px 0 rgba(27,27,27,.9))}
+  .ba-grid{
+    position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:14px;
+    padding:26px 22px;
+  }
+  .ba-pane{text-align:center}
+  .ba-photo{aspect-ratio:1/1;border-radius:18px;border:3px solid var(--tinta);overflow:hidden;position:relative;background:var(--crema-2)}
+  .ba-photo img{width:100%;height:100%;object-fit:cover}
+  .ba-pill{
+    position:absolute;top:8px;left:8px;font-size:10.5px;font-weight:700;
+    padding:4px 10px;border-radius:20px;border:2px solid var(--tinta);
+  }
+  .ba-before .ba-pill{background:var(--crema);color:var(--tinta)}
+  .ba-after .ba-pill{background:var(--coral);color:var(--crema)}
+  .ba-label{margin-top:9px;font-family:'Bricolage Grotesque';font-weight:800;font-size:16px;text-transform:uppercase;letter-spacing:.02em;color:var(--tinta)}
+  .ba-caption{position:relative;z-index:1;margin-top:18px;font-size:15px;line-height:1.5;color:var(--tinta);max-width:340px;margin-left:auto;margin-right:auto}
+  .ba-caption b{color:var(--coral)}
+
+  /* ---------- SERVICIOS / PRECIOS ---------- */
+  .svc-list{display:flex;flex-direction:column;gap:14px;margin-top:10px}
+  .svc{
+    background:var(--crema);border:3px solid var(--tinta);border-radius:20px;padding:20px;
+    display:flex;gap:15px;align-items:flex-start;
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .svc:hover{transform:translateY(-4px);box-shadow:6px 6px 0 var(--coral)}
+  .svc-ico{font-size:32px;line-height:1;flex:0 0 auto}
+  .svc-body h3{font-family:'Bricolage Grotesque';font-weight:800;font-size:21px;margin-bottom:5px}
+  .svc-body p{font-size:14.5px;line-height:1.5;color:var(--tinta-2)}
+  .svc-tag{margin-top:9px;display:inline-block;font-family:'Bricolage Grotesque';font-weight:700;font-size:13.5px;color:var(--tinta);background:var(--lima);border:2px solid var(--tinta);border-radius:30px;padding:3px 12px}
+
+  /* ---------- POR QUÉ ---------- */
+  .why{background:var(--tinta);color:var(--crema)}
+  .why .sec-title{color:var(--crema)}
+  .why .eyebrow{color:var(--lima)}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:10px}
+  .why-cell{background:var(--tinta-2);border:2px solid rgba(255,243,224,.18);border-radius:18px;padding:18px 16px}
+  .why-cell .n{font-family:'Bricolage Grotesque';font-weight:800;font-size:28px;color:var(--coral)}
+  .why-cell h4{font-weight:700;font-size:15px;margin:6px 0 5px}
+  .why-cell p{font-size:13px;line-height:1.45;color:rgba(255,243,224,.72)}
+
+  /* ---------- COMO VA ---------- */
+  .how{background:var(--crema-2)}
+  .step-list{display:flex;flex-direction:column;gap:14px;margin-top:10px}
+  .step{display:flex;gap:15px;align-items:flex-start;background:var(--crema);border:3px solid var(--tinta);border-radius:18px;padding:18px}
+  .step-n{flex:0 0 auto;width:42px;height:42px;border-radius:50%;background:var(--coral);color:var(--crema);border:2px solid var(--tinta);display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:19px}
+  .step h4{font-family:'Bricolage Grotesque';font-weight:800;font-size:18px;margin-bottom:3px}
+  .step p{font-size:14px;line-height:1.5;color:var(--tinta-2)}
+
+  /* ---------- GALERÍA ---------- */
+  .gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+  .gal-item{border-radius:18px;border:3px solid var(--tinta);position:relative;overflow:hidden;transition:transform .2s ease;aspect-ratio:1/1}
+  .gal-item:hover{transform:scale(1.03) rotate(-1deg)}
+  .gal-item img{width:100%;height:100%;object-fit:cover}
+  .gal-item.tall{grid-row:span 2;aspect-ratio:auto}
+  .gal-item.tall img{height:100%}
+
+  /* ---------- RESEÑAS / CITAS ---------- */
+  .rev{background:var(--coral)}
+  .rev .eyebrow{color:var(--tinta)}
+  .rev .sec-title{color:var(--crema)}
+  .rev-sub{color:#FFE7DF;font-size:14.5px;margin-bottom:6px}
+  .rev-list{display:flex;flex-direction:column;gap:16px;margin-top:14px}
+  .rev-card{background:var(--crema);border:3px solid var(--tinta);border-radius:20px;padding:20px;box-shadow:5px 5px 0 var(--tinta)}
+  .rev-stars{color:#E8A100;font-size:16px;letter-spacing:2px;margin-bottom:8px}
+  .rev-card p{font-size:16px;line-height:1.5;color:var(--tinta);font-weight:500}
+  .rev-who{display:flex;align-items:center;gap:10px;margin-top:14px}
+  .rev-av{width:38px;height:38px;border-radius:50%;background:var(--lima);color:var(--tinta);display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:14px;border:2px solid var(--tinta)}
+  .rev-name{font-weight:700;font-size:14px}
+  .rev-meta{font-size:12px;color:var(--tinta-2);opacity:.7}
+
+  /* ---------- CONTACTO ---------- */
+  .contact{background:var(--tinta);color:var(--crema);text-align:center}
+  .contact .sec-title{color:var(--crema)}
+  .contact .eyebrow{color:var(--lima)}
+  .contact p{font-size:16px;line-height:1.55;color:rgba(255,243,224,.82);max-width:380px;margin:0 auto 26px}
+  .contact-cta{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:var(--crema);font-family:'Bricolage Grotesque';font-weight:800;font-size:19px;padding:17px 32px;border-radius:50px;border:3px solid var(--crema);box-shadow:5px 5px 0 var(--coral);transition:transform .15s ease}
+  .contact-cta:hover{transform:translateY(-3px)}
+  .contact-info{margin-top:30px;display:flex;flex-direction:column;gap:10px;font-size:14.5px}
+  .contact-info .row{display:inline-flex;align-items:center;justify-content:center;gap:9px;color:rgba(255,243,224,.88)}
+  .contact-info .row b{color:var(--lima);font-weight:700}
+  .map-link{margin-top:22px;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;color:var(--lima);border-bottom:2px solid var(--lima);padding-bottom:2px}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--tinta);color:var(--crema);border-top:3px solid var(--coral);padding:32px 22px 116px;text-align:center}
+  .foot-brand{font-family:'Bricolage Grotesque';font-weight:800;font-size:28px;letter-spacing:-.02em}
+  .foot-brand .paw{color:var(--coral)}
+  .foot-tag{font-size:14px;color:var(--lima);margin:8px 0 18px;font-weight:500}
+  .foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 20px;font-size:13px;color:rgba(255,243,224,.7);margin-bottom:18px}
+  .foot-links a:hover{color:var(--lima)}
+  .foot-fine{font-size:11.5px;color:rgba(255,243,224,.45);line-height:1.6}
+
+  /* ---------- WA FIXED MOBILE ---------- */
+  .wa-fixed{
+    position:fixed;left:16px;right:16px;bottom:16px;z-index:200;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:#25D366;color:#0a3d1c;
+    font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;letter-spacing:-.01em;
+    padding:16px;border-radius:50px;border:3px solid var(--tinta);
+    box-shadow:0 6px 0 var(--tinta);
+    animation:wabob 2.6s ease-in-out infinite;
+  }
+  @keyframes wabob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+  .wa-fixed .wa-ico{width:24px;height:24px;flex:0 0 auto}
+
+  @media(min-width:560px){
+    .wa-fixed{left:auto;right:24px;bottom:24px;padding:16px 24px}
+  }
+  @media(min-width:760px){
+    .hero h1{font-size:96px}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="nav">
+  <div class="brand"><span class="paw">🐾</span>Mispatitascaninas</div>
+  <a class="nav-wa" href="https://wa.me/34614811952">
+    <svg class="wa-ico" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7s1.9 2.9 4.6 4c1.7.7 2.3.7 3.1.6.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1z"/></svg>
+    Escríbenos
+  </a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-blob"></div>
+  <div class="hero-blob b2"></div>
+  <span class="hero-kicker"><span class="pulse"></span>Tienda &amp; peluquería canina · La Saïdia, València</span>
+  <h1>
+    <span class="l1">Tu tienda</span>
+    <span class="l1">de</span>
+    <span class="l2">confianza</span>
+  </h1>
+  <p class="hero-sub">Pienso saludable de <strong>marca propia</strong>, baños con paciencia de verdad y consejos honestos para tu peludo. Aquí no eres un número: eres de la familia. 🐶</p>
+  <a class="hero-cta" href="https://wa.me/34614811952">
+    Escríbenos por WhatsApp →
+  </a>
+  <div class="hero-rating">
+    <span class="stars">★★★★★</span>
+    <b>4,6</b> sobre 5 · <b>45 reseñas</b> en Google
+  </div>
+
+  <!-- HERO PHOTOS -->
+  <div class="hero-shots">
+    <div class="hero-shot tall">
+      <img src="fotos/foto-01.jpg" alt="Mispatitascaninas, tienda de mascotas y peluquería canina en La Saïdia, València" loading="eager">
+      <span class="shot-tag">🐾 Nuestra tienda</span>
+    </div>
+    <div class="hero-shot small">
+      <img src="fotos/foto-02.jpg" alt="Detalle del trato cercano con las mascotas en Mispatitascaninas" loading="lazy">
+    </div>
+    <div class="hero-shot small">
+      <img src="fotos/foto-03.jpg" alt="Productos y pienso saludable en Mispatitascaninas" loading="lazy">
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Pienso saludable<span class="star"> ✦ </span></span><span>Peluquería<span class="star"> ✦ </span></span><span>Marca propia<span class="star"> ✦ </span></span><span>Trato familiar<span class="star"> ✦ </span></span><span>Consejos honestos<span class="star"> ✦ </span></span><span>Mucha paciencia<span class="star"> ✦ </span></span>
+    <span>Pienso saludable<span class="star"> ✦ </span></span><span>Peluquería<span class="star"> ✦ </span></span><span>Marca propia<span class="star"> ✦ </span></span><span>Trato familiar<span class="star"> ✦ </span></span><span>Consejos honestos<span class="star"> ✦ </span></span><span>Mucha paciencia<span class="star"> ✦ </span></span>
+  </div>
+</div>
+
+<!-- SIGNATURE: ANTES / DESPUÉS EN BLOB -->
+<section class="ba">
+  <div class="wrap reveal">
+    <span class="eyebrow">El momento peluquería</span>
+    <h2 class="sec-title">Entra peludo.<br>Sale guapísimo.</h2>
+    <div class="ba-stage">
+      <div class="blob-wrap">
+        <svg class="blob-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+          <path fill="#FFF3E0" d="M44.6,-67.8C57.3,-60.1,66.3,-46.6,71.6,-31.9C76.9,-17.2,78.5,-1.3,75.3,13.5C72.1,28.3,64.1,42,52.6,52.1C41.1,62.2,26.1,68.7,9.8,72.8C-6.5,76.9,-24.1,78.6,-39.3,72.7C-54.5,66.8,-67.3,53.3,-73.6,37.3C-79.9,21.3,-79.7,2.8,-75.1,-13.9C-70.5,-30.6,-61.5,-45.5,-48.9,-53.6C-36.3,-61.7,-20.1,-63,-2.4,-59.7C15.3,-56.4,31.9,-75.5,44.6,-67.8Z" transform="translate(100 100)"/>
+        </svg>
+        <div class="ba-grid">
+          <div class="ba-pane ba-before">
+            <div class="ba-photo">
+              <span class="ba-pill">Antes</span>
+              <img src="fotos/foto-04.jpg" alt="Perro antes de su sesión de peluquería en Mispatitascaninas" loading="lazy">
+            </div>
+            <div class="ba-label">Llega a su cita</div>
+          </div>
+          <div class="ba-pane ba-after">
+            <div class="ba-photo">
+              <span class="ba-pill">Después</span>
+              <img src="fotos/foto-05.jpg" alt="Perro después de su baño y arreglo en Mispatitascaninas, fantástico y tranquilo" loading="lazy">
+            </div>
+            <div class="ba-label">Sale como nuevo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="ba-caption">Baños sin estrés, incluso para los más mayores y miedosos. Como dice Graciela: <b>"es la primera vez que no sale ni estresada ni traumatizada"</b>. Y, además, guapísima.</p>
+  </div>
+</section>
+
+<!-- SERVICIOS / PRECIOS -->
+<section>
+  <div class="wrap reveal">
+    <span class="eyebrow">Lo que hacemos</span>
+    <h2 class="sec-title">Todo para tu <span class="pink">peludo</span></h2>
+    <div class="svc-list">
+      <div class="svc">
+        <div class="svc-ico">🥣</div>
+        <div class="svc-body">
+          <h3>Pienso saludable</h3>
+          <p>Alimentación de calidad y nuestra propia marca, esa que tantos perros y gatos del barrio no cambian por nada. Te ayudamos a elegir según su edad y necesidades.</p>
+          <span class="svc-tag">Marca propia · perro y gato</span>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="svc-ico">🛁</div>
+        <div class="svc-body">
+          <h3>Peluquería canina</h3>
+          <p>Baño, secado y arreglo con toda la calma del mundo. Tratamos a cada perro a su ritmo —da igual su edad o su carácter— para que salga limpio, guapo y tranquilo.</p>
+          <span class="svc-tag">Con mucha paciencia</span>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="svc-ico">🦴</div>
+        <div class="svc-body">
+          <h3>Tienda de mascotas</h3>
+          <p>Accesorios, snacks, juguetes y todo lo del día a día. Lo que tu peludo necesita, en tu barrio y sin tener que pedirlo por internet.</p>
+          <span class="svc-tag">En La Saïdia</span>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="svc-ico">💬</div>
+        <div class="svc-body">
+          <h3>Consejo honesto</h3>
+          <p>¿Dudas con la comida, un cambio de hábitos o necesitas un buen educador canino? Te asesoramos de verdad, aunque eso signifique recomendarte a otro profesional.</p>
+          <span class="svc-tag">Sin prisas, sin postureo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÉ -->
+<section class="why">
+  <div class="wrap reveal">
+    <span class="eyebrow">Por qué la gente repite</span>
+    <h2 class="sec-title">Aquí se hace<br>distinto</h2>
+    <div class="why-grid">
+      <div class="why-cell">
+        <div class="n">01</div>
+        <h4>Trato de barrio</h4>
+        <p>Tatiana y el equipo te conocen a ti y a tu peludo por su nombre. Atención cercana, de las de toda la vida.</p>
+      </div>
+      <div class="why-cell">
+        <div class="n">02</div>
+        <h4>Mucha paciencia</h4>
+        <p>Perros mayores o nerviosos bienvenidos. Vamos despacio para que la peluquería deje de dar miedo.</p>
+      </div>
+      <div class="why-cell">
+        <div class="n">03</div>
+        <h4>Comida que funciona</h4>
+        <p>Pienso saludable y de marca propia que tantos peludos del barrio no cambian por ningún otro.</p>
+      </div>
+      <div class="why-cell">
+        <div class="n">04</div>
+        <h4>Honestidad</h4>
+        <p>Te aconsejamos lo mejor para tu mascota, aunque a veces sea mandarte a otro especialista.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO VA -->
+<section class="how">
+  <div class="wrap reveal">
+    <span class="eyebrow">Tu primera visita</span>
+    <h2 class="sec-title">Cómo <span class="pink">va</span></h2>
+    <div class="step-list">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div>
+          <h4>Nos escribes</h4>
+          <p>Cuéntanos por WhatsApp qué necesitas: una cita de peluquería, una duda con el pienso o lo que sea.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div>
+          <h4>Buscamos su hueco</h4>
+          <p>Te damos cita en peluquería o te resolvemos en tienda. Sin agobios y a la hora que mejor te venga.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div>
+          <h4>Lo cuidamos como nuestro</h4>
+          <p>Tu peludo sale limpio, guapo y tranquilo —y tú, con la tranquilidad de haber acertado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section>
+  <div class="wrap reveal">
+    <span class="eyebrow">Nuestro día a día 📸</span>
+    <h2 class="sec-title">Por <span class="pink">aquí</span></h2>
+    <div class="gal-grid">
+      <div class="gal-item tall"><img src="fotos/foto-06.jpg" alt="Interior de la tienda de mascotas Mispatitascaninas en València" loading="lazy"></div>
+      <div class="gal-item"><img src="fotos/foto-07.jpg" alt="Productos para mascotas en Mispatitascaninas" loading="lazy"></div>
+      <div class="gal-item"><img src="fotos/foto-08.jpg" alt="Servicio de peluquería canina en Mispatitascaninas" loading="lazy"></div>
+      <div class="gal-item"><img src="fotos/foto-01.jpg" alt="Mascotas atendidas en Mispatitascaninas" loading="lazy"></div>
+      <div class="gal-item"><img src="fotos/foto-03.jpg" alt="Pienso y alimentación saludable en Mispatitascaninas" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEÑAS / CITAS -->
+<section class="rev">
+  <div class="wrap reveal">
+    <span class="eyebrow">Lo que dicen sus dueños</span>
+    <h2 class="sec-title">4,6 ★ en Google</h2>
+    <p class="rev-sub">Reseñas reales de clientes de Mispatitascaninas</p>
+    <div class="rev-list">
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p>"Mi perrita tiene doce años y es la primera vez que la llevo a esa peluquería y es la primera vez que no sale ni estresada ni traumatizada. El trato es excepcional tanto con los perris como con los dueños. Y además la dejaron guapísima."</p>
+        <div class="rev-who">
+          <div class="rev-av">GO</div>
+          <div>
+            <div class="rev-name">GRACIELA o.</div>
+            <div class="rev-meta">Reseña en Google</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p>"Mi tienda de confianza, compro el pienso de mi gatito allí de su propia marca, es excelente, no quiere comer otro que no sea ese. La atención es excelente tanto de Tatiana, como de la chica que se encarga de atender/bañar a los perritos."</p>
+        <div class="rev-who">
+          <div class="rev-av">VR</div>
+          <div>
+            <div class="rev-name">Victoria R.</div>
+            <div class="rev-meta">Reseña en Google</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p>"Muy buen trato, llevé a mi perra de 13 años a bañar y le han tenido una paciencia enorme, hemos salido muy contentos. El pienso de la tienda le ha gustado mucho también."</p>
+        <div class="rev-who">
+          <div class="rev-av">FC</div>
+          <div>
+            <div class="rev-name">Fabrizio C.</div>
+            <div class="rev-meta">Reseña en Google</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p>"La señora me atendió muy bien a pesar de que llegué tarde y la tienda estaba a punto de cerrar. Además se permitió darme algunos consejos para mi peludo y facilitarme el contacto de un educador canino de su confianza."</p>
+        <div class="rev-who">
+          <div class="rev-av">DA</div>
+          <div>
+            <div class="rev-name">Daniel A.</div>
+            <div class="rev-meta">Reseña en Google</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p>"Es una tienda de mascotas muy recomendable. Suelo comprar ahí pienso para mi perro, ya que tienen una opción que es bastante saludable. También he probado el servicio de peluquería y la verdad es que han dejado a mi perro fantástico."</p>
+        <div class="rev-who">
+          <div class="rev-av">ZL</div>
+          <div>
+            <div class="rev-name">Zoltán L.</div>
+            <div class="rev-meta">Reseña en Google</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact">
+  <div class="wrap">
+    <span class="eyebrow">¿Hablamos?</span>
+    <h2 class="sec-title">Pásate a<br>conocernos</h2>
+    <p>Estamos en La Saïdia, en pleno barrio. Escríbenos por WhatsApp para una cita de peluquería o para cualquier duda con tu peludo.</p>
+    <a class="contact-cta" href="https://wa.me/34614811952">
+      <svg class="wa-ico" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7s1.9 2.9 4.6 4c1.7.7 2.3.7 3.1.6.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1z"/></svg>
+      Escribir por WhatsApp
+    </a>
+    <div class="contact-info">
+      <span class="row"><b>📍</b> C/ del Doctor Olóriz, 5, bajo · La Saïdia, 46009 València</span>
+      <span class="row"><b>📞</b> 614 81 19 52</span>
+      <span class="row"><b>⭐</b> 4,6 sobre 5 · 45 reseñas en Google</span>
+    </div>
+    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Mispatitascaninas+Doctor+Ol%C3%B3riz+5+Valencia" target="_blank" rel="noopener">📍 Cómo llegar →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-brand"><span class="paw">🐾</span> Mispatitascaninas</div>
+  <div class="foot-tag">Tu tienda y peluquería de confianza en València</div>
+  <div class="foot-links">
+    <a href="#">Servicios</a>
+    <a href="#">Galería</a>
+    <a href="#">Reseñas</a>
+    <a href="https://wa.me/34614811952">WhatsApp</a>
+  </div>
+  <p class="foot-fine">
+    Tienda de mascotas y peluquería canina · C/ del Doctor Olóriz, 5, bajo · La Saïdia, 46009 València 🐾<br>
+    Fotos: MisPatitasCaninas (Google Maps). © 2026 Mispatitascaninas.
+  </p>
+</footer>
+
+<!-- WHATSAPP FIJO -->
+<a class="wa-fixed" href="https://wa.me/34614811952">
+  <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7s1.9 2.9 4.6 4c1.7.7 2.3.7 3.1.6.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1z"/></svg>
+  Escríbenos por WhatsApp
+</a>
+
+<!-- SCHEMA.ORG -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"PetStore",
+  "name":"Mispatitascaninas",
+  "image":"fotos/foto-01.jpg",
+  "telephone":"+34614811952",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"C/ del Doctor Olóriz, 5, bajo",
+    "addressLocality":"València",
+    "addressRegion":"Valencia",
+    "postalCode":"46009",
+    "addressCountry":"ES"
+  },
+  "aggregateRating":{
+    "@type":"AggregateRating",
+    "ratingValue":"4.6",
+    "reviewCount":"45",
+    "bestRating":"5"
+  }
+}
+</script>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>

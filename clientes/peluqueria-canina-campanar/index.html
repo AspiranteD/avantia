@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peluquería Canina Campanar — Tu perro sale hecho un pincel</title>
+<meta name="description" content="Peluquería canina de barrio en Campanar, Valencia. Beatriz cuida a tu perro con cariño, paciencia y manos expertas. 4,3★ en Google. Pide cita por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primario:#E8836B;      /* coral cálido */
+    --primario-osc:#cf6149;
+    --secundario:#2F7E80;    /* teal cuidado */
+    --secundario-osc:#235c5e;
+    --secundario-claro:#dcebec; /* placeholder, overridden below */
+    --teal-claro:#d8ebeb;
+    --coral-claro:#fbe3db;
+    --verde-claro:#dff0e6;
+    --crema:#FBF6F2;
+    --crema-osc:#f0e6dd;
+    --tinta:#243234;
+    --tinta-suave:#566668;
+    --blanco:#fffdfb;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--crema);
+    color:var(--tinta);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .display{font-family:'Quicksand',sans-serif}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  a{color:inherit}
+  img{display:block;max-width:100%}
+
+  /* ====== BARRA SUPERIOR ====== */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(251,246,242,.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--crema-osc);
+  }
+  .nav-in{
+    max-width:1080px;margin:0 auto;padding:12px 22px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .wordmark{
+    display:flex;align-items:center;gap:11px;
+    font-family:'Quicksand',sans-serif;font-weight:700;font-size:19px;
+    color:var(--secundario);letter-spacing:-.01em;text-decoration:none;
+  }
+  .wordmark .paw{
+    width:36px;height:36px;flex:0 0 36px;
+    background:var(--primario);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .wordmark .paw svg{width:21px;height:21px}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#25d366;color:#053c1c;
+    font-weight:700;font-size:14px;
+    padding:10px 17px;border-radius:40px;text-decoration:none;
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(37,211,102,.32)}
+  .nav-cta svg{width:17px;height:17px}
+
+  /* ====== HERO ====== */
+  .hero{padding:124px 0 64px;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+  .hero-eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--teal-claro);color:var(--secundario-osc);
+    font-weight:700;font-size:12.5px;letter-spacing:.04em;
+    padding:7px 15px;border-radius:40px;margin-bottom:24px;
+    text-transform:uppercase;
+  }
+  .hero-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--primario);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.65)}}
+  .hero h1{
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:clamp(40px,8.4vw,76px);
+    line-height:1.02;letter-spacing:-.02em;
+    color:var(--tinta);margin-bottom:22px;
+  }
+  .hero h1 .coral{color:var(--primario)}
+  .hero h1 .teal{color:var(--secundario)}
+  .hero-sub{
+    font-size:clamp(16px,2.2vw,20px);color:var(--tinta-suave);
+    max-width:520px;margin-bottom:30px;
+  }
+  .hero-sub b{color:var(--tinta);font-weight:700}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .btn-wa{
+    display:inline-flex;align-items:center;gap:10px;
+    background:#25d366;color:#053c1c;font-weight:700;font-size:16px;
+    padding:15px 26px;border-radius:48px;text-decoration:none;
+    box-shadow:0 10px 26px rgba(37,211,102,.3);
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .btn-wa:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(37,211,102,.42)}
+  .btn-wa svg{width:21px;height:21px}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--secundario);font-weight:700;font-size:15px;
+    text-decoration:none;padding:14px 8px;
+    border-bottom:2px solid transparent;transition:border-color .2s;
+  }
+  .btn-ghost:hover{border-color:var(--primario)}
+  .hero-trust{
+    margin-top:32px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+    color:var(--tinta-suave);font-size:14px;
+  }
+  .stars{color:var(--primario);letter-spacing:2px;font-size:16px}
+  .hero-trust .rating-num{font-weight:700;color:var(--tinta)}
+
+  /* foto hero */
+  .hero-photo{
+    position:relative;border-radius:26px;overflow:hidden;
+    aspect-ratio:4/5;background:var(--teal-claro);
+    box-shadow:0 24px 60px rgba(36,50,52,.16);
+    border:5px solid var(--blanco);
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-photo .badge{
+    position:absolute;bottom:16px;left:16px;
+    background:rgba(255,253,251,.94);backdrop-filter:blur(4px);
+    border-radius:16px;padding:11px 16px;
+    display:flex;align-items:center;gap:11px;
+    box-shadow:0 8px 22px rgba(36,50,52,.16);
+  }
+  .hero-photo .badge .b-paw{
+    width:34px;height:34px;border-radius:50%;background:var(--primario);
+    display:flex;align-items:center;justify-content:center;flex:0 0 34px;
+  }
+  .hero-photo .badge .b-paw svg{width:19px;height:19px}
+  .hero-photo .badge b{display:block;font-family:'Quicksand';font-weight:700;font-size:15px;color:var(--tinta);line-height:1.2}
+  .hero-photo .badge small{font-size:12px;color:var(--tinta-suave)}
+
+  /* heartbeat / pulso signature */
+  .pulse-line{display:block;width:100%;max-width:300px;margin:14px 0 0;height:30px}
+  .pulse-line path{
+    stroke:var(--primario);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:340;stroke-dashoffset:340;
+    animation:beat 3.4s ease-in-out infinite;
+  }
+  @keyframes beat{
+    0%{stroke-dashoffset:340}
+    55%{stroke-dashoffset:0}
+    100%{stroke-dashoffset:-340}
+  }
+
+  /* ====== reveal anim ====== */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ====== SECCIONES generales ====== */
+  section{position:relative}
+  .sec{padding:74px 0}
+  .kicker{
+    display:inline-block;font-weight:700;font-size:13px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--primario);margin-bottom:14px;
+  }
+  .h2{
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:clamp(30px,5.4vw,52px);line-height:1.04;letter-spacing:-.02em;
+    color:var(--tinta);margin-bottom:18px;
+  }
+  .lead{font-size:18px;color:var(--tinta-suave);max-width:620px}
+
+  /* ====== STATS ====== */
+  .stats{background:var(--blanco);border-top:1px solid var(--crema-osc);border-bottom:1px solid var(--crema-osc)}
+  .stats-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+    padding:44px 0;text-align:center;
+  }
+  .stat .num{
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:clamp(34px,6vw,52px);line-height:1;color:var(--secundario);
+    letter-spacing:-.02em;
+  }
+  .stat.in .num{animation:popnum .6s cubic-bezier(.2,.8,.3,1.2)}
+  @keyframes popnum{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+  .stat .lbl{font-size:13.5px;color:var(--tinta-suave);margin-top:6px;font-weight:500}
+  .stat .num span{color:var(--primario)}
+
+  /* ====== SERVICIOS ====== */
+  .serv-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:40px}
+  .card{
+    background:var(--blanco);border:1px solid var(--crema-osc);
+    border-radius:22px;padding:30px 28px;
+    transition:transform .25s ease,box-shadow .25s ease,border-color .25s;
+  }
+  .card:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(47,126,128,.13);border-color:var(--secundario)}
+  .card .ic{
+    width:58px;height:58px;border-radius:18px;
+    background:var(--teal-claro);
+    display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+  }
+  .card:nth-child(2) .ic{background:var(--coral-claro)}
+  .card:nth-child(3) .ic{background:var(--verde-claro)}
+  .card:nth-child(4) .ic{background:var(--crema-osc)}
+  .card .ic svg{width:30px;height:30px}
+  .card h3{font-family:'Quicksand',sans-serif;font-weight:700;font-size:22px;color:var(--tinta);margin-bottom:9px}
+  .card p{color:var(--tinta-suave);font-size:15.5px}
+
+  /* ====== EQUIPO / BEATRIZ ====== */
+  .equipo{background:var(--secundario);color:var(--crema)}
+  .equipo .h2{color:var(--blanco)}
+  .equipo .kicker{color:#ffd0c2}
+  .equipo-grid{display:grid;grid-template-columns:1fr;gap:42px;align-items:center}
+  .equipo-photo{
+    border-radius:24px;aspect-ratio:4/5;position:relative;overflow:hidden;
+    border:5px solid rgba(255,255,255,.16);background:var(--secundario-osc);
+    box-shadow:0 24px 50px rgba(0,0,0,.2);
+  }
+  .equipo-photo img{width:100%;height:100%;object-fit:cover}
+  .equipo-text p{color:#dceaea;font-size:17px;margin-bottom:18px}
+  .equipo-text p b{color:var(--blanco)}
+  .firma{
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:26px;color:#ffd0c2;margin-top:6px;
+  }
+  .firma small{display:block;font-family:'DM Sans';font-size:14px;color:#a7cbcb;font-weight:500;margin-top:4px}
+
+  /* ====== POR QUÉ ====== */
+  .why{background:var(--crema-osc)}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:40px}
+  .bene{
+    display:flex;gap:18px;align-items:flex-start;
+    background:var(--blanco);border-radius:18px;padding:24px 22px;
+    border:1px solid #e8dccf;
+    transition:transform .25s ease,box-shadow .25s ease;
+  }
+  .bene:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(47,126,128,.1)}
+  .bene .chk{
+    flex:0 0 42px;width:42px;height:42px;border-radius:50%;
+    background:var(--primario);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .bene .chk svg{width:22px;height:22px}
+  .bene h4{font-family:'Quicksand',sans-serif;font-weight:700;font-size:19px;margin-bottom:4px;color:var(--tinta)}
+  .bene p{color:var(--tinta-suave);font-size:15px}
+
+  /* ====== GALERÍA ====== */
+  .gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:38px}
+  .gal-grid .ph{
+    border-radius:18px;aspect-ratio:1/1;position:relative;overflow:hidden;
+    border:1px solid var(--crema-osc);transition:transform .3s ease;
+    background:var(--teal-claro);
+  }
+  .gal-grid .ph img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+  .gal-grid .ph:hover img{transform:scale(1.05)}
+  .gal-grid .ph:nth-child(3){grid-column:span 2;aspect-ratio:2/1}
+
+  /* ====== RESEÑAS ====== */
+  .res{background:var(--secundario)}
+  .res .kicker{color:#ffd0c2}
+  .res .h2{color:var(--blanco)}
+  .res-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px}
+  .res-rating{
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+    border-radius:18px;padding:16px 22px;text-align:center;
+  }
+  .res-rating .big{font-family:'Quicksand';font-weight:700;font-size:40px;color:#fff;line-height:1}
+  .res-rating .stars{display:block;margin:6px 0 2px}
+  .res-rating small{color:#a7cbcb;font-size:13px}
+  .res-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:36px}
+  .quote{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    border-radius:22px;padding:28px 26px;
+    transition:transform .25s ease;
+  }
+  .quote:hover{transform:translateY(-2px)}
+  .quote .stars{font-size:17px;margin-bottom:14px;display:block}
+  .quote p{font-family:'Quicksand',sans-serif;font-weight:500;font-size:18px;line-height:1.5;color:#f3f9f9;margin-bottom:20px}
+  .quote .who{display:flex;align-items:center;gap:12px}
+  .quote .av{
+    width:44px;height:44px;border-radius:50%;flex:0 0 44px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Quicksand';font-weight:700;font-size:17px;color:var(--secundario-osc);
+  }
+  .av1{background:var(--coral-claro)}.av2{background:var(--teal-claro)}.av3{background:var(--verde-claro)}.av4{background:var(--crema-osc)}
+  .quote .who b{display:block;color:var(--blanco);font-family:'DM Sans';font-size:15px}
+  .quote .who small{color:#a7cbcb;font-size:13px}
+
+  /* ====== GANCHO ====== */
+  .gancho{padding:0}
+  .gancho-in{
+    background:var(--primario);color:#fff;border-radius:28px;
+    padding:52px 40px;text-align:center;position:relative;overflow:hidden;
+    margin:56px 0 0;
+  }
+  .gancho-in::before{content:"🐾";position:absolute;font-size:190px;opacity:.12;top:-30px;right:-10px}
+  .gancho .tag{
+    display:inline-block;background:rgba(255,255,255,.22);
+    font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+    padding:7px 16px;border-radius:30px;margin-bottom:18px;
+  }
+  .gancho h3{
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:clamp(26px,5vw,44px);line-height:1.05;margin-bottom:14px;
+    letter-spacing:-.02em;position:relative;
+  }
+  .gancho p{font-size:17px;max-width:520px;margin:0 auto 26px;opacity:.95;position:relative}
+  .gancho .btn-wa{background:#fff;color:var(--primario-osc);box-shadow:0 10px 26px rgba(0,0,0,.18);position:relative}
+  .gancho .btn-wa:hover{box-shadow:0 16px 34px rgba(0,0,0,.26)}
+  .gancho .btn-wa svg{fill:var(--primario-osc)}
+
+  /* ====== CONTACTO ====== */
+  .cont{background:var(--secundario)}
+  .cont .h2{color:var(--blanco)}
+  .cont .kicker{color:#ffd0c2}
+  .cont-grid{display:grid;grid-template-columns:1fr;gap:34px;margin-top:34px}
+  .cont-info p{color:#dceaea;font-size:17px;margin-bottom:24px;max-width:440px}
+  .cont-row{display:flex;align-items:center;gap:14px;margin-bottom:18px;color:#e7f0f0;font-size:16px}
+  .cont-row .ci{
+    flex:0 0 44px;width:44px;height:44px;border-radius:13px;
+    background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;
+  }
+  .cont-row .ci svg{width:22px;height:22px}
+  .cont-row b{display:block;color:#fff}
+  .cont-row small{color:#a7cbcb}
+  .cont-row a{color:#fff;text-decoration:none}
+  .map-photo{
+    border-radius:22px;overflow:hidden;min-height:240px;position:relative;
+    border:5px solid rgba(255,255,255,.16);
+  }
+  .map-photo img{width:100%;height:100%;object-fit:cover;min-height:240px}
+  .map-photo .pin-tag{
+    position:absolute;bottom:14px;left:14px;
+    background:rgba(255,253,251,.94);border-radius:14px;padding:9px 14px;
+    font-size:13px;font-weight:700;color:var(--tinta);
+    display:flex;align-items:center;gap:8px;
+  }
+  .map-photo .pin-tag svg{width:17px;height:17px}
+  .cont .btn-wa{margin-top:6px}
+
+  /* ====== FOOTER ====== */
+  footer{background:var(--tinta);color:#9fb1b3;padding:48px 0 108px}
+  .foot-in{display:flex;flex-direction:column;gap:22px}
+  .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:22px;align-items:center}
+  .foot-mark{display:flex;align-items:center;gap:11px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:19px;color:var(--crema)}
+  .foot-mark .paw{width:34px;height:34px;background:var(--primario);border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .foot-mark .paw svg{width:19px;height:19px}
+  .foot-links{display:flex;gap:22px;flex-wrap:wrap}
+  .foot-links a{color:#9fb1b3;text-decoration:none;font-size:14px;transition:color .2s}
+  .foot-links a:hover{color:var(--primario)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;font-size:13px;color:#73898b;line-height:1.7}
+  .foot-bottom .credits{color:#5e7375;font-size:12px}
+
+  /* ====== WHATSAPP FIJO MÓVIL ====== */
+  .wa-fixed{
+    position:fixed;left:18px;right:18px;bottom:18px;z-index:120;
+    background:#25d366;color:#053c1c;font-weight:700;font-size:16px;
+    padding:16px;border-radius:46px;text-decoration:none;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    box-shadow:0 12px 30px rgba(37,211,102,.4);
+    animation:bob 2.6s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+  .wa-fixed svg{width:22px;height:22px}
+
+  /* ====== RESPONSIVE ====== */
+  @media(min-width:760px){
+    .hero-grid{grid-template-columns:1.05fr .95fr;gap:50px}
+    .equipo-grid{grid-template-columns:.9fr 1.1fr;gap:54px}
+    .serv-grid{grid-template-columns:repeat(2,1fr)}
+    .why-grid{grid-template-columns:repeat(2,1fr)}
+    .res-grid{grid-template-columns:repeat(2,1fr)}
+    .cont-grid{grid-template-columns:1.1fr 1fr}
+    .wa-fixed{display:none}
+    .gal-grid{grid-template-columns:repeat(3,1fr)}
+    .gal-grid .ph:nth-child(3){grid-column:span 1;aspect-ratio:1/1}
+    .gal-grid .ph:nth-child(5){grid-column:span 2;aspect-ratio:2/1}
+  }
+  @media(min-width:1000px){
+    .res-grid{grid-template-columns:repeat(4,1fr)}
+  }
+  @media(max-width:759px){
+    .nav-cta span{display:none}
+    .nav-cta{padding:10px;border-radius:50%}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .pulse-line path{animation:none;stroke-dashoffset:0}
+    .hero-eyebrow .dot,.wa-fixed,.stat .num{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== BARRA SUPERIOR ===== -->
+<nav class="nav">
+  <div class="nav-in">
+    <a href="#" class="wordmark">
+      <span class="paw"><svg viewBox="0 0 24 24" fill="#fff"><circle cx="7" cy="8" r="2.1"/><circle cx="12" cy="6" r="2.1"/><circle cx="17" cy="8" r="2.1"/><circle cx="19.5" cy="13" r="1.8"/><path d="M12 11c-3 0-5 2.4-5 4.6 0 1.7 1.4 2.4 2.6 2.4 1 0 1.6-.4 2.4-.4s1.4.4 2.4.4c1.2 0 2.6-.7 2.6-2.4C17 13.4 15 11 12 11z"/></svg></span>
+      Canina&nbsp;Campanar
+    </a>
+    <a href="https://wa.me/34722756124" class="nav-cta" aria-label="Escríbenos por WhatsApp">
+      <svg viewBox="0 0 24 24" fill="#053c1c"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+      <span>Pide cita</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow"><span class="dot"></span> Peluquería canina · Campanar, Valencia</div>
+        <h1 class="display">Tu perro sale<br><span class="coral">hecho un pincel</span>,<br>y <span class="teal">feliz</span>.</h1>
+        <p class="hero-sub">En Peluquería Canina Campanar, Beatriz trata a cada peludo con la paciencia y el cariño que se merece. Para tu perro, venir aquí <b>es una fiesta</b>; para ti, la tranquilidad de dejarlo en buenas manos.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/34722756124" class="btn-wa">
+            <svg viewBox="0 0 24 24" fill="#053c1c"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+            Pide cita por WhatsApp
+          </a>
+          <a href="#servicios" class="btn-ghost">Ver servicios →</a>
+        </div>
+        <div class="hero-trust">
+          <div><span class="stars" aria-hidden="true">★★★★☆</span><br><span><span class="rating-num">4,3</span> sobre 5 · 38 reseñas en Google</span></div>
+        </div>
+        <!-- signature: pulso / latido -->
+        <svg class="pulse-line" viewBox="0 0 300 30" aria-hidden="true">
+          <path d="M0 15 H70 l8 -10 l10 20 l9 -22 l11 26 l8 -14 H300"/>
+        </svg>
+      </div>
+      <div class="hero-photo reveal">
+        <img src="fotos/foto-01.jpg" alt="Perro recién peluqueado en Peluquería Canina Campanar" loading="eager">
+        <div class="badge">
+          <span class="b-paw"><svg viewBox="0 0 24 24" fill="#fff"><circle cx="7" cy="8" r="2.1"/><circle cx="12" cy="6" r="2.1"/><circle cx="17" cy="8" r="2.1"/><circle cx="19.5" cy="13" r="1.8"/><path d="M12 11c-3 0-5 2.4-5 4.6 0 1.7 1.4 2.4 2.6 2.4 1 0 1.6-.4 2.4-.4s1.4.4 2.4.4c1.2 0 2.6-.7 2.6-2.4C17 13.4 15 11 12 11z"/></svg></span>
+          <div><b>Trato con cariño</b><small>cada perro, su tiempo</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== STATS ===== -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat reveal"><div class="num">4,3<span>★</span></div><div class="lbl">Valoración media en Google</div></div>
+      <div class="stat reveal"><div class="num">38</div><div class="lbl">Reseñas de vecinos del barrio</div></div>
+      <div class="stat reveal"><div class="num">100%</div><div class="lbl">Mimo, paciencia y manos expertas</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICIOS ===== -->
+<section class="sec" id="servicios">
+  <div class="wrap">
+    <span class="kicker reveal">Lo que hacemos por tu peludo</span>
+    <h2 class="h2 reveal">Cuidado de la<br>cabeza a la cola.</h2>
+    <p class="lead reveal">Cada perro es distinto: su pelo, su carácter y sus manías. Por eso aquí no hay prisas ni cortes en cadena —solo el resultado que tu peludo merece.</p>
+    <div class="serv-grid">
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2F7E80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l-3 3"/><path d="M5 13l-2 8 8-2 10-10-6-6L5 13z"/><path d="M16 7l1 1"/></svg></div>
+        <h3 class="display">Corte y arreglo</h3>
+        <p>El corte que le sienta a tu perro, sea cual sea su raza. Salen limpios, peinados y "hechos un pincel" —como bien dicen nuestros clientes.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#cf6149" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21c-2 0-3-1.5-3-3 0-2 2-4 5-9 1-1.7 2-3 3-3s2 1.3 3 3c3 5 5 7 5 9 0 1.5-1 3-3 3z"/><path d="M9 16h6"/></svg></div>
+        <h3 class="display">Baño e higiene</h3>
+        <p>Baño completo con productos suaves, secado y un acabado que deja el pelo limpísimo y con buen olor. Nos encargamos también de oídos y uñas.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2e6e1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14c0-4 3-7 8-7s8 3 8 7"/><path d="M4 14c0 3 3 4 8 4s8-1 8-4"/><path d="M9 7V4"/><path d="M15 7V4"/></svg></div>
+        <h3 class="display">Deslanado y rastas</h3>
+        <p>¿Pelo enredado o con rastas? Lo desenredamos con mucha mano izquierda, sin tirones ni malos ratos para tu perro. Vuelve a casa cómodo y suave.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#7a5a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9-9a4.5 4.5 0 0 1 9-2 4.5 4.5 0 0 1 9 2c-2 4.5-9 9-9 9z"/></svg></div>
+        <h3 class="display">Cachorros y miedosos</h3>
+        <p>Si tu perro se mueve mucho o le asusta la peluquería, no pasa nada. Beatriz se gana su confianza con paciencia, paso a paso, hasta que se relaja.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EQUIPO / BEATRIZ ===== -->
+<section class="sec equipo">
+  <div class="wrap">
+    <div class="equipo-grid">
+      <div class="equipo-photo reveal">
+        <img src="fotos/foto-02.jpg" alt="Momento del cuidado en Peluquería Canina Campanar" loading="lazy">
+      </div>
+      <div class="equipo-text reveal">
+        <span class="kicker">Quién cuida de tu perro</span>
+        <h2 class="h2">Beatriz, y unas<br>manos que adoran<br>a los perros.</h2>
+        <p>En la Peluquería Canina Campanar manda una cosa: el bienestar del peludo. <b>Beatriz trata a cada perro con un cariño que se nota</b> —y que tus reseñas confirman una y otra vez.</p>
+        <p>No es una cadena ni una fábrica de cortes. Es una peluquería de barrio donde tu perro tiene nombre, su tiempo y su ritmo. Por eso muchos vecinos de Campanar la llaman, sin exagerar, <b>la mejor de Valencia</b>.</p>
+        <div class="firma display">— Beatriz · Peluquería Canina Campanar
+          <small>C/ de la Vall de la Ballestera, 34 · Campanar, València</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POR QUÉ ===== -->
+<section class="sec why">
+  <div class="wrap">
+    <span class="kicker reveal">Por qué traerlo aquí</span>
+    <h2 class="h2 reveal">Para tu perro,<br>venir es una fiesta.</h2>
+    <div class="why-grid">
+      <div class="bene reveal">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>
+        <div><h4 class="display">Trato con cariño de verdad</h4><p>"El amor con que la chica trata a los animalitos" no lo decimos nosotros: lo dicen quienes ya han venido.</p></div>
+      </div>
+      <div class="bene reveal">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>
+        <div><h4 class="display">Mucha paciencia</h4><p>¿Tu perro se mueve, tira o se asusta? Beatriz se toma el tiempo que haga falta hasta que se hace con él.</p></div>
+      </div>
+      <div class="bene reveal">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>
+        <div><h4 class="display">Local limpio y perfumado</h4><p>"Local perfumado e impecable", dicen las reseñas. Tu perro sale limpio y oliendo de maravilla.</p></div>
+      </div>
+      <div class="bene reveal">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>
+        <div><h4 class="display">Cita fácil por WhatsApp</h4><p>Escríbenos directamente: te respondemos, miramos tu peludo y buscamos hueco sin centralitas ni esperas.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERÍA ===== -->
+<section class="sec">
+  <div class="wrap">
+    <span class="kicker reveal">El día a día</span>
+    <h2 class="h2 reveal">Peludos felices,<br>fotos reales.</h2>
+    <p class="lead reveal">Algunos de los perros que han pasado por aquí y han vuelto a casa preciosos. Estas son fotos reales de la peluquería.</p>
+    <div class="gal-grid reveal">
+      <div class="ph"><img src="fotos/foto-03.jpg" alt="Perro arreglado en Peluquería Canina Campanar" loading="lazy"></div>
+      <div class="ph"><img src="fotos/foto-04.jpg" alt="Detalle del cuidado de un perro" loading="lazy"></div>
+      <div class="ph"><img src="fotos/foto-05.jpg" alt="Perro peinado y limpio tras su sesión" loading="lazy"></div>
+      <div class="ph"><img src="fotos/foto-06.jpg" alt="Resultado de un corte en la peluquería canina" loading="lazy"></div>
+      <div class="ph"><img src="fotos/foto-07.jpg" alt="Perro feliz en Peluquería Canina Campanar" loading="lazy"></div>
+      <div class="ph"><img src="fotos/foto-08.jpg" alt="Momento de la peluquería canina en Campanar" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESEÑAS ===== -->
+<section class="sec res">
+  <div class="wrap">
+    <div class="res-head">
+      <div>
+        <span class="kicker reveal">Lo dicen los vecinos</span>
+        <h2 class="h2 reveal">Palabra de<br>dueño de perro.</h2>
+      </div>
+      <div class="res-rating reveal">
+        <div class="big">4,3</div>
+        <span class="stars" aria-hidden="true">★★★★☆</span>
+        <small>38 reseñas en Google</small>
+      </div>
+    </div>
+    <div class="res-grid">
+      <div class="quote reveal">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p class="display">"La mejor de Valencia por la esmerada atención de Beatriz, que adora a los perros. Para él es una fiesta. Y sale hecho un pincel. Local perfumado e impecable."</p>
+        <div class="who"><span class="av av1">A</span><div><b>Antonio M.</b><small>Reseña en Google</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p class="display">"Excelente, me encantó cómo dejaron a mi perrita, muy limpiecita, el corte fenomenal. Tenía muchas rastas y quedó muy bien, con el amor con que la chica trata a los animalitos."</p>
+        <div class="who"><span class="av av2">C</span><div><b>Claudia R.</b><small>Reseña en Google</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p class="display">"Es la primera vez que llevo a Brownie y ha quedado precioso. La dueña ha tenido un montón de paciencia, ya que al principio se movía mucho. Lo ha tratado con mucho cariño y cuidado."</p>
+        <div class="who"><span class="av av3">L</span><div><b>Laura P.</b><small>Reseña en Google</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p class="display">"Me encanta el trato que ella siempre nos da, a mí y a mis dos mascotas. ¡Siempre me deja mis cachorros preciosos! La recomiendo totalmente."</p>
+        <div class="who"><span class="av av4">V</span><div><b>Veronica V.</b><small>Reseña en Google</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GANCHO ===== -->
+<section class="sec gancho">
+  <div class="wrap">
+    <div class="gancho-in reveal">
+      <span class="tag">🐾 Pide tu cita</span>
+      <h3 class="display">¿Le toca corte<br>a tu peludo?</h3>
+      <p>Llega el calor y el pelo enredado no perdona. Escríbenos por WhatsApp y buscamos el mejor hueco para tu perro —sin esperas y con toda la atención que se merece.</p>
+      <a href="https://wa.me/34722756124" class="btn-wa">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+        Reservar cita por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTO ===== -->
+<section class="sec cont" id="contacto">
+  <div class="wrap">
+    <span class="kicker reveal">Dónde estamos</span>
+    <h2 class="h2 reveal">En el corazón<br>de Campanar.</h2>
+    <div class="cont-grid">
+      <div class="cont-info reveal">
+        <p>Estamos en un establecimiento de barrio, en zona de mucho movimiento. Pásate con tu peludo o escríbenos primero por WhatsApp para concretar el día y la hora.</p>
+        <div class="cont-row"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>C/ de la Vall de la Ballestera, 34</b><small>Campanar, 46015 València</small></div></div>
+        <div class="cont-row"><span class="ci"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4z"/></svg></span><div><b><a href="tel:+34722756124">722 75 61 24</a></b><small>WhatsApp · te respondemos directamente</small></div></div>
+        <a href="https://wa.me/34722756124" class="btn-wa">
+          <svg viewBox="0 0 24 24" fill="#053c1c"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+          Escríbenos ahora
+        </a>
+      </div>
+      <div class="map-photo reveal">
+        <img src="fotos/foto-07.jpg" alt="Peluquería Canina Campanar en Valencia" loading="lazy">
+        <span class="pin-tag"><svg viewBox="0 0 24 24" fill="none" stroke="#cf6149" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Campanar, València</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap foot-in">
+    <div class="foot-top">
+      <div class="foot-mark">
+        <span class="paw"><svg viewBox="0 0 24 24" fill="#fff"><circle cx="7" cy="8" r="2.1"/><circle cx="12" cy="6" r="2.1"/><circle cx="17" cy="8" r="2.1"/><circle cx="19.5" cy="13" r="1.8"/><path d="M12 11c-3 0-5 2.4-5 4.6 0 1.7 1.4 2.4 2.6 2.4 1 0 1.6-.4 2.4-.4s1.4.4 2.4.4c1.2 0 2.6-.7 2.6-2.4C17 13.4 15 11 12 11z"/></svg></span>
+        Peluquería Canina Campanar
+      </div>
+      <div class="foot-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+        <a href="https://wa.me/34722756124">WhatsApp</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © 2026 Peluquería Canina Campanar · C/ de la Vall de la Ballestera, 34 · Campanar, 46015 València · 722 75 61 24 — Cuidamos a tu perro como si fuera nuestro. 🐾
+      <br><span class="credits">Fotos: Itaca, Javier Lerma Cuevas, Laura Pino Almero, Loles Bernal, Pablo A. Pérez, Sonia Martinez (Google Maps).</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FIJO MÓVIL ===== -->
+<a href="https://wa.me/34722756124" class="wa-fixed">
+  <svg viewBox="0 0 24 24" fill="#053c1c"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+  Pide cita por WhatsApp
+</a>
+
+<!-- ===== SCHEMA.ORG ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PetStore",
+  "name": "Peluquería Canina Campanar",
+  "description": "Peluquería canina de barrio en Campanar, Valencia. Corte, baño, deslanado y cuidado de perros con cariño y paciencia.",
+  "image": "fotos/foto-01.jpg",
+  "telephone": "+34722756124",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C/ de la Vall de la Ballestera, 34",
+    "addressLocality": "València",
+    "addressRegion": "Valencia",
+    "postalCode": "46015",
+    "addressCountry": "ES"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.3",
+    "reviewCount": "38",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){
+        setTimeout(()=>e.target.classList.add('in'), (i%4)*90);
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.14, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chic Can — Peluquería canina en Valencia · 4,9★ con 240 reseñas</title>
+<meta name="description" content="Peluquería canina de barrio en Valencia. Cortes con mimo y paciencia para tu perro — bichón, maltés, mayores y pieles delicadas. 4,9★ en Google. Reserva por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --terracota:#C6694A;
+    --terracota-osc:#a8512f;
+    --oliva:#6F8F7A;
+    --oliva-osc:#52705e;
+    --crema:#FBF7F0;
+    --hueso:#fffdf8;
+    --arena:#f3ebdd;
+    --tinta:#2E2A26;
+    --tinta-suave:#5e574e;
+    --wa:#25a35a;
+    --wa-osc:#1c7d45;
+    --sombra:rgba(46,42,38,.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Karla',system-ui,sans-serif;
+    background:var(--crema);
+    color:var(--tinta);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 22px}
+  section{position:relative}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:90;
+    background:rgba(251,247,240,.85);
+    backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid rgba(46,42,38,.08);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .wordmark{display:flex;align-items:center;gap:11px;font-family:'Fraunces';font-weight:700;font-size:21px;letter-spacing:-.01em}
+  .wordmark .mark{width:34px;height:34px;flex:none}
+  .nav-links{display:none;gap:30px;font-size:15px;font-weight:500;color:var(--tinta-suave)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover{color:var(--terracota)}
+  .btn-wa{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--wa);color:#fff;font-weight:700;font-size:14.5px;
+    padding:10px 18px;border-radius:40px;
+    box-shadow:0 4px 14px rgba(37,163,90,.28);
+    transition:transform .2s, box-shadow .2s, background .2s;
+  }
+  .btn-wa:hover{transform:translateY(-2px);background:var(--wa-osc);box-shadow:0 8px 22px rgba(37,163,90,.36)}
+  .btn-wa svg{width:18px;height:18px;flex:none}
+
+  /* ---------- signature: arco fine-line con silueta ---------- */
+  .arc-sig{display:block}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:104px 0 50px;position:relative;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(circle at 84% 14%, rgba(198,105,74,.10), transparent 44%),
+      radial-gradient(circle at 8% 92%, rgba(111,143,122,.13), transparent 48%);
+  }
+  .hero .wrap{position:relative;z-index:2}
+  .hero-grid{display:grid;gap:36px;align-items:center}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--hueso);border:1px solid rgba(46,42,38,.12);
+    color:var(--tinta-suave);font-weight:700;font-size:13px;letter-spacing:.01em;
+    padding:7px 15px;border-radius:40px;margin-bottom:24px;
+  }
+  .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--oliva);box-shadow:0 0 0 4px rgba(111,143,122,.18)}
+  .hero h1{
+    font-weight:600;
+    font-size:clamp(44px,9.5vw,86px);
+    line-height:.98;
+    letter-spacing:-.025em;
+    color:var(--tinta);
+    margin-bottom:8px;
+  }
+  .hero h1 .ln2{color:var(--terracota);display:block}
+  .hero h1 em{font-style:italic;font-weight:500;color:var(--oliva-osc)}
+  .hero-sub{
+    font-size:clamp(17px,2.2vw,20px);
+    color:var(--tinta-suave);max-width:520px;margin:24px 0 30px;
+    line-height:1.55;
+  }
+  .hero-sub b{color:var(--tinta);font-weight:700}
+  .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+  .btn-wa.lg{font-size:17px;padding:16px 28px}
+  .hero-cta .micro{font-size:13.5px;color:var(--tinta-suave);display:flex;align-items:center;gap:7px}
+  .hero-cta .micro b{color:var(--oliva-osc)}
+
+  .rating-line{display:flex;align-items:center;gap:12px;margin-top:26px;flex-wrap:wrap}
+  .rating-line .stars{color:var(--terracota);font-size:18px;letter-spacing:2px}
+  .rating-line b{font-family:'Fraunces';font-weight:600;font-size:18px;color:var(--tinta)}
+  .rating-line span{font-size:14px;color:var(--tinta-suave)}
+
+  .hero-photos{position:relative}
+  .hero-photos .frame{border-radius:24px;overflow:hidden;border:1px solid rgba(46,42,38,.1);box-shadow:0 24px 50px rgba(46,42,38,.16)}
+  .hero-photos .frame img{width:100%;aspect-ratio:4/5;object-fit:cover}
+  .hero-photos .frame.small{position:absolute;width:46%;bottom:-22px;right:-10px;box-shadow:0 18px 38px rgba(46,42,38,.22)}
+  .hero-photos .frame.small img{aspect-ratio:1/1}
+  .floater{position:absolute;z-index:3;font-size:13px;font-weight:700;background:var(--hueso);
+    border:1px solid rgba(46,42,38,.1);padding:8px 14px;border-radius:40px;
+    box-shadow:0 8px 22px var(--sombra);display:flex;align-items:center;gap:8px;color:var(--tinta-suave)}
+  .floater.a{top:14px;left:-6px;animation:bob 4.6s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+  /* ---------- divider strip ---------- */
+  .strip{background:var(--terracota);color:var(--crema);padding:15px 0;overflow:hidden;border-top:3px solid var(--terracota-osc);border-bottom:3px solid var(--terracota-osc)}
+  .ticker{display:flex;gap:0;white-space:nowrap;animation:scroll 28s linear infinite;width:max-content}
+  .ticker span{font-family:'Fraunces';font-weight:600;font-size:21px;letter-spacing:-.01em;padding:0 26px;display:inline-flex;align-items:center;gap:26px}
+  .ticker span::after{content:"·";opacity:.55}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.ticker,.floater{animation:none}}
+
+  /* ---------- generic section ---------- */
+  .sec{padding:74px 0}
+  .kicker{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--terracota);margin-bottom:14px}
+  .sec h2{font-weight:600;font-size:clamp(33px,6vw,56px);line-height:1.02;letter-spacing:-.025em;margin-bottom:18px}
+  .sec h2 em{font-style:italic;color:var(--oliva-osc);font-weight:500}
+  .lead{font-size:18px;color:var(--tinta-suave);max-width:560px;line-height:1.6}
+
+  /* ---------- quién soy ---------- */
+  .yo{display:grid;gap:38px;align-items:center}
+  .yo-photo{position:relative}
+  .yo-photo .frame{border-radius:22px;overflow:hidden;border:1px solid rgba(46,42,38,.1);box-shadow:0 20px 44px rgba(46,42,38,.14)}
+  .yo-photo .frame img{width:100%;aspect-ratio:4/5;object-fit:cover}
+  .yo-photo .tag{position:absolute;bottom:14px;left:14px;background:var(--hueso);border:1px solid rgba(46,42,38,.12);font-size:11.5px;font-weight:700;padding:6px 12px;border-radius:30px;letter-spacing:.02em;color:var(--terracota-osc);box-shadow:0 6px 16px var(--sombra)}
+  .yo-text p{font-size:17.5px;color:var(--tinta-suave);margin-bottom:18px;line-height:1.62}
+  .yo-text p b{color:var(--tinta)}
+  .sign{font-family:'Fraunces';font-style:italic;font-weight:500;font-size:25px;color:var(--terracota);margin-top:8px}
+  .yo-stats{display:flex;gap:26px;margin-top:28px;flex-wrap:wrap}
+  .yo-stats .st b{font-family:'Fraunces';font-weight:600;font-size:36px;display:block;line-height:1;color:var(--oliva-osc)}
+  .yo-stats .st span{font-size:13.5px;color:var(--tinta-suave);font-weight:500}
+
+  /* ---------- servicios ---------- */
+  .svc-grid{display:grid;gap:20px;margin-top:42px}
+  .card{
+    background:var(--hueso);border:1px solid rgba(46,42,38,.1);border-radius:24px;
+    padding:30px 28px;transition:transform .3s, box-shadow .3s, border-color .3s;position:relative;overflow:hidden;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px var(--sombra);border-color:rgba(198,105,74,.4)}
+  .card .ico-w{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+  .card .ico-w svg{width:32px;height:32px}
+  .card.t1 .ico-w{background:rgba(198,105,74,.13)}
+  .card.t2 .ico-w{background:rgba(111,143,122,.16)}
+  .card.t3 .ico-w{background:rgba(198,105,74,.13)}
+  .card h3{font-weight:600;font-size:25px;letter-spacing:-.01em;margin-bottom:10px}
+  .card p{font-size:15.5px;color:var(--tinta-suave);line-height:1.55;margin-bottom:18px}
+  .card .price{font-family:'Fraunces';font-weight:500;font-size:15px;color:var(--terracota)}
+  .card .corner{position:absolute;top:-20px;right:-12px;font-size:88px;opacity:.06;font-family:'Fraunces';font-weight:700}
+
+  /* ---------- por qué ---------- */
+  .porque{background:var(--oliva-osc);color:var(--crema)}
+  .porque .kicker{color:#cdd9c8}
+  .porque h2{color:var(--hueso)}
+  .porque h2 em{color:#cdd9c8}
+  .porque .lead{color:rgba(255,253,248,.8)}
+  .ben-grid{display:grid;gap:22px;margin-top:44px}
+  .ben{display:flex;gap:16px;align-items:flex-start;padding:4px 0}
+  .ben .b-ico{width:46px;height:46px;flex:none;border-radius:13px;background:rgba(255,253,248,.1);display:flex;align-items:center;justify-content:center}
+  .ben .b-ico svg{width:25px;height:25px}
+  .ben h4{font-family:'Fraunces';font-weight:600;font-size:21px;margin-bottom:5px;color:var(--hueso)}
+  .ben p{font-size:15px;color:rgba(255,253,248,.78);line-height:1.5}
+
+  /* ---------- galería ---------- */
+  .gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
+  .gal-grid figure{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(46,42,38,.08);box-shadow:0 10px 26px var(--sombra)}
+  .gal-grid figure img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .gal-grid figure:hover img{transform:scale(1.04)}
+  .gal-grid .g-tall{grid-row:span 2}
+  .gal-grid figure img{aspect-ratio:1/1}
+  .gal-grid .g-tall img{aspect-ratio:1/2}
+  .gal-grid .g-wide{grid-column:span 2}
+  .gal-grid .g-wide img{aspect-ratio:2/1}
+  .gal-cap{text-align:center;margin-top:24px;font-size:14.5px;color:var(--tinta-suave)}
+
+  /* ---------- reseñas ---------- */
+  .rev{background:var(--arena)}
+  .rev-head{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;max-width:580px;margin:0 auto}
+  .rev-badge{display:inline-flex;align-items:center;gap:10px;background:var(--hueso);border:1px solid rgba(46,42,38,.1);border-radius:40px;padding:9px 18px;margin-top:18px;box-shadow:0 8px 20px var(--sombra)}
+  .rev-badge .stars{color:var(--terracota);font-size:16px;letter-spacing:2px}
+  .rev-badge b{font-family:'Fraunces';font-weight:600;font-size:17px}
+  .rev-badge span{font-size:13.5px;color:var(--tinta-suave)}
+  .rev-grid{display:grid;gap:20px;margin-top:42px}
+  .qcard{background:var(--hueso);border:1px solid rgba(46,42,38,.1);border-radius:22px;padding:28px 26px;position:relative;display:flex;flex-direction:column}
+  .qcard .stars{color:var(--terracota);font-size:16px;letter-spacing:3px;margin-bottom:14px}
+  .qcard blockquote{font-family:'Fraunces';font-weight:500;font-size:18px;line-height:1.45;color:var(--tinta);margin-bottom:22px;font-style:italic;flex:1}
+  .qcard .who{display:flex;align-items:center;gap:12px}
+  .qcard .av{width:44px;height:44px;border-radius:50%;background:var(--oliva);color:var(--crema);display:flex;align-items:center;justify-content:center;font-family:'Fraunces';font-weight:600;font-size:17px;flex:none}
+  .qcard.t .av{background:var(--terracota)}
+  .qcard .who b{display:block;font-size:15px;font-weight:700}
+  .qcard .who span{font-size:13px;color:var(--tinta-suave)}
+
+  /* ---------- gancho ---------- */
+  .gancho{position:relative;overflow:hidden;background:var(--terracota);color:var(--crema);border-radius:30px;padding:54px 32px;text-align:center;margin:0 auto}
+  .gancho::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 10%,rgba(255,255,255,.14),transparent 42%)}
+  .gancho .in{position:relative;z-index:2}
+  .gancho .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,253,248,.18);border:1px solid rgba(255,253,248,.3);font-weight:700;font-size:13px;letter-spacing:.04em;padding:8px 16px;border-radius:40px;margin-bottom:20px}
+  .gancho h2{font-family:'Fraunces';font-weight:600;font-size:clamp(30px,6vw,50px);line-height:1.04;letter-spacing:-.025em;color:var(--hueso);margin-bottom:16px}
+  .gancho p{font-size:17.5px;color:rgba(255,253,248,.92);max-width:500px;margin:0 auto 28px;line-height:1.5}
+  .gancho .btn-wa{background:var(--hueso);color:var(--terracota-osc);box-shadow:0 8px 24px rgba(0,0,0,.18)}
+  .gancho .btn-wa:hover{background:#fff;color:var(--terracota-osc)}
+  .gancho .left{font-size:13.5px;margin-top:16px;color:rgba(255,253,248,.88);font-weight:600}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:720px;margin:0 auto}
+  .faq-item{border-bottom:1px solid rgba(46,42,38,.13)}
+  .faq-item summary{list-style:none;cursor:pointer;padding:22px 4px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:'Fraunces';font-weight:600;font-size:20px;color:var(--tinta)}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item .plus{width:30px;height:30px;flex:none;border-radius:50%;background:rgba(198,105,74,.13);display:flex;align-items:center;justify-content:center;color:var(--terracota);font-size:20px;transition:transform .3s;font-family:'Karla'}
+  .faq-item[open] .plus{transform:rotate(45deg)}
+  .faq-item p{padding:0 4px 24px;font-size:16px;color:var(--tinta-suave);line-height:1.6;max-width:620px}
+
+  /* ---------- contacto ---------- */
+  .contacto{background:var(--oliva-osc);color:var(--crema);border-radius:30px;padding:50px 32px;display:grid;gap:36px}
+  .contacto .kicker{color:#cdd9c8}
+  .contacto h2{color:var(--hueso);font-weight:600;font-size:clamp(31px,6vw,48px);line-height:1.02;letter-spacing:-.025em;margin-bottom:16px}
+  .contacto p{color:rgba(255,253,248,.84);font-size:17px;margin-bottom:26px;line-height:1.55}
+  .contacto .info{display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
+  .contacto .info .row{display:flex;align-items:center;gap:13px;font-size:15.5px;color:rgba(255,253,248,.92)}
+  .contacto .info .row svg{width:20px;height:20px;flex:none;color:#cdd9c8}
+  .contacto .info .row a:hover{color:#fff;text-decoration:underline}
+  .contacto-photo{border-radius:18px;overflow:hidden;border:1px solid rgba(255,253,248,.18);box-shadow:0 18px 40px rgba(0,0,0,.22)}
+  .contacto-photo img{width:100%;aspect-ratio:5/4;object-fit:cover}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--tinta);color:rgba(251,247,240,.72);padding:50px 0 110px;text-align:center}
+  footer .wordmark{justify-content:center;color:var(--crema);margin-bottom:18px}
+  footer .links{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;font-size:14px;margin-bottom:22px}
+  footer .links a:hover{color:var(--crema)}
+  footer .fine{font-size:12.5px;color:rgba(251,247,240,.5);line-height:1.65}
+  footer .heart{color:var(--terracota)}
+
+  /* ---------- WhatsApp fijo móvil ---------- */
+  .wa-fab{
+    position:fixed;left:16px;right:16px;bottom:16px;z-index:80;
+    background:var(--wa);color:#fff;font-weight:700;font-size:16px;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px;border-radius:18px;box-shadow:0 10px 30px rgba(37,163,90,.4);
+    animation:fabpop .5s ease both;
+  }
+  .wa-fab svg{width:22px;height:22px}
+  @keyframes fabpop{from{transform:translateY(80px);opacity:0}to{transform:none;opacity:1}}
+
+  /* ---------- responsive ---------- */
+  @media(min-width:760px){
+    .nav-links{display:flex}
+    .hero{padding:140px 0 70px}
+    .hero-grid{grid-template-columns:1.05fr .95fr;gap:54px}
+    .yo{grid-template-columns:.85fr 1.15fr;gap:54px}
+    .svc-grid{grid-template-columns:repeat(3,1fr)}
+    .ben-grid{grid-template-columns:1fr 1fr;gap:30px 40px}
+    .rev-grid{grid-template-columns:repeat(3,1fr)}
+    .contacto{grid-template-columns:1.1fr .9fr;align-items:center}
+    .wa-fab{display:none}
+    .gal-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr}
+    footer{padding:60px 0 60px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="wordmark">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M5 26c0-9 6.7-15 15-15s15 6 15 15" stroke="#C6694A" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="15" cy="22" rx="2.4" ry="3" fill="#C6694A"/>
+        <ellipse cx="25" cy="22" rx="2.4" ry="3" fill="#C6694A"/>
+        <ellipse cx="10.5" cy="27" rx="2" ry="2.6" fill="#6F8F7A"/>
+        <ellipse cx="29.5" cy="27" rx="2" ry="2.6" fill="#6F8F7A"/>
+        <path d="M20 26c3 0 5.4 2.2 5.4 4.7 0 2.2-1.9 3-3.5 3-.9 0-1.4-.4-1.9-.4s-1 .4-1.9.4c-1.6 0-3.5-.8-3.5-3C14.6 28.2 17 26 20 26z" fill="#6F8F7A"/>
+      </svg>
+      Chic&nbsp;Can
+    </a>
+    <div class="nav-links">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="https://wa.me/34610386472" class="btn-wa">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.01c-.25.69-1.46 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.45.53-.15.15-.3.31-.13.6.17.3.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41z"/></svg>
+      Reservar
+    </a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header id="top" class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>Peluquería canina · València</span>
+        <h1>
+          Tu perro,
+          <span class="ln2"><em>guapo y feliz.</em></span>
+        </h1>
+        <p class="hero-sub">
+          En Chic Can lo tratan con la calma y el cariño que se merece. 🐾<br>
+          Bichones, malteses, perros mayores o de piel delicada — <b>cada corte, con paciencia y mimo</b>, y un peque que sale tranquilo y contento.
+        </p>
+        <div class="hero-cta">
+          <a href="https://wa.me/34610386472" class="btn-wa lg">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.01c-.25.69-1.46 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.45.53-.15.15-.3.31-.13.6.17.3.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41z"/></svg>
+            Pedir cita por WhatsApp
+          </a>
+          <span class="micro">📍 <b>Te responden hoy</b> mismo</span>
+        </div>
+        <div class="rating-line">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <b>4,9</b>
+          <span>· 240 reseñas en Google</span>
+        </div>
+      </div>
+
+      <div class="hero-photos reveal">
+        <span class="floater a">🐶 trato con mimo</span>
+        <div class="frame">
+          <img src="fotos/foto-04.jpg" alt="Perro recién peluqueado en Chic Can, con el pelo cuidado y arreglado" loading="eager" width="600" height="750">
+        </div>
+        <div class="frame small">
+          <img src="fotos/foto-01.jpg" alt="Detalle del resultado de un corte de peluquería canina en Chic Can" loading="lazy" width="400" height="400">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ TICKER ============ -->
+<div class="strip" aria-hidden="true">
+  <div class="ticker">
+    <span>Cortes con mimo</span><span>Bichón &amp; maltés</span><span>Perros mayores</span><span>Paciencia infinita</span><span>4,9★ en Google</span><span>Cortes con mimo</span><span>Bichón &amp; maltés</span><span>Perros mayores</span><span>Paciencia infinita</span><span>4,9★ en Google</span>
+  </div>
+</div>
+
+<!-- ============ NOSOTROS ============ -->
+<section id="nosotros" class="sec">
+  <div class="wrap">
+    <div class="yo reveal">
+      <div class="yo-photo">
+        <div class="frame">
+          <img src="fotos/foto-02.jpg" alt="Lorena y su equipo de Chic Can durante una sesión de peluquería canina" loading="lazy" width="600" height="750">
+        </div>
+        <span class="tag">🐾 Chic Can · València</span>
+      </div>
+      <div class="yo-text">
+        <div class="kicker">Quién cuida a tu peque</div>
+        <h2>Lorena y su equipo — <em>y mucha paciencia.</em></h2>
+        <p>En Chic Can no hay prisas ni cadena de montaje. Hay <b>tiempo para cada perro</b>: el que viene por primera vez con cuatro meses, el cachorro nervioso y también el peludo de 16 años que necesita manos suaves.</p>
+        <p>Familias de todo Valencia — y de fuera, desde Canet — vuelven cada quince días porque sus perros salen <b>guapos, tranquilos y contentos</b>. Se nota cuando a quien te atiende le gustan de verdad los animales.</p>
+        <p class="sign">— Lorena, Chic Can</p>
+        <div class="yo-stats">
+          <div class="st"><b>4,9★</b><span>en Google</span></div>
+          <div class="st"><b>240</b><span>reseñas reales</span></div>
+          <div class="st"><b>∞</b><span>paciencia y mimo</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICIOS ============ -->
+<section id="servicios" class="sec" style="padding-top:24px">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Lo que hacemos</div>
+      <h2>Cuidado a la medida <em>de tu perro.</em></h2>
+      <p class="lead">Cada raza y cada piel pide lo suyo. Cuéntanos cómo es tu peque por WhatsApp y lo dejamos perfecto sin estresarlo.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="card t1 reveal">
+        <span class="corner">01</span>
+        <div class="ico-w">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C6694A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.5 5.5 9 9"/><path d="M3 21l5-1.5-2-2L3 21z"/><path d="m8 17.5 9.5-9.5a2 2 0 0 0 0-2.8l-.7-.7a2 2 0 0 0-2.8 0L4.5 14"/></svg>
+        </div>
+        <h3>Corte y arreglo</h3>
+        <p>El corte que le va a tu raza, hecho con calma. Bichón, maltés o mestizo — sale precioso y bien arreglado, cuidando cada detalle.</p>
+        <div class="price">Cita por WhatsApp</div>
+      </div>
+      <div class="card t2 reveal">
+        <span class="corner">02</span>
+        <div class="ico-w">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6F8F7A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 13a5 5 0 0 1 10 0"/><path d="M5 13a7 7 0 0 1 14 0"/><path d="M4 17h16"/><path d="M6 17v2M18 17v2M10 17v3M14 17v3"/></svg>
+        </div>
+        <h3>Baño e higiene</h3>
+        <p>Baño, secado y un acabado suave que huele de maravilla. Oídos, uñas y todos esos detalles que tu perro agradece, sin agobios.</p>
+        <div class="price">Cita por WhatsApp</div>
+      </div>
+      <div class="card t3 reveal">
+        <span class="corner">03</span>
+        <div class="ico-w">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C6694A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9C1.4 9.4 2.6 5.6 6 5.4c2 .1 3 1.3 6 4 3-2.7 4-3.9 6-4 3.4.2 4.6 4 3.3 6.6C19 16.6 12 21 12 21z"/></svg>
+        </div>
+        <h3>Mimo extra: cachorros y mayores</h3>
+        <p>Primera peluquería del cachorro o perro mayor que necesita ternura. Manos suaves, paciencia y todo el cariño que hace falta.</p>
+        <div class="price">Cita por WhatsApp</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POR QUÉ ============ -->
+<section id="porque" class="porque sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Por qué Chic Can</div>
+      <h2>Lo que tu perro <em>te diría si hablara.</em></h2>
+      <p class="lead">Lo notarás en cómo entra — y en cómo sale.</p>
+    </div>
+    <div class="ben-grid">
+      <div class="ben reveal">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#cdd9c8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3 1.2 6 4 3-2.8 4-4 6-4 3.5 0 5 4 3.5 7-2.5 4.5-9.5 9-9.5 9z"/></svg></div>
+        <div><h4>Trato con cariño</h4><p>Se nota que les gustan los animales. Tu perro sale súper contento — y eso, en una peluquería canina, lo es todo.</p></div>
+      </div>
+      <div class="ben reveal">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#cdd9c8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div><h4>Paciencia, sin prisas</h4><p>Nada de cadena ni reloj en mano. Cada perro tiene su tiempo, también el más nervioso o el más mayor.</p></div>
+      </div>
+      <div class="ben reveal">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#cdd9c8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 21l-4.9 2.6.9-5.5-4-3.9 5.5-.8z"/></svg></div>
+        <div><h4>4,9★ de verdad</h4><p>240 familias lo dejan por escrito en Google. Bichones malteses preciosos, perros mayores tratados con mimo: la prueba está en las reseñas.</p></div>
+      </div>
+      <div class="ben reveal">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#cdd9c8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div><h4>Manos para cada raza</h4><p>Cada pelo y cada piel pide lo suyo. Conocen tu raza y la cuidan — desde el bichón maltés hasta el mestizo de pelo difícil.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERÍA ============ -->
+<section id="galeria" class="sec">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto">
+      <div class="kicker" style="text-align:center">Antes y después</div>
+      <h2>Resultados <em>que se ven.</em></h2>
+    </div>
+    <div class="gal-grid reveal">
+      <figure class="g-tall"><img src="fotos/foto-03.jpg" alt="Perro peluqueado en Chic Can con un corte cuidado" loading="lazy" width="500" height="1000"></figure>
+      <figure><img src="fotos/foto-05.jpg" alt="Perro pequeño recién arreglado en la peluquería Chic Can" loading="lazy" width="500" height="500"></figure>
+      <figure><img src="fotos/foto-06.jpg" alt="Resultado de un baño y corte en Chic Can" loading="lazy" width="500" height="500"></figure>
+      <figure class="g-wide"><img src="fotos/foto-07.jpg" alt="Perro feliz tras su sesión de peluquería canina en Chic Can" loading="lazy" width="1000" height="500"></figure>
+      <figure><img src="fotos/foto-08.jpg" alt="Detalle del acabado de un corte de pelo canino en Chic Can" loading="lazy" width="500" height="500"></figure>
+    </div>
+    <p class="gal-cap">Fotos reales de clientes reales de Chic Can — sí, todos recién guapos. 🐶</p>
+  </div>
+</section>
+
+<!-- ============ RESEÑAS ============ -->
+<section id="resenas" class="rev sec">
+  <div class="wrap">
+    <div class="reveal rev-head">
+      <div class="kicker" style="text-align:center">Lo dicen ellos</div>
+      <h2 style="margin-bottom:6px">Familias que <em>repiten.</em></h2>
+      <div class="rev-badge">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <b>4,9</b>
+        <span>· 240 reseñas en Google</span>
+      </div>
+    </div>
+    <div class="rev-grid">
+      <div class="qcard reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>"Llevar a nuestro perrito de 16 años a esta peluquería ha sido la mejor decisión que podíamos tomar. Lo han dejado precioso, y tratado con mucho cuidado y cariño. ¡Salió súper contento y feliz!"</blockquote>
+        <div class="who"><div class="av">A</div><div><b>Almudena T.</b><span>Google Maps</span></div></div>
+      </div>
+      <div class="qcard t reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>"Tengo un bichón maltés y me lo han dejado precioso. Lorena es un amor; aunque voy desde Canet y se me hace un poco lejos, no tengo dudas de volver."</blockquote>
+        <div class="who"><div class="av">Y</div><div><b>Yubi T.</b><span>Google Maps</span></div></div>
+      </div>
+      <div class="qcard reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>"Lorena y su equipo son fantásticas. Cogieron a Otto con 4 meses, acaba de cumplir 5 años y lo llevamos cada 15 días… con eso está todo dicho."</blockquote>
+        <div class="who"><div class="av">J</div><div><b>Jose J.</b><span>Google Maps</span></div></div>
+      </div>
+      <div class="qcard t reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>"Llevamos a nuestro bichón maltés y estamos encantados. El trato ha sido súper bueno, se nota que les gustan los animales y tienen mucha paciencia. 🐶✨"</blockquote>
+        <div class="who"><div class="av">M</div><div><b>M Á.</b><span>Google Maps</span></div></div>
+      </div>
+      <div class="qcard reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>"Le han hecho un corte precioso, cuidando todo detalle. Se nota que trabajan con cariño y paciencia, porque salió tranquilo y feliz. 💕"</blockquote>
+        <div class="who"><div class="av">L</div><div><b>Lucia M.</b><span>Google Maps</span></div></div>
+      </div>
+      <div class="qcard t reveal" style="display:flex;align-items:center;justify-content:center;text-align:center;background:transparent;border:1px dashed rgba(46,42,38,.22);box-shadow:none">
+        <div>
+          <div class="stars" aria-hidden="true" style="margin-bottom:8px">★★★★★</div>
+          <p style="font-family:'Fraunces';font-style:italic;font-weight:500;font-size:18px;color:var(--tinta);margin-bottom:14px">…y 235 reseñas más como estas.</p>
+          <a href="https://wa.me/34610386472" style="font-weight:700;color:var(--terracota);font-size:15px">Pide tu cita →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GANCHO ============ -->
+<section class="sec" style="padding-top:20px">
+  <div class="wrap">
+    <div class="gancho reveal">
+      <div class="in">
+        <span class="pill">🐾 Agenda de la semana</span>
+        <h2>Tu perro toca peluquería.</h2>
+        <p>¿Ya le va tocando un corte? Escríbenos por WhatsApp, cuéntanos cómo es y te buscamos hueco. Sin formularios, sin esperas — te respondemos en el día.</p>
+        <a href="https://wa.me/34610386472" class="btn-wa lg">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.01c-.25.69-1.46 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.45.53-.15.15-.3.31-.13.6.17.3.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41z"/></svg>
+          Pedir cita ahora
+        </a>
+        <p class="left">⭐ 4,9 de 5 · 240 familias ya confían</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="sec">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto 40px">
+      <div class="kicker" style="text-align:center">Lo que sueles preguntar</div>
+      <h2>Dudas <em>rápidas.</em></h2>
+    </div>
+    <div class="faq reveal">
+      <details class="faq-item" open>
+        <summary>¿Cómo pido cita? <span class="plus">+</span></summary>
+        <p>Un mensaje de WhatsApp y listo. Nos cuentas cómo es tu perro (raza, edad, manías) y te confirmamos hueco en el día. Nada de formularios eternos.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Atendéis perros mayores o nerviosos? <span class="plus">+</span></summary>
+        <p>Sí, y con especial cuidado. Hemos peluqueado perros de 16 años y cachorros en su primera vez. Vamos sin prisas y con manos suaves para que salga tranquilo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Trabajáis bichón maltés y razas de pelo delicado? <span class="plus">+</span></summary>
+        <p>Es de lo que más hacemos. Conocemos el corte que pide cada raza y cuidamos cada detalle para que tu peque salga precioso y bien arreglado.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Dónde estáis? <span class="plus">+</span></summary>
+        <p>En C/ Ernesto Che Guevara, 12, 46920 València. Vienen familias de toda la zona — y de fuera, como desde Canet — porque merece la pena el trato.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cada cuánto debería traerlo? <span class="plus">+</span></summary>
+        <p>Depende de la raza y el pelo, pero muchas familias vuelven cada 15 días. Te asesoramos según tu perro para que esté siempre cómodo y guapo.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section id="contacto" class="sec" style="padding-top:10px">
+  <div class="wrap">
+    <div class="contacto reveal">
+      <div>
+        <div class="kicker">Hablemos</div>
+        <h2>Reserva la cita de tu peque.</h2>
+        <p>Escríbenos por WhatsApp y cuéntanos de tu perro. Te respondemos normalmente en minutos. 🐾</p>
+        <div class="info">
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16.5v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1 3.7 2 2 0 0 1 3 1.5h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L7 9.1a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+34610386472">610 38 64 72</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>C/ Ernesto Che Guevara, 12, 46920 València</div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 21l-4.9 2.6.9-5.5-4-3.9 5.5-.8z"/></svg>4,9 de 5 estrellas · 240 reseñas en Google</div>
+        </div>
+        <a href="https://wa.me/34610386472" class="btn-wa lg">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.01c-.25.69-1.46 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.45.53-.15.15-.3.31-.13.6.17.3.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41z"/></svg>
+          Escribir por WhatsApp
+        </a>
+      </div>
+      <div class="contacto-photo">
+        <img src="fotos/foto-01.jpg" alt="Perro recién peluqueado y feliz en Chic Can, Valencia" loading="lazy" width="500" height="400">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="wordmark">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M5 26c0-9 6.7-15 15-15s15 6 15 15" stroke="#C6694A" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="15" cy="22" rx="2.4" ry="3" fill="#C6694A"/>
+        <ellipse cx="25" cy="22" rx="2.4" ry="3" fill="#C6694A"/>
+        <ellipse cx="10.5" cy="27" rx="2" ry="2.6" fill="#6F8F7A"/>
+        <ellipse cx="29.5" cy="27" rx="2" ry="2.6" fill="#6F8F7A"/>
+        <path d="M20 26c3 0 5.4 2.2 5.4 4.7 0 2.2-1.9 3-3.5 3-.9 0-1.4-.4-1.9-.4s-1 .4-1.9.4c-1.6 0-3.5-.8-3.5-3C14.6 28.2 17 26 20 26z" fill="#6F8F7A"/>
+      </svg>
+      Chic&nbsp;Can
+    </div>
+    <div class="links">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="https://wa.me/34610386472">WhatsApp</a>
+    </div>
+    <p class="fine">
+      Chic Can · Peluquería canina · C/ Ernesto Che Guevara, 12, 46920 València · 610 38 64 72<br>
+      Cortes con mimo y paciencia para tu mejor amigo. Hecho con <span class="heart">♥</span> en Valencia.<br>
+      Fotos: Almudena Tormo Bolinches, Chic-can peluquería canina, Loli Perez, Lorena Lendinez, Marian Martin, María Dolores Egido, Sasheska Aguilera y Valencia 1974 (Google Maps).
+    </p>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FIJO MÓVIL ============ -->
+<a href="https://wa.me/34610386472" class="wa-fab">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.01c-.25.69-1.46 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.45.53-.15.15-.3.31-.13.6.17.3.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41z"/></svg>
+  Pedir cita por WhatsApp
+</a>
+
+<!-- ============ SCHEMA.ORG ============ -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"PetStore",
+  "name":"Chic Can Peluquería Canina",
+  "image":"fotos/foto-01.jpg",
+  "telephone":"+34610386472",
+  "url":"",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"C/ Ernesto Che Guevara, 12",
+    "addressLocality":"València",
+    "addressRegion":"Valencia",
+    "postalCode":"46920",
+    "addressCountry":"ES"
+  },
+  "aggregateRating":{
+    "@type":"AggregateRating",
+    "ratingValue":"4.9",
+    "reviewCount":"240",
+    "bestRating":"5",
+    "worstRating":"1"
+  }
+}
+</script>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

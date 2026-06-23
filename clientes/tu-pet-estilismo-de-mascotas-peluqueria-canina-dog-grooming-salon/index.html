@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu Pet · Estilismo de Mascotas — Peluquería canina y felina en Valencia</title>
+<meta name="description" content="Peluquería canina y felina en Quatre Carreres, Valencia. Trato cariñoso, profesional y delicado para tu mascota. 4,8★ con 124 reseñas. Reserva por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primario:#C6694A;
+    --primario-osc:#a4502f;
+    --secundario:#6F8F7A;
+    --secundario-osc:#52715e;
+    --crema:#FBF7F0;
+    --hueso:#fffdf8;
+    --tinta:#2E2A26;
+    --tinta-suave:#665e54;
+    --wa:#25a35a;
+    --wa-osc:#1c7d45;
+    --sombra:rgba(46,42,38,.10);
+    --linea:rgba(46,42,38,.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Karla',system-ui,sans-serif;
+    background:var(--crema);
+    color:var(--tinta);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,.serif{font-family:'Fraunces',Georgia,serif}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 22px}
+  section{position:relative}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:90;
+    background:rgba(251,247,240,.84);
+    backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid var(--linea);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .wordmark{display:flex;align-items:center;gap:11px;font-family:'Fraunces';font-weight:600;font-size:20px;letter-spacing:-.01em;color:var(--tinta)}
+  .wordmark .arc{width:38px;height:30px;flex:none}
+  .wordmark small{font-family:'Karla';font-weight:500;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-suave);display:block;line-height:1}
+  .wordmark .nm{display:flex;flex-direction:column;gap:3px;line-height:1}
+  .nav-links{display:none;gap:30px;font-size:15px;font-weight:500;color:var(--tinta-suave)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover{color:var(--primario)}
+  .btn-wa{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--wa);color:#fff;font-weight:700;font-size:14.5px;
+    padding:11px 18px;border-radius:40px;
+    box-shadow:0 4px 14px rgba(37,163,90,.26);
+    transition:transform .2s, box-shadow .2s, background .2s;
+  }
+  .btn-wa:hover{transform:translateY(-2px);background:var(--wa-osc);box-shadow:0 8px 22px rgba(37,163,90,.34)}
+  .btn-wa svg{width:18px;height:18px;flex:none}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:120px 0 56px;position:relative;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(circle at 84% 14%, rgba(198,105,74,.10), transparent 44%),
+      radial-gradient(circle at 8% 90%, rgba(111,143,122,.13), transparent 48%);
+  }
+  .hero .wrap{position:relative;z-index:2}
+  .hero-grid{display:grid;gap:40px;align-items:center}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--hueso);border:1px solid var(--linea);
+    color:var(--tinta-suave);font-weight:700;font-size:13px;letter-spacing:.01em;
+    padding:7px 15px;border-radius:40px;margin-bottom:24px;
+  }
+  .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--secundario);box-shadow:0 0 0 4px rgba(111,143,122,.18)}
+  .hero h1{
+    font-weight:600;
+    font-size:clamp(42px,8.4vw,76px);
+    line-height:1.02;
+    letter-spacing:-.025em;
+    color:var(--tinta);
+    margin-bottom:6px;
+  }
+  .hero h1 .ac{color:var(--primario)}
+  .hero h1 em{font-style:italic;font-weight:500;color:var(--secundario-osc)}
+  .hero-sub{
+    font-size:clamp(17px,2.2vw,20px);
+    color:var(--tinta-suave);max-width:520px;margin:24px 0 30px;
+    line-height:1.55;
+  }
+  .hero-sub b{color:var(--tinta);font-weight:700}
+  .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:15px}
+  .btn-wa.lg{font-size:16.5px;padding:16px 28px}
+  .hero-cta .micro{font-size:13.5px;color:var(--tinta-suave);display:flex;align-items:center;gap:7px}
+  .hero-cta .micro b{color:var(--primario-osc)}
+
+  .rating-row{display:flex;align-items:center;gap:14px;margin-top:30px;flex-wrap:wrap}
+  .rating-row .stars{color:var(--primario);font-size:18px;letter-spacing:2px}
+  .rating-row .rt{font-family:'Fraunces';font-weight:600;font-size:18px;color:var(--tinta)}
+  .rating-row .rt b{font-weight:700}
+  .rating-row .src{font-size:13px;color:var(--tinta-suave)}
+
+  /* hero art: foto + arco signature */
+  .hero-art{position:relative}
+  .hero-photo{
+    position:relative;border-radius:26px;overflow:hidden;
+    box-shadow:0 26px 52px rgba(46,42,38,.14);
+    border:1px solid var(--linea);
+  }
+  .hero-photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
+  .hero-arc{
+    position:absolute;top:-26px;left:-22px;width:130px;height:auto;z-index:-1;opacity:.85;
+  }
+  .hero-floater{
+    position:absolute;bottom:18px;left:50%;transform:translateX(-50%);
+    background:var(--hueso);border:1px solid var(--linea);
+    padding:11px 18px;border-radius:40px;box-shadow:0 10px 26px var(--sombra);
+    display:flex;align-items:center;gap:9px;white-space:nowrap;
+    font-size:13.5px;font-weight:700;color:var(--tinta);
+  }
+  .hero-floater .pin{width:9px;height:9px;border-radius:50%;background:var(--secundario)}
+  .hero-thumb{
+    position:absolute;top:18px;right:-16px;width:108px;height:108px;border-radius:20px;
+    overflow:hidden;border:4px solid var(--hueso);box-shadow:0 14px 30px var(--sombra);
+  }
+  .hero-thumb img{width:100%;height:100%;object-fit:cover}
+
+  /* ---------- divider strip ---------- */
+  .strip{background:var(--secundario);color:var(--crema);padding:15px 0;overflow:hidden;border-top:2px solid var(--secundario-osc);border-bottom:2px solid var(--secundario-osc)}
+  .ticker{display:flex;white-space:nowrap;animation:scroll 30s linear infinite;width:max-content}
+  .ticker span{font-family:'Fraunces';font-weight:500;font-style:italic;font-size:20px;letter-spacing:-.005em;padding:0 24px;display:inline-flex;align-items:center;gap:24px}
+  .ticker span::after{content:"·";opacity:.55;font-style:normal}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- generic section ---------- */
+  .sec{padding:72px 0}
+  .kicker{font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--primario);margin-bottom:13px}
+  .sec h2{font-weight:600;font-size:clamp(32px,5.6vw,52px);line-height:1.04;letter-spacing:-.025em;margin-bottom:18px}
+  .sec h2 em{font-style:italic;color:var(--secundario-osc);font-weight:500}
+  .lead{font-size:18px;color:var(--tinta-suave);max-width:560px;line-height:1.6}
+
+  /* ---------- servicios ---------- */
+  .svc-grid{display:grid;gap:20px;margin-top:42px}
+  .card{
+    background:var(--hueso);border:1px solid var(--linea);border-radius:24px;
+    padding:32px 28px;transition:transform .3s, box-shadow .3s, border-color .3s;position:relative;overflow:hidden;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px var(--sombra);border-color:rgba(198,105,74,.4)}
+  .card .ico-w{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+  .card .ico-w svg{width:30px;height:30px}
+  .card.t1 .ico-w{background:rgba(198,105,74,.13)}
+  .card.t2 .ico-w{background:rgba(111,143,122,.16)}
+  .card.t3 .ico-w{background:rgba(198,105,74,.13)}
+  .card h3{font-weight:600;font-size:24px;letter-spacing:-.01em;margin-bottom:10px}
+  .card p{font-size:15.5px;color:var(--tinta-suave);line-height:1.58}
+  .card .corner{position:absolute;top:-14px;right:-6px;font-size:80px;opacity:.06;font-family:'Fraunces';font-weight:600}
+
+  /* ---------- por qué ---------- */
+  .porque{background:var(--secundario-osc);color:var(--crema)}
+  .porque .kicker{color:#cdd9c8}
+  .porque h2{color:var(--hueso)}
+  .porque h2 em{color:#cdd9c8}
+  .porque .lead{color:rgba(255,253,248,.80)}
+  .ben-grid{display:grid;gap:24px;margin-top:44px}
+  .ben{display:flex;gap:16px;align-items:flex-start;padding:2px 0}
+  .ben .b-ico{width:46px;height:46px;flex:none;border-radius:13px;background:rgba(255,253,248,.12);display:flex;align-items:center;justify-content:center}
+  .ben .b-ico svg{width:24px;height:24px}
+  .ben h4{font-family:'Fraunces';font-weight:600;font-size:20px;margin-bottom:5px;color:var(--hueso)}
+  .ben p{font-size:15px;color:rgba(255,253,248,.76);line-height:1.55}
+
+  /* ---------- galería ---------- */
+  .gal-head{text-align:center;max-width:560px;margin:0 auto}
+  .gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
+  .gal-grid figure{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--linea);background:var(--hueso)}
+  .gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .gal-grid figure:hover img{transform:scale(1.05)}
+  .gal-grid .g-tall{aspect-ratio:3/4}
+  .gal-grid .g-sq{aspect-ratio:1/1}
+  .gal-grid .g-wide{grid-column:1/3;aspect-ratio:16/7}
+  .gal-cap{text-align:center;margin-top:24px;font-size:14.5px;color:var(--tinta-suave)}
+
+  /* ---------- reseñas ---------- */
+  .rev{background:#f4ecdf}
+  .rev-grid{display:grid;gap:20px;margin-top:42px}
+  .qcard{background:var(--hueso);border:1px solid var(--linea);border-radius:22px;padding:28px 26px;position:relative;display:flex;flex-direction:column}
+  .qcard .stars{color:var(--primario);font-size:15px;letter-spacing:3px;margin-bottom:14px}
+  .qcard blockquote{font-family:'Fraunces';font-weight:500;font-size:18px;line-height:1.45;color:var(--tinta);margin-bottom:22px;font-style:italic;flex:1}
+  .qcard .who{display:flex;align-items:center;gap:12px}
+  .qcard .av{width:44px;height:44px;border-radius:50%;background:var(--secundario);color:var(--crema);display:flex;align-items:center;justify-content:center;font-family:'Fraunces';font-weight:600;font-size:17px;flex:none}
+  .qcard.t .av{background:var(--primario)}
+  .qcard .who b{display:block;font-size:15px;font-weight:700;font-family:'Karla'}
+  .qcard .who span{font-size:12.5px;color:var(--tinta-suave)}
+
+  /* ---------- gancho ---------- */
+  .gancho{position:relative;overflow:hidden;background:var(--primario);color:var(--crema);border-radius:30px;padding:56px 32px;text-align:center;margin:0 auto}
+  .gancho::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 88% 12%,rgba(255,255,255,.13),transparent 42%)}
+  .gancho .in{position:relative;z-index:2}
+  .gancho .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,253,248,.18);border:1px solid rgba(255,253,248,.3);font-weight:700;font-size:13px;letter-spacing:.04em;padding:8px 16px;border-radius:40px;margin-bottom:20px}
+  .gancho h2{font-family:'Fraunces';font-weight:600;font-size:clamp(30px,6vw,50px);line-height:1.05;letter-spacing:-.025em;color:var(--hueso);margin-bottom:14px}
+  .gancho p{font-size:17px;color:rgba(255,253,248,.92);max-width:500px;margin:0 auto 28px;line-height:1.55}
+  .gancho .btn-wa{background:var(--hueso);color:var(--primario-osc);box-shadow:0 8px 24px rgba(0,0,0,.16)}
+  .gancho .btn-wa:hover{background:#fff;color:var(--primario-osc)}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:720px;margin:0 auto}
+  .faq-item{border-bottom:1px solid var(--linea)}
+  .faq-item summary{list-style:none;cursor:pointer;padding:22px 4px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:'Fraunces';font-weight:600;font-size:20px;color:var(--tinta)}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item .plus{width:30px;height:30px;flex:none;border-radius:50%;background:rgba(198,105,74,.13);display:flex;align-items:center;justify-content:center;color:var(--primario);font-size:20px;transition:transform .3s;font-family:'Karla'}
+  .faq-item[open] .plus{transform:rotate(45deg)}
+  .faq-item p{padding:0 4px 24px;font-size:16px;color:var(--tinta-suave);line-height:1.62;max-width:620px}
+
+  /* ---------- contacto ---------- */
+  .contacto{background:var(--secundario-osc);color:var(--crema);border-radius:30px;padding:50px 32px;display:grid;gap:34px}
+  .contacto .kicker{color:#cdd9c8}
+  .contacto h2{color:var(--hueso);font-weight:600;font-size:clamp(30px,6vw,48px);line-height:1.04;letter-spacing:-.025em;margin-bottom:16px}
+  .contacto p{color:rgba(255,253,248,.84);font-size:16.5px;margin-bottom:26px;line-height:1.55}
+  .contacto .info{display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
+  .contacto .info .row{display:flex;align-items:flex-start;gap:13px;font-size:15.5px;color:rgba(255,253,248,.92)}
+  .contacto .info .row svg{width:20px;height:20px;flex:none;color:#cdd9c8;margin-top:2px}
+  .contacto-photo{border-radius:20px;overflow:hidden;border:1px solid rgba(255,253,248,.18)}
+  .contacto-photo img{width:100%;aspect-ratio:5/4;object-fit:cover}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--tinta);color:rgba(251,247,240,.7);padding:50px 0 110px;text-align:center}
+  footer .wordmark{justify-content:center;color:var(--crema);margin-bottom:18px}
+  footer .wordmark small{color:rgba(251,247,240,.55)}
+  footer .links{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;font-size:14px;margin-bottom:22px}
+  footer .links a{color:rgba(251,247,240,.7)}
+  footer .links a:hover{color:var(--crema)}
+  footer .fine{font-size:12.5px;color:rgba(251,247,240,.45);line-height:1.7}
+  footer .heart{color:var(--primario)}
+  footer .credit{font-size:11.5px;color:rgba(251,247,240,.35);margin-top:14px}
+
+  /* ---------- WhatsApp fijo móvil ---------- */
+  .wa-fab{
+    position:fixed;left:16px;right:16px;bottom:16px;z-index:80;
+    background:var(--wa);color:#fff;font-weight:700;font-size:16px;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px;border-radius:18px;box-shadow:0 10px 30px rgba(37,163,90,.4);
+    animation:fabpop .5s ease both;
+  }
+  .wa-fab svg{width:22px;height:22px}
+  @keyframes fabpop{from{transform:translateY(80px);opacity:0}to{transform:none;opacity:1}}
+
+  /* ---------- responsive ---------- */
+  @media(min-width:760px){
+    .nav-links{display:flex}
+    .hero{padding:150px 0 70px}
+    .hero-grid{grid-template-columns:1.05fr .95fr;gap:54px}
+    .svc-grid{grid-template-columns:repeat(3,1fr)}
+    .ben-grid{grid-template-columns:1fr 1fr;gap:32px 44px}
+    .rev-grid{grid-template-columns:repeat(3,1fr)}
+    .contacto{grid-template-columns:1.05fr .95fr;align-items:center}
+    .wa-fab{display:none}
+    .gal-grid{grid-template-columns:repeat(4,1fr)}
+    .gal-grid .g-wide{grid-column:span 2;aspect-ratio:16/9}
+    footer{padding:60px 0 60px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .reveal{transition:none;opacity:1;transform:none}
+    .ticker{animation:none}
+    .gal-grid figure:hover img{transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="wordmark">
+      <svg class="arc" viewBox="0 0 76 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M6 54 A32 32 0 0 1 70 54" stroke="#C6694A" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M28 44c0-5 4-9 10-9s10 4 10 9c0 4-3 6-6 7-1 .4-2.6.6-4 .6s-3-.2-4-.6c-3-1-6-3-6-7z" fill="#6F8F7A"/>
+        <ellipse cx="30" cy="34" rx="2.6" ry="3.4" fill="#6F8F7A"/>
+        <ellipse cx="46" cy="34" rx="2.6" ry="3.4" fill="#6F8F7A"/>
+        <ellipse cx="24" cy="40" rx="2.2" ry="2.9" fill="#C6694A"/>
+        <ellipse cx="52" cy="40" rx="2.2" ry="2.9" fill="#C6694A"/>
+      </svg>
+      <span class="nm"><span>Tu&nbsp;Pet</span><small>Estilismo de mascotas</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#porque">Por qué</a>
+      <a href="#galeria">Galería</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="https://wa.me/34633751072" class="btn-wa">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.01c-.25.69-1.46 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.45.53-.15.15-.3.31-.13.6.17.3.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41z"/></svg>
+      Reservar
+    </a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header id="top" class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>Peluquería canina &amp; felina · Quatre Carreres, Valencia</span>
+        <h1>
+          Sale guapo.<br>
+          <span class="ac">Sale <em>feliz.</em></span>
+        </h1>
+        <p class="hero-sub">
+          En Tu Pet tratamos a tu mascota como tratarías tú a un miembro de la familia. 🐾<br>
+          <b>Mucho mimo, paciencia y mano experta</b> — incluso con los más delicados, mayores o asustadizos.
+        </p>
+        <div class="hero-cta">
+          <a href="https://wa.me/34633751072" class="btn-wa lg">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.01c-.25.69-1.46 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.45.53-.15.15-.3.31-.13.6.17.3.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41z"/></svg>
+            Pedir cita por WhatsApp
+          </a>
+          <span class="micro">📍 <b>Te respondemos hoy</b> mismo</span>
+        </div>
+        <div class="rating-row">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span class="rt"><b>4,8</b> / 5</span>
+          <span class="src">124 reseñas en Google</span>
+        </div>
+      </div>
+
+      <!-- ARTE HERO: foto real + arco signature -->
+      <div class="hero-art reveal">
+        <svg class="hero-arc" viewBox="0 0 130 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M8 84 A57 57 0 0 1 122 84" stroke="#C6694A" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M22 84 A43 43 0 0 1 108 84" stroke="#6F8F7A" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".7"/>
+        </svg>
+        <div class="hero-photo">
+          <img src="fotos/foto-08.jpg" alt="Perrito recién acicalado en Tu Pet, peluquería canina en Valencia" loading="eager" width="800" height="1000">
+        </div>
+        <div class="hero-thumb">
+          <img src="fotos/foto-02.jpg" alt="Mascota cuidada en Tu Pet" loading="lazy" width="216" height="216">
+        </div>
+        <span class="hero-floater"><span class="pin"></span>Trato cariñoso, palabra 🐶</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ TICKER ============ -->
+<div class="strip" aria-hidden="true">
+  <div class="ticker">
+    <span>Trato cariñoso</span><span>Mano experta</span><span>Perros y gatos</span><span>Mayores y delicados</span><span>Consejos para casa</span><span>Trato cariñoso</span><span>Mano experta</span><span>Perros y gatos</span><span>Mayores y delicados</span><span>Consejos para casa</span>
+  </div>
+</div>
+
+<!-- ============ SERVICIOS ============ -->
+<section id="servicios" class="sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Lo que hacemos</div>
+      <h2>Estilismo con <em>cabeza y cariño.</em></h2>
+      <p class="lead">Cada mascota es distinta. Adaptamos el baño, el corte y el ritmo a su carácter, su edad y su tipo de pelo. Sin prisas, sin sustos.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="card t1 reveal">
+        <span class="corner">01</span>
+        <div class="ico-w">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C6694A" stroke-width="1.6" aria-hidden="true"><path d="M7 3v6a5 5 0 0 0 10 0V3"/><path d="M12 14v7"/><path d="M9 21h6"/></svg>
+        </div>
+        <h3>Baño &amp; secado</h3>
+        <p>Baño con productos suaves a su medida, secado cuidadoso y un acabado limpio, peinado y oliendo de maravilla. Sale impecable.</p>
+      </div>
+      <div class="card t2 reveal">
+        <span class="corner">02</span>
+        <div class="ico-w">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6F8F7A" stroke-width="1.6" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.1 8.1 21 19"/><path d="M8.1 15.9 21 5"/></svg>
+        </div>
+        <h3>Corte &amp; estilismo</h3>
+        <p>Corte a tijera o máquina según su raza y lo que pida cada familia. Le damos su mejor versión sin que pase un mal rato.</p>
+      </div>
+      <div class="card t3 reveal">
+        <span class="corner">03</span>
+        <div class="ico-w">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C6694A" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3 1.2 6 4 3-2.8 4-4 6-4 3.5 0 5 4 3.5 7-2.5 4.5-9.5 9-9.5 9z"/></svg>
+        </div>
+        <h3>Mascotas delicadas</h3>
+        <p>Cachorros, mayores o nerviosos: vamos a su ritmo, con paciencia y mucho amor. Y te damos consejos para cuidarlo en casa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POR QUÉ ============ -->
+<section id="porque" class="porque sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Por qué Tu Pet</div>
+      <h2>Lo que tu mascota <em>te agradecerá.</em></h2>
+      <p class="lead">Porque venir a la peluquería no tiene por qué ser un mal trago — aquí muchos llegan encantados.</p>
+    </div>
+    <div class="ben-grid">
+      <div class="ben reveal">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#cdd9c8" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3 1.2 6 4 3-2.8 4-4 6-4 3.5 0 5 4 3.5 7-2.5 4.5-9.5 9-9.5 9z"/></svg></div>
+        <div><h4>Trato con cariño de verdad</h4><p>Amables, respetuosos y pacientes. Tratamos a cada perrito y gatito con el mimo que se merece.</p></div>
+      </div>
+      <div class="ben reveal">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#cdd9c8" stroke-width="1.6" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div><h4>Mano con los delicados</h4><p>Mascotas mayores, cachorros o asustadizos las atendemos con delicadeza y profesionalidad. A su ritmo.</p></div>
+      </div>
+      <div class="ben reveal">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#cdd9c8" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div><h4>Suele haber disponibilidad</h4><p>No tienes que esperar semanas. Escríbenos y cuadramos una cita que te venga bien, sin agobios.</p></div>
+      </div>
+      <div class="ben reveal">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#cdd9c8" stroke-width="1.6" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div><h4>Te damos consejos</h4><p>No solo lo dejamos guapo: te explicamos cómo cuidar su pelo y su piel para que dure entre visita y visita.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERÍA ============ -->
+<section id="galeria" class="sec">
+  <div class="wrap">
+    <div class="reveal gal-head">
+      <div class="kicker">Antes &amp; después</div>
+      <h2>Así salen <em>de aquí.</em></h2>
+    </div>
+    <div class="gal-grid reveal">
+      <figure class="g-tall"><img src="fotos/foto-01.jpg" alt="Mascota recién peinada en Tu Pet" loading="lazy"></figure>
+      <figure class="g-sq"><img src="fotos/foto-03.jpg" alt="Perro acicalado en la peluquería canina" loading="lazy"></figure>
+      <figure class="g-sq"><img src="fotos/foto-04.jpg" alt="Mascota cuidada con cariño en Tu Pet" loading="lazy"></figure>
+      <figure class="g-tall"><img src="fotos/foto-05.jpg" alt="Resultado de un corte en Tu Pet" loading="lazy"></figure>
+      <figure class="g-wide"><img src="fotos/foto-06.jpg" alt="Mascota feliz tras su sesión de estilismo" loading="lazy"></figure>
+      <figure class="g-sq"><img src="fotos/foto-07.jpg" alt="Detalle del acabado en Tu Pet" loading="lazy"></figure>
+    </div>
+    <p class="gal-cap">Fotos reales de clientes reales — todas saliendo guapas de Tu Pet. 🐾</p>
+  </div>
+</section>
+
+<!-- ============ RESEÑAS ============ -->
+<section id="resenas" class="rev sec">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto">
+      <div class="kicker" style="text-align:center">Lo dicen las familias</div>
+      <h2>4,8 estrellas, <em>y se nota.</em></h2>
+    </div>
+    <div class="rev-grid">
+      <div class="qcard reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>"Me ha encantado! Súper amables, respetuosos y lindos con los perritos. Han entendido que mi motita es delicada y mayor, y la han atendido con mucha delicadeza y profesionalidad."</blockquote>
+        <div class="who"><div class="av">C</div><div><b>Carla G.</b><span>Reseña en Google</span></div></div>
+      </div>
+      <div class="qcard t reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>"Tom y Fernando son maravillosos! Tengo un Pastor Australiano que desde pequeño está en sus manos, llega encantado y siempre lo reciben con muchísimo amor. Lo dejan súper bien cuidado y te dan consejos."</blockquote>
+        <div class="who"><div class="av">K</div><div><b>Katheryn Y.</b><span>Reseña en Google</span></div></div>
+      </div>
+      <div class="qcard reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>"¡Excelente servicio! Llevo a mi perrita regularmente y siempre salimos encantadas. El trato es súper profesional y, lo más importante, muy cariñoso con los animales. La dejan impecable."</blockquote>
+        <div class="who"><div class="av">R</div><div><b>Rosa C.</b><span>Reseña en Google</span></div></div>
+      </div>
+      <div class="qcard t reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>"Fantástico, el trato y la atención que recibimos fue simplemente magnífico, de 10. Era la primera vez que llevábamos a Haagen (cachorra de 6 meses) y fueron encantadores con ella y con nosotras."</blockquote>
+        <div class="who"><div class="av">P</div><div><b>pili n.</b><span>Reseña en Google</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GANCHO ============ -->
+<section class="sec" style="padding-top:20px">
+  <div class="wrap">
+    <div class="gancho reveal">
+      <div class="in">
+        <span class="pill">✨ Pide tu cita sin compromiso</span>
+        <h2>Tu mascota se merece su día de spa.</h2>
+        <p>Cuéntanos cómo es —su raza, su carácter, sus manías— y te proponemos la cita y el servicio que mejor le van. Te respondemos por WhatsApp en el día.</p>
+        <a href="https://wa.me/34633751072" class="btn-wa lg">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.01c-.25.69-1.46 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.45.53-.15.15-.3.31-.13.6.17.3.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41z"/></svg>
+          Pedir cita ahora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="sec">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto 40px">
+      <div class="kicker" style="text-align:center">Lo que sueles preguntarnos</div>
+      <h2>Dudas <em>rápidas.</em></h2>
+    </div>
+    <div class="faq reveal">
+      <details class="faq-item" open>
+        <summary>¿Atendéis también a gatos? <span class="plus">+</span></summary>
+        <p>Sí. Somos peluquería canina y felina: cuidamos tanto a perros como a gatos, adaptándonos al carácter de cada uno. 🐱🐶</p>
+      </details>
+      <details class="faq-item">
+        <summary>Mi perro es mayor / muy nervioso, ¿lo podéis atender? <span class="plus">+</span></summary>
+        <p>Por supuesto. Tenemos mucha mano con mascotas delicadas, mayores o asustadizas. Vamos a su ritmo, con paciencia y mucho cariño para que pase el mejor rato posible.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo pido cita? <span class="plus">+</span></summary>
+        <p>Un mensaje de WhatsApp y listo. Nos cuentas cómo es tu mascota y qué necesitáis, y te confirmamos día y hora. Solemos tener disponibilidad pronto.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Me dais consejos para cuidarlo en casa? <span class="plus">+</span></summary>
+        <p>Siempre. Además de dejarlo impecable, te explicamos cómo mantener su pelo y su piel entre visita y visita. Es de las cosas que más nos agradecen las familias.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Dónde estáis? <span class="plus">+</span></summary>
+        <p>En Carrer de les Brigades Internacionals, 2, en el barrio de Quatre Carreres (46013), Valencia. Escríbenos y te indicamos cómo llegar.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section id="contacto" class="sec" style="padding-top:10px">
+  <div class="wrap">
+    <div class="contacto reveal">
+      <div>
+        <div class="kicker">Hablemos</div>
+        <h2>Su cita te está esperando.</h2>
+        <p>Escríbenos por WhatsApp y cuéntanos de tu mascota. Te respondemos en el día, normalmente en minutos. ☕</p>
+        <div class="info">
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 16.5v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1 3.7 2 2 0 0 1 3 1.5h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L7 9.1a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>633 75 10 72</div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Carrer de les Brigades Internacionals, 2 · Quatre Carreres, 46013 València</div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m12 2 2.4 7.4H22l-6 4.5 2.3 7.1-6.3-4.6L5.7 21l2.3-7.1-6-4.5h7.6z"/></svg>4,8 ★ · 124 reseñas en Google</div>
+        </div>
+        <a href="https://wa.me/34633751072" class="btn-wa lg">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.01c-.25.69-1.46 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.45.53-.15.15-.3.31-.13.6.17.3.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41z"/></svg>
+          Escríbenos ahora
+        </a>
+      </div>
+      <div class="contacto-photo">
+        <img src="fotos/foto-06.jpg" alt="Mascota feliz tras su sesión en Tu Pet, Valencia" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="wordmark">
+      <svg class="arc" viewBox="0 0 76 60" fill="none" aria-hidden="true">
+        <path d="M6 54 A32 32 0 0 1 70 54" stroke="#C6694A" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M28 44c0-5 4-9 10-9s10 4 10 9c0 4-3 6-6 7-1 .4-2.6.6-4 .6s-3-.2-4-.6c-3-1-6-3-6-7z" fill="#6F8F7A"/>
+        <ellipse cx="30" cy="34" rx="2.6" ry="3.4" fill="#6F8F7A"/>
+        <ellipse cx="46" cy="34" rx="2.6" ry="3.4" fill="#6F8F7A"/>
+        <ellipse cx="24" cy="40" rx="2.2" ry="2.9" fill="#C6694A"/>
+        <ellipse cx="52" cy="40" rx="2.2" ry="2.9" fill="#C6694A"/>
+      </svg>
+      <span class="nm"><span>Tu&nbsp;Pet</span><small>Estilismo de mascotas</small></span>
+    </div>
+    <div class="links">
+      <a href="#servicios">Servicios</a>
+      <a href="#porque">Por qué</a>
+      <a href="#galeria">Galería</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="https://wa.me/34633751072">WhatsApp</a>
+    </div>
+    <p class="fine">
+      Tu Pet · Estilismo de Mascotas · Peluquería canina &amp; felina<br>
+      Carrer de les Brigades Internacionals, 2 · Quatre Carreres, 46013 València · 633 75 10 72<br>
+      Hecho con <span class="heart">♥</span> para que tu mascota salga guapa y feliz.
+    </p>
+    <p class="credit">Fotos: Ionica Nicoleta Andrei, Katheryn Yepez Borges, Nuria verger andreu y Tu Pet, Estilismo de Mascotas (Google Maps).</p>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FIJO MÓVIL ============ -->
+<a href="https://wa.me/34633751072" class="wa-fab" aria-label="Pedir cita por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.01c-.25.69-1.46 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.45.53-.15.15-.3.31-.13.6.17.3.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41z"/></svg>
+  Pedir cita por WhatsApp
+</a>
+
+<!-- ============ SCHEMA.ORG ============ -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"PetStore",
+  "name":"Tu Pet · Estilismo de Mascotas · Peluquería Canina & Felina",
+  "image":"fotos/foto-08.jpg",
+  "telephone":"+34633751072",
+  "url":"https://wa.me/34633751072",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Carrer de les Brigades Internacionals, 2",
+    "addressLocality":"València",
+    "addressRegion":"Valencia",
+    "postalCode":"46013",
+    "addressCountry":"ES"
+  },
+  "aggregateRating":{
+    "@type":"AggregateRating",
+    "ratingValue":"4.8",
+    "reviewCount":"124",
+    "bestRating":"5",
+    "worstRating":"1"
+  }
+}
+</script>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

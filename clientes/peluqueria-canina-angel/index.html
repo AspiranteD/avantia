@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peluquería Canina Ángel — Donde tu perro está en buenas manos (Valencia)</title>
+<meta name="description" content="Peluquería canina en l'Eixample, Valencia. David cuida a tu perro con paciencia, cariño y precio justo. 4,9★ con 118 reseñas. Pide cita por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coral:#E8836B;        /* primario, cálido */
+    --coral-osc:#cf6750;
+    --coral-claro:#fbe3db;
+    --teal:#2F7E80;         /* secundario, confianza */
+    --teal-osc:#266567;
+    --teal-claro:#dcecec;
+    --crema:#FBF6F2;        /* fondo cálido */
+    --crema-osc:#f1e7df;
+    --tinta:#243234;        /* texto */
+    --tinta-suave:#566164;
+    --blanco:#ffffff;
+    --wa:#25d366;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--crema);
+    color:var(--tinta);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .display{font-family:'Quicksand',sans-serif}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  img{display:block;max-width:100%}
+
+  /* ====== BARRA SUPERIOR ====== */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(251,246,242,.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--crema-osc);
+  }
+  .nav-in{
+    max-width:1080px;margin:0 auto;padding:12px 22px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .wordmark{
+    display:flex;align-items:center;gap:11px;
+    font-family:'Quicksand',sans-serif;font-weight:700;font-size:20px;
+    color:var(--teal);letter-spacing:-.01em;text-decoration:none;
+  }
+  .wordmark .paw{
+    width:36px;height:36px;flex:0 0 36px;
+    background:var(--coral);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .wordmark .paw svg{width:21px;height:21px}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--wa);color:#053c1c;
+    font-weight:700;font-size:14px;
+    padding:9px 16px;border-radius:40px;text-decoration:none;
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(37,211,102,.32)}
+  .nav-cta svg{width:17px;height:17px}
+
+  /* ====== signature: pulso / latido ====== */
+  .pulse-line{display:block;width:118px;height:26px;margin:0 0 22px}
+  .pulse-line path{
+    stroke:var(--coral);stroke-width:3;fill:none;
+    stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:240;stroke-dashoffset:240;
+    animation:beat 3s ease-in-out infinite;
+  }
+  @keyframes beat{
+    0%{stroke-dashoffset:240}
+    45%{stroke-dashoffset:0}
+    70%{stroke-dashoffset:0}
+    100%{stroke-dashoffset:-240}
+  }
+
+  /* ====== HERO ====== */
+  .hero{padding:122px 0 64px;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+  .hero-eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--teal-claro);color:var(--teal-osc);
+    font-weight:700;font-size:12.5px;letter-spacing:.03em;
+    padding:7px 15px;border-radius:40px;margin-bottom:22px;
+    text-transform:uppercase;
+  }
+  .hero-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.7)}}
+  .hero h1{
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:clamp(40px,8.5vw,76px);
+    line-height:1.02;letter-spacing:-.02em;
+    color:var(--tinta);margin-bottom:22px;
+  }
+  .hero h1 .coral{color:var(--coral)}
+  .hero h1 .teal{color:var(--teal)}
+  .hero-sub{
+    font-size:clamp(16px,2.2vw,20px);color:var(--tinta-suave);
+    max-width:520px;margin-bottom:30px;
+  }
+  .hero-sub b{color:var(--tinta);font-weight:700}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .btn-wa{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--wa);color:#053c1c;font-weight:700;font-size:16px;
+    padding:15px 26px;border-radius:48px;text-decoration:none;
+    box-shadow:0 10px 26px rgba(37,211,102,.3);
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .btn-wa:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(37,211,102,.42)}
+  .btn-wa svg{width:21px;height:21px}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--teal);font-weight:700;font-size:15px;
+    text-decoration:none;padding:14px 6px;
+    border-bottom:2px solid transparent;transition:border-color .2s;
+  }
+  .btn-ghost:hover{border-color:var(--coral)}
+  .hero-trust{
+    margin-top:30px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+    color:var(--tinta-suave);font-size:14px;
+  }
+  .stars{color:var(--coral);letter-spacing:2px;font-size:16px}
+  .hero-trust b{color:var(--tinta)}
+
+  .hero-media{position:relative}
+  .hero-media .shot{
+    border-radius:26px;overflow:hidden;aspect-ratio:4/5;
+    box-shadow:0 24px 60px rgba(36,50,52,.18);border:5px solid var(--blanco);
+  }
+  .hero-media .shot img{width:100%;height:100%;object-fit:cover}
+  .hero-media .shot-mini{
+    position:absolute;bottom:-22px;left:-18px;width:46%;
+    border-radius:20px;overflow:hidden;aspect-ratio:1/1;
+    border:5px solid var(--blanco);box-shadow:0 16px 40px rgba(36,50,52,.2);
+  }
+  .hero-media .shot-mini img{width:100%;height:100%;object-fit:cover}
+  .hero-media .badge{
+    position:absolute;top:16px;right:16px;z-index:3;
+    background:var(--blanco);border-radius:18px;padding:11px 15px;
+    box-shadow:0 12px 30px rgba(36,50,52,.16);
+    display:flex;align-items:center;gap:10px;
+  }
+  .hero-media .badge .num{font-family:'Quicksand';font-weight:700;font-size:22px;color:var(--coral);line-height:1}
+  .hero-media .badge small{display:block;font-size:11.5px;color:var(--tinta-suave);font-weight:500}
+
+  /* ====== STATS ====== */
+  .stats{background:var(--teal);color:var(--crema)}
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:38px 0;text-align:center}
+  .stat .n{font-family:'Quicksand';font-weight:700;font-size:clamp(30px,6vw,46px);color:#fff;line-height:1;display:inline-block;animation:statpulse 3.4s ease-in-out infinite}
+  @keyframes statpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+  .stat:nth-child(2) .n{animation-delay:.5s}
+  .stat:nth-child(3) .n{animation-delay:1s}
+  .stat .l{display:block;margin-top:8px;font-size:13.5px;color:#cfe5e5;font-weight:500}
+
+  /* ====== reveal ====== */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .75s ease,transform .75s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  section{position:relative}
+  .sec{padding:74px 0}
+  .kicker{
+    display:inline-block;font-family:'Quicksand';font-weight:700;font-size:13px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--coral);margin-bottom:14px;
+  }
+  .h2{
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:clamp(30px,5.4vw,52px);line-height:1.04;letter-spacing:-.02em;
+    color:var(--tinta);margin-bottom:18px;
+  }
+  .lead{font-size:18px;color:var(--tinta-suave);max-width:620px}
+
+  /* ====== SERVICIOS ====== */
+  .serv-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:42px}
+  .card{
+    background:var(--blanco);border:1px solid var(--crema-osc);
+    border-radius:22px;padding:30px 28px;
+    transition:transform .25s ease,box-shadow .25s ease,border-color .25s;
+  }
+  .card:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(47,126,128,.12);border-color:var(--teal)}
+  .card .ic{
+    width:58px;height:58px;border-radius:18px;
+    background:var(--teal-claro);
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+  }
+  .card:nth-child(2) .ic{background:var(--coral-claro)}
+  .card:nth-child(3) .ic{background:var(--crema-osc)}
+  .card .ic svg{width:30px;height:30px}
+  .card h3{font-family:'Quicksand';font-weight:700;font-size:23px;color:var(--tinta);margin-bottom:9px}
+  .card p{color:var(--tinta-suave);font-size:15.5px}
+  .card .price{display:inline-block;margin-top:15px;font-weight:700;font-size:14px;color:var(--coral)}
+
+  /* ====== EQUIPO / DAVID ====== */
+  .soy{background:var(--teal);color:var(--crema)}
+  .soy .h2{color:#fff}
+  .soy .kicker{color:#ffd2c5}
+  .soy-grid{display:grid;grid-template-columns:1fr;gap:42px;align-items:center}
+  .soy-photo{border-radius:24px;overflow:hidden;aspect-ratio:4/5;position:relative;border:5px solid rgba(255,255,255,.14);box-shadow:0 20px 50px rgba(0,0,0,.22)}
+  .soy-photo img{width:100%;height:100%;object-fit:cover}
+  .soy-photo .ph-tag{
+    position:absolute;top:14px;left:14px;
+    background:rgba(36,50,52,.78);color:var(--crema);
+    font-size:12px;font-weight:600;padding:6px 12px;border-radius:30px;
+    display:flex;align-items:center;gap:7px;
+  }
+  .soy-photo .ph-tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--coral)}
+  .soy-text p{color:#dcecec;font-size:17px;margin-bottom:18px}
+  .soy-text p b{color:#fff}
+  .firma{
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:28px;color:#ffd2c5;margin-top:6px;
+  }
+  .firma small{display:block;font-family:'DM Sans';font-weight:500;font-size:14px;color:#a9cccd;margin-top:4px}
+
+  /* ====== POR QUE ====== */
+  .why{background:var(--crema-osc)}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:42px}
+  .bene{
+    display:flex;gap:18px;align-items:flex-start;
+    background:var(--blanco);border-radius:18px;padding:24px 22px;
+    border:1px solid #ece0d4;transition:transform .25s ease,box-shadow .25s ease;
+  }
+  .bene:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(47,126,128,.1)}
+  .bene .chk{
+    flex:0 0 42px;width:42px;height:42px;border-radius:50%;
+    background:var(--coral);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .bene .chk svg{width:22px;height:22px}
+  .bene h4{font-family:'Quicksand';font-weight:700;font-size:19px;margin-bottom:4px;color:var(--tinta)}
+  .bene p{color:var(--tinta-suave);font-size:15px}
+
+  /* ====== GALERIA ====== */
+  .gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:40px}
+  .gal-grid .ph{
+    border-radius:18px;aspect-ratio:1/1;position:relative;overflow:hidden;
+    border:1px solid var(--crema-osc);transition:transform .3s ease,box-shadow .3s ease;
+  }
+  .gal-grid .ph img{width:100%;height:100%;object-fit:cover}
+  .gal-grid .ph:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(36,50,52,.16)}
+  .gal-grid .ph:nth-child(3){grid-column:span 2;aspect-ratio:2/1}
+
+  /* ====== RESEÑAS ====== */
+  .res{background:var(--teal)}
+  .res .kicker{color:#ffd2c5}
+  .res .h2{color:#fff}
+  .res-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:42px}
+  .quote{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+    border-radius:22px;padding:28px 26px;transition:transform .25s ease;
+  }
+  .quote:hover{transform:translateY(-2px)}
+  .quote .stars{font-size:17px;margin-bottom:13px;display:block}
+  .quote p{font-family:'DM Sans';font-size:16.5px;line-height:1.5;color:#fff;margin-bottom:20px}
+  .quote .who{display:flex;align-items:center;gap:12px}
+  .quote .av{
+    width:44px;height:44px;border-radius:50%;flex:0 0 44px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Quicksand';font-weight:700;font-size:18px;color:#fff;
+  }
+  .av1{background:var(--coral)}.av2{background:#8db8b9}.av3{background:var(--coral-osc)}.av4{background:#6fa3a4}.av5{background:#e09a6f}
+  .quote .who b{display:block;color:#fff;font-size:15px;font-weight:700}
+  .quote .who small{color:#a9cccd;font-size:13px}
+
+  /* ====== CITA / CONTACTO ====== */
+  .cont{background:var(--crema)}
+  .cont-grid{display:grid;grid-template-columns:1fr;gap:34px;margin-top:36px;align-items:start}
+  .cont-info p{color:var(--tinta-suave);font-size:17px;margin-bottom:24px;max-width:440px}
+  .cont-row{display:flex;align-items:center;gap:14px;margin-bottom:18px;color:var(--tinta);font-size:16px}
+  .cont-row .ci{
+    flex:0 0 46px;width:46px;height:46px;border-radius:14px;
+    background:var(--teal-claro);display:flex;align-items:center;justify-content:center;
+  }
+  .cont-row .ci svg{width:22px;height:22px}
+  .cont-row b{display:block;color:var(--tinta);font-weight:700}
+  .cont-row small{color:var(--tinta-suave)}
+  .cont-card{
+    background:var(--coral);color:#fff;border-radius:28px;
+    padding:42px 34px;position:relative;overflow:hidden;
+  }
+  .cont-card::before{
+    content:"";position:absolute;width:240px;height:240px;border-radius:50%;
+    background:rgba(255,255,255,.1);top:-90px;right:-70px;
+  }
+  .cont-card .tag{
+    display:inline-block;background:rgba(255,255,255,.22);
+    font-family:'Quicksand';font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+    padding:7px 15px;border-radius:30px;margin-bottom:18px;position:relative;
+  }
+  .cont-card h3{font-family:'Quicksand';font-weight:700;font-size:clamp(26px,4.4vw,38px);line-height:1.06;margin-bottom:14px;letter-spacing:-.01em;position:relative}
+  .cont-card p{font-size:16px;opacity:.95;margin-bottom:26px;position:relative}
+  .cont-card .btn-wa{background:#fff;color:var(--coral-osc);box-shadow:0 10px 26px rgba(0,0,0,.18);position:relative}
+  .cont-card .btn-wa:hover{box-shadow:0 16px 34px rgba(0,0,0,.26)}
+  .cont-card .btn-wa svg{fill:var(--coral-osc)}
+
+  /* ====== FOOTER ====== */
+  footer{background:var(--tinta);color:#9fb1b3;padding:48px 0 110px}
+  .foot-in{display:flex;flex-direction:column;gap:22px}
+  .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:22px;align-items:center}
+  .foot-mark{display:flex;align-items:center;gap:11px;font-family:'Quicksand';font-weight:700;font-size:19px;color:var(--crema)}
+  .foot-mark .paw{width:34px;height:34px;background:var(--coral);border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .foot-mark .paw svg{width:19px;height:19px}
+  .foot-links{display:flex;gap:22px;flex-wrap:wrap}
+  .foot-links a{color:#9fb1b3;text-decoration:none;font-size:14px;transition:color .2s}
+  .foot-links a:hover{color:var(--coral)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;font-size:12.5px;color:#74898b;line-height:1.7}
+
+  /* ====== WHATSAPP FIJO MOVIL ====== */
+  .wa-fixed{
+    position:fixed;left:18px;right:18px;bottom:18px;z-index:120;
+    background:var(--wa);color:#053c1c;font-weight:700;font-size:16px;
+    padding:16px;border-radius:46px;text-decoration:none;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    box-shadow:0 12px 30px rgba(37,211,102,.4);
+    animation:bob 2.6s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+  .wa-fixed svg{width:22px;height:22px}
+
+  /* ====== RESPONSIVE ====== */
+  @media(min-width:760px){
+    .hero-grid{grid-template-columns:1.05fr .95fr;gap:54px}
+    .serv-grid{grid-template-columns:repeat(3,1fr)}
+    .soy-grid{grid-template-columns:.85fr 1.15fr;gap:54px}
+    .why-grid{grid-template-columns:repeat(2,1fr)}
+    .res-grid{grid-template-columns:repeat(3,1fr)}
+    .gal-grid{grid-template-columns:repeat(3,1fr)}
+    .gal-grid .ph:nth-child(3){grid-column:span 2}
+    .cont-grid{grid-template-columns:1fr 1fr}
+    .wa-fixed{display:none}
+  }
+  @media(max-width:759px){
+    .nav-cta span{display:none}
+    .nav-cta{padding:10px;border-radius:50%}
+    .hero-media{margin-bottom:14px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important}
+    .reveal{opacity:1;transform:none}
+    .pulse-line path{stroke-dashoffset:0}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== BARRA SUPERIOR ===== -->
+<nav class="nav">
+  <div class="nav-in">
+    <a href="#" class="wordmark">
+      <span class="paw"><svg viewBox="0 0 24 24" fill="#fff"><circle cx="7" cy="8" r="2.1"/><circle cx="12" cy="6" r="2.1"/><circle cx="17" cy="8" r="2.1"/><circle cx="19.5" cy="13" r="1.8"/><path d="M12 11c-3 0-5 2.4-5 4.6 0 1.7 1.4 2.4 2.6 2.4 1 0 1.6-.4 2.4-.4s1.4.4 2.4.4c1.2 0 2.6-.7 2.6-2.4C17 13.4 15 11 12 11z"/></svg></span>
+      Peluquería&nbsp;Canina&nbsp;Ángel
+    </a>
+    <a href="https://wa.me/34722700011" class="nav-cta">
+      <svg viewBox="0 0 24 24" fill="#053c1c"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+      <span>Pedir cita</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-eyebrow"><span class="dot"></span> Peluquería canina · l'Eixample, València</div>
+        <svg class="pulse-line" viewBox="0 0 118 26" aria-hidden="true"><path d="M2 13h22l6-9 8 18 7-13 5 5h12l4-5 6 9h35"/></svg>
+        <h1 class="display">Tu perro sale <span class="coral">guapo</span>,<br>y vuelve <span class="teal">tranquilo.</span></h1>
+        <p class="hero-sub">En la peluquería de <b>David</b> tu peludo no es uno más. Paciencia con los miedosos, mano firme con los nudos y un trato cercano que se nota desde el primer corte. <b>Precio justo y resultados que enamoran.</b></p>
+        <div class="hero-actions">
+          <a href="https://wa.me/34722700011" class="btn-wa">
+            <svg viewBox="0 0 24 24" fill="#053c1c"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+            Pide cita por WhatsApp
+          </a>
+          <a href="#servicios" class="btn-ghost">Ver lo que hace David →</a>
+        </div>
+        <div class="hero-trust">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <div><b>4,9 de 5</b> · 118 reseñas reales en Google</div>
+        </div>
+      </div>
+      <div class="hero-media reveal">
+        <div class="badge">
+          <span class="num">4,9★</span>
+          <small>118 familias<br>contentas</small>
+        </div>
+        <div class="shot">
+          <img src="fotos/foto-01.jpg" alt="Perro recién peluqueado en Peluquería Canina Ángel, Valencia" loading="eager">
+        </div>
+        <div class="shot-mini">
+          <img src="fotos/foto-02.jpg" alt="Detalle del cuidado y acabado de un perro en la peluquería" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== STATS ===== -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat"><span class="n">4,9★</span><span class="l">Valoración media</span></div>
+      <div class="stat"><span class="n">118</span><span class="l">Reseñas en Google</span></div>
+      <div class="stat"><span class="n">100%</span><span class="l">Trato con cariño</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICIOS ===== -->
+<section class="sec" id="servicios">
+  <div class="wrap">
+    <span class="kicker reveal">Lo que hace David</span>
+    <h2 class="h2 reveal">Un cuidado<br>de la cabeza al rabo.</h2>
+    <p class="lead reveal">Cada perro es distinto, y aquí se nota. David adapta el trabajo a tu peludo —su pelo, su carácter y sus manías— para que salga cómodo y guapo, sin pasarlo mal.</p>
+    <div class="serv-grid">
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2F7E80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4.5l5 5-9.5 9.5-5 0 0-5z"/><path d="M12.5 6.5l5 5"/></svg></div>
+        <h3 class="display">Corte &amp; arreglo</h3>
+        <p>Corte a tijera o máquina según tu raza, con la paciencia justa para que tu perro no se estrese. Sale impecable y reconocible.</p>
+        <span class="price">Precio ajustado y serio</span>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#cf6750" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11a6 6 0 0 1 12 0c0 4-3 8-6 8s-6-4-6-8z"/><path d="M9 6c0-1.5 1.3-2.5 3-2.5"/></svg></div>
+        <h3 class="display">Baño &amp; deslanado</h3>
+        <p>Baño a fondo, secado y eliminación de nudos y pelo muerto. Tu peludo vuelve a casa suave, limpio y oliendo de maravilla.</p>
+        <span class="price">A medida de tu perro</span>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#7a5a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 15s1 1.5 2.5 1.5S14.5 15 14.5 15"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/></svg></div>
+        <h3 class="display">Mimo a los miedosos</h3>
+        <p>¿Tu perro es mayor o se asusta? David es paciente y cariñoso de verdad. Va a su ritmo para que la peluquería deje de dar miedo.</p>
+        <span class="price">Sin prisas, con calma</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DAVID ===== -->
+<section class="sec soy">
+  <div class="wrap">
+    <div class="soy-grid">
+      <div class="soy-photo reveal">
+        <span class="ph-tag">En la peluquería</span>
+        <img src="fotos/foto-03.jpg" alt="David trabajando con un perro en Peluquería Canina Ángel" loading="lazy">
+      </div>
+      <div class="soy-text reveal">
+        <span class="kicker">Detrás de la tijera</span>
+        <h2 class="h2">David, y su forma<br>de tratar a los perros.</h2>
+        <p>Quien viene una vez, repite. No es casualidad: David une <b>buen hacer</b> con una empatía real, tanto con los animales como con las personas. Lo dicen sus clientes, no nosotros.</p>
+        <p>Da igual si tu perro es <b>cachorro, mayor o miedoso</b>: encuentra la manera de que esté tranquilo y salga precioso. Y todo con un precio justo y un trato serio del primer minuto al último.</p>
+        <div class="firma display">— David
+          <small>Peluquería Canina Ángel · l'Eixample, València</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POR QUE ===== -->
+<section class="sec why">
+  <div class="wrap">
+    <span class="kicker reveal">Por qué te va a gustar</span>
+    <h2 class="h2 reveal">Tu perro en<br>buenas manos.</h2>
+    <div class="why-grid">
+      <div class="bene reveal">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>
+        <div><h4 class="display">Paciencia de verdad</h4><p>Con los perros mayores, los miedosos y los movidos. David se toma el tiempo que haga falta.</p></div>
+      </div>
+      <div class="bene reveal">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>
+        <div><h4 class="display">Precio justo y claro</h4><p>"El precio ajustado y serio", como dicen sus clientes. Sabes lo que pagas, sin sorpresas.</p></div>
+      </div>
+      <div class="bene reveal">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>
+        <div><h4 class="display">Resultados que enamoran</h4><p>Tu peludo sale guapo y reconocible. Los "ha quedado preciosa" se repiten reseña tras reseña.</p></div>
+      </div>
+      <div class="bene reveal">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>
+        <div><h4 class="display">Cita fácil por WhatsApp</h4><p>Escribe, cuenta lo que necesita tu perro y reservamos hueco. Sin llamadas eternas ni esperas.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERIA ===== -->
+<section class="sec">
+  <div class="wrap">
+    <span class="kicker reveal">El día a día</span>
+    <h2 class="h2 reveal">Caras felices,<br>fotos reales.</h2>
+    <p class="lead reveal">Algunos de los peludos que pasan por la peluquería de David. Estas fotos son de verdad, de su Google.</p>
+    <div class="gal-grid reveal">
+      <div class="ph"><img src="fotos/foto-04.jpg" alt="Perro peluqueado en Peluquería Canina Ángel" loading="lazy"></div>
+      <div class="ph"><img src="fotos/foto-05.jpg" alt="Resultado de un arreglo canino en la peluquería" loading="lazy"></div>
+      <div class="ph"><img src="fotos/foto-06.jpg" alt="Perro tras su sesión de peluquería en Valencia" loading="lazy"></div>
+      <div class="ph"><img src="fotos/foto-07.jpg" alt="Acabado y cuidado del pelo de un perro" loading="lazy"></div>
+      <div class="ph"><img src="fotos/foto-08.jpg" alt="Otro peludo contento en la Peluquería Canina Ángel" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESEÑAS ===== -->
+<section class="sec res">
+  <div class="wrap">
+    <span class="kicker reveal">Lo dicen ellos</span>
+    <h2 class="h2 reveal">Palabra de<br>quien ya viene.</h2>
+    <div class="res-grid">
+      <div class="quote reveal">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"Soy el amo de Candela. Desde el primer momento vi a un profesional y a un ser humano todavía mejor. Perfecto, y el precio ajustado y serio."</p>
+        <div class="who"><span class="av av1">J</span><div><b>Joaquín</b><small>papá de Candela 🐕</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"Excelente! Primera vez en la peluquería con Chloé, David es un genio! Mi perrita ha quedado preciosa!! Volveremos, gracias 😊"</p>
+        <div class="who"><span class="av av2">Y</span><div><b>Yamile B.</b><small>mamá de Chloé 🐩</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"David es lo mejor! Muy paciente y cariñoso con mi perrita, que ya es mayor y a veces es miedosa. El precio justo y los resultados increíbles!"</p>
+        <div class="who"><span class="av av3">L</span><div><b>Laura L.</b><small>mamá de una peluda mayor 🐾</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"Excelente, mejor imposible. Muy paciente y muy agradable. Ya nos quedamos con David para siempre, sin dudas. El resultado final, genial :)"</p>
+        <div class="who"><span class="av av4">K</span><div><b>Kathleen T.</b><small>clienta fiel 🐕</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"David es el mejor. Los conozco desde hace años. Trabaja de maravilla y se le nota que quiere a los perros. Hasta el mes que viene, David!!!!"</p>
+        <div class="who"><span class="av av5">L</span><div><b>lola S.</b><small>mamá de Coco 🐕</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CITA / CONTACTO ===== -->
+<section class="sec cont" id="contacto">
+  <div class="wrap">
+    <span class="kicker reveal">Pide tu cita</span>
+    <h2 class="h2 reveal">Reserva el próximo<br>cambio de look.</h2>
+    <div class="cont-grid">
+      <div class="cont-info reveal">
+        <p>Estamos en l'Eixample, en València. Escríbele a David por WhatsApp, cuéntale cómo es tu perro y buscáis el mejor hueco para él.</p>
+        <div class="cont-row"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#2F7E80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>Carrer d'Alexandre VI, 3</b><small>L'Eixample, 46005 València</small></div></div>
+        <div class="cont-row"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#2F7E80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Cita previa por WhatsApp</b><small>Te responde David en persona</small></div></div>
+        <div class="cont-row"><span class="ci"><svg viewBox="0 0 24 24" fill="#2F7E80"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4z"/></svg></span><div><b>722 70 00 11</b><small>WhatsApp · respondo yo mismo</small></div></div>
+      </div>
+      <div class="cont-card reveal">
+        <span class="tag">⭐ 4,9 · 118 reseñas</span>
+        <h3 class="display">Tu perro se merece a David.</h3>
+        <p>Un mensaje y listo. Cuéntanos qué necesita tu peludo y le damos cita lo antes posible.</p>
+        <a href="https://wa.me/34722700011" class="btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+          Pedir cita ahora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap foot-in">
+    <div class="foot-top">
+      <div class="foot-mark">
+        <span class="paw"><svg viewBox="0 0 24 24" fill="#fff"><circle cx="7" cy="8" r="2.1"/><circle cx="12" cy="6" r="2.1"/><circle cx="17" cy="8" r="2.1"/><circle cx="19.5" cy="13" r="1.8"/><path d="M12 11c-3 0-5 2.4-5 4.6 0 1.7 1.4 2.4 2.6 2.4 1 0 1.6-.4 2.4-.4s1.4.4 2.4.4c1.2 0 2.6-.7 2.6-2.4C17 13.4 15 11 12 11z"/></svg></span>
+        Peluquería Canina Ángel
+      </div>
+      <div class="foot-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Cita</a>
+        <a href="https://wa.me/34722700011">WhatsApp</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © 2026 Peluquería Canina Ángel · Carrer d'Alexandre VI, 3, l'Eixample, 46005 València · 4,9★ con 118 reseñas en Google.<br>
+      Fotos: David Barato Sanchis, María Samokovska, Moises Martinez, Peluquería Canina Ángel (Google Maps). 🐾
+    </div>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FIJO MOVIL ===== -->
+<a href="https://wa.me/34722700011" class="wa-fixed">
+  <svg viewBox="0 0 24 24" fill="#053c1c"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+  Pide cita por WhatsApp
+</a>
+
+<!-- ===== SCHEMA.ORG ===== -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"PetStore",
+  "name":"Peluquería Canina Ángel",
+  "description":"Peluquería canina en l'Eixample, Valencia. Corte, baño y deslanado con trato cercano, paciencia y precio justo.",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Carrer d'Alexandre VI, 3",
+    "addressLocality":"València",
+    "addressRegion":"Valencia",
+    "postalCode":"46005",
+    "addressCountry":"ES"
+  },
+  "telephone":"+34722700011",
+  "url":"https://wa.me/34722700011",
+  "aggregateRating":{
+    "@type":"AggregateRating",
+    "ratingValue":"4.9",
+    "reviewCount":"118",
+    "bestRating":"5"
+  }
+}
+</script>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){
+        setTimeout(()=>e.target.classList.add('in'), (i%4)*90);
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

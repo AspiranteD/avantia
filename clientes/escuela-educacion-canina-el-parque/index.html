@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Escuela Educación Canina El Parque — Educación canina honesta en Puçol, Valencia</title>
+<meta name="description" content="Educación y adiestramiento canino en Puçol (Valencia) con Moisés y su equipo. Refuerzo positivo, clases claras y residencia canina. 4,9★ con 101 reseñas en Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;800;900&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --amarillo:#FFE74C;
+    --amarillo-osc:#E0C300;
+    --naranja:#E8593B;
+    --negro:#111111;
+    --negro-soft:#1E1B18;
+    --crema:#F5F0E1;
+    --crema-osc:#E9E1CC;
+    --tinta:#2A2622;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Archivo',sans-serif;
+    background:var(--crema);
+    color:var(--negro);
+    line-height:1.55;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;line-height:0.92;letter-spacing:-0.01em}
+  .hand{font-family:'Caveat',cursive;text-transform:none;letter-spacing:0}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:100%;max-width:1100px;margin:0 auto;padding:0 22px}
+  .wa-btn{
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--negro);color:var(--amarillo);
+    font-family:'Archivo',sans-serif;font-weight:800;
+    padding:14px 22px;border-radius:50px;font-size:15px;
+    letter-spacing:0.01em;border:3px solid var(--negro);
+    transition:transform .18s ease, background .18s ease, color .18s ease;
+    cursor:pointer;
+  }
+  .wa-btn:hover{transform:translateY(-3px) rotate(-1deg);background:var(--amarillo);color:var(--negro)}
+  .wa-btn:focus-visible{outline:3px solid var(--naranja);outline-offset:3px}
+  .wa-btn svg{width:20px;height:20px;flex-shrink:0}
+
+  /* ---------- TOPBAR ---------- */
+  .topbar{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(245,240,225,0.92);backdrop-filter:blur(8px);
+    border-bottom:3px solid var(--negro);
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .wordmark{display:flex;align-items:center;gap:10px;font-family:'Anton',sans-serif;font-size:19px;letter-spacing:0.02em}
+  .wordmark .dot{
+    width:30px;height:30px;background:var(--amarillo);border:3px solid var(--negro);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .wordmark .dot svg{width:17px;height:17px}
+  .wordmark span small{display:block;font-family:'Archivo';font-weight:600;text-transform:uppercase;font-size:8px;letter-spacing:0.22em;color:var(--tinta);line-height:1;margin-top:2px}
+  .topbar .wa-btn{padding:9px 16px;font-size:13px}
+  .topbar .wa-btn .lbl-long{display:none}
+  @media(min-width:560px){.topbar .wa-btn .lbl-long{display:inline}.topbar .wa-btn .lbl-short{display:none}}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;padding:104px 0 0;overflow:hidden;
+    background:var(--amarillo);
+    border-bottom:4px solid var(--negro);
+  }
+  .hero .paws{position:absolute;inset:0;pointer-events:none;opacity:0.12}
+  .hero-inner{position:relative;z-index:2}
+  .hero-grid{display:grid;gap:34px;align-items:center;padding-bottom:54px}
+  @media(min-width:880px){.hero-grid{grid-template-columns:1.08fr 0.92fr}}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--negro);color:var(--amarillo);
+    font-weight:800;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;
+    padding:7px 14px;border-radius:50px;margin-bottom:22px;
+  }
+  .eyebrow .blink{width:8px;height:8px;border-radius:50%;background:var(--amarillo);animation:blink 1.4s infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0.25}}
+  .hero h1{font-size:clamp(46px,12vw,96px);margin-bottom:8px}
+  .hero h1 .line{display:block;overflow:hidden}
+  .hero h1 .line span{display:block;animation:riseUp .9s cubic-bezier(.2,.7,.2,1) both}
+  .hero h1 .l2 span{animation-delay:.12s}
+  .hero h1 .l3 span{animation-delay:.24s}
+  .hero h1 .hl{position:relative;display:inline-block}
+  .hero h1 .hl::after{
+    content:"";position:absolute;left:-4px;right:-4px;bottom:7px;height:0.34em;z-index:-1;
+    background:var(--crema);transform:skewX(-7deg);
+    animation:wipe .6s ease both .9s;
+  }
+  @keyframes wipe{from{transform:skewX(-7deg) scaleX(0);transform-origin:left}to{transform:skewX(-7deg) scaleX(1)}}
+  @keyframes riseUp{from{transform:translateY(105%)}to{transform:translateY(0)}}
+  .hero p.sub{
+    font-size:18px;font-weight:500;max-width:480px;margin:24px 0 28px;color:var(--tinta);line-height:1.5;
+    animation:fadeUp .8s ease both .5s;
+  }
+  .hero .cta-row{display:flex;flex-wrap:wrap;gap:13px;align-items:center;animation:fadeUp .8s ease both .7s}
+  .hero .cta-note{font-family:'Caveat';font-size:21px;font-weight:700;color:var(--negro);transform:rotate(-3deg)}
+  .hero-rating{margin-top:22px;display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:14px;color:var(--negro);animation:fadeUp .8s ease both .85s}
+  .hero-rating .rstars{color:var(--naranja);letter-spacing:1px;font-size:16px}
+  .hero-tags{margin-top:30px;display:flex;flex-wrap:wrap;gap:9px;animation:fadeUp .8s ease both .95s}
+  .hero-tags span{
+    background:transparent;border:2.5px solid var(--negro);border-radius:50px;
+    font-weight:800;font-size:12px;padding:7px 14px;text-transform:uppercase;letter-spacing:0.04em;
+  }
+  @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+  /* hero photo stack */
+  .hero-photos{position:relative;animation:fadeUp 1s ease both .4s}
+  .hero-photos .hp-main{
+    border:3px solid var(--negro);border-radius:20px;overflow:hidden;
+    box-shadow:12px 12px 0 var(--negro);aspect-ratio:4/5;
+  }
+  .hero-photos .hp-main img{width:100%;height:100%;object-fit:cover}
+  .hero-photos .hp-sub{
+    position:absolute;bottom:-22px;left:-18px;width:42%;
+    border:3px solid var(--negro);border-radius:16px;overflow:hidden;
+    box-shadow:7px 7px 0 var(--negro);aspect-ratio:1;background:var(--crema);
+    transform:rotate(-4deg);
+  }
+  .hero-photos .hp-sub img{width:100%;height:100%;object-fit:cover}
+  .hero-photos .hp-badge{
+    position:absolute;top:-16px;right:-10px;z-index:3;
+    background:var(--naranja);color:var(--crema);border:3px solid var(--negro);
+    font-family:'Anton';font-size:14px;letter-spacing:0.04em;
+    padding:9px 14px;border-radius:50px;transform:rotate(5deg);box-shadow:4px 4px 0 var(--negro);
+  }
+  @media(max-width:879px){
+    .hero-photos{max-width:420px;margin:6px auto 30px}
+    .hero-photos .hp-sub{width:38%;left:-8px;bottom:-16px}
+  }
+
+  /* ---------- MARQUEE ---------- */
+  .marquee{background:var(--negro);color:var(--amarillo);overflow:hidden;border-bottom:4px solid var(--negro);padding:13px 0}
+  .marquee-track{display:flex;gap:0;white-space:nowrap;animation:scroll 24s linear infinite;width:max-content}
+  .marquee-track span{font-family:'Anton';font-size:23px;letter-spacing:0.02em;padding:0 22px;display:flex;align-items:center;gap:22px}
+  .marquee-track span::after{content:"";width:11px;height:11px;background:var(--amarillo);border-radius:50%}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:66px 0}
+  .tag-label{
+    display:inline-block;font-weight:800;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;
+    color:var(--negro);background:var(--amarillo);padding:5px 12px;border:2.5px solid var(--negro);border-radius:6px;margin-bottom:18px;
+  }
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.hero *{animation:none!important}}
+
+  /* ---------- QUIEN SOY / MI METODO ---------- */
+  .soy{background:var(--crema)}
+  .soy-grid{display:grid;gap:34px}
+  @media(min-width:820px){.soy-grid{grid-template-columns:0.85fr 1.15fr;align-items:center}}
+  .soy-photo{
+    position:relative;border:3px solid var(--negro);border-radius:18px;
+    aspect-ratio:4/5;overflow:hidden;box-shadow:10px 10px 0 var(--negro);
+  }
+  .soy-photo img{width:100%;height:100%;object-fit:cover}
+  .soy-photo .firma-tag{
+    position:absolute;bottom:12px;left:12px;font-family:'Caveat';font-weight:700;font-size:24px;
+    background:var(--amarillo);color:var(--negro);border:2.5px solid var(--negro);
+    border-radius:50px;padding:4px 16px;transform:rotate(-2deg);
+  }
+  .soy h2{font-size:clamp(36px,8vw,62px);margin-bottom:18px}
+  .soy h2 em{font-style:normal;color:var(--naranja);-webkit-text-stroke:1px var(--negro)}
+  .soy p{font-size:17px;margin-bottom:16px;color:var(--tinta);font-weight:500;max-width:560px}
+  .soy .firma{font-family:'Caveat';font-size:32px;font-weight:700;margin-top:8px;color:var(--negro)}
+  .soy .credos{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px}
+  .soy .credos b{display:inline-flex;align-items:center;gap:7px;font-weight:800;font-size:13px;background:var(--negro);color:var(--crema);padding:8px 14px;border-radius:50px}
+
+  /* ---------- SERVICIOS / MI METODO ---------- */
+  .serv{background:var(--negro);color:var(--crema)}
+  .serv .tag-label{background:var(--amarillo)}
+  .serv h2{font-size:clamp(36px,8vw,66px);color:var(--crema);margin-bottom:10px}
+  .serv h2 .y{color:var(--amarillo)}
+  .serv .lead{color:#C9C2B4;font-weight:500;font-size:17px;max-width:540px;margin-bottom:36px}
+  .serv-grid{display:grid;gap:18px}
+  @media(min-width:720px){.serv-grid{grid-template-columns:repeat(2,1fr)}}
+  .serv-card{
+    background:var(--negro-soft);border:3px solid var(--crema);border-radius:18px;padding:26px 24px;
+    position:relative;transition:transform .2s ease,background .2s ease;overflow:hidden;
+  }
+  .serv-card:hover{transform:translateY(-6px);background:var(--amarillo);color:var(--negro);border-color:var(--amarillo)}
+  .serv-card:hover .num,.serv-card:hover h3,.serv-card:hover p{color:var(--negro)}
+  .serv-card:hover .ico{stroke:var(--negro)}
+  .serv-card .num{font-family:'Anton';font-size:15px;color:var(--amarillo);letter-spacing:0.1em;margin-bottom:14px;display:block}
+  .serv-card .ico{width:46px;height:46px;margin-bottom:14px;stroke:var(--amarillo);transition:stroke .2s ease}
+  .serv-card h3{font-size:24px;margin-bottom:9px;color:var(--crema)}
+  .serv-card p{font-size:15px;color:#BDB6A8;font-weight:500;line-height:1.5}
+
+  /* ---------- RESULTADOS / POR QUE ---------- */
+  .porque{background:var(--amarillo)}
+  .porque h2{font-size:clamp(38px,10vw,84px);text-align:center;margin-bottom:6px}
+  .porque .sub-c{text-align:center;font-weight:600;font-size:17px;color:var(--tinta);margin-bottom:42px}
+  .ben-grid{display:grid;gap:16px}
+  @media(min-width:680px){.ben-grid{grid-template-columns:repeat(2,1fr)}}
+  .ben{
+    background:var(--crema);border:3px solid var(--negro);border-radius:16px;padding:24px 22px;
+    display:flex;gap:16px;align-items:flex-start;box-shadow:6px 6px 0 var(--negro);
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .ben:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 var(--negro)}
+  .ben .b-ico{flex-shrink:0;width:48px;height:48px;background:var(--amarillo);border:3px solid var(--negro);border-radius:12px;display:flex;align-items:center;justify-content:center}
+  .ben .b-ico svg{width:26px;height:26px}
+  .ben h3{font-size:20px;margin-bottom:5px}
+  .ben p{font-size:14.5px;font-weight:500;color:var(--tinta);line-height:1.5}
+
+  /* ---------- GALERIA ---------- */
+  .galeria{background:var(--crema)}
+  .galeria h2{font-size:clamp(36px,8vw,62px);margin-bottom:8px}
+  .galeria .lead{font-weight:500;font-size:17px;color:var(--tinta);margin-bottom:34px;max-width:520px}
+  .gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(min-width:760px){.gal-grid{grid-template-columns:repeat(4,1fr)}}
+  .gal-item{
+    position:relative;border:3px solid var(--negro);border-radius:14px;
+    aspect-ratio:1;overflow:hidden;transition:transform .2s ease;background:var(--crema-osc);
+  }
+  .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+  .gal-item:nth-child(1){grid-row:span 2;aspect-ratio:auto}
+  .gal-item:hover{transform:rotate(-1deg)}
+  .gal-item:hover img{transform:scale(1.06)}
+
+  /* ---------- GANCHO ---------- */
+  .gancho{background:var(--negro);color:var(--crema);text-align:center;position:relative;overflow:hidden}
+  .gancho .paws{position:absolute;inset:0;opacity:0.07}
+  .gancho-in{position:relative;z-index:2;max-width:680px;margin:0 auto}
+  .gancho .pill{display:inline-flex;align-items:center;gap:8px;background:var(--naranja);color:var(--crema);font-weight:800;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;padding:8px 16px;border-radius:50px;margin-bottom:22px;border:2px solid var(--negro)}
+  .gancho h2{font-size:clamp(34px,8vw,64px);color:var(--crema);margin-bottom:16px}
+  .gancho h2 .y{color:var(--amarillo)}
+  .gancho p{font-size:18px;font-weight:500;color:#C9C2B4;margin-bottom:14px}
+  .gancho .cuenta{font-family:'Anton';font-size:clamp(38px,12vw,76px);color:var(--amarillo);letter-spacing:0.02em;line-height:1;margin:8px 0 24px}
+  .gancho .wa-btn{background:var(--amarillo);color:var(--negro);border-color:var(--amarillo);font-size:16px;padding:16px 26px}
+  .gancho .wa-btn:hover{background:var(--crema);border-color:var(--crema)}
+
+  /* ---------- RESEÑAS ---------- */
+  .resenas{background:var(--crema)}
+  .resenas h2{font-size:clamp(36px,8vw,62px);margin-bottom:8px;text-align:center}
+  .resenas .stars-top{text-align:center;font-weight:700;color:var(--tinta);margin-bottom:38px;font-size:16px}
+  .resenas .stars-top b{color:var(--negro)}
+  .resenas .stars-top .rstars{color:var(--naranja);letter-spacing:1px}
+  .res-grid{display:grid;gap:18px}
+  @media(min-width:760px){.res-grid{grid-template-columns:repeat(3,1fr)}}
+  .res{background:var(--crema);border:3px solid var(--negro);border-radius:18px;padding:24px 22px;box-shadow:6px 6px 0 var(--amarillo)}
+  .res .stars{color:var(--naranja);font-size:18px;letter-spacing:2px;margin-bottom:12px}
+  .res p{font-size:15px;font-weight:500;line-height:1.55;margin-bottom:18px;color:var(--tinta)}
+  .res .who{display:flex;align-items:center;gap:11px}
+  .res .av{width:42px;height:42px;border-radius:50%;background:var(--amarillo);border:2.5px solid var(--negro);display:flex;align-items:center;justify-content:center;font-family:'Anton';font-size:17px;flex-shrink:0}
+  .res .who b{display:block;font-weight:800;font-size:14px}
+  .res .who small{font-size:12px;color:var(--tinta);font-weight:600}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--amarillo)}
+  .faq h2{font-size:clamp(36px,8vw,62px);margin-bottom:30px;text-align:center}
+  .faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+  details{background:var(--crema);border:3px solid var(--negro);border-radius:14px;overflow:hidden}
+  summary{
+    list-style:none;cursor:pointer;padding:18px 20px;font-weight:800;font-size:16.5px;
+    display:flex;justify-content:space-between;align-items:center;gap:14px;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary .pm{flex-shrink:0;width:28px;height:28px;background:var(--amarillo);border:2.5px solid var(--negro);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Anton';font-size:20px;transition:transform .25s ease}
+  details[open] summary .pm{transform:rotate(135deg)}
+  details p{padding:0 20px 20px;font-size:15px;font-weight:500;color:var(--tinta);line-height:1.55}
+
+  /* ---------- CONTACTO ---------- */
+  .contacto{background:var(--negro);color:var(--crema)}
+  .cont-grid{display:grid;gap:30px}
+  @media(min-width:820px){.cont-grid{grid-template-columns:1.1fr 0.9fr;align-items:center}}
+  .contacto h2{font-size:clamp(38px,9vw,72px);color:var(--crema);margin-bottom:14px}
+  .contacto h2 .y{color:var(--amarillo)}
+  .contacto p.lead{font-size:18px;font-weight:500;color:#C9C2B4;margin-bottom:26px;max-width:440px}
+  .contacto .wa-btn{background:var(--amarillo);color:var(--negro);border-color:var(--amarillo);font-size:16px;padding:16px 26px;margin-bottom:22px}
+  .contacto .wa-btn:hover{background:var(--crema);border-color:var(--crema)}
+  .info-card{background:var(--negro-soft);border:3px solid var(--crema);border-radius:18px;padding:26px 24px}
+  .info-row{display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid rgba(245,240,225,0.16)}
+  .info-row:last-child{border-bottom:none}
+  .info-row .ir-ico{flex-shrink:0;width:40px;height:40px;background:var(--amarillo);border-radius:10px;display:flex;align-items:center;justify-content:center}
+  .info-row .ir-ico svg{width:21px;height:21px}
+  .info-row b{display:block;font-weight:800;font-size:14px;color:var(--crema)}
+  .info-row small{font-size:13.5px;color:#BDB6A8;font-weight:500}
+  .info-row a{color:#BDB6A8;text-decoration:underline;text-underline-offset:2px}
+  .info-row a:hover{color:var(--amarillo)}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--negro);color:var(--crema);border-top:4px solid var(--amarillo);padding:40px 0 110px}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:26px;align-items:flex-start}
+  .foot-grid .wordmark{color:var(--crema)}
+  .foot-grid .wordmark span small{color:#9b958a}
+  .foot-links{display:flex;flex-wrap:wrap;gap:8px 20px}
+  .foot-links a{font-weight:600;font-size:14px;color:#C9C2B4;transition:color .15s}
+  .foot-links a:hover{color:var(--amarillo)}
+  .foot-bottom{margin-top:30px;padding-top:22px;border-top:1px solid rgba(245,240,225,0.14);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:12.5px;color:#857f74;font-weight:500}
+  .foot-bottom .hand{font-family:'Caveat';font-size:18px;color:var(--amarillo)}
+  .foot-credit{font-size:11.5px;color:#6f6a60;margin-top:14px;font-weight:500}
+
+  /* ---------- STICKY MOBILE WA ---------- */
+  .sticky-wa{
+    position:fixed;left:14px;right:14px;bottom:14px;z-index:200;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--amarillo);color:var(--negro);border:3px solid var(--negro);
+    border-radius:50px;padding:14px;font-weight:800;font-size:15.5px;
+    box-shadow:0 6px 0 var(--negro);
+    animation:nudge 3s ease-in-out infinite;
+  }
+  .sticky-wa svg{width:22px;height:22px}
+  @keyframes nudge{0%,92%,100%{transform:translateY(0)}96%{transform:translateY(-4px)}}
+  @media(prefers-reduced-motion:reduce){.sticky-wa{animation:none}}
+  @media(min-width:760px){.sticky-wa{display:none}}
+  @media(max-width:759px){footer{padding-bottom:110px}}
+</style>
+</head>
+<body>
+
+<!-- ========== TOPBAR ========== -->
+<header class="topbar">
+  <div class="wrap">
+    <a href="#top" class="wordmark" aria-label="Escuela Educación Canina El Parque, inicio">
+      <span class="dot" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="9" r="2" fill="#111111"/><circle cx="12" cy="7" r="2" fill="#111111"/><circle cx="17" cy="9" r="2" fill="#111111"/><path d="M12 11c-3 0-5 2-5 4.5 0 1.8 1.5 2.5 2.6 1.8.8-.5 1.6-.5 2.4 0 1.1.7 2.6 0 2.6-1.8 0-2.5-2-4.5-2.6-4.5z" fill="#111111"/></svg>
+      </span>
+      <span>EL PARQUE<small>Educación canina · Puçol</small></span>
+    </a>
+    <a href="https://wa.me/34615673076" class="wa-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.2-.9-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2.1.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.5-.3.3c-.1.2-.3.3-.1.6.1.3.7 1.1 1.5 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.5 0 1z"/></svg>
+      <span class="lbl-long">Escríbenos</span><span class="lbl-short">Hola</span>
+    </a>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="top">
+  <svg class="paws" viewBox="0 0 400 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="#111111">
+      <g transform="translate(40,90) scale(0.7)"><circle cx="7" cy="9" r="3"/><circle cx="14" cy="6" r="3"/><circle cx="21" cy="9" r="3"/><path d="M14 13c-4 0-6 3-6 6 0 2 2 3 3.4 2 1-.7 2.2-.7 3.2 0 1.4 1 3.4 0 3.4-2 0-3-2.6-6-4-6z"/></g>
+      <g transform="translate(140,200) scale(0.9) rotate(20)"><circle cx="7" cy="9" r="3"/><circle cx="14" cy="6" r="3"/><circle cx="21" cy="9" r="3"/><path d="M14 13c-4 0-6 3-6 6 0 2 2 3 3.4 2 1-.7 2.2-.7 3.2 0 1.4 1 3.4 0 3.4-2 0-3-2.6-6-4-6z"/></g>
+      <g transform="translate(280,120) scale(0.6) rotate(-15)"><circle cx="7" cy="9" r="3"/><circle cx="14" cy="6" r="3"/><circle cx="21" cy="9" r="3"/><path d="M14 13c-4 0-6 3-6 6 0 2 2 3 3.4 2 1-.7 2.2-.7 3.2 0 1.4 1 3.4 0 3.4-2 0-3-2.6-6-4-6z"/></g>
+      <g transform="translate(320,340) scale(0.8) rotate(30)"><circle cx="7" cy="9" r="3"/><circle cx="14" cy="6" r="3"/><circle cx="21" cy="9" r="3"/><path d="M14 13c-4 0-6 3-6 6 0 2 2 3 3.4 2 1-.7 2.2-.7 3.2 0 1.4 1 3.4 0 3.4-2 0-3-2.6-6-4-6z"/></g>
+      <g transform="translate(60,420) scale(0.75) rotate(-25)"><circle cx="7" cy="9" r="3"/><circle cx="14" cy="6" r="3"/><circle cx="21" cy="9" r="3"/><path d="M14 13c-4 0-6 3-6 6 0 2 2 3 3.4 2 1-.7 2.2-.7 3.2 0 1.4 1 3.4 0 3.4-2 0-3-2.6-6-4-6z"/></g>
+    </g>
+  </svg>
+
+  <div class="wrap hero-inner">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><span class="blink" aria-hidden="true"></span>Educación canina · honesta y con energía</span>
+        <h1>
+          <span class="line"><span>El problema</span></span>
+          <span class="line l2"><span>casi nunca</span></span>
+          <span class="line l3"><span>es tu <span class="hl">perro.</span></span></span>
+        </h1>
+        <p class="sub">En El Parque no adiestramos perros a la fuerza: te enseñamos a <b>entenderte con el tuyo</b>. Moisés y su equipo trabajan en positivo, con ejercicios sencillos que cambian la convivencia desde los primeros días. 🐾</p>
+        <div class="cta-row">
+          <a href="https://wa.me/34615673076" class="wa-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.2-.9-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2.1.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.5-.3.3c-.1.2-.3.3-.1.6.1.3.7 1.1 1.5 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.5 0 1z"/></svg>
+            Cuéntanos qué pasa
+          </a>
+          <span class="cta-note">— te respondemos hoy ↗</span>
+        </div>
+        <div class="hero-rating">
+          <span class="rstars" aria-hidden="true">★★★★★</span>
+          <span><b>4,9</b> sobre 5 · 101 reseñas en Google</span>
+        </div>
+        <div class="hero-tags">
+          <span>Refuerzo positivo</span>
+          <span>Clases prácticas</span>
+          <span>Cachorros &amp; adultos</span>
+          <span>Residencia canina</span>
+        </div>
+      </div>
+
+      <div class="hero-photos">
+        <span class="hp-badge">★ 4,9 en Google</span>
+        <div class="hp-main">
+          <img src="fotos/foto-06.jpg" alt="Perro durante una sesión de educación canina en El Parque, Puçol" loading="eager" width="600" height="750">
+        </div>
+        <div class="hp-sub">
+          <img src="fotos/foto-02.jpg" alt="Equipo de la Escuela de Educación Canina El Parque trabajando con un perro" loading="lazy" width="320" height="320">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MARQUEE ========== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>EDUCACIÓN HONESTA</span><span>REFUERZO POSITIVO</span><span>CAMBIO REAL</span><span>SIN GRITOS</span><span>EJERCICIOS SENCILLOS</span><span>EL PARQUE</span>
+    <span>EDUCACIÓN HONESTA</span><span>REFUERZO POSITIVO</span><span>CAMBIO REAL</span><span>SIN GRITOS</span><span>EJERCICIOS SENCILLOS</span><span>EL PARQUE</span>
+  </div>
+</div>
+
+<!-- ========== QUIEN ESTA DETRAS ========== -->
+<section class="soy">
+  <div class="wrap soy-grid">
+    <div class="soy-photo reveal">
+      <img src="fotos/foto-04.jpg" alt="Moisés, educador canino de El Parque, con un perro en una clase" loading="lazy" width="600" height="750">
+      <span class="firma-tag">Moisés &amp; equipo</span>
+    </div>
+    <div class="reveal">
+      <span class="tag-label">Quién está detrás</span>
+      <h2>Es Moisés — y conecta con <em>los dos</em>.</h2>
+      <p>Lo dicen sus propias familias: Moisés explica el mundo perruno «de una manera clara y llana», y a través de unos ejercicios muy sencillos empieza a cambiar tu relación con tu perro. No es magia, es método.</p>
+      <p>En El Parque no te venden trucos de feria ni clases interminables: te dan conceptos fáciles de asimilar incluso si no tienes ninguna experiencia, para que el cambio se quede en casa, contigo, todos los días.</p>
+      <div class="firma">— Moisés &amp; el equipo de El Parque 🐕</div>
+      <div class="credos">
+        <b>✔ Refuerzo positivo</b>
+        <b>✔ +100 familias</b>
+        <b>✔ Sin castigo</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MI METODO / SERVICIOS ========== -->
+<section class="serv" id="metodo">
+  <div class="wrap">
+    <span class="tag-label reveal">Lo que hacemos juntos</span>
+    <h2 class="reveal">No son trucos.<br>Es <span class="y">entenderse.</span></h2>
+    <p class="lead reveal">Cada perro y cada familia es un mundo. Por eso en El Parque no vendemos paquetes cerrados: montamos un plan que encaja en tu vida real, paso a paso.</p>
+    <div class="serv-grid">
+      <div class="serv-card reveal">
+        <span class="num">01</span>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M10 38V20l14-10 14 10v18"/><rect x="18" y="26" width="12" height="12" rx="1.5"/></svg>
+        <h3>Educación en convivencia</h3>
+        <p>Tirones de correa, ladridos, saltos, ese caos en casa. Trabajamos el día a día real con ejercicios sencillos para que la convivencia vuelva a ser fácil.</p>
+      </div>
+      <div class="serv-card reveal">
+        <span class="num">02</span>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="16" r="7"/><path d="M12 40c0-7 5-12 12-12s12 5 12 12"/></svg>
+        <h3>Cachorros desde el día uno</h3>
+        <p>Las primeras semanas lo deciden casi todo. Socialización, necesidades en su sitio y buenos hábitos para empezar con buen pie y ahorrarte problemas futuros.</p>
+      </div>
+      <div class="serv-card reveal">
+        <span class="num">03</span>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M8 24h8l4-10 8 20 4-10h8"/></svg>
+        <h3>Obediencia &amp; paseo útil</h3>
+        <p>Que venga cuando le llamas, que pasee tranquilo y disfrutéis la calle juntos. Clases dinámicas, amenas y divertidas, justo lo que necesitáis de verdad.</p>
+      </div>
+      <div class="serv-card reveal">
+        <span class="num">04</span>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M10 14h28v22a3 3 0 0 1-3 3H13a3 3 0 0 1-3-3z"/><path d="M16 14V9a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v5"/></svg>
+        <h3>Residencia canina</h3>
+        <p>¿Te vas unos días? Tu perro se queda con todo el equipo y se lo pasa en grande, como si estuviera de campamento. Vuelve feliz y bien cuidado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RESULTADOS / POR QUE ========== -->
+<section class="porque">
+  <div class="wrap">
+    <h2 class="reveal">¿Por qué El Parque?</h2>
+    <p class="sub-c reveal">Porque te decimos la verdad y trabajamos para que el cambio sea real. 🐾</p>
+    <div class="ben-grid">
+      <div class="ben reveal">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+        <div><h3>Cambios desde los primeros días</h3><p>«A los pocos días empiezas a ver cómo se transforma todo.» Ejercicios muy sencillos que de verdad cambian la relación con tu perro.</p></div>
+      </div>
+      <div class="ben reveal">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></div>
+        <div><h3>Te entrenamos a ti</h3><p>El perro aprende rápido; tú eres quien repite cada día. Por eso te explicamos todo de forma clara y llana, sin tecnicismos.</p></div>
+      </div>
+      <div class="ben reveal">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 21s-7-4.5-9-9a4.5 4.5 0 0 1 9-2 4.5 4.5 0 0 1 9 2c-2 4.5-9 9-9 9z"/></svg></div>
+        <div><h3>Conecta con los perros</h3><p>«Moisés es genial con los perros y conecta muy bien con ellos.» Trato excepcional, profesional y mucho cariño, en todas las sesiones.</p></div>
+      </div>
+      <div class="ben reveal">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M3 11l9-7 9 7M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg></div>
+        <div><h3>Mejor convivencia para toda la casa</h3><p>«Nos ha cambiado a muchísimo mejor la convivencia.» El objetivo no es un perro robot: es una familia que disfruta de su perro.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GALERIA ========== -->
+<section class="galeria">
+  <div class="wrap">
+    <span class="tag-label reveal">El día a día</span>
+    <h2 class="reveal">Caras felices,<br>correas flojas.</h2>
+    <p class="lead reveal">Fotos reales del día a día en El Parque: clases, paseos, residencia y muchos perros disfrutando del trabajo.</p>
+    <div class="gal-grid">
+      <div class="gal-item reveal"><img src="fotos/foto-01.jpg" alt="Perro disfrutando de una sesión en la Escuela El Parque" loading="lazy" width="600" height="800"></div>
+      <div class="gal-item reveal"><img src="fotos/foto-03.jpg" alt="Trabajo de educación canina al aire libre en Puçol" loading="lazy" width="400" height="400"></div>
+      <div class="gal-item reveal"><img src="fotos/foto-05.jpg" alt="Perro durante un ejercicio de obediencia con El Parque" loading="lazy" width="400" height="400"></div>
+      <div class="gal-item reveal"><img src="fotos/foto-07.jpg" alt="Momento de la residencia canina de El Parque" loading="lazy" width="400" height="400"></div>
+      <div class="gal-item reveal"><img src="fotos/foto-08.jpg" alt="Perro feliz tras una clase en la Escuela El Parque" loading="lazy" width="400" height="400"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GANCHO ========== -->
+<section class="gancho">
+  <svg class="paws" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="#FFE74C">
+      <g transform="translate(40,60) scale(0.9) rotate(15)"><circle cx="7" cy="9" r="3"/><circle cx="14" cy="6" r="3"/><circle cx="21" cy="9" r="3"/><path d="M14 13c-4 0-6 3-6 6 0 2 2 3 3.4 2 1-.7 2.2-.7 3.2 0 1.4 1 3.4 0 3.4-2 0-3-2.6-6-4-6z"/></g>
+      <g transform="translate(300,100) scale(1.1) rotate(-20)"><circle cx="7" cy="9" r="3"/><circle cx="14" cy="6" r="3"/><circle cx="21" cy="9" r="3"/><path d="M14 13c-4 0-6 3-6 6 0 2 2 3 3.4 2 1-.7 2.2-.7 3.2 0 1.4 1 3.4 0 3.4-2 0-3-2.6-6-4-6z"/></g>
+      <g transform="translate(180,200) scale(0.8) rotate(35)"><circle cx="7" cy="9" r="3"/><circle cx="14" cy="6" r="3"/><circle cx="21" cy="9" r="3"/><path d="M14 13c-4 0-6 3-6 6 0 2 2 3 3.4 2 1-.7 2.2-.7 3.2 0 1.4 1 3.4 0 3.4-2 0-3-2.6-6-4-6z"/></g>
+    </g>
+  </svg>
+  <div class="wrap gancho-in">
+    <span class="pill reveal">🐾 Empieza este mes</span>
+    <h2 class="reveal">Cuanto antes empecéis,<br>antes <span class="y">disfrutáis.</span></h2>
+    <p class="reseña reveal">Los problemas de convivencia se trabajan mejor cuanto antes. Una primera charla nos basta para decirte, con honestidad, qué necesita tu perro.</p>
+    <div class="cuenta reveal">4,9 ★ · 101 reseñas</div>
+    <p class="reveal" style="margin-bottom:26px;">Escríbenos por WhatsApp y te contamos sin compromiso cómo empezar.</p>
+    <a href="https://wa.me/34615673076" class="wa-btn reveal">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.2-.9-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2.1.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.5-.3.3c-.1.2-.3.3-.1.6.1.3.7 1.1 1.5 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.5 0 1z"/></svg>
+      Quiero empezar
+    </a>
+  </div>
+</section>
+
+<!-- ========== RESEÑAS ========== -->
+<section class="resenas" id="resenas">
+  <div class="wrap">
+    <h2 class="reveal">Lo que dicen<br>las familias.</h2>
+    <p class="stars-top reveal"><span class="rstars">★★★★★</span> &nbsp;<b>4,9 / 5</b> · 101 reseñas reales en Google</p>
+    <div class="res-grid">
+      <div class="res reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p>"Clase dinámica, amena y divertida. Conceptos muy fáciles de asimilar incluso para personas como yo sin ningún tipo de experiencia en educación canina. Moisés (el profe), un gran descubrimiento, grandísimo profesional y muy buena persona."</p>
+        <div class="who"><div class="av" aria-hidden="true">C</div><div><b>Carlos G.</b><small>Reseña en Google</small></div></div>
+      </div>
+      <div class="res reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p>"100% recomendable. Moisés de una manera clara y llana te explica el mundo perruno y a través de unos ejercicios muy sencillos empieza a cambiar la relación con tu perro. Es increíble cómo a los pocos días empiezas a ver cómo se transforma todo."</p>
+        <div class="who"><div class="av" aria-hidden="true">A</div><div><b>Aldea R.</b><small>Reseña en Google</small></div></div>
+      </div>
+      <div class="res reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p>"Solo puedo tener palabras de agradecimiento y admiración por el trabajo que realiza Moisés y su equipo. Trato excepcional y muy profesional, nos ha cambiado a muchísimo mejor la convivencia. ¡Mil gracias!"</p>
+        <div class="who"><div class="av" aria-hidden="true">R</div><div><b>Rafael G.</b><small>Reseña en Google</small></div></div>
+      </div>
+      <div class="res reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p>"Esta semana Lola ha estado en la residencia canina con todo el equipo y se lo ha pasado bomba. Llegó a casa y se pasó la tarde durmiendo… ¡como si viniese de campamento! Muchas gracias por vuestro trabajo."</p>
+        <div class="who"><div class="av" aria-hidden="true">I</div><div><b>Ingrid S.</b><small>Reseña en Google</small></div></div>
+      </div>
+      <div class="res reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p>"Reconozco que Moisés es genial con los perros y conecta muy bien con ellos. Felicidades por tu trabajo. Vale la pena intentarlo: espero poder disfrutar pronto otra vez con mi Neska."</p>
+        <div class="who"><div class="av" aria-hidden="true">A</div><div><b>Amparo L.</b><small>Reseña en Google</small></div></div>
+      </div>
+      <div class="res reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p>"Una nota de 4,9 sobre 5 con 101 reseñas no se consigue por casualidad: se gana clase a clase, perro a perro, familia a familia."</p>
+        <div class="who"><div class="av" aria-hidden="true">★</div><div><b>4,9 en Google</b><small>101 valoraciones reales</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="faq">
+  <div class="wrap">
+    <h2 class="reveal">Dudas rápidas.</h2>
+    <div class="faq-list">
+      <details class="reveal" open>
+        <summary>¿Dónde estáis? <span class="pm" aria-hidden="true">+</span></summary>
+        <p>Estamos en Puçol (46530), Valencia. Trabajamos la educación canina y también tenemos residencia canina para cuando te vas unos días. Escríbenos por WhatsApp y te decimos cómo llegar.</p>
+      </details>
+      <details class="reveal">
+        <summary>¿Usáis castigo o métodos duros? <span class="pm" aria-hidden="true">+</span></summary>
+        <p>No. Trabajamos en positivo, con ejercicios sencillos, premios y mucha paciencia. La idea es que tú entiendas a tu perro y tu perro te entienda a ti, sin gritos ni miedos.</p>
+      </details>
+      <details class="reveal">
+        <summary>No tengo experiencia, ¿me servirá? <span class="pm" aria-hidden="true">+</span></summary>
+        <p>Totalmente. Nuestras familias lo dicen: los conceptos son fáciles de asimilar incluso sin ninguna experiencia en educación canina. Te lo explicamos todo de manera clara y llana.</p>
+      </details>
+      <details class="reveal">
+        <summary>¿También cuidáis a mi perro si me voy de viaje? <span class="pm" aria-hidden="true">+</span></summary>
+        <p>Sí. Tenemos residencia canina: tu perro se queda con todo el equipo y se lo pasa en grande, como de campamento. Vuelve feliz y bien cuidado.</p>
+      </details>
+      <details class="reveal">
+        <summary>¿Cómo empiezo? <span class="pm" aria-hidden="true">+</span></summary>
+        <p>Lo más fácil: escríbenos por WhatsApp y cuéntanos qué pasa con tu perro. Sin compromiso, te decimos con honestidad qué necesita y cómo podemos ayudarte.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACTO ========== -->
+<section class="contacto" id="contacto">
+  <div class="wrap cont-grid">
+    <div class="reveal">
+      <h2>Empecemos a <span class="y">entenderos.</span></h2>
+      <p class="lead">Cuéntanos por WhatsApp qué te pasa con tu perro. Te respondemos en el día, sin compromiso, y te decimos con honestidad cómo podemos ayudarte. 🐾</p>
+      <a href="https://wa.me/34615673076" class="wa-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.2-.9-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2.1.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.5-.3.3c-.1.2-.3.3-.1.6.1.3.7 1.1 1.5 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.5 0 1z"/></svg>
+        Escríbenos ahora
+      </a>
+    </div>
+    <div class="info-card reveal">
+      <div class="info-row">
+        <div class="ir-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2"><path d="M12 21s-7-5-7-11a7 7 0 0 1 14 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div><b>Dónde</b><small>46530 Puçol, Valencia</small></div>
+      </div>
+      <div class="info-row">
+        <div class="ir-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div>
+        <div><b>Teléfono / WhatsApp</b><small><a href="https://wa.me/34615673076">615 67 30 76</a> · respondemos en el día</small></div>
+      </div>
+      <div class="info-row">
+        <div class="ir-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2"><path d="M12 2l2.5 5 5.5.8-4 3.9.9 5.5L12 14.6 7.1 17.2 8 11.7l-4-3.9L9.5 7z"/></svg></div>
+        <div><b>Valoración</b><small>4,9 ★ sobre 5 · 101 reseñas en Google</small></div>
+      </div>
+      <div class="info-row">
+        <div class="ir-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2"><path d="M10 14h28"/><rect x="4" y="6" width="16" height="12" rx="2" transform="scale(1)"/><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div><b>Servicios</b><small>Educación canina · Cachorros · Residencia canina</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <a href="#top" class="wordmark" aria-label="Escuela Educación Canina El Parque, inicio">
+        <span class="dot" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="9" r="2" fill="#111111"/><circle cx="12" cy="7" r="2" fill="#111111"/><circle cx="17" cy="9" r="2" fill="#111111"/><path d="M12 11c-3 0-5 2-5 4.5 0 1.8 1.5 2.5 2.6 1.8.8-.5 1.6-.5 2.4 0 1.1.7 2.6 0 2.6-1.8 0-2.5-2-4.5-2.6-4.5z" fill="#111111"/></svg>
+        </span>
+        <span>EL PARQUE<small>Educación canina · Puçol</small></span>
+      </a>
+      <nav class="foot-links" aria-label="Enlaces del pie">
+        <a href="#top">Inicio</a>
+        <a href="#metodo">Servicios</a>
+        <a href="#resenas">Reseñas</a>
+        <a href="#contacto">Contacto</a>
+        <a href="https://wa.me/34615673076">WhatsApp</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Escuela Educación Canina El Parque · Puçol, Valencia.</span>
+      <span class="hand">Hecho con pelos y cariño 🐾</span>
+    </div>
+    <p class="foot-credit">Fotos: Ade Su, Escuela Educación Canina El Parque, Mar Rodríguez, Marx Ja, Residencia Canina El Parque (Google Maps).</p>
+  </div>
+</footer>
+
+<!-- ========== STICKY MOBILE WA ========== -->
+<a href="https://wa.me/34615673076" class="sticky-wa">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.2-.9-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2.1.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.5-.3.3c-.1.2-.3.3-.1.6.1.3.7 1.1 1.5 1.8 1 .9 1.8 1.1 2.1 1.3.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.5 0 1z"/></svg>
+  Escríbenos — te respondemos hoy
+</a>
+
+<!-- ========== SCHEMA.ORG ========== -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"Escuela Educación Canina El Parque",
+  "description":"Educación y adiestramiento canino en positivo y residencia canina en Puçol, Valencia. Clases claras y prácticas para mejorar la convivencia con tu perro.",
+  "image":"fotos/foto-06.jpg",
+  "telephone":"+34615673076",
+  "address":{
+    "@type":"PostalAddress",
+    "postalCode":"46530",
+    "addressLocality":"Puçol",
+    "addressRegion":"Valencia",
+    "addressCountry":"ES"
+  },
+  "areaServed":"Puçol, Valencia",
+  "aggregateRating":{
+    "@type":"AggregateRating",
+    "ratingValue":"4.9",
+    "reviewCount":"101",
+    "bestRating":"5"
+  }
+}
+</script>
+
+<script>
+  (function(){
+    var prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('.reveal');
+    if(prefersReduce || !('IntersectionObserver' in window)){
+      els.forEach(function(el){el.classList.add('in');});
+      return;
+    }
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e,i){
+        if(e.isIntersecting){
+          setTimeout(function(){e.target.classList.add('in');}, (i%4)*70);
+          obs.unobserve(e.target);
+        }
+      });
+    },{threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){obs.observe(el);});
+  })();
+</script>
+
+</body>
+</html>

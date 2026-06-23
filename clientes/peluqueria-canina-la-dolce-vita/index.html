@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peluquería Canina La Dolce Vita — Estilismo canino con cariño · València</title>
+<meta name="description" content="Peluquería canina en el barrio de Poblats Marítims (València). Daniela trata a tu perro con calma, cariño y profesionalidad. 4,9★ en Google. Reserva por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primario:#C6694A;       /* terracota cálido */
+    --primario-osc:#a4502f;
+    --secundario:#6F8F7A;     /* verde salvia */
+    --secundario-osc:#52715f;
+    --crema:#FBF7F0;
+    --hueso:#fffdf8;
+    --tinta:#2E2A26;
+    --tinta-suave:#6a6056;
+    --wa:#25a35a;
+    --wa-osc:#1c7d45;
+    --sombra:rgba(46,42,38,.10);
+    --linea:rgba(46,42,38,.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Karla',system-ui,sans-serif;
+    background:var(--crema);
+    color:var(--tinta);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 22px}
+  section{position:relative}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:90;
+    background:rgba(251,247,240,.82);
+    backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid var(--linea);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .wordmark{display:flex;align-items:center;gap:11px;font-family:'Fraunces';font-weight:600;font-size:20px;letter-spacing:-.01em;color:var(--tinta)}
+  .wordmark .mark{width:38px;height:30px;flex:none}
+  .nav-links{display:none;gap:30px;font-size:15px;font-weight:500;color:var(--tinta-suave)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover{color:var(--primario)}
+  .btn-wa{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--wa);color:#fff;font-weight:700;font-size:14.5px;
+    padding:11px 19px;border-radius:40px;
+    box-shadow:0 4px 14px rgba(37,163,90,.26);
+    transition:transform .2s, box-shadow .2s, background .2s;
+  }
+  .btn-wa:hover{transform:translateY(-2px);background:var(--wa-osc);box-shadow:0 8px 22px rgba(37,163,90,.34)}
+  .btn-wa svg{width:18px;height:18px;flex:none}
+
+  /* ---------- arco fine-line signature ---------- */
+  .arc-sig{display:block;margin:0 auto}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:120px 0 56px;position:relative;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(circle at 84% 14%, rgba(198,105,74,.10), transparent 44%),
+      radial-gradient(circle at 8% 92%, rgba(111,143,122,.13), transparent 48%);
+  }
+  .hero .wrap{position:relative;z-index:2}
+  .hero-grid{display:grid;gap:40px;align-items:center}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--hueso);border:1px solid var(--linea);
+    color:var(--tinta-suave);font-weight:600;font-size:13px;
+    padding:7px 15px;border-radius:40px;margin-bottom:26px;
+  }
+  .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--secundario);box-shadow:0 0 0 4px rgba(111,143,122,.18)}
+  .hero h1{
+    font-weight:500;
+    font-size:clamp(42px,8.2vw,76px);
+    line-height:1.02;
+    letter-spacing:-.022em;
+    color:var(--tinta);
+    margin-bottom:10px;
+  }
+  .hero h1 em{font-style:italic;color:var(--primario);font-weight:500}
+  .hero-sub{
+    font-size:clamp(17px,2.2vw,20px);
+    color:var(--tinta-suave);max-width:520px;margin:24px 0 32px;
+    line-height:1.6;
+  }
+  .hero-sub b{color:var(--tinta);font-weight:700}
+  .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+  .btn-wa.lg{font-size:16.5px;padding:16px 28px}
+  .hero-cta .micro{font-size:13.5px;color:var(--tinta-suave);display:flex;align-items:center;gap:7px}
+  .hero-cta .micro b{color:var(--secundario-osc)}
+  .rating-row{display:flex;align-items:center;gap:12px;margin-top:28px;flex-wrap:wrap}
+  .rating-row .stars{color:var(--primario);font-size:18px;letter-spacing:2px}
+  .rating-row .rnum{font-family:'Fraunces';font-weight:600;font-size:18px;color:var(--tinta)}
+  .rating-row .rtext{font-size:13.5px;color:var(--tinta-suave)}
+
+  .hero-photos{position:relative}
+  .hero-ph-main{
+    border-radius:26px;overflow:hidden;border:1px solid var(--linea);
+    box-shadow:0 24px 50px rgba(46,42,38,.16);aspect-ratio:4/5;
+  }
+  .hero-ph-main img{width:100%;height:100%;object-fit:cover}
+  .hero-ph-sub{
+    position:absolute;bottom:-26px;left:-18px;width:46%;
+    border-radius:20px;overflow:hidden;border:4px solid var(--crema);
+    box-shadow:0 16px 34px rgba(46,42,38,.18);aspect-ratio:1/1;
+  }
+  .hero-ph-sub img{width:100%;height:100%;object-fit:cover}
+  .floater{position:absolute;font-size:13px;font-weight:600;background:var(--hueso);
+    border:1px solid var(--linea);padding:9px 15px;border-radius:40px;
+    box-shadow:0 8px 22px var(--sombra);display:flex;align-items:center;gap:8px;color:var(--tinta-suave)}
+  .floater.a{top:6%;right:-10px;animation:bob 4.8s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+  /* ---------- divider strip ---------- */
+  .strip{background:var(--secundario);color:var(--crema);padding:15px 0;overflow:hidden;border-top:3px solid var(--secundario-osc);border-bottom:3px solid var(--secundario-osc)}
+  .ticker{display:flex;white-space:nowrap;animation:scroll 30s linear infinite;width:max-content}
+  .ticker span{font-family:'Fraunces';font-weight:500;font-size:21px;letter-spacing:.005em;padding:0 24px;display:inline-flex;align-items:center}
+  .ticker span::after{content:"·";opacity:.55;margin-left:24px}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- generic section ---------- */
+  .sec{padding:78px 0}
+  .kicker{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--primario);margin-bottom:14px}
+  .sec h2{font-weight:500;font-size:clamp(32px,5.6vw,52px);line-height:1.04;letter-spacing:-.02em;margin-bottom:18px}
+  .sec h2 em{font-style:italic;color:var(--secundario-osc);font-weight:500}
+  .lead{font-size:18px;color:var(--tinta-suave);max-width:560px;line-height:1.62}
+
+  /* ---------- quién es Daniela ---------- */
+  .yo{display:grid;gap:40px;align-items:center}
+  .yo-photo{border-radius:24px;overflow:hidden;border:1px solid var(--linea);box-shadow:0 18px 40px var(--sombra);aspect-ratio:4/5}
+  .yo-photo img{width:100%;height:100%;object-fit:cover}
+  .yo-text p{font-size:17px;color:var(--tinta-suave);margin-bottom:18px;line-height:1.64}
+  .yo-text p b{color:var(--tinta)}
+  .sign{font-family:'Fraunces';font-style:italic;font-weight:500;font-size:25px;color:var(--primario);margin-top:8px}
+  .yo-stats{display:flex;gap:30px;margin-top:30px;flex-wrap:wrap}
+  .yo-stats .st b{font-family:'Fraunces';font-weight:600;font-size:38px;display:block;line-height:1;color:var(--secundario-osc)}
+  .yo-stats .st span{font-size:13.5px;color:var(--tinta-suave);font-weight:500}
+
+  /* ---------- servicios ---------- */
+  .svc-grid{display:grid;gap:20px;margin-top:42px}
+  .card{
+    background:var(--hueso);border:1px solid var(--linea);border-radius:24px;
+    padding:32px 28px;transition:transform .3s, box-shadow .3s, border-color .3s;position:relative;overflow:hidden;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px var(--sombra);border-color:rgba(198,105,74,.4)}
+  .card .ico-w{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+  .card .ico-w svg{width:32px;height:32px}
+  .card.t1 .ico-w{background:rgba(198,105,74,.13)}
+  .card.t2 .ico-w{background:rgba(111,143,122,.18)}
+  .card.t3 .ico-w{background:rgba(198,105,74,.13)}
+  .card h3{font-weight:600;font-size:25px;letter-spacing:-.01em;margin-bottom:10px}
+  .card p{font-size:15.5px;color:var(--tinta-suave);line-height:1.58}
+  .card .corner{position:absolute;top:-16px;right:-10px;font-size:88px;opacity:.06;font-family:'Fraunces';font-weight:600}
+
+  /* ---------- por qué ---------- */
+  .porque{background:var(--secundario-osc);color:var(--crema)}
+  .porque .kicker{color:#cfe0d4}
+  .porque h2{color:var(--hueso)}
+  .porque h2 em{color:#cfe0d4}
+  .porque .lead{color:rgba(255,253,248,.8)}
+  .ben-grid{display:grid;gap:24px;margin-top:44px}
+  .ben{display:flex;gap:16px;align-items:flex-start;padding:4px 0}
+  .ben .b-ico{width:46px;height:46px;flex:none;border-radius:13px;background:rgba(255,253,248,.1);display:flex;align-items:center;justify-content:center}
+  .ben .b-ico svg{width:25px;height:25px}
+  .ben h4{font-family:'Fraunces';font-weight:500;font-size:21px;margin-bottom:5px;color:var(--hueso)}
+  .ben p{font-size:15px;color:rgba(255,253,248,.76);line-height:1.55}
+
+  /* ---------- galería mosaico ---------- */
+  .gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
+  .gal-grid figure{margin:0;border-radius:18px;overflow:hidden;border:1px solid var(--linea);position:relative;background:#eadfce}
+  .gal-grid figure img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .gal-grid figure:hover img{transform:scale(1.05)}
+  .gal-grid .g1{aspect-ratio:1/1}
+  .gal-grid .g2{aspect-ratio:1/1}
+  .gal-grid .g-wide{grid-column:1/3;aspect-ratio:16/9}
+  .gal-cap{text-align:center;margin-top:24px;font-size:14.5px;color:var(--tinta-suave)}
+
+  /* ---------- reseñas ---------- */
+  .rev{background:#f4ece0}
+  .rev-grid{display:grid;gap:20px;margin-top:42px}
+  .qcard{background:var(--hueso);border:1px solid var(--linea);border-radius:22px;padding:28px 26px;position:relative}
+  .qcard .stars{color:var(--primario);font-size:16px;letter-spacing:3px;margin-bottom:14px}
+  .qcard blockquote{font-family:'Fraunces';font-weight:400;font-size:18px;line-height:1.5;color:var(--tinta);margin-bottom:20px;font-style:italic}
+  .qcard .who{display:flex;align-items:center;gap:12px}
+  .qcard .av{width:44px;height:44px;border-radius:50%;background:var(--secundario);color:var(--crema);display:flex;align-items:center;justify-content:center;font-family:'Fraunces';font-weight:600;font-size:17px;flex:none}
+  .qcard.t .av{background:var(--primario)}
+  .qcard .who b{display:block;font-size:15px;font-weight:700}
+  .qcard .who span{font-size:13px;color:var(--tinta-suave)}
+
+  /* ---------- gancho ---------- */
+  .gancho{position:relative;overflow:hidden;background:var(--primario);color:var(--crema);border-radius:30px;padding:54px 32px;text-align:center;margin:0 auto}
+  .gancho::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 88% 12%,rgba(255,255,255,.14),transparent 42%)}
+  .gancho .in{position:relative;z-index:2}
+  .gancho .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,253,248,.18);border:1px solid rgba(255,253,248,.3);font-weight:700;font-size:13px;letter-spacing:.04em;padding:8px 16px;border-radius:40px;margin-bottom:20px}
+  .gancho h2{font-family:'Fraunces';font-weight:500;font-size:clamp(30px,6vw,50px);line-height:1.04;letter-spacing:-.02em;color:var(--hueso);margin-bottom:16px}
+  .gancho p{font-size:17.5px;color:rgba(255,253,248,.92);max-width:500px;margin:0 auto 28px;line-height:1.55}
+  .gancho .btn-wa{background:var(--hueso);color:var(--primario-osc);box-shadow:0 8px 24px rgba(0,0,0,.18)}
+  .gancho .btn-wa:hover{background:#fff;color:var(--primario-osc)}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:720px;margin:0 auto}
+  .faq-item{border-bottom:1px solid var(--linea)}
+  .faq-item summary{list-style:none;cursor:pointer;padding:22px 4px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:'Fraunces';font-weight:500;font-size:20px;color:var(--tinta)}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item .plus{width:30px;height:30px;flex:none;border-radius:50%;background:rgba(198,105,74,.13);display:flex;align-items:center;justify-content:center;color:var(--primario);font-size:20px;transition:transform .3s;font-family:'Karla'}
+  .faq-item[open] .plus{transform:rotate(45deg)}
+  .faq-item p{padding:0 4px 24px;font-size:16px;color:var(--tinta-suave);line-height:1.62;max-width:620px}
+
+  /* ---------- contacto ---------- */
+  .contacto{background:var(--secundario-osc);color:var(--crema);border-radius:30px;padding:50px 32px;display:grid;gap:36px}
+  .contacto .kicker{color:#cfe0d4}
+  .contacto h2{color:var(--hueso);font-weight:500;font-size:clamp(30px,6vw,46px);line-height:1.04;letter-spacing:-.02em;margin-bottom:16px}
+  .contacto p{color:rgba(255,253,248,.84);font-size:17px;margin-bottom:26px;line-height:1.6}
+  .contacto .info{display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
+  .contacto .info .row{display:flex;align-items:center;gap:13px;font-size:15.5px;color:rgba(255,253,248,.92)}
+  .contacto .info .row svg{width:20px;height:20px;flex:none;color:#cfe0d4}
+  .contacto .photo{border-radius:18px;overflow:hidden;border:1px solid rgba(255,253,248,.18);aspect-ratio:5/4}
+  .contacto .photo img{width:100%;height:100%;object-fit:cover}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--tinta);color:rgba(251,247,240,.7);padding:50px 0 110px;text-align:center}
+  footer .wordmark{justify-content:center;color:var(--crema);margin-bottom:18px}
+  footer .links{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;font-size:14px;margin-bottom:22px}
+  footer .links a:hover{color:var(--crema)}
+  footer .fine{font-size:12.5px;color:rgba(251,247,240,.45);line-height:1.7}
+  footer .heart{color:var(--primario)}
+
+  /* ---------- WhatsApp fijo móvil ---------- */
+  .wa-fab{
+    position:fixed;left:16px;right:16px;bottom:16px;z-index:80;
+    background:var(--wa);color:#fff;font-weight:700;font-size:16px;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px;border-radius:18px;box-shadow:0 10px 30px rgba(37,163,90,.4);
+    animation:fabpop .5s ease both;
+  }
+  .wa-fab svg{width:22px;height:22px}
+  @keyframes fabpop{from{transform:translateY(80px);opacity:0}to{transform:none;opacity:1}}
+
+  /* ---------- responsive ---------- */
+  @media(min-width:760px){
+    .nav-links{display:flex}
+    .hero-grid{grid-template-columns:1.05fr .95fr;gap:56px}
+    .hero{padding:150px 0 80px}
+    .yo{grid-template-columns:.85fr 1.15fr;gap:54px}
+    .svc-grid{grid-template-columns:repeat(3,1fr)}
+    .ben-grid{grid-template-columns:1fr 1fr;gap:32px 44px}
+    .rev-grid{grid-template-columns:repeat(3,1fr)}
+    .gal-grid{grid-template-columns:repeat(4,1fr)}
+    .gal-grid .g-wide{grid-column:span 2;aspect-ratio:auto}
+    .contacto{grid-template-columns:1.1fr .9fr;align-items:center}
+    .wa-fab{display:none}
+    footer{padding:60px 0 60px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{transition:none;opacity:1;transform:none}
+    .ticker,.floater{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="wordmark">
+      <!-- Arco fine-line con silueta de perro a una línea -->
+      <svg class="mark" viewBox="0 0 48 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M5 30 A19 19 0 0 1 43 30" stroke="#C6694A" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M16 30 q-1-6 4-6 q2-5 6-4 q4 1 4 5 q3 1 3 5" stroke="#6F8F7A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 24 q-3-2-2-5" stroke="#6F8F7A" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="14.4" cy="20.4" r="1.1" fill="#2E2A26"/>
+      </svg>
+      La&nbsp;Dolce&nbsp;Vita
+    </a>
+    <div class="nav-links">
+      <a href="#daniela">Daniela</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="https://wa.me/34664424405" class="btn-wa">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.01c-.25.69-1.46 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.45.53-.15.15-.3.31-.13.6.17.3.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41z"/></svg>
+      Reservar
+    </a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header id="top" class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>Peluquería canina · Poblats Marítims, València</span>
+        <h1>El cuidado que tu perro <em>se merece.</em></h1>
+        <p class="hero-sub">
+          En La Dolce Vita, Daniela trata a cada perro con <b>calma, paciencia y mucho cariño</b> — incluso a los más nerviosos. Sales con tu mejor amigo guapo, relajado y feliz de haber venido.
+        </p>
+        <div class="hero-cta">
+          <a href="https://wa.me/34664424405" class="btn-wa lg">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.01c-.25.69-1.46 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.45.53-.15.15-.3.31-.13.6.17.3.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41z"/></svg>
+            Pedir cita por WhatsApp
+          </a>
+          <span class="micro">📍 <b>Te responde Daniela</b>, en persona</span>
+        </div>
+        <div class="rating-row">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span class="rnum">4,9</span>
+          <span class="rtext">sobre 48 reseñas en Google</span>
+        </div>
+      </div>
+
+      <div class="hero-photos reveal">
+        <span class="floater a">🐾 trato tranquilo y sin estrés</span>
+        <div class="hero-ph-main">
+          <img src="fotos/foto-01.jpg" alt="Perro recién peluqueado en La Dolce Vita, València" loading="eager">
+        </div>
+        <div class="hero-ph-sub">
+          <img src="fotos/foto-02.jpg" alt="Detalle de un perro durante su sesión de estilismo canino" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ TICKER ============ -->
+<div class="strip" aria-hidden="true">
+  <div class="ticker">
+    <span>Trato con cariño</span><span>Calma para los nerviosos</span><span>Cortes a medida</span><span>Perros mayores bienvenidos</span><span>4,9★ en Google</span><span>Trato con cariño</span><span>Calma para los nerviosos</span><span>Cortes a medida</span><span>Perros mayores bienvenidos</span><span>4,9★ en Google</span>
+  </div>
+</div>
+
+<!-- ============ DANIELA ============ -->
+<section id="daniela" class="sec">
+  <div class="wrap">
+    <div class="yo reveal">
+      <div class="yo-photo">
+        <img src="fotos/foto-03.jpg" alt="Momento de cuidado en la peluquería canina La Dolce Vita" loading="lazy">
+      </div>
+      <div class="yo-text">
+        <div class="kicker">Quién cuida de tu perro</div>
+        <h2>Daniela, <em>y un trato que se nota.</em></h2>
+        <p>En La Dolce Vita no hay prisas. Daniela se gana la confianza de cada perro <b>desde el primer momento</b>, trabajando con cuidado y paciencia para que la sesión sea un buen rato, no un mal trago.</p>
+        <p>¿Tu perro es mayor o muy nervioso? Aquí <b>se le mima de más</b>. Si te ayuda a que esté tranquilo, puedes quedarte a su lado mientras lo asea. La diferencia se ve después: vuelven más confiados cada vez.</p>
+        <p class="sign">— Daniela, La Dolce Vita</p>
+        <div class="yo-stats">
+          <div class="st"><b>4,9★</b><span>valoración en Google</span></div>
+          <div class="st"><b>48</b><span>reseñas reales</span></div>
+          <div class="st"><b>100%</b><span>la recomiendan</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICIOS ============ -->
+<section id="servicios" class="sec" style="padding-top:30px">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Lo que hacemos</div>
+      <h2>Estilismo a la medida <em>de tu perro.</em></h2>
+      <p class="lead">Cada perro es distinto. Cuéntale a Daniela cómo es el tuyo por WhatsApp y lo cuadramos a su carácter y a su pelo.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="card t1 reveal">
+        <span class="corner">01</span>
+        <div class="ico-w">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C6694A" stroke-width="1.6" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.1 8.1 21 18M8.1 15.9 21 6"/></svg>
+        </div>
+        <h3>Corte y arreglo</h3>
+        <p>El corte perfecto para su raza y su carácter. Daniela le da forma con calma, sin estrés, y sales con tu perro impecable.</p>
+      </div>
+      <div class="card t2 reveal">
+        <span class="corner">02</span>
+        <div class="ico-w">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6F8F7A" stroke-width="1.6" aria-hidden="true"><path d="M12 3c4 4 6 7 6 10a6 6 0 0 1-12 0c0-3 2-6 6-10z"/></svg>
+        </div>
+        <h3>Baño e higiene</h3>
+        <p>Baño completo, secado y cuidado al detalle. Limpio, suave y oliendo de maravilla — con todo el mimo, también si va mayor.</p>
+      </div>
+      <div class="card t3 reveal">
+        <span class="corner">03</span>
+        <div class="ico-w">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C6694A" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3 1.2 6 4 3-2.8 4-4 6-4 3.5 0 5 4 3.5 7-2.5 4.5-9.5 9-9.5 9z"/></svg>
+        </div>
+        <h3>Trato para los nerviosos</h3>
+        <p>Perros miedosos o que lo pasan mal en la pelu: aquí van con paciencia y confianza. Puedes acompañarlo para que no se estrese.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POR QUÉ ============ -->
+<section id="porque" class="porque sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Por qué La Dolce Vita</div>
+      <h2>Lo que tu perro <em>nota aquí dentro.</em></h2>
+      <p class="lead">Pequeños detalles que marcan la diferencia entre una peluquería más y un sitio al que tu perro quiere volver.</p>
+    </div>
+    <div class="ben-grid">
+      <div class="ben reveal">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#cfe0d4" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3 1.2 6 4 3-2.8 4-4 6-4 3.5 0 5 4 3.5 7-2.5 4.5-9.5 9-9.5 9z"/></svg></div>
+        <div><h4>Cariño de verdad</h4><p>Se nota que Daniela ama a los animales. Trata a cada perro con el cuidado con el que cuidaría al suyo.</p></div>
+      </div>
+      <div class="ben reveal">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#cfe0d4" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div><h4>Sin prisas, sin estrés</h4><p>Nada de meterle prisa. La sesión va al ritmo de tu perro para que sea un buen rato, no un mal trago.</p></div>
+      </div>
+      <div class="ben reveal">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#cfe0d4" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+        <div><h4>Puedes quedarte con él</h4><p>Si tu perro se pone nervioso, Daniela te deja estar a su lado mientras lo asea. Tranquilidad para los dos.</p></div>
+      </div>
+      <div class="ben reveal">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#cfe0d4" stroke-width="1.6" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div><h4>Mano con los mayores</h4><p>Perros con años, delicados o que necesitan paciencia extra. Aquí se les mima muchísimo, paso a paso.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERÍA ============ -->
+<section id="galeria" class="sec">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto">
+      <div class="kicker" style="text-align:center">Un día en la pelu</div>
+      <h2>Algunos de <em>nuestros clientes.</em></h2>
+    </div>
+    <div class="gal-grid reveal">
+      <figure class="g1"><img src="fotos/foto-04.jpg" alt="Perro atendido en La Dolce Vita" loading="lazy"></figure>
+      <figure class="g2"><img src="fotos/foto-05.jpg" alt="Resultado de una sesión de peluquería canina" loading="lazy"></figure>
+      <figure class="g-wide"><img src="fotos/foto-06.jpg" alt="Perro relajado durante el cuidado en La Dolce Vita" loading="lazy"></figure>
+      <figure class="g1"><img src="fotos/foto-07.jpg" alt="Estilismo canino con resultado natural y cuidado" loading="lazy"></figure>
+      <figure class="g2"><img src="fotos/foto-08.jpg" alt="Perro guapo y feliz tras su visita a la peluquería" loading="lazy"></figure>
+    </div>
+    <p class="gal-cap">Perros reales, recién salidos de su sesión en La Dolce Vita. 🐶</p>
+  </div>
+</section>
+
+<!-- ============ RESEÑAS ============ -->
+<section id="resenas" class="rev sec">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto">
+      <div class="kicker" style="text-align:center">Lo dicen ellos</div>
+      <h2>Dueños que <em>vuelven encantados.</em></h2>
+    </div>
+    <div class="rev-grid">
+      <div class="qcard reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>“Daniela, con su profesionalidad, atención y cariño en el trato, se gana la confianza desde el primer momento. Trabaja con mucho cuidado y amor.”</blockquote>
+        <div class="who"><div class="av">M</div><div><b>Miguel R.</b><span>perrita caniche toy</span></div></div>
+      </div>
+      <div class="qcard t reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>“Me encanta cómo trata a mi perrito Nino, él está ya mayor y lo cuida y mima muchísimo. Me deja estar con ella mientras lo asea para que no se estrese. La recomiendo 100%.”</blockquote>
+        <div class="who"><div class="av">A</div><div><b>Amparo G.</b><span>su perro Nino</span></div></div>
+      </div>
+      <div class="qcard reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>“El corte perfecto. Daniela fue muy amable y profesional, se notaba que realmente aman a los animales. Mi perro, que normalmente es muy nervioso, se sintió a gusto.”</blockquote>
+        <div class="who"><div class="av">S</div><div><b>Sarah O.</b><span>perro nervioso</span></div></div>
+      </div>
+      <div class="qcard t reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>“Llevé a Toffee, un perrito rescatado que estoy acogiendo tras la DANA, y me lo lavó y cuidó sin cobrarme nada. Gracias Daniela por tu solidaridad.”</blockquote>
+        <div class="who"><div class="av">A</div><div><b>Ana C.</b><span>su acogido Toffee</span></div></div>
+      </div>
+      <div class="qcard reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>“Antes tenía mucho miedo y estaba muy nerviosa, pero gracias a la dedicación y el cariño con el que Daniela la trata, ahora va mucho más tranquila y confiada.”</blockquote>
+        <div class="who"><div class="av">M</div><div><b>Monica P.</b><span>su perrita</span></div></div>
+      </div>
+      <div class="qcard t reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>“4,9★ sobre 48 reseñas en Google. Mira tú mismo lo que cuentan los dueños del barrio.”</blockquote>
+        <div class="who"><div class="av">★</div><div><b>Valoración Google</b><span>Poblats Marítims, València</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GANCHO ============ -->
+<section class="sec" style="padding-top:20px">
+  <div class="wrap">
+    <div class="gancho reveal">
+      <div class="in">
+        <span class="pill">🐾 Plazas limitadas cada semana</span>
+        <h2>Reserva la cita de tu perro hoy.</h2>
+        <p>Daniela atiende con calma y sin agobios, así que las plazas vuelan. Escríbele por WhatsApp, cuéntale cómo es tu perro y os busca el mejor hueco.</p>
+        <a href="https://wa.me/34664424405" class="btn-wa lg">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.01c-.25.69-1.46 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.45.53-.15.15-.3.31-.13.6.17.3.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41z"/></svg>
+          Pedir cita ahora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="sec">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto 40px">
+      <div class="kicker" style="text-align:center">Lo que sueles preguntar</div>
+      <h2>Dudas <em>rápidas.</em></h2>
+    </div>
+    <div class="faq reveal">
+      <details class="faq-item" open>
+        <summary>Mi perro es muy nervioso, ¿lo lleváis bien? <span class="plus">+</span></summary>
+        <p>Es justo lo que mejor se hace aquí. Daniela trabaja con calma y paciencia para ganarse su confianza, y si ayuda a que esté tranquilo, puedes quedarte a su lado mientras lo asea. Muchos dueños cuentan que su perro, antes miedoso, ahora va confiado.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Atendéis a perros mayores? <span class="plus">+</span></summary>
+        <p>Sí, y con mucho mimo. Hay mano y paciencia con los perros que ya tienen años o que necesitan un trato más delicado. Cuéntale a Daniela cómo está el tuyo y lo adapta a él.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puedo quedarme con mi perro durante la sesión? <span class="plus">+</span></summary>
+        <p>Si eso ayuda a que tu perro no se estrese, sí. Daniela deja a algunos dueños acompañar a su perro mientras lo asea para que esté más tranquilo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Dónde estáis y cómo llego? <span class="plus">+</span></summary>
+        <p>En C/ de Just Vilar, 26, bajo derecha — barrio de Poblats Marítims, 46011 València. Si tienes dudas para llegar, escríbele a Daniela por WhatsApp y te orienta.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo pido cita? <span class="plus">+</span></summary>
+        <p>Un mensaje de WhatsApp y listo. Cuéntale cómo es tu perro y qué necesita, y Daniela te confirma el hueco. Sin formularios eternos.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section id="contacto" class="sec" style="padding-top:10px">
+  <div class="wrap">
+    <div class="contacto reveal">
+      <div>
+        <div class="kicker">Hablemos</div>
+        <h2>Tu perro tiene cita pendiente.</h2>
+        <p>Escríbele a Daniela por WhatsApp y cuéntale cómo es tu perro. Te responde ella misma, en persona.</p>
+        <div class="info">
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 16.5v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1 3.7 2 2 0 0 1 3 1.5h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L7 9.1a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>664 42 44 05</div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>C/ de Just Vilar, 26 · Poblats Marítims, València</div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M11.3 1.7 2.4 12.2c-.4.5 0 1.3.7 1.3H10l-1.3 8.5c-.1.7.8 1.1 1.3.5l8.9-10.5c.4-.5 0-1.3-.7-1.3H12l1.3-8.5c.1-.7-.8-1.1-1.3-.5z"/></svg>4,9★ sobre 48 reseñas en Google</div>
+        </div>
+        <a href="https://wa.me/34664424405" class="btn-wa lg">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.01c-.25.69-1.46 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.45.53-.15.15-.3.31-.13.6.17.3.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41z"/></svg>
+          Escribir a Daniela
+        </a>
+      </div>
+      <div class="photo">
+        <img src="fotos/foto-07.jpg" alt="Perro feliz tras su sesión en La Dolce Vita" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="wordmark">
+      <svg class="mark" viewBox="0 0 48 38" fill="none" aria-hidden="true">
+        <path d="M5 30 A19 19 0 0 1 43 30" stroke="#C6694A" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M16 30 q-1-6 4-6 q2-5 6-4 q4 1 4 5 q3 1 3 5" stroke="#6F8F7A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 24 q-3-2-2-5" stroke="#6F8F7A" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="14.4" cy="20.4" r="1.1" fill="#FBF7F0"/>
+      </svg>
+      La&nbsp;Dolce&nbsp;Vita
+    </div>
+    <div class="links">
+      <a href="#daniela">Daniela</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="https://wa.me/34664424405">WhatsApp</a>
+    </div>
+    <p class="fine">
+      Peluquería Canina La Dolce Vita · C/ de Just Vilar, 26, bajo derecha · Poblats Marítims, 46011 València · 664 42 44 05<br>
+      Estilismo canino con cariño, hecho con <span class="heart">♥</span> en el barrio.<br>
+      Fotos: gloria patricia samaca martinez · peluquería canina La Dolce Vita (Google Maps)
+    </p>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FIJO MÓVIL ============ -->
+<a href="https://wa.me/34664424405" class="wa-fab">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.01c-.25.69-1.46 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.45.53-.15.15-.3.31-.13.6.17.3.77 1.27 1.66 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41z"/></svg>
+  Pedir cita por WhatsApp
+</a>
+
+<!-- ============ SCHEMA.ORG ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PetStore",
+  "name": "Peluquería Canina La Dolce Vita",
+  "description": "Peluquería y estilismo canino en el barrio de Poblats Marítims (València). Trato cercano, calmado y cariñoso, también con perros nerviosos y mayores.",
+  "image": "fotos/foto-01.jpg",
+  "telephone": "+34664424405",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C/ de Just Vilar, 26, bajo derecha",
+    "addressLocality": "València",
+    "addressRegion": "Valencia",
+    "postalCode": "46011",
+    "addressCountry": "ES"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "48",
+    "bestRating": "5"
+  }
+}
+</script>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peluquería Canina 4 Patas — San Isidro, Patraix (Valencia)</title>
+<meta name="description" content="Peluquería canina en el barrio de Patraix, Valencia. Baño, corte y mimo para tu perro con Isabel. 4,8★ en Google. Pide cita por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coral:#E8836B;       /* primario, acento cálido */
+    --coral-osc:#d16244;
+    --teal:#2F7E80;        /* secundario, confianza */
+    --teal-osc:#256365;
+    --teal-claro:#dcecec;
+    --crema:#FBF6F2;       /* fondo cálido */
+    --crema-osc:#f1e8df;
+    --tinta:#243234;       /* texto */
+    --tinta-suave:#56676a;
+    --blanco:#fffdfa;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--crema);
+    color:var(--tinta);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .head{font-family:'Quicksand',sans-serif}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  img{display:block;max-width:100%}
+
+  /* ====== BARRA SUPERIOR ====== */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(251,246,242,.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--crema-osc);
+  }
+  .nav-in{
+    max-width:1080px;margin:0 auto;padding:12px 22px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .wordmark{
+    display:flex;align-items:center;gap:11px;
+    font-family:'Quicksand',sans-serif;font-weight:700;font-size:20px;
+    color:var(--teal);letter-spacing:-.01em;text-decoration:none;
+  }
+  .wordmark .paw{
+    width:36px;height:36px;flex:0 0 36px;
+    background:var(--coral);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .wordmark .paw svg{width:21px;height:21px}
+  .wordmark span.t{line-height:1.05}
+  .wordmark span.t small{display:block;font-size:11px;font-weight:500;color:var(--tinta-suave);letter-spacing:.02em}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#25d366;color:#053c1c;
+    font-weight:700;font-size:14px;
+    padding:9px 16px;border-radius:40px;text-decoration:none;
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(37,211,102,.32)}
+  .nav-cta svg{width:17px;height:17px}
+
+  /* ====== HERO ====== */
+  .hero{padding:118px 0 64px;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+  .hero-eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--teal-claro);color:var(--teal-osc);
+    font-weight:700;font-size:12.5px;letter-spacing:.04em;
+    padding:7px 15px;border-radius:40px;margin-bottom:24px;
+    text-transform:uppercase;
+  }
+  .hero-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.65)}}
+  .hero h1{
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:clamp(40px,8.5vw,76px);
+    line-height:1.0;letter-spacing:-.02em;
+    color:var(--tinta);margin-bottom:22px;
+  }
+  .hero h1 .coral{color:var(--coral)}
+  .hero h1 .teal{color:var(--teal)}
+  .hero-sub{
+    font-size:clamp(16px,2.2vw,20px);color:var(--tinta-suave);
+    max-width:520px;margin-bottom:30px;
+  }
+  .hero-sub b{color:var(--tinta);font-weight:700}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .btn-wa{
+    display:inline-flex;align-items:center;gap:10px;
+    background:#25d366;color:#053c1c;font-weight:700;font-size:16px;
+    padding:15px 26px;border-radius:48px;text-decoration:none;
+    box-shadow:0 10px 26px rgba(37,211,102,.3);
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .btn-wa:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(37,211,102,.42)}
+  .btn-wa svg{width:21px;height:21px}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--teal);font-weight:700;font-size:15px;
+    text-decoration:none;padding:14px 8px;
+    border-bottom:2px solid transparent;transition:border-color .2s;
+  }
+  .btn-ghost:hover{border-color:var(--coral)}
+  .hero-trust{
+    margin-top:30px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+    color:var(--tinta-suave);font-size:14px;
+  }
+  .stars{color:var(--coral);letter-spacing:2px;font-size:16px}
+
+  /* foto hero */
+  .hero-photo{
+    position:relative;border-radius:26px;overflow:hidden;
+    box-shadow:0 24px 60px rgba(36,50,52,.16);
+    border:5px solid var(--blanco);
+    aspect-ratio:4/5;
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-photo .badge{
+    position:absolute;left:16px;bottom:16px;
+    background:rgba(255,253,250,.94);border-radius:16px;
+    padding:11px 15px;display:flex;align-items:center;gap:11px;
+    box-shadow:0 8px 20px rgba(36,50,52,.18);
+  }
+  .hero-photo .badge .num{font-family:'Quicksand';font-weight:700;font-size:26px;color:var(--coral);line-height:1}
+  .hero-photo .badge small{display:block;font-size:12px;color:var(--tinta-suave)}
+  .hero-photo .badge .st{color:var(--coral);font-size:13px;letter-spacing:1px}
+
+  /* signature: huella + heartbeat */
+  .sig-line{margin-top:34px;max-width:340px;opacity:.9}
+  .sig-line svg{width:100%;height:auto;overflow:visible}
+  .beat{
+    stroke:var(--coral);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:360;stroke-dashoffset:360;
+    animation:beat 3.2s ease-in-out infinite;
+  }
+  @keyframes beat{
+    0%{stroke-dashoffset:360}
+    55%{stroke-dashoffset:0}
+    100%{stroke-dashoffset:0;opacity:.55}
+  }
+
+  /* ====== reveal anim ====== */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ====== SECCIONES generales ====== */
+  section{position:relative}
+  .sec{padding:74px 0}
+  .kicker{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:'Quicksand';font-weight:700;font-size:12.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--coral);margin-bottom:16px;
+  }
+  .kicker .pw{width:16px;height:16px}
+  .h2{
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:clamp(30px,5.2vw,52px);line-height:1.04;letter-spacing:-.015em;
+    color:var(--tinta);margin-bottom:18px;
+  }
+  .lead{font-size:18px;color:var(--tinta-suave);max-width:620px}
+
+  /* ====== STATS ====== */
+  .stats{background:var(--teal);color:var(--crema)}
+  .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .stat{text-align:center;padding:14px 8px}
+  .stat .n{
+    font-family:'Quicksand';font-weight:700;
+    font-size:clamp(34px,7vw,52px);line-height:1;color:var(--blanco);
+    display:inline-block;
+  }
+  .stat.go .n{animation:bump 2.6s ease-in-out infinite}
+  @keyframes bump{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+  .stat .l{font-size:14px;color:#cfe2e2;margin-top:8px;font-weight:500}
+
+  /* ====== SERVICIOS ====== */
+  .serv-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:42px}
+  .card{
+    background:var(--blanco);border:1px solid var(--crema-osc);
+    border-radius:22px;padding:30px 28px;
+    transition:transform .25s ease,box-shadow .25s ease,border-color .25s;
+  }
+  .card:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(47,126,128,.12);border-color:var(--teal)}
+  .card .ic{
+    width:58px;height:58px;border-radius:18px;
+    background:var(--teal-claro);
+    display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+  }
+  .card:nth-child(2) .ic{background:#fbe2da}
+  .card:nth-child(3) .ic{background:var(--crema-osc)}
+  .card:nth-child(4) .ic{background:#e3eeee}
+  .card .ic svg{width:30px;height:30px}
+  .card h3{font-family:'Quicksand';font-weight:700;font-size:22px;color:var(--tinta);margin-bottom:9px}
+  .card p{color:var(--tinta-suave);font-size:15.5px}
+
+  /* ====== EQUIPO / ISABEL ====== */
+  .soy{background:var(--teal);color:var(--crema)}
+  .soy .h2{color:var(--blanco)}
+  .soy .kicker{color:#ffd6c9}
+  .soy-grid{display:grid;grid-template-columns:1fr;gap:38px;align-items:center}
+  .soy-photo{
+    border-radius:24px;overflow:hidden;aspect-ratio:4/5;position:relative;
+    border:1px solid rgba(255,255,255,.2);
+  }
+  .soy-photo img{width:100%;height:100%;object-fit:cover}
+  .soy-photo .ph-tag{
+    position:absolute;top:16px;left:16px;
+    background:rgba(36,50,52,.8);color:var(--crema);
+    font-size:12px;font-weight:600;padding:6px 12px;border-radius:30px;
+    display:flex;align-items:center;gap:7px;
+  }
+  .soy-photo .ph-tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--coral)}
+  .soy-text p{color:#d8e8e8;font-size:17px;margin-bottom:18px}
+  .soy-text p b{color:var(--blanco)}
+  .firma{
+    font-family:'Quicksand';font-weight:700;
+    font-size:26px;color:#ffd6c9;margin-top:6px;
+  }
+  .firma small{display:block;font-family:'DM Sans';font-size:14px;color:#a9cccc;font-weight:500;margin-top:4px}
+
+  /* ====== POR QUE ====== */
+  .why{background:var(--crema-osc)}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:40px}
+  .bene{
+    display:flex;gap:18px;align-items:flex-start;
+    background:var(--blanco);border-radius:18px;padding:24px 22px;
+    border:1px solid #ece0d3;transition:transform .25s ease;
+  }
+  .bene:hover{transform:translateY(-2px)}
+  .bene .chk{
+    flex:0 0 42px;width:42px;height:42px;border-radius:50%;
+    background:var(--coral);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .bene .chk svg{width:22px;height:22px}
+  .bene h4{font-family:'Quicksand';font-weight:700;font-size:19px;margin-bottom:4px;color:var(--tinta)}
+  .bene p{color:var(--tinta-suave);font-size:15px}
+
+  /* ====== GALERIA ====== */
+  .gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:40px}
+  .gal-grid .ph{
+    border-radius:18px;aspect-ratio:1/1;position:relative;overflow:hidden;
+    border:1px solid var(--crema-osc);transition:transform .3s ease;
+  }
+  .gal-grid .ph img{width:100%;height:100%;object-fit:cover}
+  .gal-grid .ph:hover{transform:translateY(-2px)}
+  .gal-grid .ph:nth-child(3){grid-column:span 2;aspect-ratio:2/1}
+
+  /* ====== RESEÑAS ====== */
+  .res{background:var(--teal)}
+  .res .kicker{color:#ffd6c9}
+  .res .h2{color:var(--blanco)}
+  .res-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:42px}
+  .quote{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+    border-radius:22px;padding:28px 26px;
+  }
+  .quote .stars{font-size:18px;margin-bottom:14px;display:block}
+  .quote p{font-family:'Quicksand';font-weight:500;font-size:18px;line-height:1.45;color:var(--blanco);margin-bottom:20px}
+  .quote .who{display:flex;align-items:center;gap:12px}
+  .quote .av{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Quicksand';font-size:18px;color:#fff}
+  .av1{background:var(--coral)}.av2{background:#7fb3b4}.av3{background:#e0a07a}.av4{background:#5fa0a1}.av5{background:#d98c6e}
+  .quote .who b{display:block;color:var(--blanco);font-family:'DM Sans';font-size:15px}
+  .quote .who small{color:#a9cccc;font-size:13px}
+
+  /* ====== GANCHO ====== */
+  .gancho{padding:0}
+  .gancho-in{
+    background:var(--coral);color:#fff;border-radius:28px;
+    padding:50px 38px;text-align:center;position:relative;overflow:hidden;
+    margin:8px 0;
+  }
+  .gancho-in::before{content:"🐾";position:absolute;font-size:190px;opacity:.12;top:-30px;right:-10px}
+  .gancho .tag{
+    display:inline-block;background:rgba(255,255,255,.24);
+    font-family:'Quicksand';font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;
+    padding:7px 16px;border-radius:30px;margin-bottom:18px;
+  }
+  .gancho h3{
+    font-family:'Quicksand';font-weight:700;
+    font-size:clamp(26px,5vw,46px);line-height:1.05;margin-bottom:14px;
+    letter-spacing:-.015em;position:relative;
+  }
+  .gancho p{font-size:17px;max-width:520px;margin:0 auto 26px;opacity:.96;position:relative}
+  .gancho .btn-wa{background:#fff;color:var(--coral-osc);box-shadow:0 10px 26px rgba(0,0,0,.18);position:relative}
+  .gancho .btn-wa:hover{box-shadow:0 16px 34px rgba(0,0,0,.26)}
+
+  /* ====== CONTACTO / CITA ====== */
+  .cont{background:var(--teal);color:var(--crema)}
+  .cont .h2{color:var(--blanco)}
+  .cont .kicker{color:#ffd6c9}
+  .cont-grid{display:grid;grid-template-columns:1fr;gap:34px;margin-top:34px}
+  .cont-info p{color:#d8e8e8;font-size:17px;margin-bottom:24px;max-width:440px}
+  .cont-row{display:flex;align-items:center;gap:14px;margin-bottom:18px;color:#e7f1f1;font-size:16px}
+  .cont-row .ci{
+    flex:0 0 44px;width:44px;height:44px;border-radius:13px;
+    background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;
+  }
+  .cont-row .ci svg{width:22px;height:22px}
+  .cont-row b{display:block;color:#fff}
+  .cont-row small{color:#a9cccc}
+  .cont-photo{border-radius:22px;overflow:hidden;min-height:240px;border:1px solid rgba(255,255,255,.2)}
+  .cont-photo img{width:100%;height:100%;object-fit:cover;min-height:240px}
+  .cont .btn-wa{margin-top:6px}
+
+  /* ====== FOOTER ====== */
+  footer{background:var(--tinta);color:#9fb6b7;padding:48px 0 104px}
+  .foot-in{display:flex;flex-direction:column;gap:22px}
+  .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center}
+  .foot-mark{display:flex;align-items:center;gap:10px;font-family:'Quicksand';font-weight:700;font-size:19px;color:var(--crema)}
+  .foot-mark .paw{width:32px;height:32px;background:var(--coral);border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .foot-mark .paw svg{width:18px;height:18px}
+  .foot-links{display:flex;gap:22px;flex-wrap:wrap}
+  .foot-links a{color:#9fb6b7;text-decoration:none;font-size:14px;transition:color .2s}
+  .foot-links a:hover{color:var(--coral)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;font-size:13px;color:#73908f}
+  .foot-attr{font-size:12px;color:#5e7a79;margin-top:4px}
+
+  /* ====== WHATSAPP FIJO MOVIL ====== */
+  .wa-fixed{
+    position:fixed;left:18px;right:18px;bottom:18px;z-index:120;
+    background:#25d366;color:#053c1c;font-weight:700;font-size:16px;
+    padding:16px;border-radius:46px;text-decoration:none;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    box-shadow:0 12px 30px rgba(37,211,102,.4);
+    animation:bob 2.6s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+  .wa-fixed svg{width:22px;height:22px}
+
+  /* ====== RESPONSIVE ====== */
+  @media(min-width:760px){
+    .hero-grid{grid-template-columns:1.05fr .95fr;gap:50px}
+    .stats-grid{grid-template-columns:repeat(4,1fr)}
+    .serv-grid{grid-template-columns:repeat(2,1fr)}
+    .soy-grid{grid-template-columns:.85fr 1.15fr;gap:52px}
+    .why-grid{grid-template-columns:repeat(2,1fr)}
+    .gal-grid{grid-template-columns:repeat(3,1fr)}
+    .gal-grid .ph:nth-child(3){grid-column:span 2}
+    .res-grid{grid-template-columns:repeat(3,1fr)}
+    .cont-grid{grid-template-columns:1.1fr 1fr}
+    .wa-fixed{display:none}
+  }
+  @media(max-width:759px){
+    .nav-cta span{display:none}
+    .nav-cta{padding:9px;border-radius:50%}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .reveal{transition:none;opacity:1;transform:none}
+    .beat,.stat.go .n,.wa-fixed,.hero-eyebrow .dot{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== BARRA SUPERIOR ===== -->
+<nav class="nav">
+  <div class="nav-in">
+    <a href="#" class="wordmark">
+      <span class="paw"><svg viewBox="0 0 24 24" fill="#fff"><circle cx="7" cy="8" r="2.1"/><circle cx="12" cy="6" r="2.1"/><circle cx="17" cy="8" r="2.1"/><circle cx="19.5" cy="13" r="1.8"/><path d="M12 11c-3 0-5 2.4-5 4.6 0 1.7 1.4 2.4 2.6 2.4 1 0 1.6-.4 2.4-.4s1.4.4 2.4.4c1.2 0 2.6-.7 2.6-2.4C17 13.4 15 11 12 11z"/></svg></span>
+      <span class="t">4&nbsp;Patas<small>Peluquería canina · Patraix</small></span>
+    </a>
+    <a href="https://wa.me/34657820642" class="nav-cta">
+      <svg viewBox="0 0 24 24" fill="#053c1c"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+      <span>Pedir cita</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow"><span class="dot"></span> Peluquería canina · San Isidro, Patraix</div>
+        <h1 class="head">Tu perro vuelve a casa <span class="coral">limpio,</span> <span class="teal">guapo</span> y feliz.</h1>
+        <p class="hero-sub">Baño, corte y mucho mimo en el barrio de Patraix. Con <b>Isabel</b>, que trata a cada perro con el cariño que tú le darías —y te lo entrega sequito, con las uñas cortadas y las orejas limpias.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/34657820642" class="btn-wa">
+            <svg viewBox="0 0 24 24" fill="#053c1c"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+            Pedir cita por WhatsApp
+          </a>
+          <a href="#servicios" class="btn-ghost">Ver servicios →</a>
+        </div>
+        <div class="hero-trust">
+          <div><span class="stars">★★★★★</span><br><span><b>4,8</b> sobre 5 · 44 reseñas reales en Google</span></div>
+        </div>
+        <!-- signature: huella + latido -->
+        <div class="sig-line" aria-hidden="true">
+          <svg viewBox="0 0 340 56" xmlns="http://www.w3.org/2000/svg">
+            <g fill="#E8836B" transform="translate(2 14)">
+              <circle cx="7" cy="8" r="3.1"/><circle cx="15" cy="4" r="3.1"/><circle cx="23" cy="8" r="3.1"/><circle cx="27.5" cy="15" r="2.6"/>
+              <path d="M15 12c-4 0-6.5 3-6.5 5.8 0 2.1 1.8 3 3.3 3 1.3 0 2-.5 3.2-.5s1.9.5 3.2.5c1.5 0 3.3-.9 3.3-3C21.5 15 19 12 15 12z"/>
+            </g>
+            <path class="beat" d="M40 28 H120 l8 -16 l10 32 l9 -22 l7 14 H320"/>
+          </svg>
+        </div>
+      </div>
+      <div class="hero-photo reveal">
+        <img src="fotos/foto-01.jpg" alt="Perro recién bañado y peinado en Peluquería Canina 4 Patas, Patraix (Valencia)" loading="eager">
+        <div class="badge">
+          <span class="num">4,8<span class="st" style="font-size:13px"> ★</span></span>
+          <small>Valoración media<br>en Google · 44 reseñas</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== STATS ===== -->
+<section class="sec stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat go reveal"><span class="n">4,8★</span><div class="l">Valoración en Google</div></div>
+      <div class="stat reveal"><span class="n">44</span><div class="l">Reseñas de vecinos</div></div>
+      <div class="stat reveal"><span class="n">100%</span><div class="l">Trato con cariño</div></div>
+      <div class="stat reveal"><span class="n">Patraix</span><div class="l">Tu barrio, Valencia</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICIOS ===== -->
+<section class="sec" id="servicios">
+  <div class="wrap">
+    <span class="kicker reveal"><svg class="pw" viewBox="0 0 24 24" fill="#E8836B"><circle cx="7" cy="8" r="2.1"/><circle cx="12" cy="6" r="2.1"/><circle cx="17" cy="8" r="2.1"/><circle cx="19.5" cy="13" r="1.8"/><path d="M12 11c-3 0-5 2.4-5 4.6 0 1.7 1.4 2.4 2.6 2.4 1 0 1.6-.4 2.4-.4s1.4.4 2.4.4c1.2 0 2.6-.7 2.6-2.4C17 13.4 15 11 12 11z"/></svg> Lo que hacemos por tu perro</span>
+    <h2 class="h2 reveal">Un cuidado completo,<br>de la oreja a la cola.</h2>
+    <p class="lead reveal">No es solo un baño: es entregarte a tu perro limpio de verdad, cómodo y guapo. Tú lo dejas tranquilo y lo recoges como nuevo.</p>
+    <div class="serv-grid">
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2F7E80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14c0-4 3.5-7 8-7s8 3 8 7"/><path d="M4 14h16v2a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M9 7V4M15 7V4"/></svg></div>
+        <h3 class="head">Baño completo</h3>
+        <p>Champú adecuado a su pelo, secado a fondo y cepillado. Tu perro vuelve a casa limpio limpio —y oliendo de maravilla.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#d16244" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M8 7.5 20 17M8 16.5 20 7"/></svg></div>
+        <h3 class="head">Corte y arreglo</h3>
+        <p>Corte a tijera o máquina según su raza y lo que tú quieras. Lo dejamos guapísimo, con su carita despejada y comodísimo.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#8a6a3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1.5 3 4 4 4 7a4 4 0 0 1-8 0c0-3 2.5-4 4-7z"/><path d="M9 20h6"/></svg></div>
+        <h3 class="head">Uñas y orejas</h3>
+        <p>Uñas cortadas y orejas limpias en cada visita. Esos detalles que se notan y que cuidan su salud —sin que tú tengas que pelearte en casa.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2F7E80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9-9a4.5 4.5 0 0 1 9-2 4.5 4.5 0 0 1 9 2c-2 4.5-9 9-9 9z"/></svg></div>
+        <h3 class="head">Mimo y paciencia</h3>
+        <p>El trato que marca la diferencia. Aquí tu perro está en buenas manos: con calma, cariño y sin prisas. Por eso vuelve contento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ISABEL / EQUIPO ===== -->
+<section class="sec soy">
+  <div class="wrap">
+    <div class="soy-grid">
+      <div class="soy-photo reveal">
+        <span class="ph-tag">En plena faena</span>
+        <img src="fotos/foto-02.jpg" alt="Isabel trabajando en Peluquería Canina 4 Patas, Patraix" loading="lazy">
+      </div>
+      <div class="soy-text reveal">
+        <span class="kicker">Quién te atiende</span>
+        <h2 class="h2 head">Isabel, y el<br>cariño se nota.</h2>
+        <p>En 4 Patas te atiende <b>Isabel</b>: profesional, simpática y, sobre todo, con un amor real por los animales. No es un eslogan —es lo primero que dicen sus clientas cuando hablan de ella.</p>
+        <p>Por eso tantos perros del barrio la adoran y vuelven moviendo el rabo. Tú dejas a tu perro sabiendo que <b>está en muy buenas manos</b>, y lo recoges guapísimo y tranquilo.</p>
+        <div class="firma head">— Isabel · Peluquería Canina 4 Patas
+          <small>San Isidro · Patraix, Valencia</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POR QUE ===== -->
+<section class="sec why">
+  <div class="wrap">
+    <span class="kicker reveal">Por qué traerlo aquí</span>
+    <h2 class="h2 reveal">Lo que te llevas<br>en cada visita.</h2>
+    <div class="why-grid">
+      <div class="bene reveal">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>
+        <div><h4 class="head">Te lo entregan seco de verdad</h4><p>Nada de recogerlo a medio secar. Sale sequito y cómodo, listo para volver a casa sin pasar frío.</p></div>
+      </div>
+      <div class="bene reveal">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>
+        <div><h4 class="head">Trato cercano, cero prisas</h4><p>Isabel se nota el cariño que tiene a los animales. Tu perro deja de temer la peluquería.</p></div>
+      </div>
+      <div class="bene reveal">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>
+        <div><h4 class="head">En tu barrio, sin desplazamientos</h4><p>En San Isidro, Patraix. Lo dejas de camino y lo recoges guapo, sin cruzar media Valencia.</p></div>
+      </div>
+      <div class="bene reveal">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>
+        <div><h4 class="head">Cita fácil por WhatsApp</h4><p>Sin centralitas ni esperas. Escribes, cuentas qué necesita tu perro y buscamos hueco.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERIA ===== -->
+<section class="sec">
+  <div class="wrap">
+    <span class="kicker reveal">El día a día en 4 Patas</span>
+    <h2 class="h2 reveal">Caras felices,<br>fotos reales.</h2>
+    <p class="lead reveal">Algunos de los peludos que pasan por aquí —y se van moviendo el rabo.</p>
+    <div class="gal-grid reveal">
+      <div class="ph"><img src="fotos/foto-03.jpg" alt="Perro arreglado en Peluquería Canina 4 Patas" loading="lazy"></div>
+      <div class="ph"><img src="fotos/foto-04.jpg" alt="Perro tras el baño y corte en 4 Patas, Patraix" loading="lazy"></div>
+      <div class="ph"><img src="fotos/foto-05.jpg" alt="Resultado de peluquería canina en San Isidro, Valencia" loading="lazy"></div>
+      <div class="ph"><img src="fotos/foto-06.jpg" alt="Perro limpio y peinado en 4 Patas" loading="lazy"></div>
+      <div class="ph"><img src="fotos/foto-07.jpg" alt="Cuidado canino en Patraix, Valencia" loading="lazy"></div>
+      <div class="ph"><img src="fotos/foto-08.jpg" alt="Perro contento tras su sesión en 4 Patas" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESEÑAS ===== -->
+<section class="sec res">
+  <div class="wrap">
+    <span class="kicker reveal">Lo dicen los vecinos</span>
+    <h2 class="h2 reveal">Palabra de quienes<br>ya la conocen.</h2>
+    <div class="res-grid">
+      <div class="quote reveal">
+        <span class="stars">★★★★★</span>
+        <p class="head">"Por fin encontré una peluquería en el barrio donde me entregan a mi hija seca... Esta vez estoy súper satisfecha: mi Fiona limpia limpia, sus uñas cortadas, sus orejas limpias y se nota que la ducharon."</p>
+        <div class="who"><span class="av av1">A</span><div><b>Andreina A.</b><small>Reseña en Google</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars">★★★★★</span>
+        <p class="head">"Isabel es muy buena profesional, simpática, agradable, se nota el cariño que tiene por los animales. Estoy muy contento de llevar a mi perra Luna, sé que está en muy buenas manos."</p>
+        <div class="who"><span class="av av2">M</span><div><b>Miguel Á.</b><small>Reseña en Google</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars">★★★★★</span>
+        <p class="head">"Maravilloso todo. La atención, el trato a mi perrito, el servicio de baño y corte estupendo. Ya no me cambio de allí."</p>
+        <div class="who"><span class="av av3">M</span><div><b>Miriam B.</b><small>Reseña en Google</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars">★★★★★</span>
+        <p class="head">"Isabel es un encanto. Mi perra la adora. Es la mejor peluquera canina de Valencia. Deja a mi chica guapísima."</p>
+        <div class="who"><span class="av av4">M</span><div><b>Mavi G.</b><small>Reseña en Google</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars">★★★★★</span>
+        <p class="head">"Isabel es una gran profesional, se nota que le gustan los animales. Cuando llevo a mi perrita Gaba la trata con mucho cariño y estoy muy contenta porque sé que está en buenas manos. Lo recomiendo al 100%."</p>
+        <div class="who"><span class="av av5">L</span><div><b>Leo G.</b><small>Reseña en Google</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GANCHO ===== -->
+<section class="sec gancho">
+  <div class="wrap">
+    <div class="gancho-in reveal">
+      <span class="tag">🐾 Pide tu cita</span>
+      <h3 class="head">¿Tu perro necesita<br>un buen baño y corte?</h3>
+      <p>Escríbele a Isabel por WhatsApp, cuéntale cómo es tu perro y qué necesita, y buscáis hueco. Fácil, rápido y sin esperas.</p>
+      <a href="https://wa.me/34657820642" class="btn-wa">
+        <svg viewBox="0 0 24 24" fill="#d16244"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+        Pedir cita ahora
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTO / CITA ===== -->
+<section class="sec cont" id="contacto">
+  <div class="wrap">
+    <span class="kicker reveal">Dónde estamos</span>
+    <h2 class="h2 reveal">Te esperamos en<br>San Isidro, Patraix.</h2>
+    <div class="cont-grid">
+      <div class="cont-info reveal">
+        <p>En el barrio de toda la vida. Trae a tu perro cuando quieras —o escríbenos antes por WhatsApp y reservamos tu hueco.</p>
+        <div class="cont-row"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>C/ José Andreu Alabarta, 35</b><small>Patraix · 46014 València</small></div></div>
+        <div class="cont-row"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Cita previa por WhatsApp</b><small>Te confirmamos hueco al momento</small></div></div>
+        <div class="cont-row"><span class="ci"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4z"/></svg></span><div><b>657 82 06 42</b><small>WhatsApp · te responde Isabel</small></div></div>
+        <a href="https://wa.me/34657820642" class="btn-wa">
+          <svg viewBox="0 0 24 24" fill="#053c1c"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+          Escríbenos ahora
+        </a>
+      </div>
+      <div class="cont-photo reveal">
+        <img src="fotos/foto-01.jpg" alt="Perro recién arreglado en Peluquería Canina 4 Patas San Isidro, Patraix (Valencia)" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap foot-in">
+    <div class="foot-top">
+      <div class="foot-mark">
+        <span class="paw"><svg viewBox="0 0 24 24" fill="#fff"><circle cx="7" cy="8" r="2.1"/><circle cx="12" cy="6" r="2.1"/><circle cx="17" cy="8" r="2.1"/><circle cx="19.5" cy="13" r="1.8"/><path d="M12 11c-3 0-5 2.4-5 4.6 0 1.7 1.4 2.4 2.6 2.4 1 0 1.6-.4 2.4-.4s1.4.4 2.4.4c1.2 0 2.6-.7 2.6-2.4C17 13.4 15 11 12 11z"/></svg></span>
+        Peluquería Canina 4 Patas
+      </div>
+      <div class="foot-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+        <a href="https://wa.me/34657820642">WhatsApp</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © 2026 Peluquería Canina 4 Patas · C/ José Andreu Alabarta, 35 · Patraix, 46014 València · 4,8★ con 44 reseñas en Google. Hecho con cariño para los perros del barrio. 🐾
+      <div class="foot-attr">Fotos: Peluquería canina 4 patas san isidro valencia (Google Maps).</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FIJO MOVIL ===== -->
+<a href="https://wa.me/34657820642" class="wa-fixed">
+  <svg viewBox="0 0 24 24" fill="#053c1c"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+  Pedir cita por WhatsApp
+</a>
+
+<!-- ===== SCHEMA.ORG ===== -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"PetStore",
+  "name":"Peluquería Canina 4 Patas San Isidro Valencia",
+  "description":"Peluquería canina en el barrio de Patraix (Valencia): baño, corte, uñas y orejas. Trato cercano y con cariño por Isabel.",
+  "image":"fotos/foto-01.jpg",
+  "telephone":"+34657820642",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Carrer de José Andreu Alabarta, 35",
+    "addressLocality":"València",
+    "addressRegion":"Valencia",
+    "postalCode":"46014",
+    "addressCountry":"ES"
+  },
+  "areaServed":"Patraix, València",
+  "aggregateRating":{
+    "@type":"AggregateRating",
+    "ratingValue":"4.8",
+    "reviewCount":"44",
+    "bestRating":"5",
+    "worstRating":"1"
+  },
+  "review":[
+    {"@type":"Review","author":{"@type":"Person","name":"Andreina A."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Por fin encontré una peluquería en el barrio donde me entregan a mi hija seca. Mi Fiona limpia, sus uñas cortadas, sus orejas limpias."},
+    {"@type":"Review","author":{"@type":"Person","name":"Miguel Á."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Isabel es muy buena profesional, simpática, agradable, se nota el cariño que tiene por los animales. Mi perra Luna está en muy buenas manos."},
+    {"@type":"Review","author":{"@type":"Person","name":"Mavi G."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Isabel es un encanto. Mi perra la adora. Es la mejor peluquera canina de Valencia. Deja a mi chica guapísima."}
+  ]
+}
+</script>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){
+        setTimeout(()=>e.target.classList.add('in'), (i%4)*90);
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.14, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

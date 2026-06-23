@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cocofany — Peluquería canina en Valencia · Baño y corte con mimo</title>
+<meta name="description" content="Peluquería canina Cocofany en Valencia (Jesús). Baño y corte con trato uno a uno, sin prisas y mucho cariño. 4.8★ en Google. Pide cita por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primario:#FF5B4A;
+    --primario-soft:#FF8475;
+    --secundario:#B6E61E;
+    --crema:#FFF3E0;
+    --crema-2:#FBE7CC;
+    --tinta:#1B1B1B;
+    --tinta-2:#2C2826;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--crema);
+    color:var(--tinta);
+    font-family:'DM Sans',sans-serif;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--primario);color:var(--crema)}
+  h1,h2,h3{line-height:.96;letter-spacing:-.02em;font-family:'Bricolage Grotesque',sans-serif;font-weight:800}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+
+  /* ---------- NAVBAR ---------- */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;
+    background:rgba(255,243,224,.86);
+    backdrop-filter:blur(12px);
+    border-bottom:2px solid var(--tinta);
+  }
+  .brand{display:flex;align-items:center;gap:8px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.01em}
+  .brand .dot{color:var(--primario)}
+  .nav-wa{
+    display:inline-flex;align-items:center;gap:7px;
+    background:var(--primario);color:var(--crema);
+    font-family:'DM Sans';font-weight:700;font-size:14px;
+    padding:9px 16px;border-radius:40px;border:2px solid var(--tinta);
+    transition:transform .15s ease, background .2s ease;
+  }
+  .nav-wa:hover{transform:translateY(-2px) rotate(-2deg);background:var(--tinta)}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding:120px 20px 60px;text-align:center;overflow:hidden}
+  .hero-blob{
+    position:absolute;width:520px;height:520px;border-radius:50%;
+    background:var(--primario);opacity:.16;filter:blur(10px);
+    top:-160px;right:-200px;z-index:0;
+    animation:floaty 9s ease-in-out infinite;
+  }
+  .hero-blob.b2{background:var(--secundario);opacity:.22;width:360px;height:360px;top:auto;bottom:-140px;left:-160px;right:auto;animation-delay:-3s}
+  @keyframes floaty{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(30px) scale(1.06)}}
+  .hero-kicker{
+    position:relative;z-index:2;
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--tinta);color:var(--crema);
+    font-weight:500;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;
+    padding:7px 15px;border-radius:30px;margin-bottom:26px;
+  }
+  .hero-kicker .pulse{width:8px;height:8px;border-radius:50%;background:var(--secundario);animation:pulse 1.4s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+  .hero h1{
+    position:relative;z-index:2;
+    font-size:clamp(52px,15vw,116px);
+    animation:bouncein .9s cubic-bezier(.18,.89,.32,1.28) both;
+  }
+  .hero h1 .l1{display:block;color:var(--tinta)}
+  .hero h1 .l2{display:block;color:var(--primario);position:relative}
+  .hero h1 .l2::after{
+    content:"";position:absolute;left:50%;bottom:4px;transform:translateX(-50%);
+    width:0;height:12px;background:var(--secundario);z-index:-1;opacity:.85;border-radius:6px;
+    animation:underline 1.1s ease-out forwards .8s;
+  }
+  @keyframes underline{to{width:90%}}
+  @keyframes bouncein{0%{opacity:0;transform:translateY(40px) scale(.92)}100%{opacity:1;transform:none}}
+  .hero-sub{
+    position:relative;z-index:2;
+    max-width:460px;margin:24px auto 0;
+    font-size:18px;line-height:1.5;color:var(--tinta-2);
+  }
+  .hero-sub strong{font-weight:700;color:var(--tinta)}
+  .hero-cta{
+    position:relative;z-index:2;
+    display:inline-flex;align-items:center;gap:10px;margin-top:32px;
+    background:var(--primario);color:var(--crema);
+    font-family:'Bricolage Grotesque';font-weight:800;font-size:19px;letter-spacing:-.01em;
+    padding:18px 30px;border-radius:50px;border:3px solid var(--tinta);
+    box-shadow:6px 6px 0 var(--tinta);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .hero-cta:hover,.hero-cta:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--tinta)}
+  .hero-note{position:relative;z-index:2;margin-top:14px;font-size:13px;color:var(--tinta-2);opacity:.8}
+  .hero-rating{
+    position:relative;z-index:2;margin-top:16px;
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--crema-2);border:2px solid var(--tinta);border-radius:40px;
+    padding:8px 16px;font-size:14px;font-weight:700;
+  }
+  .hero-rating .stars{color:var(--primario);letter-spacing:1px}
+  .hero-rating .muted{font-weight:500;color:var(--tinta-2)}
+
+  /* ---------- HERO PHOTOS ---------- */
+  .hero-photos{
+    position:relative;z-index:2;max-width:440px;margin:40px auto 0;
+    display:grid;grid-template-columns:1.4fr 1fr;gap:12px;
+  }
+  .hp{border:3px solid var(--tinta);border-radius:22px;overflow:hidden;position:relative;box-shadow:7px 7px 0 var(--primario)}
+  .hp.big{grid-row:span 2}
+  .hp img{width:100%;height:100%;object-fit:cover}
+  .hp.big img{min-height:300px}
+  .hp.small img{height:144px}
+  .sticker{
+    position:absolute;z-index:5;
+    background:var(--secundario);color:var(--tinta);border:2px solid var(--tinta);
+    font-family:'Bricolage Grotesque';font-weight:800;font-size:13px;
+    padding:8px 12px;border-radius:50%;width:74px;height:74px;
+    display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.05;
+    box-shadow:3px 3px 0 var(--tinta);
+    animation:spin 16s linear infinite;
+  }
+  .sticker.s-hero{top:-22px;left:-18px}
+  @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+  /* ---------- MARQUEE ---------- */
+  .marquee{
+    background:var(--tinta);color:var(--crema);overflow:hidden;white-space:nowrap;
+    border-top:3px solid var(--tinta);border-bottom:3px solid var(--tinta);padding:13px 0;
+  }
+  .marquee-track{display:inline-block;animation:scroll 20s linear infinite;font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;letter-spacing:-.01em}
+  .marquee-track span{margin:0 18px}
+  .marquee-track .star{color:var(--secundario)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section{position:relative}
+  .wrap{max-width:500px;margin:0 auto;padding:64px 22px}
+  .eyebrow{
+    display:inline-block;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--primario);margin-bottom:14px;
+  }
+  .sec-title{font-size:clamp(36px,11vw,58px);color:var(--tinta);margin-bottom:18px}
+  .sec-title .pop{color:var(--primario)}
+
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s cubic-bezier(.18,.89,.32,1.28)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- ANTES / DESPUÉS (signature blob) ---------- */
+  .ba{background:var(--crema-2)}
+  .ba-stage{position:relative;margin-top:14px}
+  .blob-wrap{position:relative;width:100%;max-width:440px;margin:0 auto}
+  .blob-wrap svg{width:100%;height:auto;display:block}
+  .ba-grid{
+    position:absolute;inset:8% 9%;
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center;
+  }
+  .ba-pane{position:relative}
+  .ba-photo{aspect-ratio:1/1;border-radius:18px;border:3px solid var(--tinta);overflow:hidden;box-shadow:4px 4px 0 var(--tinta)}
+  .ba-photo img{width:100%;height:100%;object-fit:cover}
+  .ba-tag{
+    position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+    font-family:'Bricolage Grotesque';font-weight:800;font-size:13px;
+    padding:4px 14px;border-radius:30px;border:2px solid var(--tinta);white-space:nowrap;
+  }
+  .ba-before .ba-tag{background:var(--crema);color:var(--tinta-2)}
+  .ba-after .ba-tag{background:var(--secundario);color:var(--tinta)}
+  .ba-caption{text-align:center;margin-top:26px;font-size:16px;color:var(--tinta-2);line-height:1.5}
+  .ba-caption b{color:var(--primario);font-weight:800;font-family:'Bricolage Grotesque'}
+
+  /* ---------- SERVICIOS / PRECIOS ---------- */
+  .svc-list{display:flex;flex-direction:column;gap:14px;margin-top:10px}
+  .svc{
+    background:var(--crema);border:3px solid var(--tinta);border-radius:20px;padding:20px;
+    display:flex;gap:15px;align-items:flex-start;
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .svc:hover{transform:translateY(-4px);box-shadow:6px 6px 0 var(--secundario)}
+  .svc-ico{font-size:34px;line-height:1;flex:0 0 auto}
+  .svc-body h3{font-size:22px;margin-bottom:5px}
+  .svc-body p{font-size:14.5px;line-height:1.5;color:var(--tinta-2);font-weight:400}
+  .svc-tag{margin-top:10px;display:inline-block;font-family:'Bricolage Grotesque';font-weight:800;font-size:13px;color:var(--primario);border:2px solid var(--primario);border-radius:30px;padding:3px 12px}
+  .price-note{margin-top:16px;font-size:13.5px;color:var(--tinta-2);text-align:center;line-height:1.5}
+
+  /* ---------- CÓMO VA ---------- */
+  .how{background:var(--tinta);color:var(--crema)}
+  .how .sec-title{color:var(--crema)}
+  .how .eyebrow{color:var(--secundario)}
+  .how-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:10px}
+  .how-cell{background:var(--tinta-2);border:2px solid rgba(255,243,224,.18);border-radius:18px;padding:18px 16px}
+  .how-cell .n{font-family:'Bricolage Grotesque';font-weight:800;font-size:30px;color:var(--primario)}
+  .how-cell h4{font-weight:700;font-size:15.5px;margin:6px 0 5px}
+  .how-cell p{font-size:13px;line-height:1.45;color:rgba(255,243,224,.74);font-weight:400}
+
+  /* ---------- GALERÍA ---------- */
+  .gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+  .gal-item{
+    aspect-ratio:1/1;border-radius:18px;border:3px solid var(--tinta);position:relative;overflow:hidden;
+    transition:transform .2s ease;box-shadow:4px 4px 0 transparent;
+  }
+  .gal-item:hover{transform:scale(1.02) rotate(-1deg);box-shadow:4px 4px 0 var(--primario)}
+  .gal-item img{width:100%;height:100%;object-fit:cover}
+  .gal-item.tall{grid-row:span 2;aspect-ratio:auto}
+
+  /* ---------- RESEÑAS ---------- */
+  .rev{background:var(--crema-2)}
+  .rev-list{display:flex;flex-direction:column;gap:16px;margin-top:8px}
+  .rev-card{
+    background:var(--crema);border:3px solid var(--tinta);border-radius:20px;padding:20px;
+    box-shadow:5px 5px 0 var(--tinta);
+  }
+  .rev-stars{color:var(--primario);font-size:17px;letter-spacing:2px;margin-bottom:8px}
+  .rev-card p{font-size:16.5px;line-height:1.5;color:var(--tinta);font-weight:500}
+  .rev-who{display:flex;align-items:center;gap:10px;margin-top:14px}
+  .rev-av{width:38px;height:38px;border-radius:50%;background:var(--primario);color:var(--crema);display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:15px;border:2px solid var(--tinta)}
+  .rev-name{font-weight:700;font-size:14px}
+  .rev-meta{font-size:12px;color:var(--tinta-2);opacity:.7}
+
+  /* ---------- CITA / CONTACTO ---------- */
+  .cta{background:var(--primario);color:var(--crema);text-align:center}
+  .cta .sec-title{color:var(--crema)}
+  .cta .eyebrow{color:var(--tinta)}
+  .cta p{font-size:16px;line-height:1.55;color:#FFE9E3;max-width:380px;margin:0 auto 26px}
+  .cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--crema);color:var(--tinta);font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;padding:18px 32px;border-radius:50px;border:3px solid var(--tinta);box-shadow:5px 5px 0 var(--tinta);transition:transform .12s ease,box-shadow .12s ease}
+  .cta-btn:hover,.cta-btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--tinta)}
+  .cta-info{margin-top:30px;display:flex;flex-direction:column;gap:9px;font-size:14.5px}
+  .cta-info .row{display:inline-flex;align-items:center;justify-content:center;gap:9px;color:#FFEDE7}
+  .cta-info .row b{color:var(--secundario);font-weight:700}
+  .cta-info .row a{text-decoration:underline;text-underline-offset:2px}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--tinta);color:var(--crema);border-top:3px solid var(--secundario);padding:34px 22px 110px;text-align:center}
+  .foot-brand{font-family:'Bricolage Grotesque';font-weight:800;font-size:30px}
+  .foot-brand .dot{color:var(--primario)}
+  .foot-tag{font-size:15px;color:var(--secundario);margin:8px 0 18px;font-weight:500}
+  .foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 20px;font-size:13px;color:rgba(255,243,224,.72);margin-bottom:18px}
+  .foot-fine{font-size:11.5px;color:rgba(255,243,224,.5);line-height:1.7}
+
+  /* ---------- WA FIXED MOBILE ---------- */
+  .wa-fixed{
+    position:fixed;left:16px;right:16px;bottom:16px;z-index:200;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:#25D366;color:#0a3d1c;
+    font-family:'Bricolage Grotesque';font-weight:800;font-size:18px;
+    padding:16px;border-radius:50px;border:3px solid var(--tinta);
+    box-shadow:0 6px 0 var(--tinta);
+    animation:wabob 2.6s ease-in-out infinite;
+  }
+  @keyframes wabob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+  .wa-fixed .wa-ico{width:24px;height:24px;flex:0 0 auto}
+
+  @media(min-width:560px){
+    .wa-fixed{left:auto;right:24px;bottom:24px;padding:16px 24px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="nav">
+  <div class="brand">Cocofany<span class="dot">●</span></div>
+  <a class="nav-wa" href="https://wa.me/34642703835" aria-label="Pedir cita por WhatsApp">
+    <svg class="wa-ico" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7s1.9 2.9 4.6 4c1.7.7 2.3.7 3.1.6.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1z"/></svg>
+    Pedir cita
+  </a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-blob"></div>
+  <div class="hero-blob b2"></div>
+  <span class="hero-kicker"><span class="pulse"></span>Peluquería canina · Jesús, Valencia</span>
+  <h1>
+    <span class="l1">Entra peludo.</span>
+    <span class="l2">Sale precioso.</span>
+  </h1>
+  <p class="hero-sub">En <strong>Cocofany</strong> tu perro pasa por las manos de Laura: baño, corte y mucho mimo, <strong>uno a uno y sin prisas</strong>. Sale guapo y, sobre todo, tranquilo. 🐾</p>
+  <a class="hero-cta" href="https://wa.me/34642703835">Pedir cita por WhatsApp →</a>
+  <p class="hero-note">Te respondemos por WhatsApp y buscamos el horario que mejor te venga.</p>
+  <div class="hero-rating">
+    <span class="stars">★★★★★</span>
+    <span>4,8</span>
+    <span class="muted">· 68 reseñas en Google</span>
+  </div>
+
+  <div class="hero-photos">
+    <div class="hp big">
+      <span class="sticker s-hero">¡Guapo!</span>
+      <img src="fotos/foto-01.jpg" alt="Perro recién peluqueado en Cocofany, Valencia" loading="eager">
+    </div>
+    <div class="hp small"><img src="fotos/foto-02.jpg" alt="Detalle de corte canino en Cocofany" loading="lazy"></div>
+    <div class="hp small"><img src="fotos/foto-03.jpg" alt="Perro tras su baño y corte en Cocofany" loading="lazy"></div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Baño<span class="star"> ✦ </span></span><span>Corte<span class="star"> ✦ </span></span><span>Uno a uno<span class="star"> ✦ </span></span><span>Sin prisas<span class="star"> ✦ </span></span><span>Mucho mimo<span class="star"> ✦ </span></span><span>Valencia<span class="star"> ✦ </span></span>
+    <span>Baño<span class="star"> ✦ </span></span><span>Corte<span class="star"> ✦ </span></span><span>Uno a uno<span class="star"> ✦ </span></span><span>Sin prisas<span class="star"> ✦ </span></span><span>Mucho mimo<span class="star"> ✦ </span></span><span>Valencia<span class="star"> ✦ </span></span>
+  </div>
+</div>
+
+<!-- ANTES / DESPUÉS — signature blob -->
+<section class="ba">
+  <div class="wrap reveal">
+    <span class="eyebrow">El cambiazo 🪄</span>
+    <h2 class="sec-title">De peludito a <span class="pop">recién salido</span></h2>
+    <div class="ba-stage">
+      <div class="blob-wrap">
+        <svg viewBox="0 0 440 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparativa antes y después">
+          <path fill="#FF5B4A" fill-opacity="0.14" stroke="#1B1B1B" stroke-width="3"
+            d="M60,40 C150,-5 300,5 380,50 C435,82 430,180 400,250 C368,325 280,360 190,358 C100,356 28,320 16,235 C6,160 -5,80 60,40 Z"/>
+        </svg>
+        <div class="ba-grid">
+          <div class="ba-pane ba-before">
+            <span class="ba-tag">Antes</span>
+            <div class="ba-photo"><img src="fotos/foto-04.jpg" alt="Perro antes de la sesión en Cocofany" loading="lazy"></div>
+          </div>
+          <div class="ba-pane ba-after">
+            <span class="ba-tag">Después</span>
+            <div class="ba-photo"><img src="fotos/foto-05.jpg" alt="El mismo perro tras baño y corte en Cocofany" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+      <p class="ba-caption">El resultado es <b>impecable</b> y el trato, inmejorable — tal cual lo cuentan quienes ya han venido.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS / PRECIOS -->
+<section>
+  <div class="wrap reveal">
+    <span class="eyebrow">Lo que hacemos</span>
+    <h2 class="sec-title">Baño, corte y <span class="pop">detalle</span></h2>
+    <div class="svc-list">
+      <div class="svc">
+        <div class="svc-ico">🛁</div>
+        <div class="svc-body">
+          <h3>Baño completo</h3>
+          <p>Baño con el producto adecuado para su pelo, secado y cepillado. Sale limpio, suelto y oliendo de maravilla.</p>
+          <span class="svc-tag">Limpieza al máximo detalle</span>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="svc-ico">✂️</div>
+        <div class="svc-body">
+          <h3>Corte a su medida</h3>
+          <p>Tijera y máquina según su raza o el look que tú quieras. Para que vuelva a casa hecho un guapo.</p>
+          <span class="svc-tag">Acabado a tu gusto</span>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="svc-ico">🐾</div>
+        <div class="svc-body">
+          <h3>Cuidados extra</h3>
+          <p>Uñas, oídos, almohadillas y esos detalles que marcan la diferencia. Y en fechas señaladas, hasta su adornito. ✨</p>
+          <span class="svc-tag">Cariño en cada paso</span>
+        </div>
+      </div>
+    </div>
+    <p class="price-note">El precio depende de la raza, el tamaño y el estado del pelo. Escríbenos por WhatsApp y te lo decimos al momento, sin compromiso.</p>
+  </div>
+</section>
+
+<!-- CÓMO VA -->
+<section class="how">
+  <div class="wrap reveal">
+    <span class="eyebrow">Por qué Cocofany</span>
+    <h2 class="sec-title">Aquí se hace<br>distinto</h2>
+    <div class="how-grid">
+      <div class="how-cell">
+        <div class="n">01</div>
+        <h4>Uno a uno</h4>
+        <p>Tu perro tiene toda la atención de Laura. Nada de agobios ni de hacer cola.</p>
+      </div>
+      <div class="how-cell">
+        <div class="n">02</div>
+        <h4>Sin prisas</h4>
+        <p>Si hoy viene con miedo, vamos despacito. Lo importante es que se vaya tranquilo.</p>
+      </div>
+      <div class="how-cell">
+        <div class="n">03</div>
+        <h4>Tu horario</h4>
+        <p>Buscamos el hueco que mejor te venga a ti — nos lo dicen y lo agradecen.</p>
+      </div>
+      <div class="how-cell">
+        <div class="n">04</div>
+        <h4>Profesional</h4>
+        <p>Trato cuidado, sitio limpio y un resultado del que presumir. 4,8★ en Google.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section>
+  <div class="wrap reveal">
+    <span class="eyebrow">Sus clientes 🏆</span>
+    <h2 class="sec-title">El muro de los <span class="pop">guapos</span></h2>
+    <div class="gal-grid">
+      <div class="gal-item tall"><img src="fotos/foto-06.jpg" alt="Perro peluqueado en Cocofany Valencia" loading="lazy"></div>
+      <div class="gal-item"><img src="fotos/foto-07.jpg" alt="Resultado de peluquería canina en Cocofany" loading="lazy"></div>
+      <div class="gal-item"><img src="fotos/foto-08.jpg" alt="Perro tras su baño y corte en Cocofany" loading="lazy"></div>
+      <div class="gal-item tall"><img src="fotos/foto-01.jpg" alt="Perro recién peluqueado en Cocofany" loading="lazy"></div>
+      <div class="gal-item"><img src="fotos/foto-03.jpg" alt="Detalle de corte canino en Cocofany" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEÑAS -->
+<section class="rev">
+  <div class="wrap reveal">
+    <span class="eyebrow">Lo que dicen sus humanos</span>
+    <h2 class="sec-title">Reseñas de <span class="pop">5 estrellas</span></h2>
+    <div class="rev-list">
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p>"Hoy hemos ido por primera vez a la pelu, y no hemos podido elegir mejor sitio. Resultado impecable y trato inmejorable!!! Laura es encantadora y muy profesional. Lola a quedado asi de bonita ❤️"</p>
+        <div class="rev-who">
+          <div class="rev-av">LM</div>
+          <div>
+            <div class="rev-name">Lucia M.</div>
+            <div class="rev-meta">Reseña en Google</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p>"Experiencia muy grata! León quedó precioso y para colmo Laura nos ayudó con unas rojeces que tenía, por lo que no puedes dejar a tu mascota en mejores manos! Profesional, limpio y cuidado al máximo detalle!"</p>
+        <div class="rev-who">
+          <div class="rev-av">AH</div>
+          <div>
+            <div class="rev-name">Andrea H.</div>
+            <div class="rev-meta">Reseña en Google</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p>"Laura es un amor, Drago tenía miedo de su antigua peluquería. Nuestra vecina nos aconsejó Cocofany. La Dana nos afectó y no teníamos peluquería, pero fue un acierto magnífico. En verdad que lo recomiendo un 100% 💗 es la mejor."</p>
+        <div class="rev-who">
+          <div class="rev-av">AG</div>
+          <div>
+            <div class="rev-name">Angelica G.</div>
+            <div class="rev-meta">Reseña en Google</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p>"Ya tenemos peluquería para Coco, nuestra perrita bichón maltés! Nos ha encantado el profesionalismo, cariño, atención... de Laura! Ha salido tranquila y preciosa y con adornos de navidad! Enhorabuena Laura!!! Recomendamos 💯 por ciento!"</p>
+        <div class="rev-who">
+          <div class="rev-av">MJ</div>
+          <div>
+            <div class="rev-name">Maria J.</div>
+            <div class="rev-meta">Reseña en Google</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p>"100% recomendable!!! Nos dejó a los perros muy guapos 😁. Ella es súper agradable y además nos dijo de cogernos a los perros en el horario que mejor nos viniese. Volveremos pronto."</p>
+        <div class="rev-who">
+          <div class="rev-av">JL</div>
+          <div>
+            <div class="rev-name">Jorge L.</div>
+            <div class="rev-meta">Reseña en Google</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CITA / CONTACTO -->
+<section class="cta">
+  <div class="wrap">
+    <span class="eyebrow">¿Pedimos cita?</span>
+    <h2 class="sec-title">Tu perro<br>se lo merece</h2>
+    <p>Cuéntanos qué perro tienes y qué necesita, y le buscamos su hueco. Respondemos por WhatsApp.</p>
+    <a class="cta-btn" href="https://wa.me/34642703835">
+      <svg class="wa-ico" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7s1.9 2.9 4.6 4c1.7.7 2.3.7 3.1.6.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1z"/></svg>
+      Escribir por WhatsApp
+    </a>
+    <div class="cta-info">
+      <span class="row"><b>📍</b> Carrer del Pintor Rafael Solbes, 1 · Jesús, 46017 València</span>
+      <span class="row"><b>📞</b> <a href="tel:+34642703835">642 70 38 35</a></span>
+      <span class="row"><b>⭐</b> 4,8 sobre 5 · 68 reseñas en Google</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-brand">Cocofany<span class="dot">●</span></div>
+  <div class="foot-tag">Peluquería canina · Baño y corte en Valencia</div>
+  <div class="foot-links">
+    <a href="#">Servicios</a>
+    <a href="#">Galería</a>
+    <a href="#">Reseñas</a>
+    <a href="https://wa.me/34642703835">WhatsApp</a>
+  </div>
+  <p class="foot-fine">
+    Carrer del Pintor Rafael Solbes, 1 · Jesús, 46017 València, Valencia 🐾<br>
+    Fotos: Barbara Pdkvck · Peluquería canina Cocofany - Baño y corte en valencia · laura palmi peña (Google Maps).<br>
+    © 2026 Peluquería Canina Cocofany.
+  </p>
+</footer>
+
+<!-- WHATSAPP FIJO -->
+<a class="wa-fixed" href="https://wa.me/34642703835" aria-label="Pedir cita por WhatsApp">
+  <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7s1.9 2.9 4.6 4c1.7.7 2.3.7 3.1.6.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1z"/></svg>
+  Pedir cita
+</a>
+
+<!-- SCHEMA.ORG -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PetStore",
+  "name": "Peluquería Canina Cocofany - Baño y corte en Valencia",
+  "image": "fotos/foto-01.jpg",
+  "telephone": "+34642703835",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Carrer del Pintor Rafael Solbes, 1",
+    "addressLocality": "València",
+    "addressRegion": "Valencia",
+    "postalCode": "46017",
+    "addressCountry": "ES"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "68",
+    "bestRating": "5"
+  }
+}
+</script>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>

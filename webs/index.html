@@ -1,83 +1,71 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
 <title>Avantia · Webs de demostración</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#1a1410; --panel:#241c15; --line:#38291d;
-    --crema:#f6efe4; --muted:#b6a890; --coral:#FF5B4A; --lima:#B6E61E;
-  }
+  :root{--bg:#1a1410;--panel:#241c15;--line:#38291d;--crema:#f6efe4;--muted:#b6a890;--coral:#FF5B4A;--lima:#B6E61E}
   *{margin:0;padding:0;box-sizing:border-box}
-  body{
-    font-family:'DM Sans',system-ui,sans-serif;
-    background:radial-gradient(circle at 80% -10%,rgba(255,91,74,.15),transparent 45%),var(--bg);
-    color:var(--crema); min-height:100vh; padding:48px 22px 80px;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:1080px;margin:0 auto}
-  .eyebrow{
-    font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);
-    font-weight:700;margin-bottom:14px;
-  }
-  h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,6vw,52px);
-    line-height:1.02;letter-spacing:-.02em;margin-bottom:14px;max-width:18ch}
-  .sub{color:var(--muted);font-size:16px;line-height:1.6;max-width:54ch;margin-bottom:40px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
-  .card{
-    display:block;background:var(--panel);border:1px solid var(--line);border-radius:18px;
-    padding:24px;color:inherit;text-decoration:none;
-    transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;
-  }
-  .card:hover{transform:translateY(-4px);border-color:var(--coral);
-    box-shadow:0 18px 40px -22px rgba(255,91,74,.6)}
-  .row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}
-  .name{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.01em}
-  .badge{font-size:11px;font-weight:700;background:var(--lima);color:#1a1410;
-    padding:4px 11px;border-radius:999px;white-space:nowrap;text-transform:uppercase;letter-spacing:.04em}
-  .meta{color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:18px}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:radial-gradient(circle at 80% -10%,rgba(255,91,74,.15),transparent 45%),var(--bg);color:var(--crema);min-height:100vh;padding:48px 22px 80px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto}
+  .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);font-weight:700;margin-bottom:14px}
+  h1{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,6vw,52px);line-height:1.02;letter-spacing:-.02em;margin-bottom:14px;max-width:20ch}
+  .sub{color:var(--muted);font-size:16px;line-height:1.6;max-width:60ch;margin-bottom:14px}
+  .count{display:inline-block;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--muted);margin-bottom:34px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+  .card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;color:inherit;text-decoration:none;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
+  .card:hover{transform:translateY(-4px);border-color:var(--coral);box-shadow:0 18px 40px -22px rgba(255,91,74,.6)}
+  .row{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:12px}
+  .name{font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;letter-spacing:-.01em;line-height:1.15}
+  .estilo{font-size:10.5px;font-weight:700;background:rgba(182,230,30,.15);color:var(--lima);padding:4px 9px;border-radius:999px;white-space:nowrap;text-transform:uppercase;letter-spacing:.04em}
+  .meta{color:var(--muted);font-size:13.5px;line-height:1.6;margin-bottom:16px}
   .meta .star{color:#ffc24c}
-  .open{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;
-    color:var(--crema);background:var(--coral);padding:11px 18px;border-radius:999px;width:100%;justify-content:center}
+  .open{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;color:var(--crema);background:var(--coral);padding:10px 16px;border-radius:999px;width:100%;justify-content:center}
   .foot{margin-top:54px;color:var(--muted);font-size:13px;text-align:center;opacity:.8}
   .foot a{color:var(--coral);text-decoration:none}
-</style>
-</head>
-<body>
-  <div class="wrap">
-    <div class="eyebrow">Avantia · Demostraciones</div>
-    <h1>Webs de muestra para negocios de Valencia</h1>
-    <p class="sub">Ejemplos reales generados a partir de datos públicos de Google Maps. Cada landing es única, personalizada con las reseñas y el estilo del negocio. Haz clic para abrir.</p>
-
-    <div class="grid" id="grid"></div>
-
-    <div class="foot">© 2026 Avantia · <a href="/avantia/">volver a la web principal</a></div>
-  </div>
-
-  <script>
-    const clients = [
-      { slug:"ritualpet-estilismo-canino", name:"Ritual Pet", rating:"5.0", reviews:"95", location:"Camins al Grau, Valencia" },
-      { slug:"tu-pet", name:"Tu Pet", rating:"4.8", reviews:"124", location:"Quatre Carreres, Valencia" }
-    ];
-    const grid = document.getElementById("grid");
-    clients.forEach(c => {
-      const a = document.createElement("a");
-      a.className = "card";
-      a.href = `/avantia/clientes/${c.slug}/`;
-      a.innerHTML = `
-        <div class="row">
-          <span class="name">${c.name}</span>
-          <span class="badge">En línea</span>
-        </div>
-        <div class="meta"><span class="star">★</span> ${c.rating} · ${c.reviews} reseñas<br>📍 ${c.location}</div>
-        <span class="open">Ver landing →</span>`;
-      grid.appendChild(a);
-    });
-  </script>
-</body>
-</html>
+</style></head><body>
+<div class="wrap">
+  <div class="eyebrow">Avantia · Demostraciones</div>
+  <h1>Webs de muestra para peluquerías caninas de Valencia</h1>
+  <p class="sub">Ejemplos reales generados a partir de datos públicos de Google Maps: fotos, reseñas y valoraciones de cada negocio. Cada landing es única y personalizada. Haz clic para abrir.</p>
+  <span class="count">20 negocios · 5 estilos de diseño</span>
+  <div class="grid" id="grid"></div>
+  <div class="foot">© 2026 Avantia · <a href="/avantia/">volver a la web principal</a></div>
+</div>
+<script>
+  const clients = [
+    { slug:"ritualpet-estilismo-canino", name:"ritualpet-estilismo-canino-chijdx_h", rating:"5", reviews:"95", loc:"Camins al Grau", estilo:"Energía Playful" },
+    { slug:"chic-can-peluqueria-canina", name:"chic-can-peluqueria-canina-chijr6qh", rating:"4.9", reviews:"240", loc:"46920 València", estilo:"Elegancia Serena" },
+    { slug:"escuela-educacion-canina-el-parque", name:"escuela-educacion-canina-el-parque-chijidmu", rating:"4.9", reviews:"101", loc:"46530 Puçol", estilo:"Honestidad Bold" },
+    { slug:"peluqueria-canina-angel", name:"peluqueria-canina-angel-chij1b6b", rating:"4.9", reviews:"118", loc:"46005 València", estilo:"Confianza Cercana" },
+    { slug:"peluqueria-canina-nero", name:"peluqueria-canina-nero-chijsunr", rating:"4.9", reviews:"63", loc:"Quatre Carreres", estilo:"Orgánico Natural" },
+    { slug:"peluquearte-peluqueria-canina-y-alimentacion", name:"peluquearte-peluqueria-canina-y-alimentacion-chijh1j0", rating:"4.8", reviews:"111", loc:"46022 València", estilo:"Orgánico Natural" },
+    { slug:"peluqueria-canina-cocofany-bano-y-corte-en-valencia", name:"peluqueria-canina-cocofany-bano-y-corte-en-valencia-chijizcd", rating:"4.8", reviews:"68", loc:"46017 València", estilo:"Energía Playful" },
+    { slug:"tu-pet-estilismo-de-mascotas-peluqueria-canina-dog-grooming-salon", name:"tu-pet-estilismo-de-mascotas-peluqueria-canina-dog-grooming-salon-chijjx9d", rating:"4.8", reviews:"124", loc:"46013 València", estilo:"Elegancia Serena" },
+    { slug:"peluqueria-canina-la-dolce-vita", name:"peluqueria-canina-la-dolce-vita-chijc2ro", rating:"4.9", reviews:"48", loc:"46011 València", estilo:"Elegancia Serena" },
+    { slug:"peluqueria-canina-patusos", name:"peluqueria-canina-patusos-chij9aay", rating:"4.5", reviews:"98", loc:"46011 València", estilo:"Energía Playful" },
+    { slug:"peluqueria-canina-4-patas-san-isidro-valencia", name:"peluqueria-canina-4-patas-san-isidro-valencia-chij0rby", rating:"4.8", reviews:"44", loc:"46014 València", estilo:"Confianza Cercana" },
+    { slug:"mispatitascaninas", name:"mispatitascaninas-chij93w7", rating:"4.6", reviews:"45", loc:"46009 València", estilo:"Energía Playful" },
+    { slug:"monisisimos-peluqueria-canina-spa", name:"monisisimos-peluqueria-canina-spa-chijwexs", rating:"4.9", reviews:"71", loc:"Extramurs", estilo:"Elegancia Serena" },
+    { slug:"animal-spirit-spa-canino", name:"animal-spirit-spa-canino-chijatxj", rating:"4.7", reviews:"65", loc:"46020 València", estilo:"Confianza Cercana" },
+    { slug:"doggos-spa-canino", name:"doggos-spa-canino-chijawss", rating:"4.6", reviews:"92", loc:"46020 València", estilo:"Orgánico Natural" },
+    { slug:"peluqueria-canina-campanar", name:"peluqueria-canina-campanar-chijbyf2", rating:"4.3", reviews:"38", loc:"46015 València", estilo:"Confianza Cercana" },
+    { slug:"peluqueria-canina-aurelio-s", name:"peluqueria-canina-aurelio-s-chijie4y", rating:"4.8", reviews:"45", loc:"46020 València", estilo:"Honestidad Bold" },
+    { slug:"peluqueria-canina-nets", name:"peluqueria-canina-nets-chijm8cj", rating:"4.8", reviews:"64", loc:"46019 València", estilo:"Energía Playful" },
+    { slug:"peluqueria-canina-orion-malilla", name:"peluqueria-canina-orion-malilla-chijuywv", rating:"5", reviews:"11", loc:"Quatre Carreres", estilo:"Orgánico Natural" },
+    { slug:"pup-bubble-dog-wash", name:"pup-bubble-dog-wash-chijlcjv", rating:"4.6", reviews:"11", loc:"46920 Mislata", estilo:"Energía Playful" }
+  ];
+  const grid = document.getElementById("grid");
+  clients.forEach(c => {
+    const a = document.createElement("a");
+    a.className = "card"; a.href = `/avantia/clientes/${c.slug}/`;
+    a.innerHTML = `<div class="row"><span class="name">${c.name}</span><span class="estilo">${c.estilo}</span></div>
+      <div class="meta"><span class="star">★</span> ${c.rating} · ${c.reviews} reseñas<br>📍 ${c.loc}</div>
+      <span class="open">Ver landing →</span>`;
+    grid.appendChild(a);
+  });
+</script>
+</body></html>

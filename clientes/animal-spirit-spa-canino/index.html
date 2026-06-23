@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animal Spirit Spa Canino — Peluquería canina en Benimaclet, Valencia</title>
+<meta name="description" content="Peluquería canina en Benimaclet (Valencia). Trato con cariño, mano izquierda con perros miedosos y resultados que se notan. 4,7★ en Google. Pide cita por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coral:#E8836B;          /* primario, cálido */
+    --coral-osc:#c9624a;
+    --coral-suave:#fbe4dc;
+    --teal:#2F7E80;           /* secundario, confianza */
+    --teal-osc:#235e60;
+    --teal-suave:#d8eaea;
+    --crema:#FBF6F2;
+    --crema-osc:#f0e6dd;
+    --tinta:#243234;
+    --tinta-suave:#566366;
+    --blanco:#ffffff;
+    --wa:#25d366;
+    --wa-tinta:#053c1c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--crema);
+    color:var(--tinta);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .round{font-family:'Quicksand',sans-serif}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  img{display:block;max-width:100%}
+
+  /* ====== BARRA SUPERIOR ====== */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(251,246,242,.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--crema-osc);
+  }
+  .nav-in{
+    max-width:1080px;margin:0 auto;padding:12px 22px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .wordmark{
+    display:flex;align-items:center;gap:11px;
+    font-family:'Quicksand',sans-serif;font-weight:700;font-size:20px;
+    color:var(--teal);letter-spacing:-.01em;text-decoration:none;
+  }
+  .wordmark .paw{
+    width:36px;height:36px;flex:0 0 36px;
+    background:var(--coral);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .wordmark .paw svg{width:21px;height:21px}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--wa);color:var(--wa-tinta);
+    font-family:'Quicksand',sans-serif;font-weight:700;font-size:14px;
+    padding:9px 16px;border-radius:40px;text-decoration:none;
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(37,211,102,.32)}
+  .nav-cta svg{width:17px;height:17px}
+
+  /* ====== HERO ====== */
+  .hero{padding:122px 0 64px;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+  .hero-eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--teal-suave);color:var(--teal-osc);
+    font-family:'Quicksand',sans-serif;font-weight:700;font-size:13px;letter-spacing:.02em;
+    padding:7px 15px;border-radius:40px;margin-bottom:24px;
+  }
+  .hero-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.7)}}
+  .hero h1{
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:clamp(40px,8.4vw,82px);
+    line-height:1.02;letter-spacing:-.02em;
+    color:var(--tinta);margin-bottom:22px;
+  }
+  .hero h1 .coral{color:var(--coral)}
+  .hero h1 .teal{color:var(--teal)}
+  .hero-sub{font-size:clamp(16.5px,2.2vw,20px);color:var(--tinta-suave);max-width:520px;margin-bottom:30px}
+  .hero-sub b{color:var(--tinta);font-weight:700}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .btn-wa{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--wa);color:var(--wa-tinta);
+    font-family:'Quicksand',sans-serif;font-weight:700;font-size:16px;
+    padding:15px 26px;border-radius:48px;text-decoration:none;
+    box-shadow:0 10px 26px rgba(37,211,102,.3);
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .btn-wa:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(37,211,102,.42)}
+  .btn-wa svg{width:21px;height:21px}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--teal);font-weight:700;font-size:15px;
+    font-family:'Quicksand',sans-serif;
+    text-decoration:none;padding:14px 6px;
+    border-bottom:2px solid transparent;transition:border-color .2s;
+  }
+  .btn-ghost:hover{border-color:var(--coral)}
+  .hero-trust{margin-top:34px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;color:var(--tinta-suave);font-size:14px}
+  .stars{color:var(--coral);letter-spacing:2px;font-size:16px}
+  .hero-trust b{color:var(--tinta);font-weight:700}
+
+  /* heartbeat signature */
+  .pulse-line{margin-top:30px;max-width:360px}
+  .pulse-line svg{width:100%;height:34px;overflow:visible}
+  .pulse-path{
+    fill:none;stroke:var(--coral);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:600;stroke-dashoffset:600;
+    animation:beat 3s ease-in-out infinite;
+  }
+  @keyframes beat{
+    0%{stroke-dashoffset:600}
+    60%{stroke-dashoffset:0}
+    100%{stroke-dashoffset:0;opacity:.85}
+  }
+
+  /* hero photo collage */
+  .hero-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:14px}
+  .hero-photos .hp{
+    border-radius:22px;overflow:hidden;border:1px solid var(--crema-osc);
+    box-shadow:0 18px 40px rgba(47,93,110,.12);position:relative;
+  }
+  .hero-photos .hp img{width:100%;height:100%;object-fit:cover}
+  .hero-photos .hp1{grid-row:span 2;aspect-ratio:3/4.4}
+  .hero-photos .hp2{aspect-ratio:4/3}
+  .hero-photos .hp3{aspect-ratio:4/3}
+  .hero-photos .badge{
+    position:absolute;left:14px;bottom:14px;
+    background:rgba(36,50,52,.82);color:var(--crema);
+    font-family:'Quicksand',sans-serif;font-weight:700;font-size:12px;
+    padding:7px 13px;border-radius:30px;display:flex;align-items:center;gap:7px;
+  }
+  .hero-photos .badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--coral)}
+
+  /* ====== reveal ====== */
+  .reveal{opacity:0;transform:translateY(32px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ====== STATS ====== */
+  .stats{background:var(--teal);color:var(--crema)}
+  .stats-in{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:40px 0}
+  .stat{text-align:center}
+  .stat .n{font-family:'Quicksand',sans-serif;font-weight:700;font-size:clamp(30px,7vw,46px);line-height:1;color:var(--blanco)}
+  .stat .n .star{color:#ffd9ce}
+  .stat .l{font-size:13.5px;color:#cfe5e5;margin-top:8px;font-weight:500}
+
+  /* ====== SECCIONES ====== */
+  section{position:relative}
+  .sec{padding:74px 0}
+  .kicker{display:inline-block;font-family:'Quicksand',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+  .h2{font-family:'Quicksand',sans-serif;font-weight:700;font-size:clamp(30px,5.4vw,52px);line-height:1.04;letter-spacing:-.02em;color:var(--tinta);margin-bottom:18px}
+  .lead{font-size:18px;color:var(--tinta-suave);max-width:620px}
+
+  /* ====== SERVICIOS ====== */
+  .serv-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:42px}
+  .card{
+    background:var(--blanco);border:1px solid var(--crema-osc);
+    border-radius:22px;padding:30px 28px;
+    transition:transform .25s ease,box-shadow .25s ease,border-color .25s;
+  }
+  .card:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(47,93,110,.12);border-color:var(--teal)}
+  .card .ic{width:58px;height:58px;border-radius:18px;background:var(--teal-suave);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+  .card:nth-child(2) .ic{background:var(--coral-suave)}
+  .card:nth-child(3) .ic{background:var(--crema-osc)}
+  .card:nth-child(4) .ic{background:var(--teal-suave)}
+  .card .ic svg{width:30px;height:30px}
+  .card h3{font-family:'Quicksand',sans-serif;font-weight:700;font-size:22px;color:var(--tinta);margin-bottom:9px}
+  .card p{color:var(--tinta-suave);font-size:15.5px}
+
+  /* ====== POR QUE ====== */
+  .why{background:var(--crema-osc)}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:40px}
+  .bene{display:flex;gap:18px;align-items:flex-start;background:var(--blanco);border-radius:18px;padding:24px 22px;border:1px solid var(--crema-osc)}
+  .bene .chk{flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:var(--coral);color:#fff;display:flex;align-items:center;justify-content:center}
+  .bene .chk svg{width:22px;height:22px}
+  .bene h4{font-family:'Quicksand',sans-serif;font-weight:700;font-size:19px;margin-bottom:4px;color:var(--tinta)}
+  .bene p{color:var(--tinta-suave);font-size:15px}
+
+  /* ====== GALERIA ====== */
+  .gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:40px}
+  .gal-grid .ph{border-radius:18px;aspect-ratio:1/1;overflow:hidden;border:1px solid var(--crema-osc);transition:transform .3s ease}
+  .gal-grid .ph img{width:100%;height:100%;object-fit:cover}
+  .gal-grid .ph:hover{transform:translateY(-2px)}
+  .gal-grid .ph.wide{grid-column:span 2;aspect-ratio:2/1}
+
+  /* ====== RESEÑAS ====== */
+  .res{background:var(--teal)}
+  .res .kicker{color:#ffd9ce}
+  .res .h2{color:var(--blanco)}
+  .res-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:42px}
+  .quote{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:22px;padding:28px 26px;display:flex;flex-direction:column}
+  .quote .stars{font-size:17px;margin-bottom:14px;display:block;color:#ffd9ce}
+  .quote p{font-family:'Quicksand',sans-serif;font-weight:500;font-size:17px;line-height:1.5;color:var(--crema);margin-bottom:20px;flex:1}
+  .quote .who{display:flex;align-items:center;gap:12px}
+  .quote .av{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Quicksand',sans-serif;font-weight:700;font-size:18px;color:#fff;background:var(--coral)}
+  .quote:nth-child(2) .av{background:var(--teal-osc)}
+  .quote:nth-child(4) .av{background:var(--teal-osc)}
+  .quote .who b{display:block;color:var(--blanco);font-size:15px;font-weight:700}
+  .quote .who small{color:#bcdada;font-size:13px}
+
+  /* ====== CITA / CTA ====== */
+  .cta-in{background:var(--coral);color:#fff;border-radius:28px;padding:52px 40px;text-align:center;position:relative;overflow:hidden;margin:8px 0}
+  .cta-in::before{content:"🐾";position:absolute;font-size:190px;opacity:.12;top:-30px;right:-10px}
+  .cta-in .tag{display:inline-block;background:rgba(255,255,255,.24);font-family:'Quicksand',sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:30px;margin-bottom:20px}
+  .cta-in h3{font-family:'Quicksand',sans-serif;font-weight:700;font-size:clamp(26px,5vw,46px);line-height:1.04;margin-bottom:16px;letter-spacing:-.02em;position:relative}
+  .cta-in p{font-size:17px;max-width:520px;margin:0 auto 28px;opacity:.95;position:relative}
+  .cta-in .btn-wa{background:#fff;color:var(--coral-osc);box-shadow:0 10px 26px rgba(0,0,0,.18);position:relative}
+  .cta-in .btn-wa:hover{box-shadow:0 16px 34px rgba(0,0,0,.26)}
+
+  /* ====== CONTACTO ====== */
+  .cont{background:var(--teal);color:var(--crema)}
+  .cont .h2{color:var(--blanco)}
+  .cont .kicker{color:#ffd9ce}
+  .cont-grid{display:grid;grid-template-columns:1fr;gap:34px;margin-top:34px}
+  .cont-info p{color:#d6e8e8;font-size:17px;margin-bottom:24px;max-width:440px}
+  .cont-row{display:flex;align-items:center;gap:14px;margin-bottom:18px;color:#e7f2f2;font-size:16px}
+  .cont-row .ci{flex:0 0 44px;width:44px;height:44px;border-radius:13px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center}
+  .cont-row .ci svg{width:22px;height:22px}
+  .cont-row b{display:block;color:#fff;font-family:'Quicksand',sans-serif;font-weight:700}
+  .cont-row small{color:#bcdada}
+  .cont .btn-wa{margin-top:6px}
+  .cont-photo{border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.18);min-height:240px}
+  .cont-photo img{width:100%;height:100%;object-fit:cover;min-height:240px}
+
+  /* ====== FOOTER ====== */
+  footer{background:var(--tinta);color:#9fb1b3;padding:48px 0 110px}
+  .foot-in{display:flex;flex-direction:column;gap:22px}
+  .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center}
+  .foot-mark{display:flex;align-items:center;gap:10px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:20px;color:var(--crema)}
+  .foot-mark .paw{width:32px;height:32px;background:var(--coral);border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .foot-mark .paw svg{width:18px;height:18px}
+  .foot-links{display:flex;gap:22px;flex-wrap:wrap}
+  .foot-links a{color:#9fb1b3;text-decoration:none;font-size:14px;transition:color .2s}
+  .foot-links a:hover{color:var(--coral)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:13px;color:#7a8d8f;line-height:1.7}
+
+  /* ====== WHATSAPP FIJO ====== */
+  .wa-fixed{
+    position:fixed;left:18px;right:18px;bottom:18px;z-index:120;
+    background:var(--wa);color:var(--wa-tinta);
+    font-family:'Quicksand',sans-serif;font-weight:700;font-size:16px;
+    padding:16px;border-radius:46px;text-decoration:none;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    box-shadow:0 12px 30px rgba(37,211,102,.4);
+    animation:bob 2.6s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+  .wa-fixed svg{width:22px;height:22px}
+
+  /* ====== RESPONSIVE ====== */
+  @media(min-width:760px){
+    .hero-grid{grid-template-columns:1.05fr .95fr;gap:50px}
+    .stats-in{padding:48px 0}
+    .serv-grid{grid-template-columns:repeat(2,1fr)}
+    .why-grid{grid-template-columns:repeat(2,1fr)}
+    .res-grid{grid-template-columns:repeat(2,1fr)}
+    .cont-grid{grid-template-columns:1.1fr 1fr}
+    .gal-grid{grid-template-columns:repeat(3,1fr)}
+    .gal-grid .ph.wide{grid-column:span 2}
+    .wa-fixed{display:none}
+  }
+  @media(min-width:980px){
+    .res-grid{grid-template-columns:repeat(3,1fr)}
+  }
+  @media(max-width:759px){
+    .nav-cta span{display:none}
+    .nav-cta{padding:9px;border-radius:50%}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="nav-in">
+    <a href="#" class="wordmark">
+      <span class="paw"><svg viewBox="0 0 24 24" fill="#fff"><circle cx="7" cy="8" r="2.1"/><circle cx="12" cy="6" r="2.1"/><circle cx="17" cy="8" r="2.1"/><circle cx="19.5" cy="13" r="1.8"/><path d="M12 11c-3 0-5 2.4-5 4.6 0 1.7 1.4 2.4 2.6 2.4 1 0 1.6-.4 2.4-.4s1.4.4 2.4.4c1.2 0 2.6-.7 2.6-2.4C17 13.4 15 11 12 11z"/></svg></span>
+      Animal&nbsp;Spirit
+    </a>
+    <a href="https://wa.me/34963693673" class="nav-cta">
+      <svg viewBox="0 0 24 24" fill="#053c1c"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+      <span>Pide cita</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow"><span class="dot"></span> Peluquería canina · Benimaclet, Valencia</div>
+        <h1 class="round">Tu perro sale <span class="coral">guapo</span><br>y, sobre todo, <span class="teal">feliz.</span></h1>
+        <p class="hero-sub">En Animal Spirit cada peludo entra con su nombre y su historia. Tenemos mano izquierda con los miedosos y los que vienen de malas experiencias —y se nota a la salida. <b>Cariño de verdad, profesionales de los pies a la cola.</b></p>
+        <div class="hero-actions">
+          <a href="https://wa.me/34963693673" class="btn-wa">
+            <svg viewBox="0 0 24 24" fill="#053c1c"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+            Pide cita por WhatsApp
+          </a>
+          <a href="#servicios" class="btn-ghost">Ver lo que hacemos →</a>
+        </div>
+        <div class="hero-trust">
+          <span class="stars">★★★★★</span>
+          <div><b>4,7 / 5</b> en Google · 65 reseñas de vecinos de Benimaclet</div>
+        </div>
+        <!-- signature: huella + latido -->
+        <div class="pulse-line" aria-hidden="true">
+          <svg viewBox="0 0 360 34" xmlns="http://www.w3.org/2000/svg">
+            <path class="pulse-path" d="M0 17 H70 l10 -11 12 22 11 -17 9 9 H180 q6 0 9 -5 a7 7 0 1 1 14 0 q3 5 9 5 H360"/>
+          </svg>
+        </div>
+      </div>
+      <div class="hero-photos reveal">
+        <div class="hp hp1">
+          <img src="fotos/foto-01.jpg" alt="Perro recién peluqueado en Animal Spirit Spa Canino, Benimaclet" loading="eager">
+          <span class="badge">Animal Spirit · Benimaclet</span>
+        </div>
+        <div class="hp hp2"><img src="fotos/foto-02.jpg" alt="Resultado de peluquería canina en Animal Spirit" loading="lazy"></div>
+        <div class="hp hp3"><img src="fotos/foto-03.jpg" alt="Perro feliz tras su sesión de spa canino" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== STATS ===== -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-in">
+      <div class="stat reveal"><div class="n">4,7<span class="star">★</span></div><div class="l">Valoración media en Google</div></div>
+      <div class="stat reveal"><div class="n">65</div><div class="l">Reseñas de clientes reales</div></div>
+      <div class="stat reveal"><div class="n">+13</div><div class="l">Años acompañando a peludos</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICIOS ===== -->
+<section class="sec" id="servicios">
+  <div class="wrap">
+    <span class="kicker reveal">Lo que hacemos juntos</span>
+    <h2 class="h2 reveal round">Cuidado de los<br>pies a la cola.</h2>
+    <p class="lead reveal">Cada perro es distinto: su pelo, su carácter y su humor del día. Adaptamos el ritmo y el trato a tu peludo, no al revés.</p>
+    <div class="serv-grid">
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2F7E80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4c2 0 3 2 3 4s-1 4-3 4-3-2-3-4 1-4 3-4z"/><path d="M14 14c0-3 3-5 5-3s1 6-2 8-7 1-7-2"/></svg></div>
+        <h3 class="round">Corte &amp; estilismo</h3>
+        <p>Tijera y máquina según su raza y su pelo, dejándolo cómodo y guapo. Te lo devolvemos como nuevo —varios clientes lo dicen tal cual.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#c9624a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 6 6 6 10a6 6 0 0 1-12 0c0-4 3-6 6-10z"/></svg></div>
+        <h3 class="round">Baño &amp; spa</h3>
+        <p>Baño a su medida, secado sin sustos y productos cuidados con su piel. Sale limpio, oloroso y relajado, no estresado.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#566366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></div>
+        <h3 class="round">Perros miedosos</h3>
+        <p>Si viene de una mala experiencia o le cuesta dejarse hacer, aquí tenemos paciencia y mano para ganárnoslo. Es nuestra especialidad.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2F7E80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 6"/></svg></div>
+        <h3 class="round">Cuidado completo</h3>
+        <p>Uñas, oídos, deslanado y esos detalles que marcan la diferencia. Salud y estética van juntas: revisamos mientras lo arreglamos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POR QUE ===== -->
+<section class="sec why">
+  <div class="wrap">
+    <span class="kicker reveal">Por qué Animal Spirit</span>
+    <h2 class="h2 reveal round">Aquí tu perro<br>tiene nombre.</h2>
+    <div class="why-grid">
+      <div class="bene reveal">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>
+        <div><h4 class="round">Un don con los animales</h4><p>Los más miedosos se relajan. "La dueña tiene un don con los animales", lo dicen sus propios clientes.</p></div>
+      </div>
+      <div class="bene reveal">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>
+        <div><h4 class="round">Cariño de verdad</h4><p>Tratan a cada peludo como si fuera suyo. No es postureo: es lo que se repite reseña tras reseña.</p></div>
+      </div>
+      <div class="bene reveal">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>
+        <div><h4 class="round">Clientes de años</h4><p>Familias que vuelven temporada tras temporada con su perro. La confianza no se improvisa, se gana.</p></div>
+      </div>
+      <div class="bene reveal">
+        <span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg></span>
+        <div><h4 class="round">Cita fácil por WhatsApp</h4><p>Sin centralitas ni esperas. Nos escribes, nos cuentas cómo es tu peludo y buscamos hueco juntos.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERIA ===== -->
+<section class="sec">
+  <div class="wrap">
+    <span class="kicker reveal">El antes y el después</span>
+    <h2 class="h2 reveal round">Caras felices,<br>sin filtros.</h2>
+    <p class="lead reveal">Peludos reales que han pasado por Animal Spirit. La diferencia se ve —y, sobre todo, se les nota contentos.</p>
+    <div class="gal-grid reveal">
+      <div class="ph"><img src="fotos/foto-04.jpg" alt="Perro arreglado en Animal Spirit Spa Canino" loading="lazy"></div>
+      <div class="ph"><img src="fotos/foto-05.jpg" alt="Resultado de peluquería canina" loading="lazy"></div>
+      <div class="ph wide"><img src="fotos/foto-06.jpg" alt="Perro feliz tras su sesión en la peluquería" loading="lazy"></div>
+      <div class="ph"><img src="fotos/foto-07.jpg" alt="Detalle de estilismo canino" loading="lazy"></div>
+      <div class="ph"><img src="fotos/foto-08.jpg" alt="Peludo recién peluqueado y contento" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESEÑAS ===== -->
+<section class="sec res">
+  <div class="wrap">
+    <span class="kicker reveal">Lo dicen ellos</span>
+    <h2 class="h2 reveal round">Palabra de<br>vecino.</h2>
+    <div class="res-grid">
+      <div class="quote reveal">
+        <span class="stars">★★★★★</span>
+        <p class="round">"Llevo muchos años llevando a Thai, nuestra perrita de 13 años, y el trato es excepcional. Ella disfruta muchísimo y le tratan con un cariño increíble. Gracias por vuestra profesionalidad y por dejarle siempre tan tan guapa."</p>
+        <div class="who"><span class="av">C</span><div><b>Cristina A.</b><small>Reseña en Google</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars">★★★★★</span>
+        <p class="round">"Estoy muy contento y mi peludo también. Venía de una mala experiencia en otra peluquería y les avisé porque Bao es miedoso. La dueña tiene un don con los animales y enseguida se lo ganó. Yo mismo me sorprendí. Salió precioso y contento."</p>
+        <div class="who"><span class="av">O</span><div><b>oscar f.</b><small>Reseña en Google</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars">★★★★★</span>
+        <p class="round">"Llevé a mi pastor belga negro a Animal Spirit y la experiencia ha sido increíble. Siempre había tenido problemas en otras peluquerías porque es un perro con un carácter complicado y no todo el mundo sabe manejarlo bien. Sin embargo, aquí de..."</p>
+        <div class="who"><span class="av">Y</span><div><b>Yayo H.</b><small>Reseña en Google</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars">★★★★★</span>
+        <p class="round">"He llevado a mi golden por primera vez y ha sido un acierto, ha salido muy contento. Antes lo llevaba a otra peluquería donde no se dejaba hacer nada, aquí ha salido como nuevo, recomendada. Las fotos son del antes y el después."</p>
+        <div class="who"><span class="av">A</span><div><b>Almudena L.</b><small>Reseña en Google</small></div></div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars">★★★★★</span>
+        <p class="round">"Llevo años llevando a Teo a Animal Spirit y no cambio por nada. Son profesionales como la copa de un pino, tratan a los pequeñines como si fueran de ellas, trato fabuloso. ¡Seguid así!"</p>
+        <div class="who"><span class="av">M</span><div><b>maria g.</b><small>Reseña en Google</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CITA / CTA ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="cta-in reveal">
+      <span class="tag">🐾 Pide tu cita</span>
+      <h3 class="round">¿Le toca arreglo<br>a tu peludo?</h3>
+      <p>Escríbenos por WhatsApp, cuéntanos cómo es tu perro —raza, carácter, si es de los miedosos— y buscamos el mejor hueco para él. Sin compromiso.</p>
+      <a href="https://wa.me/34963693673" class="btn-wa">
+        <svg viewBox="0 0 24 24" fill="#c9624a"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+        Reservar cita por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTO ===== -->
+<section class="sec cont" id="contacto">
+  <div class="wrap">
+    <span class="kicker reveal">Pásate cuando quieras</span>
+    <h2 class="h2 reveal round">Estamos en<br>Benimaclet.</h2>
+    <div class="cont-grid">
+      <div class="cont-info reveal">
+        <p>En pleno barrio de Benimaclet, a la vuelta de la esquina. Ven con tu peludo y compruébalo tú mismo.</p>
+        <div class="cont-row"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>Carrer del Doctor Garcia Brustenga, 20</b><small>Benimaclet, 46020 València</small></div></div>
+        <div class="cont-row"><span class="ci"><svg viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg></span><div><b>963 69 36 73</b><small>Llámanos o escríbenos por WhatsApp</small></div></div>
+        <div class="cont-row"><span class="ci"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4z"/></svg></span><div><b>WhatsApp directo</b><small>La forma más rápida de pedir cita</small></div></div>
+        <a href="https://wa.me/34963693673" class="btn-wa">
+          <svg viewBox="0 0 24 24" fill="#053c1c"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+          Escríbenos ahora
+        </a>
+      </div>
+      <div class="cont-photo reveal">
+        <img src="fotos/foto-02.jpg" alt="Animal Spirit Spa Canino en Benimaclet, Valencia" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap foot-in">
+    <div class="foot-top">
+      <div class="foot-mark">
+        <span class="paw"><svg viewBox="0 0 24 24" fill="#fff"><circle cx="7" cy="8" r="2.1"/><circle cx="12" cy="6" r="2.1"/><circle cx="17" cy="8" r="2.1"/><circle cx="19.5" cy="13" r="1.8"/><path d="M12 11c-3 0-5 2.4-5 4.6 0 1.7 1.4 2.4 2.6 2.4 1 0 1.6-.4 2.4-.4s1.4.4 2.4.4c1.2 0 2.6-.7 2.6-2.4C17 13.4 15 11 12 11z"/></svg></span>
+        Animal Spirit Spa Canino
+      </div>
+      <div class="foot-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+        <a href="https://wa.me/34963693673">WhatsApp</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © 2026 Animal Spirit Spa Canino · Peluquería canina en Carrer del Doctor Garcia Brustenga, 20, Benimaclet, 46020 València · 4,7★ en Google (65 reseñas).<br>
+      Fotos: Carolina Tomas y Eva Furio (Google Maps). Hecho con cariño para los peludos del barrio. 🐾
+    </div>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FIJO MOVIL ===== -->
+<a href="https://wa.me/34963693673" class="wa-fixed">
+  <svg viewBox="0 0 24 24" fill="#053c1c"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.4-.2-2.9.8.8-2.8-.2-.4A8 8 0 0 1 12 4zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7s1.5-.6 1.7-1.2c.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3.2-.5 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.3-.4-.5-.4z"/></svg>
+  Pide cita por WhatsApp
+</a>
+
+<!-- ===== SCHEMA.ORG ===== -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"PetStore",
+  "name":"Animal Spirit Spa Canino",
+  "image":"fotos/foto-01.jpg",
+  "description":"Peluquería canina en Benimaclet, Valencia. Trato cercano, mano izquierda con perros miedosos y resultados cuidados.",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Carrer del Doctor Garcia Brustenga, 20",
+    "addressLocality":"València",
+    "addressRegion":"Valencia",
+    "postalCode":"46020",
+    "addressCountry":"ES"
+  },
+  "telephone":"+34 963 69 36 73",
+  "aggregateRating":{
+    "@type":"AggregateRating",
+    "ratingValue":"4.7",
+    "reviewCount":"65",
+    "bestRating":"5"
+  }
+}
+</script>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){
+        setTimeout(()=>e.target.classList.add('in'), (i%4)*90);
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.14, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
