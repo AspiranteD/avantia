@@ -36,6 +36,9 @@
   .btn-copy:active{opacity:.85}
   .btn-video{background:var(--lima);color:var(--bg);font-weight:700}
   .btn-video:hover{opacity:.9;transform:translateY(-2px)}
+  .btn-wa{background:#25D366;color:#07321f;font-weight:800;width:100%;margin-bottom:10px;font-size:14px}
+  .btn-wa:hover{opacity:.92;transform:translateY(-2px)}
+  .aviso-fijo{font-size:12px;color:#ffcf66;background:rgba(255,180,0,.1);border:1px solid rgba(255,180,0,.28);border-radius:8px;padding:6px 10px;margin-bottom:10px;line-height:1.4}
   /* Paquetes */
   .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
   .tier{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column}
@@ -71,7 +74,7 @@
   <h1>Mensajes WhatsApp listos para copiar</h1>
   <p class="sub">El primer mensaje solo busca una cosa: que contesten. Por eso lleva únicamente el regalo + 99€. Los paquetes (199€ / 499€) van en el Paso 2, cuando ya hay conversación.</p>
   <span class="count">20 mensajes · 1 clic para copiar</span>
-  <div class="tip">📎 <b>Cómo enviar:</b> copia el mensaje → pégalo en WhatsApp → adjunta el <b>vídeo</b> de su landing en móvil (+ 1-2 capturas si quieres). &nbsp;·&nbsp; ✏️ Va firmado como <b>Guillem</b>: cámbialo si firmas de otra forma.</div>
+  <div class="tip">📎 <b>Cómo enviar:</b> pulsa <b>💬 Abrir WhatsApp</b> → se abre el chat del cliente con el mensaje ya escrito → dale a enviar → adjunta el <b>vídeo</b> con el botón 🎬 (ábrelo y guárdalo). &nbsp;·&nbsp; ✏️ Va firmado como <b>Guillem</b>: cámbialo en el código si firmas de otra forma.</div>
   <div class="tip" style="border-color:rgba(255,91,74,.28);background:rgba(255,91,74,.07)">💡 <b style="color:var(--coral)">Por qué le trae clientes</b> (tu argumento si te preguntan): se ve profesional en el móvil y en Google · botón de WhatsApp <b>a un toque</b>, sin llamadas ni rellenar nada · sus reseñas reales dan confianza al que llega. Convierte la visita en un mensaje suyo.</div>
 
   <div class="section-label"><span class="step">Paso 1</span><h2>El gancho — solo 99€</h2></div>
@@ -138,6 +141,31 @@
 
 <script>
 const SENDER = "Guillem";
+
+// Teléfono real de cada negocio (sacado del wa.me de su propia landing).
+// Los que empiezan por 9 tras el 34 son fijos -> quizá sin WhatsApp.
+const PHONES = {
+  "animal-spirit-spa-canino": "34963693673",
+  "chic-can-peluqueria-canina": "34610386472",
+  "doggos-spa-canino": "34963599377",
+  "escuela-educacion-canina-el-parque": "34615673076",
+  "mispatitascaninas": "34614811952",
+  "monisisimos-peluqueria-canina-spa": "34960410725",
+  "peluquearte-peluqueria-canina-y-alimentacion": "34663873130",
+  "peluqueria-canina-4-patas-san-isidro-valencia": "34657820642",
+  "peluqueria-canina-angel": "34722700011",
+  "peluqueria-canina-aurelio-s": "34652943184",
+  "peluqueria-canina-campanar": "34722756124",
+  "peluqueria-canina-cocofany-bano-y-corte-en-valencia": "34642703835",
+  "peluqueria-canina-la-dolce-vita": "34664424405",
+  "peluqueria-canina-nero": "34674974985",
+  "peluqueria-canina-nets": "34963277676",
+  "peluqueria-canina-orion-malilla": "34600852919",
+  "peluqueria-canina-patusos": "34635628466",
+  "pup-bubble-dog-wash": "34660436753",
+  "ritualpet-estilismo-canino": "34692684407",
+  "tu-pet-estilismo-de-mascotas-peluqueria-canina-dog-grooming-salon": "34633751072"
+};
 
 // PASO 1 — primer mensaje: solo regalo + 99€, sin mencionar paquetes superiores.
 function tpl(linea2){
@@ -217,6 +245,9 @@ function copyMessage(message) {
 function renderCards() {
   const grid = document.getElementById('grid');
   clients.forEach(client => {
+    const phone = PHONES[client.slug] || "";
+    const esFijo = phone.charAt(2) === '9';
+    const wa = phone ? `https://wa.me/${phone}?text=${encodeURIComponent(client.msg)}` : '#';
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
@@ -226,9 +257,11 @@ function renderCards() {
           <span class="estilo">${client.estilo}</span>
         </div>
         <div class="message-preview">${client.msg}</div>
+        ${esFijo ? '<div class="aviso-fijo">⚠️ Número fijo — quizá sin WhatsApp. Si no abre el chat, copia el mensaje y búscalo a mano.</div>' : ''}
+        <a class="btn btn-wa" href="${wa}" target="_blank" rel="noopener">💬 Abrir WhatsApp con el mensaje</a>
         <div class="button-group">
+          <a href="../videos/${client.slug}.mp4" target="_blank" rel="noopener" class="btn btn-video">🎬 Vídeo</a>
           <button class="btn btn-copy" onclick="copyMessage(this.dataset.msg)" data-msg="${client.msg.replace(/"/g,'&quot;')}">📋 Copiar</button>
-          <a href="../videos/#${client.slug}" class="btn btn-video">🎬 Ver</a>
         </div>
       </div>
     `;
