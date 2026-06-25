@@ -33,6 +33,9 @@
   <p class="sub">Ejemplos reales generados a partir de datos públicos de Google Maps: fotos, reseñas y valoraciones de cada negocio. Cada landing es única y personalizada. Haz clic para abrir.</p>
   <span class="count">20 negocios · 5 estilos de diseño</span>
   <div class="grid" id="grid"></div>
+  <h2 style="margin:38px 0 6px;font-size:1.25rem">Otros sectores <span style="font-weight:400;opacity:.7">· experimental</span></h2>
+  <p class="sub" style="margin-bottom:14px">Primeras demos fuera de peluquería canina.</p>
+  <div class="grid" id="grid2"></div>
   <div class="foot">© 2026 Avantia · <a href="/avantia/">volver a la web principal</a></div>
 </div>
 <script>
@@ -58,14 +61,21 @@
     { slug:"peluqueria-canina-orion-malilla", name:"Orion Malilla", rating:"5", reviews:"11", loc:"Quatre Carreres", estilo:"Orgánico Natural" },
     { slug:"pup-bubble-dog-wash", name:"Pup Bubble", rating:"4.6", reviews:"11", loc:"Mislata", estilo:"Energía Playful" }
   ];
-  const grid = document.getElementById("grid");
-  clients.forEach(c => {
-    const a = document.createElement("a");
-    a.className = "card"; a.href = `/avantia/clientes/${c.slug}/`;
-    a.innerHTML = `<div class="row"><span class="name">${c.name}</span><span class="estilo">${c.estilo}</span></div>
-      <div class="meta"><span class="star">★</span> ${c.rating} · ${c.reviews} reseñas<br>📍 ${c.loc}</div>
-      <span class="open">Ver landing →</span>`;
-    grid.appendChild(a);
-  });
+  const otros = [
+    { slug:"la-casa-del-sabor", name:"La Casa del Sabor", rating:"4.5", reviews:"192", loc:"Quatre Carreres · Casa de comidas", estilo:"Pizarra de Mercado" }
+  ];
+  function render(list, gridId) {
+    const grid = document.getElementById(gridId);
+    list.forEach(c => {
+      const a = document.createElement("a");
+      a.className = "card"; a.href = `/avantia/clientes/${c.slug}/`;
+      a.innerHTML = `<div class="row"><span class="name">${c.name}</span><span class="estilo">${c.estilo}</span></div>
+        <div class="meta"><span class="star">★</span> ${c.rating} · ${c.reviews} reseñas<br>📍 ${c.loc}</div>
+        <span class="open">Ver landing →</span>`;
+      grid.appendChild(a);
+    });
+  }
+  render(clients, "grid");
+  render(otros, "grid2");
 </script>
 </body></html>

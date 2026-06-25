@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Casa del Sabor · Cocina de autor a precio de barrio · Quatre Carreres, València</title>
+<meta name="description" content="Casa de comidas de autor en Quatre Carreres, València. Guisos del día y cocina del mundo con producto fresco, para llevar. Escríbenos.">
+<meta name="theme-color" content="#33402a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --board:#20271a; --board-2:#283021; --board-3:#171d12;
+    --chalk:#f1ede0; --chalk-soft:#bcc2ad; --terra:#e8814f; --terra-2:#f0966a;
+    --kraft:#d8c9a8; --wa:#25D366; --wa-osc:#1da851;
+    --hand:'Caveat',cursive; --cond:'Barlow Condensed',sans-serif; --sans:'Barlow',sans-serif;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);color:var(--chalk);background:var(--board);line-height:1.62;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+    background-image:
+      radial-gradient(circle at 20% 10%,rgba(255,255,255,.04),transparent 40%),
+      radial-gradient(circle at 85% 80%,rgba(232,129,79,.05),transparent 45%);
+  }
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;position:relative;z-index:1}
+  :focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+
+  .acento{color:var(--terra-2);font-style:italic}
+  em{color:var(--terra-2);font-style:italic}
+
+  .kicker{font-family:var(--cond);font-size:1rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--terra-2);display:inline-flex;align-items:center;gap:10px;margin-bottom:14px;font-weight:600}
+  .kicker::before{content:"";width:30px;height:2px;background:var(--terra-2);display:inline-block}
+
+  h1,h2,h3{font-family:var(--hand);font-weight:600;line-height:.98;letter-spacing:.01em}
+
+  /* chalk underline */
+  .chalk-u{position:relative;display:inline-block}
+  .chalk-u::after{content:"";position:absolute;left:-2%;right:-2%;bottom:-2px;height:5px;
+    background:var(--terra);border-radius:50%;
+    -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='6'%3E%3Cpath d='M0 3 Q25 0 50 3 T100 3' stroke='black' stroke-width='4' fill='none'/%3E%3C/svg%3E");
+    mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='6'%3E%3Cpath d='M0 3 Q25 0 50 3 T100 3' stroke='black' stroke-width='4' fill='none'/%3E%3C/svg%3E");
+    -webkit-mask-size:100% 100%;mask-size:100% 100%}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--cond);font-weight:600;
+    font-size:1.18rem;letter-spacing:.04em;text-transform:uppercase;padding:14px 28px;border-radius:999px;
+    cursor:pointer;border:none;transition:transform .2s,box-shadow .2s,background .2s}
+  .btn-wa{background:var(--wa);color:#06351a;box-shadow:0 10px 26px -10px rgba(37,211,102,.7)}
+  .btn-wa:hover{background:var(--wa-osc);transform:translateY(-2px) rotate(-1deg)}
+  .btn-wa svg{width:21px;height:21px;fill:currentColor}
+  .btn-chalk{background:transparent;color:var(--chalk);border:2px dashed var(--chalk-soft)}
+  .btn-chalk:hover{border-color:var(--terra-2);color:var(--terra-2)}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(23,29,18,.86);backdrop-filter:blur(10px);
+    border-bottom:1px solid transparent;transition:border-color .3s}
+  nav.scrolled{border-color:rgba(241,237,224,.12)}
+  .nav-in{max-width:var(--maxw);margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--hand);font-weight:700;font-size:1.7rem;color:var(--chalk)}
+  .brand-mark{width:42px;height:42px;border-radius:9px;border:2px solid var(--chalk-soft);color:var(--terra-2);
+    display:grid;place-items:center;font-family:var(--hand);font-weight:700;font-size:1.7rem;flex:none;transform:rotate(-3deg)}
+  nav .btn{padding:10px 18px;font-size:1rem}
+
+  /* hero */
+  header.hero{padding:124px 0 64px}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center}
+  .hero h1{font-size:clamp(3.4rem,9vw,6.6rem);margin:6px 0 10px}
+  .hero h1 .line2{color:var(--terra-2)}
+  .hero .sub{font-family:var(--sans);font-size:1.14rem;color:var(--chalk-soft);max-width:36ch;margin-bottom:28px}
+  .hero .sub b{color:var(--chalk);font-weight:600}
+  .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-bottom:26px}
+  .ver-mas{font-family:var(--cond);font-size:1.15rem;text-transform:uppercase;letter-spacing:.05em;font-weight:600;
+    color:var(--chalk);display:inline-flex;gap:8px;border-bottom:2px solid var(--chalk-soft);padding-bottom:3px;transition:gap .2s,border-color .2s}
+  .ver-mas:hover{gap:12px;border-color:var(--terra-2);color:var(--terra-2)}
+  .social-proof{display:flex;align-items:center;gap:11px;font-family:var(--cond);font-size:1.1rem;color:var(--chalk-soft)}
+  .stars{display:inline-flex;gap:2px;color:var(--terra-2)}.stars svg{width:18px;height:18px;fill:currentColor}
+  .social-proof b{color:var(--chalk)}
+  .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .chip{display:inline-flex;align-items:center;gap:7px;font-family:var(--cond);text-transform:uppercase;letter-spacing:.08em;
+    font-size:.84rem;font-weight:600;color:var(--chalk);border:2px dashed rgba(241,237,224,.28);border-radius:999px;padding:7px 15px}
+  .chip .e{font-size:1rem}
+  .cook-stats{display:flex;flex-wrap:wrap;gap:30px;margin-top:32px;padding-top:24px;border-top:2px dashed rgba(241,237,224,.18)}
+  .cook-stats .stat .n{font-family:var(--hand);font-size:2.3rem;line-height:1;color:var(--terra-2)}
+  .cook-stats .stat .l{font-family:var(--cond);text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:var(--chalk-soft);margin-top:4px}
+
+  /* hero board */
+  .menu-board{background:var(--board-3);border-radius:8px;padding:14px;
+    box-shadow:0 36px 70px -40px rgba(0,0,0,.9), inset 0 0 0 2px rgba(241,237,224,.05);
+    transform:rotate(1.2deg);transition:transform .4s;position:relative}
+  .menu-board:hover{transform:rotate(0)}
+  .menu-board::before{content:"";position:absolute;inset:0;border-radius:8px;pointer-events:none;
+    box-shadow:inset 0 0 60px rgba(0,0,0,.5)}
+  .mb-inner{border:2px dashed rgba(241,237,224,.28);border-radius:5px;padding:28px 26px}
+  .mb-top{text-align:center;border-bottom:2px dashed rgba(241,237,224,.22);padding-bottom:14px;margin-bottom:18px}
+  .mb-top .mb-k{font-family:var(--cond);text-transform:uppercase;letter-spacing:.3em;font-size:.82rem;color:var(--terra-2)}
+  .mb-top .mb-t{font-family:var(--hand);font-size:2.6rem;line-height:1;margin-top:4px;color:var(--chalk)}
+  .mb-list{list-style:none;display:flex;flex-direction:column;gap:15px}
+  .mb-list li{display:flex;align-items:baseline;gap:10px}
+  .mb-list .dish{font-family:var(--hand);font-size:1.7rem;color:var(--chalk)}
+  .mb-list .dot{flex:1;border-bottom:2px dotted rgba(241,237,224,.3);transform:translateY(-5px)}
+  .mb-list .tag{font-family:var(--cond);text-transform:uppercase;font-size:.78rem;letter-spacing:.12em;color:var(--terra-2);white-space:nowrap}
+  .mb-foot{text-align:center;margin-top:20px;padding-top:14px;border-top:2px dashed rgba(241,237,224,.22);
+    font-family:var(--hand);font-size:1.5rem;color:var(--terra-2)}
+
+  section{padding:80px 0;position:relative}
+  .sec-head{max-width:680px;margin-bottom:42px}
+  .sec-head h2{font-size:clamp(2.8rem,6.5vw,4.6rem)}
+  .sec-head .intro{font-family:var(--sans);margin-top:14px;color:var(--chalk-soft);font-size:1.1rem}
+
+  /* quién cocina */
+  .cook{background:var(--board-2);border-top:2px dashed rgba(241,237,224,.14);border-bottom:2px dashed rgba(241,237,224,.14)}
+  .cook-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:50px;align-items:center}
+  .cook-photo{border-radius:5px;overflow:hidden;border:10px solid var(--board-3);box-shadow:0 30px 60px -38px rgba(0,0,0,.9);
+    aspect-ratio:4/5;background:#2a3522;transform:rotate(-1.5deg);transition:transform .4s}
+  .cook-photo:hover{transform:rotate(0)}
+  .cook-photo img{width:100%;height:100%;object-fit:cover}
+  .cook h2{font-size:clamp(3rem,6vw,4.6rem);color:var(--chalk);margin-bottom:20px}
+  .cook p{font-family:var(--sans);color:var(--chalk-soft);font-size:1.12rem;margin-bottom:18px;max-width:54ch}
+  .cook p b{color:var(--chalk);font-weight:600}
+  .firma{margin-top:26px;font-family:var(--hand);font-size:2rem;color:var(--terra-2)}
+  .firma small{display:block;font-family:var(--cond);text-transform:uppercase;letter-spacing:.16em;font-size:.82rem;color:var(--chalk-soft);margin-top:6px}
+
+  /* cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:var(--board-3);border:2px dashed rgba(241,237,224,.2);border-radius:6px;padding:26px 24px;
+    transition:transform .25s,border-color .25s}
+  .card:hover{transform:translateY(-5px) rotate(-.6deg);border-color:var(--terra-2)}
+  .card .ico{font-size:2.1rem;margin-bottom:12px}
+  .card h3{font-size:2.1rem;color:var(--chalk);margin-bottom:4px}
+  .card p{font-family:var(--sans);color:var(--chalk-soft);font-size:.99rem}
+
+  /* pizarra */
+  .pizarra-in{background:var(--board-3);border:3px dashed rgba(241,237,224,.3);border-radius:8px;
+    padding:60px 44px;text-align:center;position:relative}
+  .pizarra-in .kicker{justify-content:center}
+  .pizarra-in h2{font-size:clamp(3rem,7vw,5rem);color:var(--chalk);margin-bottom:14px}
+  .pizarra-in p{font-family:var(--sans);color:var(--chalk-soft);max-width:46ch;margin:0 auto 26px;font-size:1.12rem}
+
+  /* galería */
+  .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .gal-grid figure{margin:0;border-radius:5px;overflow:hidden;aspect-ratio:1;background:#2a3522;
+    border:8px solid var(--board-3);box-shadow:0 18px 36px -26px rgba(0,0,0,.8);position:relative}
+  .gal-grid figure:nth-child(odd){transform:rotate(-1deg)}
+  .gal-grid figure:nth-child(even){transform:rotate(1deg)}
+  .gal-grid figure{transition:transform .35s}
+  .gal-grid figure:hover{transform:rotate(0) scale(1.02);z-index:2}
+  .gal-grid img{width:100%;height:100%;object-fit:cover}
+  .gal-grid figure:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+
+  /* reseñas */
+  .resenas{background:var(--board-2)}
+  .g-badge{display:inline-flex;align-items:center;gap:9px;border:2px dashed rgba(241,237,224,.25);border-radius:999px;
+    padding:8px 16px;font-family:var(--cond);text-transform:uppercase;letter-spacing:.08em;font-size:.92rem;color:var(--chalk-soft);margin-bottom:18px}
+  .g-badge .gl{font-family:var(--sans);font-weight:700;letter-spacing:0}
+  .g-badge .gl span:nth-child(1){color:#4285F4}.g-badge .gl span:nth-child(2){color:#EA4335}
+  .g-badge .gl span:nth-child(3){color:#FBBC05}.g-badge .gl span:nth-child(4){color:#4285F4}
+  .g-badge .gl span:nth-child(5){color:#34A853}.g-badge .gl span:nth-child(6){color:#EA4335}
+  .g-badge b{color:var(--chalk)}
+  .res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .res{background:var(--board-3);border:2px dashed rgba(241,237,224,.2);border-radius:6px;padding:26px;display:flex;flex-direction:column}
+  .res .stars{margin-bottom:12px}
+  .res p{font-family:var(--sans);font-size:1rem;color:var(--chalk);margin-bottom:18px;flex:1}
+  .res-author{display:flex;align-items:center;gap:12px}
+  .res-ini{width:44px;height:44px;border-radius:50%;border:2px solid var(--terra-2);color:var(--terra-2);
+    display:grid;place-items:center;font-family:var(--hand);font-weight:700;font-size:1.5rem;flex:none}
+  .res-author b{display:block;font-family:var(--cond);text-transform:uppercase;letter-spacing:.06em;font-weight:600;font-size:1.05rem;color:var(--chalk)}
+  .res-author small{color:var(--chalk-soft);font-size:.82rem}
+
+  /* contacto */
+  .contacto{background:var(--board-3);border-top:2px dashed rgba(241,237,224,.14)}
+  .cont-grid{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
+  .contacto h2{font-size:clamp(2.8rem,6vw,4.4rem);color:var(--chalk);margin-bottom:14px}
+  .contacto .intro{font-family:var(--sans);color:var(--chalk-soft);font-size:1.1rem;margin-bottom:26px;max-width:42ch}
+  .cont-list{list-style:none;display:flex;flex-direction:column;gap:15px;margin-bottom:26px}
+  .cont-list li{display:flex;gap:13px;align-items:flex-start;font-family:var(--sans);font-size:1.04rem}
+  .cont-list .ci{font-size:1.2rem;flex:none;width:24px}
+  .cont-list a{border-bottom:1px solid rgba(241,237,224,.3)}.cont-list a:hover{border-color:var(--terra-2)}
+  .cont-list small{display:block;color:var(--chalk-soft);font-size:.84rem;margin-top:2px}
+  .map{border-radius:6px;overflow:hidden;border:8px solid var(--board-2);background:#222a1b;aspect-ratio:4/3;
+    position:relative;display:flex;align-items:flex-end;transform:rotate(-1deg);transition:transform .4s}
+  .map:hover{transform:rotate(0)}
+  .map-svg{position:absolute;inset:0;width:100%;height:100%}
+  .map-pin{position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);font-size:2.2rem;
+    filter:drop-shadow(0 6px 8px rgba(0,0,0,.5));animation:bob 2.6s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,-62%)}}
+  .map-link{position:relative;width:100%;margin:12px;padding:12px 17px;background:rgba(23,29,18,.9);border-radius:5px;
+    display:flex;align-items:center;justify-content:space-between;font-family:var(--cond);text-transform:uppercase;
+    letter-spacing:.06em;font-size:1rem;font-weight:600;color:var(--chalk)}
+  .map-link .arrow{transition:transform .2s}.map:hover .map-link .arrow{transform:translateX(4px)}
+
+  /* CTA final */
+  .cta-final{background:linear-gradient(120deg,#c25c34 0%,#8a3c22 45%,var(--board-3) 100%);text-align:center}
+  .cta-final h2{font-size:clamp(3.4rem,8vw,6rem);color:#fff;margin-bottom:10px}
+  .cta-final p{font-family:var(--sans);font-size:1.16rem;color:rgba(255,255,255,.92);max-width:46ch;margin:0 auto 28px}
+  .cta-final .btn-wa{background:#fff;color:#0c3a1d}.cta-final .btn-wa:hover{background:#f0fff5}
+  .cta-call{display:block;margin-top:18px;font-family:var(--cond);text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.9);font-size:1.05rem}
+  .cta-call a{border-bottom:1px solid rgba(255,255,255,.5)}
+
+  footer{background:var(--board-3);color:var(--chalk-soft);text-align:center;padding:38px 22px;
+    font-family:var(--sans);font-size:.92rem;border-top:2px dashed rgba(241,237,224,.14)}
+  footer .brand{justify-content:center;margin-bottom:12px}
+
+  .fab{position:fixed;right:18px;bottom:18px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--wa);
+    display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.7);transform:translateY(120px);transition:transform .35s,background .2s}
+  .fab.show{transform:translateY(0)}.fab:hover{background:var(--wa-osc)}.fab svg{width:32px;height:32px;fill:#fff}
+  .fab::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:ring 2.4s infinite;opacity:0}
+  @keyframes ring{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:860px){
+    .hero-grid,.cook-grid,.cont-grid{grid-template-columns:1fr;gap:36px}
+    .menu-board{max-width:440px;margin:0 auto}
+    .cards,.res-grid{grid-template-columns:1fr}
+    .gal-grid{grid-template-columns:repeat(2,1fr)}
+    .gal-grid figure:first-child{grid-column:span 2;grid-row:auto}
+    section{padding:60px 0}.pizarra-in{padding:46px 24px}
+    nav .btn span.lbl{display:none}nav .btn{padding:10px 13px}
+  }
+  @media(max-width:480px){.gal-grid{grid-template-columns:1fr 1fr;gap:9px}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#" aria-label="La Casa del Sabor, inicio"><span class="brand-mark">S</span><span>La Casa del Sabor</span></a>
+    <a class="btn btn-wa" href="https://wa.me/34963951660?text=Hola%20Marisa%2C%20%C2%BFqu%C3%A9%20hay%20hoy%20en%20la%20cocina%3F%20Quiero%20encargar%20para%20llevar" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      <span class="lbl">WhatsApp</span>
+    </a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="kicker">36 años cocinando con cariño · Quatre Carreres, València</span>
+      <h1>Tú pon el hambre.<br><span class="line2">De lo demás se encarga <span class="chalk-u">Marisa</span>.</span></h1>
+      <p class="sub">Marisa cocina cada mañana los clásicos de siempre y platos que te sorprenden. Tú lo pides, te lo dejamos listo y caliente. <b>Pregúntale qué hay hoy por WhatsApp.</b></p>
+      <div class="hero-cta">
+        <a class="btn btn-wa" href="https://wa.me/34963951660?text=Hola%20Marisa%2C%20%C2%BFqu%C3%A9%20hay%20hoy%20en%20la%20cocina%3F%20Quiero%20encargar%20para%20llevar" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Encargar por WhatsApp
+        </a>
+        <a class="ver-mas" href="#cocinamos">Ver qué cocinamos →</a>
+      </div>
+      <div class="social-proof">
+        <span class="stars" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg></span>
+        <span><b>4,5 sobre 5</b> · 192 reseñas en Google</span>
+      </div>
+      <div class="hero-chips">
+        <span class="chip"><span class="e">🥡</span> Para llevar</span>
+        <span class="chip"><span class="e">💃</span> Casas falleras y eventos</span>
+        <span class="chip"><span class="e">🕒</span> Pedidos de 9 a 12</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="menu-board">
+        <div class="mb-inner">
+          <div class="mb-top"><div class="mb-k">Hoy en la cocina</div><div class="mb-t">La pizarra de Marisa</div></div>
+          <ul class="mb-list">
+            <li><span class="dish">Arroz al horno</span><span class="dot"></span><span class="tag">de cuchara</span></li>
+            <li><span class="dish">Fabada de la olla</span><span class="dot"></span><span class="tag">clásico</span></li>
+            <li><span class="dish">Curry del mundo</span><span class="dot"></span><span class="tag">de viaje</span></li>
+            <li><span class="dish">Guiso veggie del día</span><span class="dot"></span><span class="tag">veggie</span></li>
+          </ul>
+          <div class="mb-foot">¿Qué hay hoy? · Pregúntanos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="cook" id="quien">
+  <div class="wrap cook-grid">
+    <div class="cook-photo reveal"><img src="fotos/marisa.jpg" alt="Marisa cocinando en La Casa del Sabor" loading="lazy" width="900" height="1100"></div>
+    <div class="cook-copy reveal">
+      <span class="kicker">Quién cocina</span>
+      <h2>Detrás de cada plato,<br>está <em>Marisa</em>.</h2>
+      <p>Aquí no hay carta congelada ni microondas. Cada plato lo guisa <b>Marisa</b> cada mañana con lo que trae del mercado: los clásicos de toda la vida —paella, arroz al horno, fabada, pollo al horno— y recetas que se trae de medio mundo, latinas, asiáticas, europeas.</p>
+      <p>Y al otro lado del mostrador, <b>Dani</b>, su hijo, que te recibe con una sonrisa y te explica al detalle lo que hay hoy. Aquí no eres un comensal: eres del barrio.</p>
+      <div class="firma">— Marisa y Dani<small>En los fogones · Quatre Carreres</small></div>
+      <div class="cook-stats">
+        <div class="stat"><div class="n">36 años</div><div class="l">cocinando con cariño</div></div>
+        <div class="stat"><div class="n">Cada mañana</div><div class="l">con lo del mercado</div></div>
+        <div class="stat"><div class="n">Medio mundo</div><div class="l">en recetas, un solo barrio</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cocinamos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Lo que cocinamos</span>
+      <h2>Lo de siempre y lo que <span class="acento">no esperas</span>.</h2>
+      <p class="intro">Comida casera y no tan casera: los guisos de siempre y recetas que no te esperas. La carta cambia cada día con lo que hay fresco; estos son los imprescindibles, y lo de hoy te lo contamos por WhatsApp.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal"><div class="ico">🍚</div><h3>Arroces</h3><p>Paella y arroz al horno como en casa, a fuego y con su tiempo. De los que se hacen esperar.</p></article>
+      <article class="card reveal"><div class="ico">🥘</div><h3>Guisos del día</h3><p>Fabada, pollo al horno, platos de cuchara… lo que se cuece hoy en la olla, recién hecho.</p></article>
+      <article class="card reveal"><div class="ico">🌍</div><h3>Cocina del mundo</h3><p>Hoy latino, mañana asiático, pasado europeo. Recetas que Marisa trae de medio mundo, siempre con producto fresco.</p></article>
+      <article class="card reveal"><div class="ico">🥬</div><h3>Veggie y para todos</h3><p>Opciones vegetarianas y veganas que cambian a diario. Pregunta y te decimos lo de hoy.</p></article>
+      <article class="card reveal"><div class="ico">🥡</div><h3>Para llevar</h3><p>Tú lo pides, nosotros lo guisamos, tú lo recoges caliente. Comida de casa sin manchar una olla.</p></article>
+      <article class="card reveal"><div class="ico">🎉</div><h3>Encargos y eventos</h3><p>Casas falleras, comidas familiares, celebraciones… Dinos cuántos sois y de qué tenéis ganas, y lo dejamos listo.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="pizarra">
+  <div class="wrap">
+    <div class="pizarra-in reveal">
+      <span class="kicker">La pizarra</span>
+      <h2>Hoy en la <em>cocina</em>.</h2>
+      <p>La carta cambia cada día con lo que trae el mercado. Escríbenos por la mañana —pedidos de 9 a 12— y te decimos qué hay hoy; lo recoges calentito al mediodía.</p>
+      <a class="btn btn-wa" href="https://wa.me/34963951660?text=Hola%20Marisa%2C%20%C2%BFqu%C3%A9%20hay%20hoy%20en%20la%20cocina%3F%20Quiero%20encargar%20para%20llevar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Pregúntanos qué hay hoy
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">El día a día</span>
+      <h2>Lo que sale de la cocina.</h2>
+      <p class="intro">Algunos de los platos que pasan por aquí. Fotos reales de La Casa del Sabor.</p>
+    </div>
+    <div class="gal-grid reveal">
+      <figure><img src="fotos/plato-01.jpg" alt="Paella y arroces de La Casa del Sabor" loading="lazy" width="900" height="900"></figure>
+      <figure><img src="fotos/plato-02.jpg" alt="Guiso del día recién hecho" loading="lazy" width="900" height="900"></figure>
+      <figure><img src="fotos/plato-03.jpg" alt="Plato de cocina del mundo de La Casa del Sabor" loading="lazy" width="900" height="900"></figure>
+      <figure><img src="fotos/plato-04.jpg" alt="Opción veggie del día" loading="lazy" width="900" height="900"></figure>
+      <figure><img src="fotos/plato-05.jpg" alt="Comida para llevar de La Casa del Sabor" loading="lazy" width="900" height="900"></figure>
+      <figure><img src="fotos/plato-06.jpg" alt="El local de La Casa del Sabor en Quatre Carreres" loading="lazy" width="900" height="900"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="resenas" id="resenas">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="g-badge"><span class="gl"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span> · <b>4,5</b> ★ · 192 reseñas</span>
+      <h2>La mejor casa de comidas<br>de <span class="acento">Valencia</span>.</h2>
+    </div>
+    <div class="res-grid">
+      <blockquote class="res reveal">
+        <span class="stars" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg></span>
+        <p>"Sin duda, la mejor casa de comidas de Valencia. Tienen platos originales y también los clásicos de toda la vida, todo hecho con muchísimo cariño y con un sabor espectacular. El trato es inmejorable: Marisa es una auténtica crack, siempre atenta y con una sonrisa."</p>
+        <div class="res-author"><span class="res-ini">S</span><span><b>Sara Peris</b><small>Reseña de Google</small></span></div>
+      </blockquote>
+      <blockquote class="res reveal">
+        <span class="stars" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg></span>
+        <p>"Lo que más llama la atención es cómo juegan con nuevas recetas súper originales con ingredientes increíbles. Es difícil fallar ya que todo está buenísimo. Además de la comida, el servicio es increíble, los chicos que te atienden son un encanto y te reciben siempre con una sonrisa."</p>
+        <div class="res-author"><span class="res-ini">N</span><span><b>Natalia López</b><small>Reseña de Google</small></span></div>
+      </blockquote>
+      <blockquote class="res reveal">
+        <span class="stars" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.335 3.855 1.401-8.168L.132 9.21l8.2-1.192z"/></svg></span>
+        <p>"Comida casera excelente. Con una atención genial, siempre te explican con detalle las elaboraciones. Gran variedad de platos, tienen muchas opciones vegetarianas, veganas… Calidad-precio excepcional. Muy recomendable."</p>
+        <div class="res-author"><span class="res-ini">I</span><span><b>Ignacio MA</b><small>Reseña de Google</small></span></div>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="contacto" id="donde">
+  <div class="wrap cont-grid">
+    <div class="cont-copy reveal">
+      <span class="kicker">Dónde estamos</span>
+      <h2>En el corazón de<br>Quatre Carreres.</h2>
+      <p class="intro">Pásate al mediodía a recoger lo tuyo, o escríbenos antes y te lo dejamos listo y caliente.</p>
+      <ul class="cont-list">
+        <li><span class="ci">📍</span><span>Av. de la Plata, 83<small>Quatre Carreres, València</small></span></li>
+        <li><span class="ci">🕒</span><span>Mar–Dom 12:30–15:30 · Lunes cerrado<small>Solo mediodía · pedidos de 9 a 12, mejor encargar antes</small></span></li>
+        <li><span class="ci">📞</span><span><a href="tel:+34963951660">+34 963 95 16 60</a><small>Llámanos al mediodía</small></span></li>
+        <li><span class="ci">📷</span><span><a href="https://www.instagram.com/casadelsabor.melocoton/" target="_blank" rel="noopener">@casadelsabor.melocoton</a><small>Síguenos en Instagram</small></span></li>
+        <li><span class="ci">🎵</span><span><a href="https://www.tiktok.com/@lacasadelsabor1991" target="_blank" rel="noopener">@lacasadelsabor1991</a><small>Y en TikTok, cada día lo que se cuece</small></span></li>
+      </ul>
+      <a class="btn btn-wa" href="https://wa.me/34963951660?text=Hola%20Marisa%2C%20%C2%BFqu%C3%A9%20hay%20hoy%20en%20la%20cocina%3F%20Quiero%20encargar%20para%20llevar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Escríbenos ahora
+      </a>
+    </div>
+    <a class="map reveal" href="https://www.google.com/maps/place/?q=place_id:ChIJ6fb2X8RIYA0Rh2seV14dtrg" target="_blank" rel="noopener" aria-label="Abrir La Casa del Sabor en Google Maps">
+      <svg class="map-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="400" height="300" fill="#222a1b"/>
+        <path d="M0 120 H400 M0 200 H400 M120 0 V300 M260 0 V300" stroke="#2e3823" stroke-width="10"/>
+        <path d="M0 70 H400 M330 0 V300" stroke="#2a331f" stroke-width="5"/>
+        <rect x="40" y="135" width="60" height="50" fill="#2c3522"/>
+        <rect x="280" y="215" width="70" height="55" fill="#2c3522"/>
+        <rect x="140" y="90" width="90" height="20" fill="#2c3522"/>
+      </svg>
+      <span class="map-pin" aria-hidden="true">📍</span>
+      <span class="map-link">Abrir en Google Maps <span class="arrow">→</span></span>
+    </a>
+  </div>
+</section>
+
+<section class="cta-final" id="cta">
+  <div class="wrap reveal">
+    <h2>¿Qué te apetece hoy?</h2>
+    <p>Escríbenos por WhatsApp y te decimos qué hay en la cocina. Te lo dejamos listo para recoger.</p>
+    <a class="btn btn-wa" href="https://wa.me/34963951660?text=Hola%20Marisa%2C%20%C2%BFqu%C3%A9%20hay%20hoy%20en%20la%20cocina%3F%20Quiero%20encargar%20para%20llevar" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      Ver qué hay hoy
+    </a>
+    <span class="cta-call">o llámanos al <a href="tel:+34963951660">+34 963 95 16 60</a></span>
+  </div>
+</section>
+
+<footer>
+  <div class="brand" style="display:inline-flex"><span class="brand-mark">S</span><span>La Casa del Sabor</span></div>
+  <p>© 2026 La Casa del Sabor · Av. de la Plata, 83 · Quatre Carreres, València</p>
+</footer>
+
+<a class="fab" id="fab" href="https://wa.me/34963951660?text=Hola%20Marisa%2C%20%C2%BFqu%C3%A9%20hay%20hoy%20en%20la%20cocina%3F%20Quiero%20encargar%20para%20llevar" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+  var nav=document.getElementById('nav'),fab=document.getElementById('fab');
+  function onScroll(){var y=window.scrollY;nav.classList.toggle('scrolled',y>20);fab.classList.toggle('show',y>620);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
