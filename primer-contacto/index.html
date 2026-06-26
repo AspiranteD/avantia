@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Avantia · Primer contacto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#1a1410;--panel:#241c15;--line:#38291d;--crema:#f6efe4;--muted:#b6a890;--coral:#FF5B4A;--lima:#B6E61E}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:radial-gradient(circle at 80% -10%,rgba(255,91,74,.15),transparent 45%),var(--bg);color:var(--crema);min-height:100vh;padding:48px 22px 80px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto}
+  .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);font-weight:700;margin-bottom:14px}
+  h1{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,6vw,52px);line-height:1.02;letter-spacing:-.02em;margin-bottom:14px;max-width:30ch}
+  h2{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(22px,4vw,32px);margin:8px 0 6px}
+  .sub{color:var(--muted);font-size:16px;line-height:1.6;max-width:62ch;margin-bottom:14px}
+  .count{display:inline-block;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--muted);margin-bottom:22px}
+  .tip{background:rgba(182,230,30,.08);border:1px solid rgba(182,230,30,.25);border-radius:14px;padding:14px 18px;margin-bottom:34px;font-size:14px;color:var(--crema);line-height:1.6}
+  .tip b{color:var(--lima)}
+  .section-label{display:flex;align-items:center;gap:10px;margin:56px 0 6px}
+  .section-label .step{font-family:'Bricolage Grotesque';font-weight:800;font-size:13px;background:var(--coral);color:#fff;border-radius:999px;padding:4px 12px;white-space:nowrap}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:all .3s ease}
+  .card:hover{border-color:var(--coral);transform:translateY(-4px)}
+  .card-content{padding:18px;flex:1;display:flex;flex-direction:column}
+  .meta{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}
+  .name{font-family:'Bricolage Grotesque';font-weight:800;font-size:16px;flex:1}
+  .estilo{font-size:11px;font-weight:700;background:rgba(182,230,30,.15);color:var(--lima);padding:4px 10px;border-radius:999px;white-space:nowrap;text-transform:uppercase;letter-spacing:.04em;flex-shrink:0}
+  .message-preview{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:16px;flex:1;white-space:pre-wrap;max-height:150px;overflow:hidden;position:relative}
+  .message-preview::after{content:'';position:absolute;bottom:0;left:0;right:0;height:24px;background:linear-gradient(transparent,var(--panel))}
+  .button-group{display:flex;gap:10px;margin-top:auto}
+  .btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 14px;border-radius:12px;border:none;font-weight:700;font-size:13px;cursor:pointer;transition:all .2s ease;text-decoration:none;flex:1;min-height:42px}
+  .btn-copy{background:var(--coral);color:#fff}
+  .btn-copy:hover{opacity:.9;transform:translateY(-2px)}
+  .btn-copy:active{opacity:.85}
+  .btn-video{background:var(--lima);color:var(--bg);font-weight:700}
+  .btn-video:hover{opacity:.9;transform:translateY(-2px)}
+  .btn-wa{background:#25D366;color:#07321f;font-weight:800;width:100%;margin-bottom:10px;font-size:14px}
+  .btn-wa:hover{opacity:.92;transform:translateY(-2px)}
+  .aviso-fijo{font-size:12px;color:#ffcf66;background:rgba(255,180,0,.1);border:1px solid rgba(255,180,0,.28);border-radius:8px;padding:6px 10px;margin-bottom:10px;line-height:1.4}
+  /* Paquetes */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+  .tier{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column}
+  .tier.star{border-color:var(--lima);box-shadow:0 0 0 1px var(--lima),0 14px 40px rgba(182,230,30,.12);position:relative}
+  .tier .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--lima);color:var(--bg);font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.06em;padding:5px 14px;border-radius:999px;white-space:nowrap}
+  .tier .tname{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:8px}
+  .tier .price{font-family:'Bricolage Grotesque';font-weight:800;font-size:38px;line-height:1;margin-bottom:4px}
+  .tier .price small{font-size:15px;color:var(--muted);font-weight:500}
+  .tier .pitch{font-size:13px;color:var(--coral);font-weight:700;margin-bottom:14px}
+  .tier ul{list-style:none;font-size:14px;line-height:1.5;color:var(--crema);display:flex;flex-direction:column;gap:8px}
+  .tier li{display:flex;gap:8px;align-items:flex-start}
+  .tier li::before{content:'·';color:var(--lima);font-weight:800;font-size:18px;line-height:1}
+  .tier.star li::before{color:var(--lima)}
+  .followup{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:24px}
+  .followup .lab{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:12px}
+  .followup pre{white-space:pre-wrap;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.6;color:var(--crema);background:rgba(0,0,0,.2);border-radius:12px;padding:16px;margin-bottom:14px}
+  .foot{margin-top:54px;color:var(--muted);font-size:13px;text-align:center;opacity:.8}
+  .foot a{color:var(--coral);text-decoration:none}
+  .footer-nav{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;padding-top:20px;border-top:1px solid var(--line)}
+  .footer-nav a{color:var(--coral);text-decoration:none;font-size:14px;font-weight:700}
+  .footer-nav a:hover{text-decoration:underline}
+  .toast{position:fixed;top:20px;right:20px;background:var(--lima);color:var(--bg);padding:12px 18px;border-radius:8px;display:none;z-index:1000;font-weight:700;animation:slideIn .3s ease}
+  .toast.show{display:block}
+  @keyframes slideIn{from{transform:translateX(100px);opacity:0}to{transform:translateX(0);opacity:1}}
+  @media(max-width:768px){
+    .grid{grid-template-columns:1fr}
+    .tiers{grid-template-columns:1fr}
+    .meta{flex-direction:column;align-items:flex-start}
+  }
+</style></head><body>
+<div class="wrap">
+  <div class="eyebrow">Avantia · Primer contacto</div>
+  <h1>Mensajes WhatsApp listos para copiar</h1>
+  <p class="sub">El primer mensaje solo busca una cosa: que contesten. Por eso lleva únicamente el regalo + 99€. Los paquetes (199€ / 499€) van en el Paso 2, cuando ya hay conversación.</p>
+  <span class="count">20 mensajes · 1 clic para copiar</span>
+  <div class="tip">📎 <b>Cómo enviar:</b> pulsa <b>💬 Abrir WhatsApp</b> → se abre el chat del cliente con el mensaje ya escrito → dale a enviar → adjunta el <b>vídeo</b> con el botón 🎬 (ábrelo y guárdalo). &nbsp;·&nbsp; ✏️ Va firmado como <b>Guillem</b>: cámbialo en el código si firmas de otra forma.</div>
+  <div class="tip" style="border-color:rgba(255,91,74,.28);background:rgba(255,91,74,.07)">💡 <b style="color:var(--coral)">Por qué le trae clientes</b> (tu argumento si te preguntan): se ve profesional en el móvil y en Google · botón de WhatsApp <b>a un toque</b>, sin llamadas ni rellenar nada · sus reseñas reales dan confianza al que llega. Convierte la visita en un mensaje suyo.</div>
+
+  <div class="section-label"><span class="step">Paso 1</span><h2>El gancho — solo 99€</h2></div>
+  <p class="sub">Regalo primero, precio bajo, sin presión. Aquí no se mencionan los paquetes superiores.</p>
+  <div class="grid" id="grid"></div>
+
+  <div class="section-label"><span class="step">Paso 2</span><h2>Cuando contesten — los 3 paquetes</h2></div>
+  <p class="sub">No los sueltes hasta que muestren interés. El de <b style="color:var(--lima)">199€</b> es el objetivo: por 100€ más que el básico, la web pasa a ser suya de verdad. El de 499€ está para que el 199€ parezca lo lógico.</p>
+
+  <div class="tiers">
+    <div class="tier">
+      <div class="tname">Paquete 1 · La tienes ya</div>
+      <div class="price">99€</div>
+      <div class="pitch">Lo que te enseño en el vídeo</div>
+      <ul>
+        <li>Tu landing con tus datos, fotos y reseñas reales de Google</li>
+        <li>Lista para compartir por WhatsApp y redes</li>
+        <li>No te cuesta esperar: ya está hecha</li>
+      </ul>
+    </div>
+    <div class="tier star">
+      <div class="badge">★ El que cogen casi todos</div>
+      <div class="tname">Paquete 2 · A tu medida</div>
+      <div class="price">199€</div>
+      <div class="pitch">Por 100€ más, deja de ser plantilla</div>
+      <ul>
+        <li>Todo lo del paquete de 99€</li>
+        <li>La personalizamos juntos: tu historia, tus textos, tus servicios y precios</li>
+        <li>Tus propias fotos</li>
+        <li>Ajustes hasta que sea tuya de verdad</li>
+      </ul>
+    </div>
+    <div class="tier">
+      <div class="tname">Paquete 3 · Marca completa</div>
+      <div class="price">499€</div>
+      <div class="pitch">Montarlo todo en serio</div>
+      <ul>
+        <li>Todo lo del paquete de 199€</li>
+        <li>Sesión de fotos profesional de tu local y tu trabajo</li>
+        <li>Creación de marca: logo e identidad</li>
+        <li>Ayuda de marketing inicial para arrancar y captar tus primeros clientes</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="followup">
+    <div class="lab">📋 Mensaje de seguimiento (cuando pregunten "¿qué incluye?" o se interesen)</div>
+    <pre id="followupText"></pre>
+    <button class="btn btn-copy" style="max-width:260px" onclick="copyMessage(document.getElementById('followupText').textContent)">📋 Copiar seguimiento</button>
+  </div>
+
+  <div class="footer-nav">
+    <a href="../webs/">← Hub de landings</a>
+    <a href="../videos/">Ver vídeos →</a>
+    <a href="../samples/">Sampler de estilos →</a>
+  </div>
+  <div class="foot">
+    <p>Paso 1: gancho 99€ (cuesta cero) · Paso 2: 199€ es el objetivo · 499€ ancla el valor</p>
+    <p style="margin-top:8px">Generado: 2026-06-25 · <a href="https://github.com/AspiranteD/maps-ai-agency" target="_blank">GitHub</a></p>
+  </div>
+</div>
+
+<div class="toast" id="toast">✅ ¡Copiado al portapapeles!</div>
+
+<script>
+const SENDER = "Guillem";
+
+// Teléfono real de cada negocio (sacado del wa.me de su propia landing).
+// Los que empiezan por 9 tras el 34 son fijos -> quizá sin WhatsApp.
+const PHONES = {
+  "animal-spirit-spa-canino": "34963693673",
+  "chic-can-peluqueria-canina": "34610386472",
+  "doggos-spa-canino": "34963599377",
+  "escuela-educacion-canina-el-parque": "34615673076",
+  "mispatitascaninas": "34614811952",
+  "monisisimos-peluqueria-canina-spa": "34960410725",
+  "peluquearte-peluqueria-canina-y-alimentacion": "34663873130",
+  "peluqueria-canina-4-patas-san-isidro-valencia": "34657820642",
+  "peluqueria-canina-angel": "34722700011",
+  "peluqueria-canina-aurelio-s": "34652943184",
+  "peluqueria-canina-campanar": "34722756124",
+  "peluqueria-canina-cocofany-bano-y-corte-en-valencia": "34642703835",
+  "peluqueria-canina-la-dolce-vita": "34664424405",
+  "peluqueria-canina-nero": "34674974985",
+  "peluqueria-canina-nets": "34963277676",
+  "peluqueria-canina-orion-malilla": "34600852919",
+  "peluqueria-canina-patusos": "34635628466",
+  "pup-bubble-dog-wash": "34660436753",
+  "ritualpet-estilismo-canino": "34692684407",
+  "tu-pet-estilismo-de-mascotas-peluqueria-canina-dog-grooming-salon": "34633751072"
+};
+
+// PASO 1 — primer mensaje: solo regalo + 99€, sin mencionar paquetes superiores.
+function tpl(linea2){
+  return `Buenas! Soy ${SENDER}, hago webs para negocios de aquí, de Valencia.
+
+${linea2} Te he montado una web con tus fotos y reseñas reales de Google. La idea: que quien te encuentre te escriba al WhatsApp en un toque y te entren más clientes.
+
+Te dejo un vídeo de cómo queda en el móvil 👇
+
+Si te gusta, es tuya por 99€. Sin compromiso, dime qué te parece.`;
+}
+
+// PASO 2 — seguimiento cuando se interesan: presenta los 3 paquetes anclando el 199€.
+const FOLLOWUP = `Genial 🙌 Lo bueno es que está montada para captar: quien te encuentra ve tus fotos y reseñas, y te escribe al WhatsApp en un toque. Tú solo respondes.
+
+Hay tres opciones:
+
+· 99€ — la web que te he enseñado tal cual, con tus datos y reseñas de Google. Tuya y lista.
+
+· 199€ — la hacemos TUYA de verdad: la personalizamos juntos (tu historia, tus textos, tus servicios y precios, tus propias fotos) y la afinamos hasta que te encaje. Es la que coge casi todo el mundo, por 100€ más cambia bastante.
+
+· 499€ — todo lo anterior + sesión de fotos profesional, creación de tu marca (logo e identidad) y una ayuda de marketing para arrancar y captar tus primeros clientes desde la web.
+
+¿Con cuál te ves? Sin prisa, lo que necesites.`;
+
+const clients = [
+  { name:"Animal Spirit Spa Canino", slug:"animal-spirit-spa-canino", estilo:"Spa canino",
+    msg: tpl("Le he echado un ojo a Animal Spirit y me ha encantado vuestro spa.") },
+  { name:"Chic Can Peluquería Canina", slug:"chic-can-peluqueria-canina", estilo:"Peluquería canina",
+    msg: tpl("Le he echado un ojo a Chic Can.") },
+  { name:"Doggos Spa Canino ⚠️", slug:"doggos-spa-canino", estilo:"Spa canino",
+    msg: tpl("Le he echado un ojo a Doggos Spa.") },
+  { name:"Escuela Educación Canina El Parque", slug:"escuela-educacion-canina-el-parque", estilo:"Educación canina",
+    msg: tpl("Le he echado un ojo a la Escuela El Parque y a cómo trabajáis la educación canina.") },
+  { name:"MisPatitasCaninas", slug:"mispatitascaninas", estilo:"Estética canina",
+    msg: tpl("Le he echado un ojo a Mis Patitas Caninas.") },
+  { name:"Monisisimos Peluquería Canina Spa", slug:"monisisimos-peluqueria-canina-spa", estilo:"Peluquería + Spa",
+    msg: tpl("Le he echado un ojo a Monísisimos.") },
+  { name:"PeluqueArte Peluquería Canina", slug:"peluquearte-peluqueria-canina-y-alimentacion", estilo:"Peluquería + Tienda",
+    msg: tpl("Le he echado un ojo a PeluqueArte, peluquería y la parte de alimentación.") },
+  { name:"Peluquería 4 Patas San Isidro", slug:"peluqueria-canina-4-patas-san-isidro-valencia", estilo:"Peluquería canina",
+    msg: tpl("Le he echado un ojo a 4 Patas, ahí en San Isidro.") },
+  { name:"Peluquería Canina Ángel", slug:"peluqueria-canina-angel", estilo:"Peluquería canina",
+    msg: tpl("Le he echado un ojo a tu peluquería, Ángel.") },
+  { name:"Peluquería Canina Aurelio's", slug:"peluqueria-canina-aurelio-s", estilo:"Peluquería canina",
+    msg: tpl("Le he echado un ojo a Aurelio's.") },
+  { name:"Peluquería Canina Campanar", slug:"peluqueria-canina-campanar", estilo:"Peluquería canina",
+    msg: tpl("Le he echado un ojo a tu peluquería, ahí en Campanar.") },
+  { name:"Peluquería Canina Cocofany", slug:"peluqueria-canina-cocofany-bano-y-corte-en-valencia", estilo:"Peluquería canina",
+    msg: tpl("Le he echado un ojo a Cocofany y a vuestro baño y corte.") },
+  { name:"Peluquería Canina La Dolce Vita", slug:"peluqueria-canina-la-dolce-vita", estilo:"Peluquería canina",
+    msg: tpl("Le he echado un ojo a La Dolce Vita.") },
+  { name:"Peluquería Canina Nero", slug:"peluqueria-canina-nero", estilo:"Peluquería canina",
+    msg: tpl("Le he echado un ojo a Nero.") },
+  { name:"Peluquería Canina Nets", slug:"peluqueria-canina-nets", estilo:"Peluquería canina",
+    msg: tpl("Le he echado un ojo a Nets.") },
+  { name:"Peluquería Canina Orión Malilla", slug:"peluqueria-canina-orion-malilla", estilo:"Peluquería canina",
+    msg: tpl("Le he echado un ojo a Orión, ahí en Malilla.") },
+  { name:"Peluquería Canina Patussos ⚠️", slug:"peluqueria-canina-patusos", estilo:"Peluquería canina",
+    msg: tpl("Le he echado un ojo a Patussos.") },
+  { name:"Pup Bubble Dog Wash", slug:"pup-bubble-dog-wash", estilo:"Autoservicio baño",
+    msg: tpl("Le he echado un ojo a Pup Bubble y a vuestro autoservicio de baño.") },
+  { name:"RitualPet Estilismo Canino", slug:"ritualpet-estilismo-canino", estilo:"Estilismo canino",
+    msg: tpl("Le he echado un ojo a RitualPet.") },
+  { name:"Tu Pet Estilismo de Mascotas", slug:"tu-pet-estilismo-de-mascotas-peluqueria-canina-dog-grooming-salon", estilo:"Estilismo canino",
+    msg: tpl("Le he echado un ojo a Tu Pet.") }
+];
+
+function copyMessage(message) {
+  navigator.clipboard.writeText(message).then(() => {
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+  });
+}
+
+function renderCards() {
+  const grid = document.getElementById('grid');
+  clients.forEach(client => {
+    const phone = PHONES[client.slug] || "";
+    const esFijo = phone.charAt(2) === '9';
+    const wa = phone ? `https://wa.me/${phone}?text=${encodeURIComponent(client.msg)}` : '#';
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="card-content">
+        <div class="meta">
+          <span class="name">${client.name}</span>
+          <span class="estilo">${client.estilo}</span>
+        </div>
+        <div class="message-preview">${client.msg}</div>
+        ${esFijo ? '<div class="aviso-fijo">⚠️ Número fijo — quizá sin WhatsApp. Si no abre el chat, copia el mensaje y búscalo a mano.</div>' : ''}
+        <a class="btn btn-wa" href="${wa}" target="_blank" rel="noopener">💬 Abrir WhatsApp con el mensaje</a>
+        <div class="button-group">
+          <a href="../videos/${client.slug}.mp4" target="_blank" rel="noopener" class="btn btn-video">🎬 Vídeo</a>
+          <button class="btn btn-copy" onclick="copyMessage(this.dataset.msg)" data-msg="${client.msg.replace(/"/g,'&quot;')}">📋 Copiar</button>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+document.getElementById('followupText').textContent = FOLLOWUP;
+renderCards();
+</script>
+</body></html>
